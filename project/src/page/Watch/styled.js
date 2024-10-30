@@ -10,14 +10,14 @@ export const WatchWrap = styled.div`
         position: relative;
         width: 70%;
         margin: 0 auto;
-
         .videoInner {
             width: 100%;
             height: 0;
             padding-bottom: 56.25%;
             position: relative;
+            border-radius: 2rem;
+            overflow: hidden;
         }
-
         iframe {
             position: absolute;
             left: 0;
