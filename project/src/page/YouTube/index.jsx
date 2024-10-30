@@ -9,13 +9,17 @@ const YouTube = () => {
     const dispatch = useDispatch();
     useEffect(() => {
         if (allMovies.length === 0) dispatch(getAllMovies());
+        document.title = `YouTube`;
     }, []);
     return (
         <YouTubeWrap>
-            <ul>
-                {allMovies.map((movie) => (
-                    <Video key={movie.movie_id} movie={movie} />
-                ))}
+            <ul className='test-wrap'>
+                {allMovies
+                    .slice()
+                    .sort(() => Math.random() - 0.5)
+                    .map((movie) => (
+                        <Video key={movie.movie_id} movie={movie} />
+                    ))}
             </ul>
         </YouTubeWrap>
     );

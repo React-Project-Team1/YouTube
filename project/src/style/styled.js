@@ -2,7 +2,10 @@ import styled from 'styled-components';
 
 export const HeaderWrap = styled.header`
     box-sizing: border-box;
-    position: relative;
+    position: sticky;
+    top: 0;
+    background-color: #fff;
+    z-index: 999;
     div {
         box-sizing: border-box;
     }
@@ -88,18 +91,13 @@ export const HeaderWrap = styled.header`
                     border-radius: 50%;
                     background-color: var(--youtube-red);
                     box-sizing: border-box;
-                    padding: 0.6rem;
                     font-size: 1.4rem;
                     color: #fff;
+                    width: 3rem;
+                    height: 3rem;
                 }
             }
         }
-    }
-    .side-menu {
-        background-color: #000;
-        width: 10%;
-        min-height: 100vh;
-        position: absolute;
     }
 `;
 

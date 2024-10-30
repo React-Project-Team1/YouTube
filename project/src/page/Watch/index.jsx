@@ -14,6 +14,7 @@ const Watch = () => {
     useEffect(() => {
         if (isSideMenu) dispatch(SideMenuChange());
         if (allMovies.length === 0) dispatch(getAllMovies());
+        document.title = `${thisMovie.movie_title}`;
     }, [Movie_ID]);
     if (!Movie_ID || !thisMovie)
         return (

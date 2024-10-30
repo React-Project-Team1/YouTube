@@ -14,7 +14,7 @@ const UserMenu = () => {
                 />
             </a>
             <a href='#'>
-                <span className='user-profile'>이름</span>
+                <span className='user-profile'>Y</span>
             </a>
         </div>
     );
