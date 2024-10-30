@@ -39,7 +39,6 @@
 
 export const Channel = {
     // 강솔
-    //채널1
     KBS_Joy: {
         channel_id: 741852,
         channel_name: 'KBS Joy',
@@ -60,7 +59,8 @@ export const Channel = {
                     '그의 눈앞에 시도 때도 없이 나타난다는 귀신들!독실한 크리스천이지만 신묘한 능력 덕분에 모르는 사람들까지 점 봐달라고 찾아온다는데..',
                 movie_image:
                     'https://i.ytimg.com/vi/j-rZqBXHIic/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDc5a2AFFlDSZ1NnUBbw6obVrfkKw',
-                movie_video: 'https://www.youtube.com/embed/j-rZqBXHIic?si=m8lX6Aec3_QXyyZh',
+                movie_video:
+                    'https://www.youtube.com/embed/j-rZqBXHIic?si=m8lX6Aec3_QXyyZh&autoplay=1&mute=1',
                 // 동영상 좋아요 수
                 movie_like_count: 91000,
                 movie_category: 'talk',
@@ -87,7 +87,8 @@ export const Channel = {
                     '엄마가 유명해서 불편해요 SNS 중독 엄마와 팩트폭격기 딸의 한 치 양보 없는 썰전! ',
                 movie_image:
                     'https://i.ytimg.com/vi/pxPADFCRFY4/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCNtOffVDGsBO3Z0_nOhVcFH7FQoA',
-                movie_video: 'https://www.youtube.com/embed/pxPADFCRFY4?si=IeVxx9gJUd6fQE-p',
+                movie_video:
+                    'https://www.youtube.com/embed/pxPADFCRFY4?si=IeVxx9gJUd6fQE-p&autoplay=1&mute=1',
                 // 동영상 좋아요 수
                 movie_like_count: 48000,
                 movie_category: 'talk',
@@ -115,7 +116,8 @@ export const Channel = {
                 movie_body: '행복한 삶을 꿈꾸는 #투렛증후군 환자의 고백',
                 movie_image:
                     'https://i.ytimg.com/vi/eAXN1C0dLe8/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAU_AOTsQpOpjh0Wu_JfwMY1jKFaw',
-                movie_video: 'https://www.youtube.com/embed/eAXN1C0dLe8?si=K1gkasXQmkbjj42S',
+                movie_video:
+                    'https://www.youtube.com/embed/eAXN1C0dLe8?si=K1gkasXQmkbjj42S&autoplay=1&mute=1',
                 // 동영상 좋아요 수
                 movie_like_count: 14000,
                 movie_category: 'talk',
@@ -143,7 +145,7 @@ export const Channel = {
                 movie_image:
                     'https://i.ytimg.com/vi/HBpxhWhWpuw/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLA9XoUoh6LstlgHZzMo74_h2zmJSw',
                 movie_video:
-                    'https://www.youtube.com/embed/HBpxhWhWpuw?si=rveNvcv3_Qq9D2n8&amp;controls=0',
+                    'https://www.youtube.com/embed/HBpxhWhWpuw?si=rveNvcv3_Qq9D2n8&autoplay=1&mute=1',
                 // 동영상 좋아요 수
                 movie_like_count: 53000,
                 movie_category: 'talk',
@@ -172,7 +174,7 @@ export const Channel = {
                 movie_image:
                     'https://i.ytimg.com/vi/rxIiCI-5hsc/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLA8RrMxr0wxcF8b9PZ61VG5aj5k4g',
                 movie_video:
-                    'https://www.youtube.com/embed/rxIiCI-5hsc?si=TBIulhyWK7n7yBDO&amp;controls=0',
+                    'https://www.youtube.com/embed/rxIiCI-5hsc?si=TBIulhyWK7n7yBDO&autoplay=1&mute=1',
                 // 동영상 좋아요 수
                 movie_like_count: 67000,
                 movie_category: 'talk',
@@ -214,7 +216,7 @@ export const Channel = {
                 movie_image:
                     'https://i.ytimg.com/vi/cQb-6mQV-KQ/hqdefault.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLB31OYLvG7ZcTDySJTy1hMsOm2fsA',
                 movie_video:
-                    'https://www.youtube.com/embed/cQb-6mQV-KQ?si=jccwNpyuj6FWpXLa&amp;controls=0',
+                    'https://www.youtube.com/embed/cQb-6mQV-KQ?si=jccwNpyuj6FWpXLa&autoplay=1&mute=1',
                 // 동영상 좋아요 수
                 movie_like_count: 66000,
                 movie_category: 'vlog',
@@ -234,7 +236,6 @@ export const Channel = {
                     },
                 ],
             },
-
             {
                 movie_id: 789321,
                 movie_title: '드디어 동생과 내친구의 결혼식 공개해요! (제 축사도..)',
@@ -242,7 +243,7 @@ export const Channel = {
                 movie_image:
                     'https://i.ytimg.com/vi/lWwyGT1BJMA/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDVHK7saocl61XDD-xZOHlNnf3Byg',
                 movie_video:
-                    'https://www.youtube.com/embed/lWwyGT1BJMA?si=ZamdeYRmluFQ4nC7&amp;controls=0',
+                    'https://www.youtube.com/embed/lWwyGT1BJMA?si=ZamdeYRmluFQ4nC7&autoplay=1&mute=1',
                 // 동영상 좋아요 수
                 movie_like_count: 17000,
                 movie_category: 'vlog',
@@ -263,7 +264,6 @@ export const Channel = {
                     },
                 ],
             },
-
             {
                 movie_id: 168997,
                 movie_title:
@@ -272,7 +272,7 @@ export const Channel = {
                 movie_image:
                     'https://i.ytimg.com/vi/YaxocJPDMDY/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBDizKIGKdh_cb5Wc6y6lvY3yUTMQ',
                 movie_video:
-                    'https://www.youtube.com/embed/YaxocJPDMDY?si=GvxkGOgBrYlgbQ-q&amp;controls=0',
+                    'https://www.youtube.com/embed/YaxocJPDMDY?si=GvxkGOgBrYlgbQ-q&autoplay=1&mute=1',
                 // 동영상 좋아요 수
                 movie_like_count: 26000,
                 movie_category: 'vlog',
@@ -293,7 +293,6 @@ export const Channel = {
                     },
                 ],
             },
-
             {
                 movie_id: 211666,
                 movie_title: '[드디어 공개] 동생과 내친구가 연애하게된 스토리 ep.1',
@@ -302,7 +301,7 @@ export const Channel = {
                 movie_image:
                     'https://i.ytimg.com/vi/nyMZxK2Kvhs/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDdY3151EqR0c7ZBkdJ17MBXgys7Q',
                 movie_video:
-                    'https://www.youtube.com/embed/nyMZxK2Kvhs?si=iJT0KA3RWRV3v5Af&amp;controls=0',
+                    'https://www.youtube.com/embed/nyMZxK2Kvhs?si=iJT0KA3RWRV3v5Af&autoplay=1&mute=1',
                 // 동영상 좋아요 수
                 movie_like_count: 16000,
                 movie_category: 'vlog',
@@ -322,7 +321,6 @@ export const Channel = {
                     },
                 ],
             },
-
             {
                 movie_id: 167556,
                 movie_title:
@@ -331,7 +329,7 @@ export const Channel = {
                 movie_image:
                     'https://i.ytimg.com/vi/MiBlImCwkso/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDdLe_OzNOXirgKX86KNW2tM-x8Hw',
                 movie_video:
-                    'https://www.youtube.com/embed/gB1EonLy5lQ?si=laMZ9Xj6HLVMjQi6&amp;controls=0',
+                    'https://www.youtube.com/embed/gB1EonLy5lQ?si=laMZ9Xj6HLVMjQi6&autoplay=1&mute=1',
                 // 동영상 좋아요 수
                 movie_like_count: 29000,
                 movie_category: 'vlog',
@@ -354,7 +352,6 @@ export const Channel = {
             },
         ],
     },
-    /////////////채널3///////////////
     Highfiction: {
         channel_id: '641322',
         channel_name: '하이픽션',
@@ -365,7 +362,6 @@ export const Channel = {
         channel_introduction: '더 높은 재미를 추구하는 하이픽션 입니다',
         // 채널의 구독자 수
         channel_subscribers: 756000,
-
         //영상1
         Movies: [
             {
@@ -375,7 +371,7 @@ export const Channel = {
                 movie_image:
                     'https://i.ytimg.com/vi/0WZGu5-gwYY/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDOMsvUKKlWP9t7Xmg-ifXaViTa2A',
                 movie_video:
-                    'https://www.youtube.com/embed/0WZGu5-gwYY?si=S6y8EncMYiq64k_c&amp;controls=0',
+                    'https://www.youtube.com/embed/0WZGu5-gwYY?si=S6y8EncMYiq64k_c&autoplay=1&mute=1',
                 // 동영상 좋아요 수
                 movie_like_count: 29000,
                 movie_category: 'Comedy',
@@ -396,7 +392,6 @@ export const Channel = {
                     },
                 ],
             },
-
             {
                 movie_id: 135276,
                 movie_title: '나 꼬시고 싶어? [거짓말 없는 세상]',
@@ -404,7 +399,7 @@ export const Channel = {
                 movie_image:
                     'https://i.ytimg.com/vi/I2so7rnoDEM/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDUmB5blGdntffbfTHpi4XLhIt7rw',
                 movie_video:
-                    'https://www.youtube.com/embed/I2so7rnoDEM?si=rQi-dvnPIdToyATH&amp;controls=0',
+                    'https://www.youtube.com/embed/I2so7rnoDEM?si=rQi-dvnPIdToyATH&autoplay=1&mute=1',
                 // 동영상 좋아요 수
                 movie_like_count: 22000,
                 movie_category: 'Comedy',
@@ -424,7 +419,6 @@ export const Channel = {
                     },
                 ],
             },
-
             {
                 movie_id: 875312,
                 movie_title: '숏박스 구독 안 한 새끼 누구냐??',
@@ -433,7 +427,7 @@ export const Channel = {
                 movie_image:
                     'https://i.ytimg.com/vi/MgdXR4vTtxQ/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDEVsOphJ1wTY1BEwoPnqP7_8T1hQ',
                 movie_video:
-                    'https://www.youtube.com/embed/MgdXR4vTtxQ?si=GwxbT8ZznAtF1Kxm&amp;controls=0',
+                    'https://www.youtube.com/embed/MgdXR4vTtxQ?si=GwxbT8ZznAtF1Kxm&autoplay=1&mute=1',
                 // 동영상 좋아요 수
                 movie_like_count: 37000,
                 movie_category: 'Comedy',
@@ -454,35 +448,33 @@ export const Channel = {
                     },
                 ],
             },
-
             {
                 movie_id: 653112,
-                movie_title: '우리 이제 헤어지자',
-                movie_body: '조폭여친 이별편! 슬프지만 재밌게 봐주세요!',
+                movie_title: '도망가면 뒤진다?',
+                movie_body: '안녕하세요 하이픽션입니다 오늘도 재밌게 봐주세요!!',
                 movie_image:
-                    'https://i.ytimg.com/vi/y3K8sqJuAVM/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBXtMl8oCJPrfgnwdt_t1ILmgEiJg',
+                    'https://i.ytimg.com/vi/KpV430uiUkY/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLB7VbGVys7By0hxajhDNZhvqLKVQQ',
                 movie_video:
-                    'https://www.youtube.com/embed/y3K8sqJuAVM?si=FXrGM2Hf0Sp0qbvv&amp;controls=0',
-                // 동영상 좋아요 수
-                movie_like_count: 42000,
+                    'https://www.youtube.com/embed/KpV430uiUkY?si=F2mGpsPg0Vk6Pt7x&autoplay=1&mute=1',
+                movie_like_count: 22000,
                 movie_category: 'Comedy',
                 movie_channel: 'Highfiction',
-                movie_channel_id: 641322,
+                movie_channel_id: '641322',
                 movie_date: {
-                    year: 2024,
-                    month: 10,
+                    year: 2023,
+                    month: 12,
                     day: 5,
                 },
                 movie_comments: [
                     {
                         comment_id: 642323,
-                        comment_body: '안녕…',
+                        comment_body:
+                            '그래도 세번 도망칠 용기라도 있네 친구는 ㅋㅋㅋㅋㅋㅋㅋ 이쁜사랑 하세요 ㅋㅋㅋㅋㅋ',
                         comment_user_id: 'test',
-                        comment_user_name: '@bcean_official',
+                        comment_user_name: 'AKI-___',
                     },
                 ],
             },
-
             {
                 movie_id: 325464,
                 movie_title: '또 쳐다보세요 [거짓말 없는 세상]',
@@ -490,7 +482,7 @@ export const Channel = {
                 movie_image:
                     'https://i.ytimg.com/vi/0cEMl3j2cAU/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAYsI-7LoLfSCZ6yPl6w-Fwd-ol7Q',
                 movie_video:
-                    'https://www.youtube.com/embed/0cEMl3j2cAU?si=kz2G69MhCdpzC4bM&amp;controls=0',
+                    'https://www.youtube.com/embed/0cEMl3j2cAU?si=kz2G69MhCdpzC4bM&autoplay=1&mute=1',
                 // 동영상 좋아요 수
                 movie_like_count: 22000,
                 movie_category: 'Comedy',
@@ -512,7 +504,6 @@ export const Channel = {
             },
         ],
     },
-    /////////////채널4///////////////
     Beginagain: {
         channel_id: 984562,
         channel_name: '@begin_again',
@@ -533,7 +524,7 @@ export const Channel = {
                 movie_image:
                     'https://i.ytimg.com/vi/cq-A2RJC7fg/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDHvwfqHd1X24KLdrxSJUYL25xDFg',
                 movie_video:
-                    'https://www.youtube.com/embed/cq-A2RJC7fg?si=V1LgeIM39vh5OAml&amp;controls=0',
+                    'https://www.youtube.com/embed/cq-A2RJC7fg?si=V1LgeIM39vh5OAml&autoplay=1&mute=1',
                 // 동영상 좋아요 수
                 movie_like_count: 260000,
                 movie_category: 'music',
@@ -553,7 +544,6 @@ export const Channel = {
                     },
                 ],
             },
-
             {
                 movie_id: 423411,
                 movie_title:
@@ -562,7 +552,7 @@ export const Channel = {
                 movie_image:
                     'https://i.ytimg.com/vi/XNGoOqB8380/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDyocU3z6aYqzs-BCnoS0vhThrQ_A',
                 movie_video:
-                    'https://www.youtube.com/embed/XNGoOqB8380?si=5RsOiKM5D9N9dFNz&amp;controls=0',
+                    'https://www.youtube.com/embed/XNGoOqB8380?si=5RsOiKM5D9N9dFNz&autoplay=1&mute=1',
                 // 동영상 좋아요 수
                 movie_like_count: 120000,
                 movie_category: 'music',
@@ -591,7 +581,7 @@ export const Channel = {
                 movie_image:
                     'https://i.ytimg.com/vi/wEgvCBcfFLI/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLA-Z584pH-XHi9wlU2NMG62MHXYwA',
                 movie_video:
-                    'https://www.youtube.com/embed/wEgvCBcfFLI?si=q1O96MbHz3GbFUe5&amp;controls=0',
+                    'https://www.youtube.com/embed/wEgvCBcfFLI?si=q1O96MbHz3GbFUe5&autoplay=1&mute=1',
                 // 동영상 좋아요 수
                 movie_like_count: 240000,
                 movie_category: 'music',
@@ -620,7 +610,7 @@ export const Channel = {
                 movie_image:
                     'https://i.ytimg.com/vi/STwHSJSA86c/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCftOY5ZUPTPthjULKeF-K1kPjTIA',
                 movie_video:
-                    'https://www.youtube.com/embed/STwHSJSA86c?si=W3U9NoS5ERACOGH7&amp;controls=0',
+                    'https://www.youtube.com/embed/STwHSJSA86c?si=W3U9NoS5ERACOGH7&autoplay=1&mute=1',
                 // 동영상 좋아요 수
                 movie_like_count: 110000,
                 movie_category: 'music',
@@ -648,7 +638,7 @@ export const Channel = {
                 movie_image:
                     'https://i.ytimg.com/vi/YS10Cdaz2Kk/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLB8bhQuomv7G42p44l1WG1TuPsoeg',
                 movie_video:
-                    'https://www.youtube.com/embed/YS10Cdaz2Kk?si=1tV2bLLnE1IUEmNN&amp;controls=0',
+                    'https://www.youtube.com/embed/YS10Cdaz2Kk?si=1tV2bLLnE1IUEmNN&autoplay=1&mute=1',
                 // 동영상 좋아요 수
                 movie_like_count: 290000,
                 movie_category: 'music',
@@ -670,7 +660,6 @@ export const Channel = {
             },
         ],
     },
-    /////////////채널5///////////////
     G_Movie: {
         channel_id: 859641,
         channel_name: '@지무비',
@@ -691,7 +680,7 @@ export const Channel = {
                 movie_image:
                     'https://i.ytimg.com/vi/2EahotHTVpc/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLA3sfFbsdOHoyNxdvJ0GIg7RiJ6pw',
                 movie_video:
-                    'https://www.youtube.com/embed/2EahotHTVpc?si=fng9erydx2hVg_bq&amp;controls=0',
+                    'https://www.youtube.com/embed/2EahotHTVpc?si=fng9erydx2hVg_bq&autoplay=1&mute=1',
                 // 동영상 좋아요 수
                 movie_like_count: '', //좋아요 수 비공개
                 movie_category: 'movie_review',
@@ -721,7 +710,7 @@ export const Channel = {
                 movie_image:
                     'https://i.ytimg.com/vi/yyiox2536C0/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBnAyfSOlqWJGhw2eRAMWp2MzsOAg',
                 movie_video:
-                    'https://www.youtube.com/embed/yyiox2536C0?si=PALxhnFQEsTxm9hi&amp;controls=0',
+                    'https://www.youtube.com/embed/yyiox2536C0?si=PALxhnFQEsTxm9hi&autoplay=1&mute=1',
                 // 동영상 좋아요 수
                 movie_like_count: 110000,
                 movie_category: 'movie_review',
@@ -749,7 +738,7 @@ export const Channel = {
                 movie_image:
                     'https://i.ytimg.com/vi/P0ikE6tFbas/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLC1V4ANcuPOrDvWuF3pf0LuZCZ-Ow',
                 movie_video:
-                    'https://www.youtube.com/embed/P0ikE6tFbas?si=Dn3uKDy6SES_t03P&amp;controls=0',
+                    'https://www.youtube.com/embed/P0ikE6tFbas?si=Dn3uKDy6SES_t03P&autoplay=1&mute=1',
                 // 동영상 좋아요 수
                 movie_like_count: 91000,
                 movie_category: 'movie_review',
@@ -778,7 +767,7 @@ export const Channel = {
                 movie_image:
                     'https://i.ytimg.com/vi/RIj9IdZvg6M/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDDtlVjX8Kfc1lGqlbJXNvGZ1T4Og',
                 movie_video:
-                    'https://www.youtube.com/embed/RIj9IdZvg6M?si=hPbUY9_bnY3y4BRX&amp;controls=0',
+                    'https://www.youtube.com/embed/RIj9IdZvg6M?si=hPbUY9_bnY3y4BRX&autoplay=1&mute=1',
                 // 동영상 좋아요 수
                 movie_like_count: 78000,
                 movie_category: 'movie_review',
@@ -807,7 +796,7 @@ export const Channel = {
                 movie_image:
                     'https://i.ytimg.com/vi/eJ5U0tuDxKk/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDzeIKOpDmmjPBJKv_wSjR_CpMd5Q',
                 movie_video:
-                    'https://www.youtube.com/embed/eJ5U0tuDxKk?si=Qj0oDz0Rl92Lp-0V&amp;controls=0',
+                    'https://www.youtube.com/embed/eJ5U0tuDxKk?si=Qj0oDz0Rl92Lp-0V&autoplay=1&mute=1',
                 // 동영상 좋아요 수
                 movie_like_count: 100000,
                 movie_category: 'movie_review',
@@ -847,8 +836,8 @@ export const Channel = {
                 movie_title: '라디오헤드 - Fake Plastic Trees',
                 movie_body: `‘Fake Plastic Trees’ is taken from ‘The Bends’ out on XL Recordings. Director: Jake Scott Producer: Ellen JacobsonCinematography: Salvatore Totino Production`,
                 movie_image:
-                    'https://i.ytimg.com/vi/n5h0qHwNrHk/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBH3XGekrC2cTsAgMiLwR_Ysd_mew',
-                movie_video: 'https://www.youtube.com/embed/EzcJhJt_vQY',
+                    'https://i.ytimg.com/vi/EzcJhJt_vQY/maxresdefault.jpg?sqp=-oaymwEmCIAKENAF8quKqQMa8AEB-AH-CYAC0AWKAgwIABABGGUgXCg5MA8=&rs=AOn4CLDSe2Z3YNdtCuBYnvoVdDAZTymL3g',
+                movie_video: 'https://www.youtube.com/embed/EzcJhJt_vQY?autoplay=1&mute=1',
                 // 동영상 좋아요 수
                 movie_like_count: 490000,
                 movie_category: 'live',
@@ -863,7 +852,7 @@ export const Channel = {
                     {
                         comment_id: 136551,
                         comment_body: `"why did you take so long to buy groceries?" 
-                                        me:`,
+                                          me:`,
                         comment_user_id: 'miguelrodriguez-pineroriva6713',
                         comment_user_name: '산미구엘',
                     },
@@ -873,9 +862,8 @@ export const Channel = {
                 movie_id: 556152,
                 movie_title: '이쯤에서 돌아보는 그들의 발자취56165156라디오헤드) 이야기',
                 movie_body: `‘Lotus Flower’ is taken from ‘The King of Limbs’ out on XL Recordings Director of Photograph: Nick Wood`,
-                movie_image:
-                    'https://i.ytimg.com/vi/n5h0qHwNrHk/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBH3XGekrC2cTsAgMiLwR_Ysd_mew',
-                movie_video: 'https://www.youtube.com/embed/f2fjTisiUDI',
+                movie_image: 'https://i.ytimg.com/vi/f2fjTisiUDI/maxresdefault.jpg',
+                movie_video: 'https://www.youtube.com/embed/f2fjTisiUDI?autoplay=1&mute=1',
                 // 동영상 좋아요 수
                 movie_like_count: 440000,
                 movie_category: 'music',
@@ -902,7 +890,7 @@ export const Channel = {
                     '라디오헤드는 Creep 말고도 좋은 노래가 많다 #라디오헤드 56165156#creep #okcomputer #오아시스 #톰요크 #thesmile #더스마일',
                 movie_image:
                     'https://i.ytimg.com/vi/XFkzRNyygfk/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBCkbazk73In3wUcMpWdiSNFURE3A',
-                movie_video: 'https://www.youtube.com/embed/bthufxQepAk',
+                movie_video: 'https://www.youtube.com/embed/bthufxQepAk?autoplay=1&mute=1',
                 // 동영상 좋아요 수
                 movie_like_count: 570000,
                 movie_category: 'music',
@@ -928,7 +916,7 @@ export const Channel = {
                 movie_body: `'2 + 2 = 5' is taken from 'Hail to the Thief' out on XL Recordings.`,
                 movie_image:
                     'https://i.ytimg.com/vi/11oAXmVdEyQ/hqdefault.jpg?sqp=-oaymwE2CNACELwBSFXyq4qpAygIARUAAIhCGAFwAcABBvABAfgBvgKAAvABigIMCAAQARgTICsofzAP&rs=AOn4CLB6QlCofl8Rnkm-zzX0EjscePbHdA',
-                movie_video: 'https://www.youtube.com/embed/c6GO7c-zO6E',
+                movie_video: 'https://www.youtube.com/embed/c6GO7c-zO6E?autoplay=1&mute=1',
                 // 동영상 좋아요 수
                 movie_like_count: 9400,
                 movie_category: 'live',
@@ -954,7 +942,7 @@ export const Channel = {
                 movie_body: '‘No Surprises’ is taken from ‘OK Computer’ out on XL Recordings',
                 movie_image:
                     'https://i.ytimg.com/vi/u5CVsCnxyXg/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCSo72rG7nC88JI6Ez5InNKRYqhMw',
-                movie_video: 'https://www.youtube.com/embed/a8Yh0mNTBuo',
+                movie_video: 'https://www.youtube.com/embed/a8Yh0mNTBuo?autoplay=1&mute=1',
                 // 동영상 좋아요 수
                 movie_like_count: 10000,
                 movie_category: 'live',
@@ -969,7 +957,7 @@ export const Channel = {
                     {
                         comment_id: 136555,
                         comment_body: `Thom: drowns
-                                       His face: (            -_-             )`,
+                                         His face: (            -_-             )`,
                         comment_user_id: 'mushfiqahmad1783',
                         comment_user_name: '독버섯',
                     },
@@ -977,7 +965,6 @@ export const Channel = {
             },
         ],
     },
-    // 2
     ultraTasteDiary: {
         channel_id: 6546654,
         channel_name: '최강록 Ultra Taste Diary',
@@ -996,8 +983,8 @@ export const Channel = {
                 movie_body:
                     '8년 이상 지난 이 음식을 기억하고 계신분들께 감사를 드립니다. 진심은... 그냥 그 때 그 순간에 남은 영상으로 떠돌아 다니는게 이 음식을 돋보이게 하는거라 생각했어요. ',
                 movie_image:
-                    'https://i.ytimg.com/an_webp/JdD3OqGRB_Y/mqdefault_6s.webp?du=3000&sqp=CNCYgbkG&rs=AOn4CLB30v6-gW5oZV0YhbC-tgEJNcrzrw',
-                movie_video: 'https://www.youtube.com/embed/JdD3OqGRB_Y',
+                    'https://i.ytimg.com/vi/JdD3OqGRB_Y/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDnkmCZnxlQxrPCSb-PLyPLDsbt8Q',
+                movie_video: 'https://www.youtube.com/embed/JdD3OqGRB_Y?autoplay=1&mute=1',
                 // 동영상 좋아요 수
                 movie_like_count: 3500,
                 movie_category: 'food',
@@ -1023,8 +1010,8 @@ export const Channel = {
                 movie_body:
                     '첫편부터 길고 긴 요리영상을 올리기가 좀 그래서 만든 영상. 근데 이제 주성치 팬심을 곁들인.. 휴...',
                 movie_image:
-                    'https://i.ytimg.com/an_webp/ysLaz2YJ2c4/mqdefault_6s.webp?du=3000&sqp=CJKQgbkG&rs=AOn4CLBCuMdA1vmTXmu-igCCZVQcjswj4A',
-                movie_video: 'https://www.youtube.com/embed/ysLaz2YJ2c4',
+                    'https://i.ytimg.com/vi/ysLaz2YJ2c4/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCFw5rw__2RGVNup0KFKjUqJXoSqw',
+                movie_video: 'https://www.youtube.com/embed/ysLaz2YJ2c4?autoplay=1&mute=1',
                 // 동영상 좋아요 수
                 movie_like_count: 9600,
                 movie_category: '자기 소개',
@@ -1048,9 +1035,8 @@ export const Channel = {
                 movie_id: 794543,
                 movie_title: 'Miso Mashed... Mushirakano(미소 매쉬드 포테이토)',
                 movie_body: '#최강록 #UltraTasteDiary #미소 김소희님 헌정',
-                movie_image:
-                    'https://i.ytimg.com/an_webp/A0t58bjx00s/mqdefault_6s.webp?du=3000&sqp=CMyPgbkG&rs=AOn4CLDesEEiftG5OaqfyftNcsXhazSbNg',
-                movie_video: 'https://www.youtube.com/embed/A0t58bjx00s',
+                movie_image: 'https://i.ytimg.com/vi/A0t58bjx00s/maxresdefault.jpg',
+                movie_video: 'https://www.youtube.com/embed/A0t58bjx00s?autoplay=1&mute=1',
                 // 동영상 좋아요 수
                 movie_like_count: 13000,
                 movie_category: 'food',
@@ -1074,9 +1060,8 @@ export const Channel = {
                 movie_id: 794544,
                 movie_title: 'MBTI 무료 성격유형 검사',
                 movie_body: '#최강록 #UTD #mbti',
-                movie_image:
-                    'https://i.ytimg.com/an_webp/deq3zoLUc_U/mqdefault_6s.webp?du=3000&sqp=CKuUgbkG&rs=AOn4CLCZyPGCaaHsp43_UrS23sdDkZgK-g',
-                movie_video: 'https://www.youtube.com/embed/deq3zoLUc_U',
+                movie_image: 'https://i.ytimg.com/vi/deq3zoLUc_U/maxresdefault.jpg',
+                movie_video: 'https://www.youtube.com/embed/deq3zoLUc_U?autoplay=1&mute=1',
                 // 동영상 좋아요 수
                 movie_like_count: 13000,
                 movie_category: 'comedy',
@@ -1101,9 +1086,8 @@ export const Channel = {
                 movie_title: '지금 만나러 갑니다 / 수빙고(하이브리드 아이스)',
                 movie_body:
                     '#최강록 #강레오 #수빙고 #하이브리드아이스 오랜만에 그 분을 만나러 갔습니다.',
-                movie_image:
-                    'https://i.ytimg.com/an_webp/6o4vGCjZ3WI/mqdefault_6s.webp?du=3000&sqp=CNKdgbkG&rs=AOn4CLB35SY-byqECnmItxtCKfx24_n2PQ',
-                movie_video: 'https://www.youtube.com/embed/6o4vGCjZ3WI',
+                movie_image: 'https://i.ytimg.com/vi/6o4vGCjZ3WI/maxresdefault.jpg',
+                movie_video: 'https://www.youtube.com/embed/6o4vGCjZ3WI?autoplay=1&mute=1',
                 // 동영상 좋아요 수
                 movie_like_count: 7600,
                 movie_category: 'food',
@@ -1126,7 +1110,6 @@ export const Channel = {
             },
         ],
     },
-    // 3
     suede: {
         channel_id: 96745102,
         channel_name: '스웨이드',
@@ -1143,7 +1126,7 @@ export const Channel = {
                 movie_body: `Official video for Life Is Golden, from Suede's 8th studio album 'The Blue Hour'. Filmed on location in Pripyat, Ukraine, near Chernobyl. Directed by Mike Christie.`,
                 movie_image:
                     'https://i.ytimg.com/vi/pEJfWrfN15k/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLA6L984WNodmomrig1dFx2SVi2Q7g',
-                movie_video: 'https://www.youtube.com/embed/Q9wbVPmUlOw',
+                movie_video: 'https://www.youtube.com/embed/Q9wbVPmUlOw?autoplay=1&mute=1',
                 // 동영상 좋아요 수
                 movie_like_count: 17000,
                 movie_category: 'music',
@@ -1169,7 +1152,7 @@ export const Channel = {
                 movie_body: `Suede debut their brand new single ‘She Still Leads Me On’, streaming live on stage at a headline performance in Belgium at Brussels’ Cirque Royal.`,
                 movie_image:
                     'https://i.ytimg.com/vi/tfDgLym55Pg/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBKy3j6bVSAWAffzphdYR0V3MhkmA',
-                movie_video: 'https://www.youtube.com/embed/VvDxY0kInV0',
+                movie_video: 'https://www.youtube.com/embed/VvDxY0kInV0?autoplay=1&mute=1',
                 // 동영상 좋아요 수
                 movie_like_count: 21000,
                 movie_category: 'live',
@@ -1198,7 +1181,7 @@ export const Channel = {
                     '오랜만에 올리네요 펄프 커먼피플은 계속 번역중인데 제가 게을러서 시간이 꽤 걸릴듯',
                 movie_image:
                     'https://i.ytimg.com/vi/PX6L65xgOzY/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLA5mtz-M8xCkrnltxlGQccViokC-g',
-                movie_video: 'https://www.youtube.com/embed/939_uYyZa1A',
+                movie_video: 'https://www.youtube.com/embed/939_uYyZa1A?autoplay=1&mute=1',
                 // 동영상 좋아요 수
                 movie_like_count: 1018,
                 movie_category: 'interview',
@@ -1222,9 +1205,8 @@ export const Channel = {
                 movie_id: 738164,
                 movie_title: '스웨이드, 사상 첫 단독 내한 공연 개최🇬🇧 [#위클리팝]',
                 movie_body: `브릿팝의 주역, 스웨이드(Suede)가 8년 만에 한국을 찾습니다. '녹슬지 않는 록 스피릿' 관록이 느껴지는 베테랑 밴드 스웨이드의 내한 공연에 대한 자세한 내용은 영상을 통해 만나보세요🤟`,
-                movie_image:
-                    'https://i.ytimg.com/an_webp/Z4J2D9ZNpvI/mqdefault_6s.webp?du=3000&sqp=CIiagbkG&rs=AOn4CLAtYf3zQhVfm3k43jY9HVVf1u4Eug',
-                movie_video: 'https://www.youtube.com/embed/Z4J2D9ZNpvI',
+                movie_image: 'https://i.ytimg.com/vi/Z4J2D9ZNpvI/maxresdefault.jpg',
+                movie_video: 'https://www.youtube.com/embed/Z4J2D9ZNpvI?autoplay=1&mute=1',
                 // 동영상 좋아요 수
                 movie_like_count: 3000,
                 movie_category: 'live',
@@ -1252,7 +1234,7 @@ export const Channel = {
                     'Suede 스웨이드 - She @ LIVE 라이브 @2013 INCHEON PENTAPORT ROCK FESTIVAl',
                 movie_image:
                     'https://i.ytimg.com/vi/twoO3xYRsz0/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCVNcO5wAtTuHBa3jadFUsnlzK57A',
-                movie_video: 'https://www.youtube.com/embed/V3T6NDalQeU',
+                movie_video: 'https://www.youtube.com/embed/V3T6NDalQeU?autoplay=1&mute=1',
                 // 동영상 좋아요 수
                 movie_like_count: 4000,
                 movie_category: 'live',
@@ -1274,7 +1256,6 @@ export const Channel = {
             },
         ],
     },
-    // 4
     woowakgood: {
         channel_id: 41846541,
         channel_name: '우왁굳',
@@ -1283,9 +1264,9 @@ export const Channel = {
         channel_image:
             'https://yt3.googleusercontent.com/vhOEy7Ode6Y8ZN3noHKZua0LMt2n2Z7xfEyfWmzTXwQ6oq59BFyTXnN9AcnksHTYAM1YCzdY=s160-c-k-c0x00ffffff-no-rj',
         channel_introduction: `아프리카 TV에서 게임방송을 하고 있는 "우왁굳"의 유튜브 채널입니다.
-                               방송에서 재밌었던 장면들, 편집영상, 녹화영상등이 올라옵니다.
-                               영상 업로드 시간 : 매일 새벽중
-                               우왁굳 카카오톡 친구추가 하기 : @우왁굳`,
+                                 방송에서 재밌었던 장면들, 편집영상, 녹화영상등이 올라옵니다.
+                                 영상 업로드 시간 : 매일 새벽중
+                                 우왁굳 카카오톡 친구추가 하기 : @우왁굳`,
         // 채널의 구독자 수
         channel_subscribers: 1720000,
         Movies: [
@@ -1294,9 +1275,8 @@ export const Channel = {
                 movie_title: '편의점 알바하면 찾아오는 진상들이 한 번에 다 온다면? ㅋㅋㅋ',
                 movie_body:
                     '편의점 알바하면 찾아오는 진상들이 한 번에 다 온다면? ㅋㅋㅋ - VR챗 상황극',
-                movie_image:
-                    'https://i.ytimg.com/an_webp/BxzPDQzux40/mqdefault_6s.webp?du=3000&sqp=COnagLkG&rs=AOn4CLBugw7l4aUHI9BBsx2P_gsskm7Hzg',
-                movie_video: 'https://www.youtube.com/embed/BxzPDQzux40',
+                movie_image: 'https://i1.ytimg.com/vi/BxzPDQzux40/maxresdefault.jpg',
+                movie_video: 'https://www.youtube.com/embed/BxzPDQzux40?autoplay=1&mute=1',
                 // 동영상 좋아요 수
                 movie_like_count: 120000,
                 movie_category: 'gaming',
@@ -1322,9 +1302,8 @@ export const Channel = {
                 movie_title:
                     '폭력적인 중국인에게 대처하는 법 : 중국인에게 타이완 넘버원을 외쳐보았다',
                 movie_body: 'TAIWAN #1 (conan exiles)',
-                movie_image:
-                    'https://i.ytimg.com/an_webp/Hkg6Vu2Um5k/mqdefault_6s.webp?du=3000&sqp=COnygLkG&rs=AOn4CLDuIR0f23jj0pQVCTNScFaAq25y2g',
-                movie_video: 'https://www.youtube.com/embed/Hkg6Vu2Um5k',
+                movie_image: 'https://i.ytimg.com/vi_webp/Hkg6Vu2Um5k/sddefault.webp',
+                movie_video: 'https://www.youtube.com/embed/Hkg6Vu2Um5k?autoplay=1&mute=1',
                 // 동영상 좋아요 수
                 movie_like_count: 40000,
                 movie_category: 'gaming',
@@ -1349,9 +1328,8 @@ export const Channel = {
                 movie_id: 314513,
                 movie_title: '몸으로 말해요 ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ',
                 movie_body: '※ E-Mail : ecvhao@naver.com',
-                movie_image:
-                    'https://i.ytimg.com/an_webp/wKyoYzpDEEM/mqdefault_6s.webp?du=3000&sqp=CN2JgbkG&rs=AOn4CLAKz89xy9rHgp14IiIMrvCnLPPsnA',
-                movie_video: 'https://www.youtube.com/embed/wKyoYzpDEEM',
+                movie_image: 'https://i.ytimg.com/vi/wKyoYzpDEEM/maxresdefault.jpg',
+                movie_video: 'https://www.youtube.com/embed/wKyoYzpDEEM?autoplay=1&mute=1',
                 // 동영상 좋아요 수
                 movie_like_count: 35000,
                 movie_category: 'gaming',
@@ -1375,9 +1353,8 @@ export const Channel = {
                 movie_id: 314514,
                 movie_title: '시청자가 사는 역대급 쓰레기 방',
                 movie_body: '0:00 컨텐츠 설명 0:17 미션놀이 시작 5:56 썸네일 7:26 미션놀이',
-                movie_image:
-                    'https://i.ytimg.com/an_webp/cKi4E_nXQNE/mqdefault_6s.webp?du=3000&sqp=CPmDgbkG&rs=AOn4CLAM10nlffvrRiIR1wfxuFrArMrxdA',
-                movie_video: 'https://www.youtube.com/embed/cKi4E_nXQNE',
+                movie_image: 'https://i.ytimg.com/vi/cKi4E_nXQNE/maxresdefault.jpg',
+                movie_video: 'https://www.youtube.com/embed/cKi4E_nXQNE?autoplay=1&mute=1',
                 // 동영상 좋아요 수
                 movie_like_count: 10000,
                 movie_category: 'challenge',
@@ -1404,7 +1381,7 @@ export const Channel = {
                 movie_image:
                     'https://i.ytimg.com/vi/O7TeGzypNrg/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBIahTkMd7jwYIMT5Q8lXtVbJqIIA',
 
-                movie_video: 'https://www.youtube.com/embed/O7TeGzypNrg',
+                movie_video: 'https://www.youtube.com/embed/O7TeGzypNrg?autoplay=1&mute=1',
                 // 동영상 좋아요 수
                 movie_like_count: 32000,
                 movie_category: 'comedy',
@@ -1427,7 +1404,6 @@ export const Channel = {
             },
         ],
     },
-    // 5
     goodboykris: {
         channel_id: 81372931,
         channel_name: '소련 여자',
@@ -1444,9 +1420,8 @@ export const Channel = {
                 movie_id: 119751,
                 movie_title: '던질까 말까 100시간 춤 추기 (세계 최초)',
                 movie_body: `대한민국 유튜브 algorithm 매우 이해 힘든 것 이상한 유행의 Origin : 트니트니 '던질까 말까'`,
-                movie_image:
-                    'https://i.ytimg.com/an_webp/JsISM29qgC0/mqdefault_6s.webp?du=3000&sqp=CJfogLkG&rs=AOn4CLDwzLpYc8BW4SffGXpSvcBmYAnPug',
-                movie_video: 'https://www.youtube.com/embed/JsISM29qgC0',
+                movie_image: 'https://i1.ytimg.com/vi/JsISM29qgC0/maxresdefault.jpg',
+                movie_video: 'https://www.youtube.com/embed/JsISM29qgC0?autoplay=1&mute=1',
                 // 동영상 좋아요 수
                 movie_like_count: 91000,
                 movie_category: 'comedy',
@@ -1471,9 +1446,8 @@ export const Channel = {
                 movie_id: 119752,
                 movie_title: '한국인들은 백인이 길바닥에 똥을 싸도 칭찬해줄까?',
                 movie_body: '#똥 #한국 #백인 🇰🇷🤔👩🏼💩👏🏻?',
-                movie_image:
-                    'https://i.ytimg.com/an_webp/WG5aX86i3rs/mqdefault_6s.webp?du=3000&sqp=CN_3gLkG&rs=AOn4CLBaYaMJm5iTNcdXox3SijLUxh7NUw',
-                movie_video: 'https://www.youtube.com/embed/WG5aX86i3rs',
+                movie_image: 'https://i1.ytimg.com/vi/WG5aX86i3rs/maxresdefault.jpg',
+                movie_video: 'https://www.youtube.com/embed/WG5aX86i3rs?autoplay=1&mute=1',
                 // 동영상 좋아요 수
                 movie_like_count: 13000,
                 movie_category: 'education',
@@ -1498,9 +1472,8 @@ export const Channel = {
                 movie_id: 119753,
                 movie_title: '러시아어 왕초보 강의(‘스파시바’ 절대 쓰지 마세요)',
                 movie_body: `특별 출연하신 일리야 선생님 고맙습니다. 🎁 댓글에 메일 주소 적으면 ‘가벼운 러시아어 학습지 스타트팩'을 선물세트 자동 응모! 🎁`,
-                movie_image:
-                    'https://i.ytimg.com/an_webp/UtljPnhHPJY/mqdefault_6s.webp?du=3000&sqp=CIjIgLkG&rs=AOn4CLAId7-mgWy6G3-PyGDWmPrUNvDLDA',
-                movie_video: 'https://www.youtube.com/embed/UtljPnhHPJY',
+                movie_image: 'https://i.ytimg.com/vi_webp/UtljPnhHPJY/maxresdefault.webp',
+                movie_video: 'https://www.youtube.com/embed/UtljPnhHPJY?autoplay=1&mute=1',
                 // 동영상 좋아요 수
                 movie_like_count: 14000,
                 movie_category: 'education',
@@ -1525,9 +1498,8 @@ export const Channel = {
                 movie_id: 119754,
                 movie_title: '죄송해서 거짓말합니다.',
                 movie_body: '#나는행복합니다 #죄송합니다 #해명합니다 ㅈㅅㅈㅅ~ ㅋ',
-                movie_image:
-                    'https://i.ytimg.com/an_webp/v7i62-5BHeQ/mqdefault_6s.webp?du=3000&sqp=CJz1gLkG&rs=AOn4CLD5m7V_2_7m6ABSGIZf29qxoMtYrw',
-                movie_video: 'https://www.youtube.com/embed/v7i62-5BHeQ',
+                movie_image: 'https://i.ytimg.com/vi_webp/v7i62-5BHeQ/maxresdefault.webp',
+                movie_video: 'https://www.youtube.com/embed/v7i62-5BHeQ?autoplay=1&mute=1',
                 // 동영상 좋아요 수
                 movie_like_count: 53000,
                 movie_category: 'comedy',
@@ -1553,9 +1525,8 @@ export const Channel = {
                 movie_title: '북한 러시아 동맹 해명합니다.',
                 movie_body:
                     '#지드래곤 #북한 #러시아 북한이랑 친해라는데 어쩌라고요~ #북한, #러시아, #지드래곤, #해명, #북한풍선, #스타게이저, #버튜버',
-                movie_image:
-                    'https://i.ytimg.com/an_webp/v7i62-5BHeQ/mqdefault_6s.webp?du=3000&sqp=CJz1gLkG&rs=AOn4CLD5m7V_2_7m6ABSGIZf29qxoMtYrw',
-                movie_video: 'https://www.youtube.com/embed/SL_sPoo5OuU',
+                movie_image: 'https://i.ytimg.com/vi/SL_sPoo5OuU/maxresdefault.jpg',
+                movie_video: 'https://www.youtube.com/embed/SL_sPoo5OuU?autoplay=1&mute=1',
                 // 동영상 좋아요 수
                 movie_like_count: 10000,
                 movie_category: 'education',
@@ -1598,7 +1569,8 @@ export const Channel = {
                 movie_body: 'Job것들아~~~~~~,,, 인력소장이다,,, ',
                 movie_image:
                     'https://i.ytimg.com/vi/9jl-oxM0FxU/hqdefault.jpg?sqp=-oaymwEcCPYBEIoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAwsc8KHtBS9lVn_A-u-KtT-Gy3OQ',
-                movie_video: 'https://www.youtube.com/embed/7eJajoei--0?si=3bJI0gFwv_BWGsfg',
+                movie_video:
+                    'https://www.youtube.com/embed/7eJajoei--0?si=3bJI0gFwv_BWGsfg&autoplay=1&mute=1',
                 movie_like_count: 15000,
                 movie_category: 'entertainment',
                 movie_channel: 'workman',
@@ -1626,7 +1598,8 @@ export const Channel = {
                 movie_body: '오늘은,, 성규,, 아니고 범규가,,,키즈카페 알바를 하고 왔다,,,~ ',
                 movie_image:
                     'https://i.ytimg.com/vi/SOSJ-q-7CRA/hqdefault.jpg?sqp=-oaymwEcCPYBEIoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCyKHdIb-ChBXO1W-wEdDxipdeXmw',
-                movie_video: 'https://www.youtube.com/embed/SOSJ-q-7CRA?si=4rN5-WJcFSEz_bpX',
+                movie_video:
+                    'https://www.youtube.com/embed/SOSJ-q-7CRA?si=4rN5-WJcFSEz_bpX&autoplay=1&mute=1',
                 movie_like_count: 160000,
                 movie_category: 'entertainment',
                 movie_channel: 'workman',
@@ -1654,7 +1627,8 @@ export const Channel = {
                 movie_body: '오늘은,,,울 잡것덜이,,,많이 추천해준,,,올리브영 다녀왔다,,,~~',
                 movie_image:
                     'https://i.ytimg.com/vi/G_W9pXqnheY/hqdefault.jpg?sqp=-oaymwEcCPYBEIoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBBDxsU7nAsTGRYTlbF0KMQytaNUw',
-                movie_video: 'https://www.youtube.com/embed/G_W9pXqnheY?si=_oA8nuXGuR4qASvk',
+                movie_video:
+                    'https://www.youtube.com/embed/G_W9pXqnheY?si=_oA8nuXGuR4qASvk&autoplay=1&mute=1',
                 movie_like_count: 18000,
                 movie_category: 'entertainment',
                 movie_channel: 'workman',
@@ -1682,7 +1656,8 @@ export const Channel = {
                     '오늘은 해랑열차 알바하고 왔다,,,정말 너무 좋더라고~,,나중에 꼭 가족들과 한번 가보는 거 추천혀~,,,~~!!',
                 movie_image:
                     'https://i.ytimg.com/vi/NCma_qnVu-4/hqdefault.jpg?sqp=-oaymwEcCPYBEIoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLC-nlwkuC3KKAdWCGnd99CpNnJj9A',
-                movie_video: 'https://www.youtube.com/embed/NCma_qnVu-4?si=9d3llszhrs_lJVXJ',
+                movie_video:
+                    'https://www.youtube.com/embed/NCma_qnVu-4?si=9d3llszhrs_lJVXJ&autoplay=1&mute=1',
                 movie_like_count: 16000,
                 movie_category: 'entertainment',
                 movie_channel: 'workman',
@@ -1710,7 +1685,8 @@ export const Channel = {
                     '오늘은,,, 안경점 알바하고 왔다,,,우리 보이넥스트도어,,, 친구들 안경을 얹기만 했는데도 참 멋지더라고,,,,',
                 movie_image:
                     'https://i.ytimg.com/vi/g64d5UPLjFo/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLDfkOXiFasHnykeFYkAc5ynRSPnGQ',
-                movie_video: 'https://www.youtube.com/embed/g64d5UPLjFo?si=QZL7J5gq56Hg-Z4-',
+                movie_video:
+                    'https://www.youtube.com/embed/g64d5UPLjFo?si=QZL7J5gq56Hg-Z4-&autoplay=1&mute=1',
                 movie_like_count: 32000,
                 movie_category: 'entertainment',
                 movie_channel: 'workman',
@@ -1732,8 +1708,6 @@ export const Channel = {
             },
         ],
     },
-    //------------------------------------------------------------------------------------------------------
-    //------------------------------------------------------------------------------------------------------
     sbs_dali: {
         channel_id: 775460,
         channel_name: '달리 [SBS DALI] - SBS 공식 교양 채널',
@@ -1752,7 +1726,8 @@ export const Channel = {
                 movie_body: '#꼬꼬무 #꼬꼬무요약 #다단계 #SMK #이광남',
                 movie_image:
                     'https://i.ytimg.com/vi/PQ6eDFLyn4E/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLD69dTl0SYq9Ls62Q2BZoUAuUKc2A',
-                movie_video: 'https://www.youtube.com/embed/PQ6eDFLyn4E?si=vKLy81wGZPPt6WSl',
+                movie_video:
+                    'https://www.youtube.com/embed/PQ6eDFLyn4E?si=vKLy81wGZPPt6WSl&autoplay=1&mute=1',
                 movie_like_count: 4700,
                 movie_category: '시사교양',
                 movie_channel: 'sbs_dali',
@@ -1780,7 +1755,8 @@ export const Channel = {
                 movie_body: '#꼬꼬무 #꼬꼬무요약 #태풍매미',
                 movie_image:
                     'https://i.ytimg.com/vi/aPY7KS0K5NY/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLBWilX4clPSTGFQS9Ujzmqf5F2ipg',
-                movie_video: 'https://www.youtube.com/embed/aPY7KS0K5NY?si=WhJVFOK9_bMl5RK0',
+                movie_video:
+                    'https://www.youtube.com/embed/aPY7KS0K5NY?si=WhJVFOK9_bMl5RK0&autoplay=1&mute=1',
                 movie_like_count: 8100,
                 movie_category: '시사교양',
                 movie_channel: 'sbs_dali',
@@ -1807,7 +1783,8 @@ export const Channel = {
                 movie_body: '#꼬꼬무 #꼬꼬무요약 #비트코인 #사토시나카모토',
                 movie_image:
                     'https://i.ytimg.com/vi/42VIq8EW0wU/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLDEWCHAwhORr80kArOeGZEOP3C6yQ',
-                movie_video: 'https://www.youtube.com/embed/42VIq8EW0wU?si=kRlQrubOZqxSEt5t',
+                movie_video:
+                    'https://www.youtube.com/embed/42VIq8EW0wU?si=kRlQrubOZqxSEt5t&autoplay=1&mute=1',
                 movie_like_count: 6400,
                 movie_category: '시사교양',
                 movie_channel: 'sbs_dali',
@@ -1834,7 +1811,8 @@ export const Channel = {
                 movie_body: '#꼬꼬무 #꼬꼬무요약 #의정부연쇄살인사건 #뻥식이사건',
                 movie_image:
                     'https://i.ytimg.com/vi/GAqV_mkqJhU/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLDvDUfeX9mMWvQfdJk9XGe7r0m9SA',
-                movie_video: 'https://www.youtube.com/embed/GAqV_mkqJhU?si=Qt2iuH4iTnUd5m8r',
+                movie_video:
+                    'https://www.youtube.com/embed/GAqV_mkqJhU?si=Qt2iuH4iTnUd5m8r&autoplay=1&mute=1',
                 movie_like_count: 7200,
                 movie_category: '시사교양',
                 movie_channel: 'sbs_dali',
@@ -1861,7 +1839,8 @@ export const Channel = {
                 movie_body: '#꼬꼬무 #꼬꼬무요약 #헤이그특사',
                 movie_image:
                     'https://i.ytimg.com/vi/cS4M7OBprBc/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLA97bKQ8M3gFRUSRmOXTKtt29xCZg',
-                movie_video: 'https://www.youtube.com/embed/cS4M7OBprBc?si=LRN60vPzFQhAIsnE',
+                movie_video:
+                    'https://www.youtube.com/embed/cS4M7OBprBc?si=LRN60vPzFQhAIsnE&autoplay=1&mute=1',
                 movie_like_count: 2700,
                 movie_category: '시사교양',
                 movie_channel: 'sbs_dali',
@@ -1883,8 +1862,6 @@ export const Channel = {
             },
         ],
     },
-    //------------------------------------------------------------------------------------------------------
-    //------------------------------------------------------------------------------------------------------
     ootbstudio: {
         channel_id: 125424,
         channel_name: 'ootb STUDIO',
@@ -1904,7 +1881,8 @@ export const Channel = {
                 movie_body: '코딩 알못 전과자의 코딩 도전🧑‍💻오늘은 포항공대 컴퓨터공학과 다녀옴!',
                 movie_image:
                     'https://i.ytimg.com/vi/-k_Q9Svr7j4/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLCJu_IUJQ6Y34U-K2FQ8mPHvjrnoA',
-                movie_video: 'https://www.youtube.com/embed/-k_Q9Svr7j4?si=BFFkS3KTBcvHcFAY',
+                movie_video:
+                    'https://www.youtube.com/embed/-k_Q9Svr7j4?si=BFFkS3KTBcvHcFAY&autoplay=1&mute=1',
                 movie_like_count: 19000,
                 movie_category: 'entertainment',
                 movie_channel: 'ootbstudio',
@@ -1931,7 +1909,8 @@ export const Channel = {
                 movie_body: '동화 작가 데뷔한 전과자?!✏️ 오늘은 단국대학교 문예창작과 다녀옴!',
                 movie_image:
                     'https://i.ytimg.com/vi/D-xlw07rGEM/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLAzWam2-YPnpvnms1gKLAQsZCAGcw',
-                movie_video: 'https://www.youtube.com/embed/D-xlw07rGEM?si=BgTdxkt5gWSxRT3c',
+                movie_video:
+                    'https://www.youtube.com/embed/D-xlw07rGEM?si=BgTdxkt5gWSxRT3c&autoplay=1&mute=1',
                 movie_like_count: 23000,
                 movie_category: 'entertainment',
                 movie_channel: 'ootbstudio',
@@ -1959,7 +1938,8 @@ export const Channel = {
                 movie_body: '김연경 선수 실물 영접하고 왔습니다..🤭',
                 movie_image:
                     'https://i.ytimg.com/vi/X8COuUKz2K0/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLAHQ38xhEbHipBtK_zQafMJCXmj3w',
-                movie_video: 'https://www.youtube.com/embed/X8COuUKz2K0?si=6xtzyaJ1CfJw2szG',
+                movie_video:
+                    'https://www.youtube.com/embed/X8COuUKz2K0?si=6xtzyaJ1CfJw2szG&autoplay=1&mute=1',
                 movie_like_count: 26000,
                 movie_category: 'entertainment',
                 movie_channel: 'ootbstudio',
@@ -1986,7 +1966,8 @@ export const Channel = {
                 movie_body: '아랍어 1도 모르는 전과자가 한국외대 아랍어과 다녀옴!',
                 movie_image:
                     'https://i.ytimg.com/vi/Gzs1qNmTcYY/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLCfIfUsPcPqH92WaJxO8pEXZwPjPQ',
-                movie_video: 'https://www.youtube.com/embed/Gzs1qNmTcYY?si=vx02u1zbiOhO0baG',
+                movie_video:
+                    'https://www.youtube.com/embed/Gzs1qNmTcYY?si=vx02u1zbiOhO0baG&autoplay=1&mute=1',
                 movie_like_count: 32000,
                 movie_category: 'entertainment',
                 movie_channel: 'ootbstudio',
@@ -2015,7 +1996,8 @@ export const Channel = {
                     '드디어 전과자도 2학기 개강 완!🏫 오늘은 경희대학교 연극영화학과 다녀옴!',
                 movie_image:
                     'https://i.ytimg.com/vi/sQknHM8unPM/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLBP-qcUyVxiAqEg2GimMuzqnjDGUg',
-                movie_video: 'https://www.youtube.com/embed/sQknHM8unPM?si=Brwk4oDoDT4E0v_h',
+                movie_video:
+                    'https://www.youtube.com/embed/sQknHM8unPM?si=Brwk4oDoDT4E0v_h&autoplay=1&mute=1',
                 movie_like_count: 33000,
                 movie_category: 'entertainment',
                 movie_channel: 'ootbstudio',
@@ -2036,8 +2018,6 @@ export const Channel = {
             },
         ],
     },
-    //------------------------------------------------------------------------------------------------------
-    //------------------------------------------------------------------------------------------------------
     SBSKPOP: {
         channel_id: 2250024,
         channel_name: 'SBSKPOP X INKIGAYO',
@@ -2056,7 +2036,8 @@ export const Channel = {
                 movie_body: '에스파 - Whiplash #aespa #Whiplash',
                 movie_image:
                     'https://i.ytimg.com/vi/p3kJOuNnkJg/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDw9oGNHqbtjkBlRI0hQU85fe9LCg',
-                movie_video: 'https://www.youtube.com/embed/p3kJOuNnkJg?si=fF2ky_2of1fliP6G',
+                movie_video:
+                    'https://www.youtube.com/embed/p3kJOuNnkJg?si=fF2ky_2of1fliP6G&autoplay=1&mute=1',
                 movie_like_count: 55000,
                 movie_category: '음악',
                 movie_channel: 'SBSKPOP',
@@ -2082,7 +2063,8 @@ export const Channel = {
                 movie_body: '있지 - GOLD #ITZY #GOLD',
                 movie_image:
                     'https://i.ytimg.com/vi/2WNIGv1r5d4/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDihD8KUyOdVjxXngpjYFB6KJ4Npg',
-                movie_video: 'https://www.youtube.com/embed/2WNIGv1r5d4?si=IU51kHkPu9mZle0s',
+                movie_video:
+                    'https://www.youtube.com/embed/2WNIGv1r5d4?si=IU51kHkPu9mZle0s&autoplay=1&mute=1',
                 movie_like_count: 12000,
                 movie_category: '음악',
                 movie_channel: 'SBSKPOP',
@@ -2109,7 +2091,8 @@ export const Channel = {
                 movie_body: '빌리 - 기억사탕 #Billlie #Remembrance_Candy',
                 movie_image:
                     'https://i.ytimg.com/vi/zyzRypp6dbQ/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLB9daqmRFj7s35yyO_4dbbctPcyGA',
-                movie_video: 'https://www.youtube.com/embed/zyzRypp6dbQ?si=zu-9x2jdhW_w3NDP',
+                movie_video:
+                    'https://www.youtube.com/embed/zyzRypp6dbQ?si=zu-9x2jdhW_w3NDP&autoplay=1&mute=1',
                 movie_like_count: 1200,
                 movie_category: '음악',
                 movie_channel: 'SBSKPOP',
@@ -2137,7 +2120,8 @@ export const Channel = {
                     '[단독샷캠4K] 아이브 After LIKE 단독샷 별도녹화│IVE ONE TAKE STAGE @SBS Inkigayo 220828',
                 movie_image:
                     'https://i.ytimg.com/vi/fdzojloPlFA/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLArt4d22OllBmd1Gfxovdb_lcNuKg',
-                movie_video: 'https://www.youtube.com/embed/fdzojloPlFA?si=nQwDPXBvL1pmSExl',
+                movie_video:
+                    'https://www.youtube.com/embed/fdzojloPlFA?si=nQwDPXBvL1pmSExl&autoplay=1&mute=1',
                 movie_like_count: 210000,
                 movie_category: '음악',
                 movie_channel: 'SBSKPOP',
@@ -2165,7 +2149,8 @@ export const Channel = {
                     '[단독샷캠4K] 뉴진스 Ditto 단독샷 별도녹화│NewJeans ONE TAKE STAGE @SBS Inkigayo 230115',
                 movie_image:
                     'https://i.ytimg.com/vi/jUNz-uTF--E/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAO7YFNY9buWMwRPfy6vHYJkTkWow',
-                movie_video: 'https://www.youtube.com/embed/jUNz-uTF--E?si=UDI5QuZOMAiPeC17',
+                movie_video:
+                    'https://www.youtube.com/embed/jUNz-uTF--E?si=UDI5QuZOMAiPeC17&autoplay=1&mute=1',
                 movie_like_count: 210000,
                 movie_category: '음악',
                 movie_channel: 'SBSKPOP',
@@ -2186,15 +2171,13 @@ export const Channel = {
             },
         ],
     },
-    //------------------------------------------------------------------------------------------------------
-    //------------------------------------------------------------------------------------------------------
     SBSANIMAL: {
         channel_id: 2215544,
         channel_name: 'SBS TV동물농장x애니멀봐 공식 유튜브 채널입니다!',
         channel_banner:
             'https://yt3.googleusercontent.com/jJb9nRaO1XSX7cCyUCWlddsO4VEMAfmKkpUfCKsWSco9VOi0QdUvFeTjUSpt669Xs85CIWp9lw=w1060-fcrop64=1,00005a57ffffa5a8-k-c0xffffffff-no-nd-rj',
         channel_image:
-            'https://yt3.googleusercontent.com/VovCAMdmNvWsAlDenNBzS6rDSUg636bPBKCA5EIup1o2Ny7DbUQlS88F4I7C-cqB5ckbiMr7=s160-c-k-c0x00ffffff-no-rj',
+            'https://github.com/React-Project-Team1/data-center/blob/main/images/Youtube/channels4_profile.jpg?raw=true',
         channel_introduction: 'SBS 동물농장 x 애니멀봐 공식 유튜브 채널입니다! ',
         channel_subscribers: 4920000,
         Movies: [
@@ -2206,7 +2189,8 @@ export const Channel = {
                 movie_body: '개코개코했지만 빈대냄새까지 찾아내는 검역탐지견들....☆',
                 movie_image:
                     'https://i.ytimg.com/vi/HOGfNYten8c/hqdefault.jpg?s…AFwAcABBg==&rs=AOn4CLCtbjNXF9VEL1nMlZoqVwPY9QJQUA',
-                movie_video: 'https://www.youtube.com/embed/HOGfNYten8c?si=k6-fUSnQNNAnXJ4v',
+                movie_video:
+                    'https://www.youtube.com/embed/HOGfNYten8c?si=k6-fUSnQNNAnXJ4v&autoplay=1&mute=1',
                 movie_like_count: 1500,
                 movie_category: '동물',
                 movie_channel: 'SBSANIMAL',
@@ -2233,7 +2217,8 @@ export const Channel = {
                     '[나는 새끼다] 26호 새끼 - 먼치킨 - 우리는 태어난 지 30일 된 먼치킨 고양이를 밀착취재 해보았다.',
                 movie_image:
                     'https://i.ytimg.com/vi/E8V02ArInjY/hqdefault.jpg?sqp=-oaymwEcCPYBEIoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLA2x9N9Np1o4crItzsX1yA2dek_HQ',
-                movie_video: 'https://www.youtube.com/embed/E8V02ArInjY?si=-gZ7rSEfkdHYv1lH',
+                movie_video:
+                    'https://www.youtube.com/embed/E8V02ArInjY?si=-gZ7rSEfkdHYv1lH&autoplay=1&mute=1',
                 movie_like_count: 12000,
                 movie_category: '동물',
                 movie_channel: 'SBSANIMAL',
@@ -2261,7 +2246,8 @@ export const Channel = {
                     '동물농장 전설의 수의사와 함께하는 –쪼꼬미 동물병원- 시즌3 첫번째 내원환자 드워프 햄스터 콩콩이님 들어오실게요',
                 movie_image:
                     'https://i.ytimg.com/vi/d-PV-ScWtB8/hqdefault.jpg?sqp=-oaymwEXCOADEI4CSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLDCai2kKXqHqIpaCi-if-Il1SpFQg',
-                movie_video: 'https://www.youtube.com/embed/d-PV-ScWtB8?si=fXQ_wjNh_U0VDBRm',
+                movie_video:
+                    'https://www.youtube.com/embed/d-PV-ScWtB8?si=fXQ_wjNh_U0VDBRm&autoplay=1&mute=1',
                 movie_like_count: 6800,
                 movie_category: '동물',
                 movie_channel: 'SBSANIMAL',
@@ -2288,7 +2274,8 @@ export const Channel = {
                 movie_body: '서울 한복판에서 산책하다 너굴맨을 만났다?',
                 movie_image:
                     'https://i.ytimg.com/vi/Tkw5NKyCpeU/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAaQmyb0JA9lGuJehEKCea8snH1Qg',
-                movie_video: 'https://www.youtube.com/embed/Tkw5NKyCpeU?si=uG5O3Z2WJPAqR9CJ',
+                movie_video:
+                    'https://www.youtube.com/embed/Tkw5NKyCpeU?si=uG5O3Z2WJPAqR9CJ&autoplay=1&mute=1',
                 movie_like_count: 500,
                 movie_category: '동물',
                 movie_channel: 'SBSANIMAL',
@@ -2316,7 +2303,8 @@ export const Channel = {
                     '판다 덕후 주목! 우유라떼 마시며 들려주는 그때 그 시절 핫한 판다들의 이야기..⭐️ ',
                 movie_image:
                     'https://i.ytimg.com/vi/MlKFeqBIZJs/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLArU-vHn5ofD3InGBgEJcZGvgZB4w',
-                movie_video: 'https://www.youtube.com/embed/MlKFeqBIZJs?si=2twwrn3h4FCtmZRB',
+                movie_video:
+                    'https://www.youtube.com/embed/MlKFeqBIZJs?si=2twwrn3h4FCtmZRB&autoplay=1&mute=1',
                 movie_like_count: 2100,
                 movie_category: '동물',
                 movie_channel: 'SBSANIMAL',
@@ -2355,7 +2343,7 @@ export const Channel = {
                 movie_body: '#캣타워 #아기고양이 #고양이 #고양이 #아기고양이 #캣타워',
                 movie_image:
                     'https://i.ytimg.com/vi/1qrH9H8GN_s/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCRLzIkZj4Cw7c4wvmFDc_Z3wUKDg',
-                movie_video: 'https://www.youtube.com/embed/1qrH9H8GN_s',
+                movie_video: 'https://www.youtube.com/embed/1qrH9H8GN_s?autoplay=1&mute=1',
                 // 동영상 좋아요 수
                 movie_like_count: 4000,
                 movie_category: 'animal',
@@ -2382,7 +2370,7 @@ export const Channel = {
                 movie_body: ' #진돗개 #동물병원 #새끼고양이 #진돗개 #새끼고양이 #동물병원',
                 movie_image:
                     'https://i.ytimg.com/vi/v-vg-2TqDf8/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLC7es255msmnPG80ROxdJmbsCANww',
-                movie_video: 'https://www.youtube.com/embed/v-vg-2TqDf8',
+                movie_video: 'https://www.youtube.com/embed/v-vg-2TqDf8?autoplay=1&mute=1',
                 // 동영상 좋아요 수
                 movie_like_count: 2700,
                 movie_category: 'animal',
@@ -2409,7 +2397,7 @@ export const Channel = {
                     '산 운동장에 다녀왔다가 돌아온 날이에요-!⛰️ 아이들도 저희도 일정이 워낙 빠듯해서 일주일 정도 빗질을 못했던 상황인데다 여름에서 가을로 넘어가는 시기여서 털갈이 성수기였던 게 한몫한 영상인 점 꼭 기억해주세요!ㅎ',
                 movie_image:
                     'https://i.ytimg.com/vi/UxT7nY1p7V0/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBTLwAAkXE8jWXlTvQ-CsKmBJVHyg',
-                movie_video: 'https://www.youtube.com/embed/UxT7nY1p7V0',
+                movie_video: 'https://www.youtube.com/embed/UxT7nY1p7V0?autoplay=1&mute=1',
                 // 동영상 좋아요 수
                 movie_like_count: 2500,
                 movie_category: 'animal',
@@ -2438,7 +2426,7 @@ export const Channel = {
                     '곱슬이는 빠삐용의 ’삐용‘이란 이름을 갖게 되었어요. 그리곤 심장사상충 치료를 시작했었답니다.',
                 movie_image:
                     'https://i.ytimg.com/vi/hbxzkJ62zVI/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAAwiqLlDqC2LaXQMB35ZKzVdj4aQ',
-                movie_video: 'https://www.youtube.com/embed/hbxzkJ62zVI',
+                movie_video: 'https://www.youtube.com/embed/hbxzkJ62zVI?autoplay=1&mute=1',
                 // 동영상 좋아요 수
                 movie_like_count: 12000,
                 movie_category: 'animal',
@@ -2465,7 +2453,7 @@ export const Channel = {
                     "이레아빠의 생일파티는 어때보이나요?ㅠㅎ '다견가정'스럽게(?) 보낸 개아빠의 생일파티(?)...😂",
                 movie_image:
                     'https://i.ytimg.com/vi/nRV6SKGq3lQ/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLD855jOPKms3gDj2S5aQdFaAejN0Q',
-                movie_video: 'https://www.youtube.com/embed/nRV6SKGq3lQ',
+                movie_video: 'https://www.youtube.com/embed/nRV6SKGq3lQ?autoplay=1&mute=1',
                 // 동영상 좋아요 수
                 movie_like_count: 12000,
                 movie_category: 'animal',
@@ -2508,7 +2496,7 @@ export const Channel = {
                     '하단에 쿠팡 링크로 구매하면 쿠팡으로부터 일정액의 수수료를 쇼핑맘 채널이 제공 받아 내돈내산 리뷰 운영에 도움이 됩니다 :)',
                 movie_image:
                     'https://i.ytimg.com/vi/clvV6sG6i1Y/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLD83S70mJQ-shHwJlR3ef4BJ3VT2w',
-                movie_video: 'https://www.youtube.com/embed/clvV6sG6i1Y',
+                movie_video: 'https://www.youtube.com/embed/clvV6sG6i1Y?autoplay=1&mute=1',
                 // 동영상 좋아요 수
                 movie_like_count: 544,
                 movie_category: 'shopping',
@@ -2536,7 +2524,7 @@ export const Channel = {
                     '하단에 쿠팡 링크로 구매하면 쿠팡으로부터 일정액의 수수료를 쇼핑맘 채널이 제공 받아 내돈내산 리뷰 운영에 도움이 됩니다 :)',
                 movie_image:
                     'https://i.ytimg.com/vi/VD33utJraE0/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCE97KxtNBTDfX8fqCp1XYRAGf5Hw',
-                movie_video: 'https://www.youtube.com/embed/VD33utJraE0',
+                movie_video: 'https://www.youtube.com/embed/VD33utJraE0?autoplay=1&mute=1',
                 // 동영상 좋아요 수
                 movie_like_count: 2500,
                 movie_category: 'shopping',
@@ -2565,7 +2553,7 @@ export const Channel = {
                     '하단에 쿠팡 링크로 구매하면 쿠팡으로부터 일정액의 수수료를 쇼핑맘 채널이 제공 받아 내돈내산 리뷰 운영에 도움이 됩니다 :)',
                 movie_image:
                     'https://i.ytimg.com/vi/SObd7CMcp3c/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLD2VdiYZb211K5gz3R6nBkVEzj1sg',
-                movie_video: 'https://www.youtube.com/embed/SObd7CMcp3c',
+                movie_video: 'https://www.youtube.com/embed/SObd7CMcp3c?autoplay=1&mute=1',
                 // 동영상 좋아요 수
                 movie_like_count: 376,
                 movie_category: 'shopping',
@@ -2594,7 +2582,7 @@ export const Channel = {
                     '하단에 쿠팡 링크로 구매하면 쿠팡으로부터 일정액의 수수료를 쇼핑맘 채널이 제공 받아 내돈내산 리뷰 운영에 도움이 됩니다 :)',
                 movie_image:
                     'https://i.ytimg.com/vi/A7NzGlfUtYc/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDcn9tdUw1T0ZstSZCjjrxnYK9yWQ',
-                movie_video: 'https://www.youtube.com/embed/A7NzGlfUtYc',
+                movie_video: 'https://www.youtube.com/embed/A7NzGlfUtYc?autoplay=1&mute=1',
                 // 동영상 좋아요 수
                 movie_like_count: 2100,
                 movie_category: 'shopping',
@@ -2623,7 +2611,7 @@ export const Channel = {
                     '하단에 쿠팡 링크로 구매하면 쿠팡으로부터 일정액의 수수료를 쇼핑맘 채널이 제공 받아 내돈내산 리뷰 운영에 도움이 됩니다 :)',
                 movie_image:
                     'https://i.ytimg.com/vi/iaOjF9aCcK0/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCsemOpqXLzAgFhU4E_fEAJiQ7Rsw',
-                movie_video: 'https://www.youtube.com/embed/iaOjF9aCcK0',
+                movie_video: 'https://www.youtube.com/embed/iaOjF9aCcK0?autoplay=1&mute=1',
                 // 동영상 좋아요 수
                 movie_like_count: 757,
                 movie_category: 'shopping',
@@ -2664,7 +2652,7 @@ export const Channel = {
                     '오늘 영상에서 보여드린 마켓비 타일카페트, 모듈 협탁 이외에 고오오급진 모듈 수납장까지 공구 진행하니까 혹시 필요하셨던 분들은 쟁여가세요! ',
                 movie_image:
                     'https://i.ytimg.com/vi/HxCRe7uDyAM/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDXHa2B_7ErgdIARsosiKMleOWuvw',
-                movie_video: 'https://www.youtube.com/embed/HxCRe7uDyAM',
+                movie_video: 'https://www.youtube.com/embed/HxCRe7uDyAM?autoplay=1&mute=1',
                 // 동영상 좋아요 수
                 movie_like_count: 21000,
                 movie_category: 'vlog',
@@ -2693,7 +2681,7 @@ export const Channel = {
                     '오늘 영상에서 보여드린 마켓비 타일카페트, 모듈 협탁 이외에 고오오급진 모듈 수납장까지 공구 진행하니까 혹시 필요하셨던 분들은 쟁여가세요! ',
                 movie_image:
                     'https://i.ytimg.com/vi/1_35QO9UVYk/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAWCnBcp3_BQyr5qfYReTl24QLGcg',
-                movie_video: 'https://www.youtube.com/embed/1_35QO9UVYk',
+                movie_video: 'https://www.youtube.com/embed/1_35QO9UVYk?autoplay=1&mute=1',
                 // 동영상 좋아요 수
                 movie_like_count: 1600,
                 movie_category: 'vlog',
@@ -2721,7 +2709,7 @@ export const Channel = {
                 movie_body: '✧outer 누이어 - 리프 스웨이드 하프 자켓',
                 movie_image:
                     'https://i.ytimg.com/vi/cYhMT9pX4xU/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAhPCxa09mVABS-h_j1igycOjKY8A',
-                movie_video: 'https://www.youtube.com/embed/cYhMT9pX4xU',
+                movie_video: 'https://www.youtube.com/embed/cYhMT9pX4xU?autoplay=1&mute=1',
                 // 동영상 좋아요 수
                 movie_like_count: 6200,
                 movie_category: 'vlog',
@@ -2748,7 +2736,7 @@ export const Channel = {
                 movie_body: '메디힐 당근 수분 진정 패드',
                 movie_image:
                     'https://i.ytimg.com/vi/HE89T9XNew0/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLACaE1cGETg6z4yENTleWBsaq1opg',
-                movie_video: 'https://www.youtube.com/embed/HE89T9XNew0',
+                movie_video: 'https://www.youtube.com/embed/HE89T9XNew0?autoplay=1&mute=1',
                 // 동영상 좋아요 수
                 movie_like_count: 1600,
                 movie_category: 'vlog',
@@ -2776,12 +2764,12 @@ export const Channel = {
                     '오늘 영상에서 보여드린 마켓비 타일카페트, 모듈 협탁 이외에 고오오급진 모듈 수납장까지 공구 진행하니까 혹시 필요하셨던 분들은 쟁여가세요! ',
                 movie_image:
                     'https://i.ytimg.com/vi/WNBeisZs5xk/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDfkivid92jAq4QOyFIkfYDXKnY3w',
-                movie_video: 'https://www.youtube.com/embed/WNBeisZs5xk',
+                movie_video: 'https://www.youtube.com/embed/WNBeisZs5xk?autoplay=1&mute=1',
                 // 동영상 좋아요 수
                 movie_like_count: 1800,
                 movie_category: 'vlog',
                 movie_channel: 'mamu_vlog',
-                movie_channel_id: 409322,
+                movie_channel_id: 201864,
                 movie_date: {
                     year: 2024,
                     month: 3,
@@ -2818,7 +2806,7 @@ export const Channel = {
                     '오늘은 최근에 업로드 했던 릴스&쇼츠에서 가장 예쁘다고 해줬던 쿨톤메이크업 버전 들고왔지롱 ,, ✩',
                 movie_image:
                     'https://i.ytimg.com/vi/wwX_ObHl3pc/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBBqgUdn0sDe0Vr2p_nFYBEJ6Kv3g',
-                movie_video: 'https://www.youtube.com/embed/wwX_ObHl3pc',
+                movie_video: 'https://www.youtube.com/embed/wwX_ObHl3pc?autoplay=1&mute=1',
                 // 동영상 좋아요 수
                 movie_like_count: 711,
                 movie_category: 'makeup',
@@ -2846,7 +2834,7 @@ export const Channel = {
                     '무찌픽 향수인 슈가 플로럴이 지금 #올리브영에서 할인 중이니 얼른 달려가봐 🍑',
                 movie_image:
                     'https://i.ytimg.com/vi/h0PMQw54tWA/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBvfvIMDZazcOFUyWSEaKWuOZwbKA',
-                movie_video: 'https://www.youtube.com/embed/h0PMQw54tWA',
+                movie_video: 'https://www.youtube.com/embed/h0PMQw54tWA?autoplay=1&mute=1',
                 // 동영상 좋아요 수
                 movie_like_count: 1800,
                 movie_category: 'shopping',
@@ -2874,7 +2862,7 @@ export const Channel = {
                     '영상에 나온 네이밍 레이어드 핏 쿠션 리필 기획과 색감 뽀용한 플러피 파우더 블러쉬가 할인하니 궁금하신 분들은 아래 링크에서 확인 해주세요(✿◡‿◡)',
                 movie_image:
                     'https://i.ytimg.com/vi/jUZlsfv6XwI/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLArcAArMUXvWKVjTV_xxvqdDKIAsA',
-                movie_video: 'https://www.youtube.com/embed/jUZlsfv6XwI',
+                movie_video: 'https://www.youtube.com/embed/jUZlsfv6XwI?autoplay=1&mute=1',
                 // 동영상 좋아요 수
                 movie_like_count: 1100,
                 movie_category: 'makeup',
@@ -2902,7 +2890,7 @@ export const Channel = {
                     '무찌에용💖 오늘은 제 소속사 데이뉴에서 1박 2일 네트워킹을 양양으로 다녀왔어요!!',
                 movie_image:
                     'https://i.ytimg.com/vi/rBEzFMUk1G4/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLC1WHvPnLlJur92nREN1ZQ-KCRN1Q',
-                movie_video: 'https://www.youtube.com/embed/rBEzFMUk1G4',
+                movie_video: 'https://www.youtube.com/embed/rBEzFMUk1G4?autoplay=1&mute=1',
                 // 동영상 좋아요 수
                 movie_like_count: 243,
                 movie_category: 'vlog',
@@ -2930,7 +2918,7 @@ export const Channel = {
                     "원래 제목은 '얼굴에 토끼 1도 없는데 저도 토끼가 될 수 있나요..? ' 이였던 메이크업 영상...",
                 movie_image:
                     'https://i.ytimg.com/vi/hKtoxxWf5cE/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLB9iAguipmx4W7NvR4ZXdrLkyLQjg',
-                movie_video: 'https://www.youtube.com/embed/hKtoxxWf5cE',
+                movie_video: 'https://www.youtube.com/embed/hKtoxxWf5cE?autoplay=1&mute=1',
                 // 동영상 좋아요 수
                 movie_like_count: 498,
                 movie_category: 'makeup',
@@ -2969,7 +2957,7 @@ export const Channel = {
                 movie_body: '안녕 얘들아 나는 아가리어터야 ',
                 movie_image:
                     'https://i.ytimg.com/vi/JMcR6_-O92M/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLD41hQEZ2q94T492JrTGiBIbd3ISg',
-                movie_video: 'https://www.youtube.com/embed/JMcR6_-O92M',
+                movie_video: 'https://www.youtube.com/embed/JMcR6_-O92M?autoplay=1&mute=1',
                 // 동영상 좋아요 수
                 movie_like_count: 3400,
                 movie_category: 'travel',
@@ -2996,7 +2984,7 @@ export const Channel = {
                 movie_body: '(최대 혜택가) 25,000원에 5G 무제한 놓치지 마세요😘 ',
                 movie_image:
                     'https://i.ytimg.com/vi/ohi235S5-yU/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAySptXPFI04GhWZ9tqsJHsIdneXw',
-                movie_video: 'https://www.youtube.com/embed/ohi235S5-yU',
+                movie_video: 'https://www.youtube.com/embed/ohi235S5-yU?autoplay=1&mute=1',
                 // 동영상 좋아요 수
                 movie_like_count: 3900,
                 movie_category: 'makeup',
@@ -3022,7 +3010,7 @@ export const Channel = {
                 movie_body: '🌎호텔스컴바인 대만 타이베이 최.저.가. 기획전🌎 ',
                 movie_image:
                     'https://i.ytimg.com/vi/qf42eT5OIPs/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCLA5mZrnz7iaaJi7nNK3DOz7z2Bw',
-                movie_video: 'https://www.youtube.com/embed/qf42eT5OIPs',
+                movie_video: 'https://www.youtube.com/embed/qf42eT5OIPs?autoplay=1&mute=1',
                 // 동영상 좋아요 수
                 movie_like_count: 4000,
                 movie_category: 'travel',
@@ -3048,7 +3036,7 @@ export const Channel = {
                 movie_body: '💚시카지우개패드 단품 9,900원💚 가성비가 걍 미치셨어요',
                 movie_image:
                     'https://i.ytimg.com/vi/5BKkxdp8NqU/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCbJJdL1emlgUB3HjvFzdV2zpCWcg',
-                movie_video: 'https://www.youtube.com/embed/5BKkxdp8NqU',
+                movie_video: 'https://www.youtube.com/embed/5BKkxdp8NqU?autoplay=1&mute=1',
                 // 동영상 좋아요 수
                 movie_like_count: 2500,
                 movie_category: 'vlog',
@@ -3075,7 +3063,7 @@ export const Channel = {
                 movie_body: '👄인스타 놀러오세요👄',
                 movie_image:
                     'https://i.ytimg.com/vi/OTNFiUeq7u0/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLA-k1Px3ZJYHZmrs3Ss2XXsAhkWMA',
-                movie_video: 'https://www.youtube.com/embed/OTNFiUeq7u0',
+                movie_video: 'https://www.youtube.com/embed/OTNFiUeq7u0?autoplay=1&mute=1',
                 // 동영상 좋아요 수
                 movie_like_count: 3000,
                 movie_category: 'vlog',

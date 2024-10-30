@@ -1,7 +1,7 @@
 import Layout from './common/Layout';
 import { Channel, Feed, Join, Login, Search, Studio, Subscription, Watch, YouTube } from './page';
 import GlobalStyle from './style/GlobalStyle';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Route, Routes, HashRouter } from 'react-router-dom';
 
 const App = () => {
     return (

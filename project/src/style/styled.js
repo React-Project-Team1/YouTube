@@ -15,7 +15,18 @@ export const HeaderWrap = styled.header`
             display: flex;
             align-items: center;
         }
+        .logo-gif {
+            width: 30%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            img {
+                width: 100%;
+            }
+        }
         .logo {
+            cursor: pointer;
         }
         .all-menu {
             .icon {

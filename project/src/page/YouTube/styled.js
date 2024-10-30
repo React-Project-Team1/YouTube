@@ -13,6 +13,7 @@ export const YouTubeWrap = styled.div`
             &:not(:nth-child(5n)) {
                 margin-right: 1%;
             }
+            margin-bottom: 1%;
         }
     }
 `;
