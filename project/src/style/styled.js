@@ -34,6 +34,15 @@ export const HeaderWrap = styled.header`
         .all-menu {
             .icon {
                 margin-right: 2.5rem;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                cursor: pointer;
+                padding: 0.8rem;
+                border-radius: 50%;
+                &:hover {
+                    background-color: #f5f5f5;
+                }
             }
         }
         .search-box {
@@ -72,7 +81,6 @@ export const HeaderWrap = styled.header`
             justify-content: center;
             align-items: center;
             a {
-                display: block;
                 display: flex;
                 justify-content: center;
                 align-items: center;
@@ -139,6 +147,17 @@ export const SideMenuWrap = styled.div`
         width: 18rem;
         word-break: keep-all;
         font-size: 1rem;
+    }
+    .not-login-span {
+        display: block;
+        width: 20rem;
+        font-size: 1.4rem;
+        box-sizing: border-box;
+        padding: 0 1rem;
+        margin-bottom: 1rem;
+    }
+    .login-menu {
+        width: 10rem;
     }
 `;
 

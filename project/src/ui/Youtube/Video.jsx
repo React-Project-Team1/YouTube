@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { VideoWrap } from './styled';
+import { SideMenuChange } from '../../store/modules/headerSlice';
 
 const Video = ({ movie }) => {
     const {
@@ -14,7 +15,10 @@ const Video = ({ movie }) => {
         movie_channel,
     } = movie;
     const { Channel } = useSelector((state) => state.channel);
+    const { isSideMenu } = useSelector((state) => state.header);
+    // 마우스 올렸을때 영상 재생 컨트롤
     const [play, setPlay] = useState(false);
+    const dispatch = useDispatch();
     const movie_view_conunt = (movie_like_count) => {
         if (movie_like_count >= 10000) {
             return Math.floor(movie_like_count / 10000) + '만회';
@@ -24,10 +28,15 @@ const Video = ({ movie }) => {
             return movie_like_count + '회';
         }
     };
-
     const navigate = useNavigate();
     return (
-        <VideoWrap onClick={() => navigate(`/watch/${movie_id}`)} className='video-loder'>
+        <VideoWrap
+            onClick={() => {
+                navigate(`/watch/${movie_id}`);
+                if (isSideMenu) dispatch(SideMenuChange());
+            }}
+            className='video-loder'
+        >
             <div
                 className='video-wrap'
                 onMouseEnter={() => setPlay(true)}

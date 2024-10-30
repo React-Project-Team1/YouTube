@@ -18,7 +18,7 @@ const App = () => {
                             <Route path=':Movie_ID' element={<Watch />} />
                         </Route>
                         <Route path='/channel'>
-                            <Route path=':Channel_ID' element={<Channel />} />
+                            <Route path=':Channel_name' element={<Channel />} />
                         </Route>
                         <Route path='/feed'>
                             <Route path=':Category' element={<Feed />} />

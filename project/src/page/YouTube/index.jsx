@@ -17,6 +17,7 @@ const YouTube = () => {
                 {allMovies
                     .slice()
                     .sort(() => Math.random() - 0.5)
+                    .slice(0, 20)
                     .map((movie) => (
                         <Video key={movie.movie_id} movie={movie} />
                     ))}

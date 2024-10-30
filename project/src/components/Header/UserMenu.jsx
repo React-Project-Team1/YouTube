@@ -1,4 +1,7 @@
+import { useSelector } from 'react-redux';
+
 const UserMenu = () => {
+    const { isLoginUser } = useSelector((state) => state.auth);
     return (
         <div className='user-menu'>
             <a href='#'>
@@ -14,7 +17,7 @@ const UserMenu = () => {
                 />
             </a>
             <a href='#'>
-                <span className='user-profile'>Y</span>
+                <span className='user-profile'>{isLoginUser.user_name.charAt(0)}</span>
             </a>
         </div>
     );

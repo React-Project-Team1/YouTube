@@ -48,7 +48,7 @@ export const SideMenuAPI = {
             id: 4390684386,
             name: '내 동영상',
             type: 'MyVideo',
-            nav: '/studio/',
+            nav: '/studio',
             icon: 'https://raw.githubusercontent.com/React-Project-Team1/data-center/50bcadb338add2ff5dcb6ac28c339d051e58635b/Icon/My_video.svg',
         },
         {

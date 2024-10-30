@@ -5,14 +5,53 @@ import { LoginUser } from '../../assets/api/LoginUser';
 const initialState = {
     LoginUser,
     // 현재 로그인 된 유저
-    isLoginUser: {},
-    isAuth: false,
+    isLoginUser: {
+        user_id: 806540,
+        user_name: '아가리어터',
+        user_age: 27,
+        user_tel: '010-5305-9524',
+        user_email: 'Or7r2l@naver.com',
+        user_password: '1111',
+        user_search_list: [{ search_id: 1, search: 'vlog' }],
+        // 시청 기록
+        Viewing_Record: [
+            // 동영상 정보
+        ],
+        // 재생 목록
+        Playlist: [],
+        // 나중에 볼 동영상
+        Later_Watch: [],
+        // 좋아요 표시한 동영상
+        like_Movie_List: [],
+        // 오프라인 저장 동영상
+        Download_List: [],
+        // 구독한 채널 아이디
+        Subscription_Id: [859641, 775460],
+    },
+    isAuth: true,
 };
 
 export const authSlice = createSlice({
     name: 'authSlice',
     initialState,
     reducers: {
+        // 10-30 김신영님 작업
+        UserLogin(state, action) {
+            const { user_email, user_password } = action.payload;
+            // 코드 수정 필요
+            const thisUser = state.LoginUser.find((user) => user.user_email === user_email);
+            if (thisUser.user_password === user_password) {
+                state.isAuth = true;
+                state.isLoginUser = thisUser;
+            }
+        },
+        // 로그아웃
+        UserLogout(state) {
+            state.isAuth = false;
+            state.isLoginUser = null;
+        },
+        // 10-30 김신영님 작업끝
+
         AddNewUser(state, action) {
             // 새로운 유저 회원가입 조건문 처리 해야함
             // 로그인, 로그아웃 등 기능은 별도로 구현 해야함
@@ -74,6 +113,8 @@ export const authSlice = createSlice({
 });
 
 export const {
+    UserLogin,
+    UserLogout,
     AddNewUser,
     IsAddList,
     IsDelList,
