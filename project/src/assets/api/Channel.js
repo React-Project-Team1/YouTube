@@ -1014,7 +1014,7 @@ export const Channel = {
                 movie_video: 'https://www.youtube.com/embed/ysLaz2YJ2c4?autoplay=1&mute=1',
                 // 동영상 좋아요 수
                 movie_like_count: 9600,
-                movie_category: '자기 소개',
+                movie_category: 'talk',
                 movie_channel: 'ultraTasteDiary',
                 movie_channel_id: 6546654,
                 movie_date: {
