@@ -35,23 +35,31 @@ export const authSlice = createSlice({
     name: 'authSlice',
     initialState,
     reducers: {
-        // 10-30 김신영님 작업
+        // 10-31 김신영님 작업
         UserLogin(state, action) {
             const { user_email, user_password } = action.payload;
-            // 코드 수정 필요
-            const thisUser = state.LoginUser.find((user) => user.user_email === user_email);
-            if (thisUser.user_password === user_password) {
+            // 입력한 정보와 일치하는 유저 찾기
+            const thisUser = state.LoginUser.find(
+                (user) => user.user_email === user_email && user.user_password === user_password
+            );
+            if (thisUser) {
+                // 이메일과 비밀번호 모두 일치하는 경우에만 로그인 성공
                 state.isAuth = true;
                 state.isLoginUser = thisUser;
+            } else {
+                // 로그인 실패 시
+                state.isAuth = false;
+                state.isLoginUser = {};
             }
+            console.log(state.isAuth);
         },
-        // 로그아웃
+
         UserLogout(state) {
             state.isAuth = false;
             state.isLoginUser = null;
+            // localStorage 처리...
         },
-        // 10-30 김신영님 작업끝
-
+        // 10-31 김신영님 작업끝
         AddNewUser(state, action) {
             // 새로운 유저 회원가입 조건문 처리 해야함
             // 로그인, 로그아웃 등 기능은 별도로 구현 해야함

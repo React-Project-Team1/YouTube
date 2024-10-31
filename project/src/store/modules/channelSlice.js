@@ -11,6 +11,11 @@ export const channelSlice = createSlice({
     name: 'channelSlice',
     initialState,
     reducers: {
+        // 영상 검색
+        SearchMovies(state, action) {
+            // state.Channel = state.Channel.filter((movie) => movie.movie_title === 검색어?);
+        },
+        // 10-31 김신영 작업
         // 채널 정보 수정
         ChangeChannelInfo(state, action) {},
         // 영상 추가
@@ -48,5 +53,6 @@ export const {
     DelMoviesComment,
     IsMovieChangeLike,
     getAllMovies,
+    SearchMovies,
 } = channelSlice.actions;
 export default channelSlice.reducer;

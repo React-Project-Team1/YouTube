@@ -6,8 +6,13 @@ const MenuItem = ({ id, name, type, nav, icon }) => {
     const { isLoginUser } = useSelector((state) => state.auth);
     // 사이트 이동 함수
     const handleClickNav = () => {
-        if (type === 'MyVideo') {
-            navigate(`${nav}/${isLoginUser.user_id}`);
+        if (
+            type === 'MyVideo' ||
+            type === 'Dashboard' ||
+            type === 'Content' ||
+            type === 'Comment'
+        ) {
+            navigate(`/studio/${isLoginUser.user_id}${nav}`);
         } else {
             navigate(nav);
         }

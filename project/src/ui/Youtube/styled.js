@@ -22,6 +22,7 @@ export const VideoWrap = styled.li`
             top: 0;
             width: 100%;
             height: 100%;
+            z-index: -1;
         }
     }
     .text-wrap {

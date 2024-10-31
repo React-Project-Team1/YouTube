@@ -167,3 +167,15 @@ export const LayoutWrap = styled.div`
         width: 100%;
     }
 `;
+
+export const StudioLayoutWrap = styled.div`
+    width: 100%;
+    min-height: 100vh;
+    header {
+        box-shadow: rgba(0, 0, 0, 0.03) 0px 1rem 2.5rem -0.5rem,
+            rgba(0, 0, 0, 0.04) 0rem 1rem 1rem -0.5rem;
+    }
+    .content-wrap {
+        display: flex;
+    }
+`;

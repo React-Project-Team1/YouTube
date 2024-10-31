@@ -4,7 +4,6 @@ import { SubscribersListWrap } from './styled';
 
 const SubscribersList = ({ subscribers, channel }) => {
     const navigate = useNavigate();
-    console.log(channel);
     return (
         <SubscribersListWrap>
             <h3 className='title-h3'>채널 분석</h3>

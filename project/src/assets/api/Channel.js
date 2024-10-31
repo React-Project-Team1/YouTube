@@ -852,7 +852,7 @@ export const Channel = {
                     {
                         comment_id: 136551,
                         comment_body: `"why did you take so long to buy groceries?" 
-                                          me:`,
+                                            me:`,
                         comment_user_id: 'miguelrodriguez-pineroriva6713',
                         comment_user_name: '산미구엘',
                     },
@@ -957,7 +957,7 @@ export const Channel = {
                     {
                         comment_id: 136555,
                         comment_body: `Thom: drowns
-                                         His face: (            -_-             )`,
+                                           His face: (            -_-             )`,
                         comment_user_id: 'mushfiqahmad1783',
                         comment_user_name: '독버섯',
                     },
@@ -1264,9 +1264,9 @@ export const Channel = {
         channel_image:
             'https://yt3.googleusercontent.com/vhOEy7Ode6Y8ZN3noHKZua0LMt2n2Z7xfEyfWmzTXwQ6oq59BFyTXnN9AcnksHTYAM1YCzdY=s160-c-k-c0x00ffffff-no-rj',
         channel_introduction: `아프리카 TV에서 게임방송을 하고 있는 "우왁굳"의 유튜브 채널입니다.
-                                 방송에서 재밌었던 장면들, 편집영상, 녹화영상등이 올라옵니다.
-                                 영상 업로드 시간 : 매일 새벽중
-                                 우왁굳 카카오톡 친구추가 하기 : @우왁굳`,
+                                   방송에서 재밌었던 장면들, 편집영상, 녹화영상등이 올라옵니다.
+                                   영상 업로드 시간 : 매일 새벽중
+                                   우왁굳 카카오톡 친구추가 하기 : @우왁굳`,
         // 채널의 구독자 수
         channel_subscribers: 1720000,
         Movies: [
@@ -1450,7 +1450,7 @@ export const Channel = {
                 movie_video: 'https://www.youtube.com/embed/WG5aX86i3rs?autoplay=1&mute=1',
                 // 동영상 좋아요 수
                 movie_like_count: 13000,
-                movie_category: 'education',
+                movie_category: 'challenge',
                 movie_channel: 'goodboykris',
                 movie_channel_id: 81372931,
                 movie_date: {
@@ -1476,7 +1476,7 @@ export const Channel = {
                 movie_video: 'https://www.youtube.com/embed/UtljPnhHPJY?autoplay=1&mute=1',
                 // 동영상 좋아요 수
                 movie_like_count: 14000,
-                movie_category: 'education',
+                movie_category: 'challenge',
                 movie_channel: 'goodboykris',
                 movie_channel_id: 81372931,
                 movie_date: {
@@ -1529,7 +1529,7 @@ export const Channel = {
                 movie_video: 'https://www.youtube.com/embed/SL_sPoo5OuU?autoplay=1&mute=1',
                 // 동영상 좋아요 수
                 movie_like_count: 10000,
-                movie_category: 'education',
+                movie_category: 'talk',
                 movie_channel: 'goodboykris',
                 movie_channel_id: 81372931,
                 movie_date: {
@@ -1729,7 +1729,7 @@ export const Channel = {
                 movie_video:
                     'https://www.youtube.com/embed/PQ6eDFLyn4E?si=vKLy81wGZPPt6WSl&autoplay=1&mute=1',
                 movie_like_count: 4700,
-                movie_category: '시사교양',
+                movie_category: 'documentary',
                 movie_channel: 'sbs_dali',
                 movie_channel_id: 775460,
                 movie_date: {
@@ -1758,7 +1758,7 @@ export const Channel = {
                 movie_video:
                     'https://www.youtube.com/embed/aPY7KS0K5NY?si=WhJVFOK9_bMl5RK0&autoplay=1&mute=1',
                 movie_like_count: 8100,
-                movie_category: '시사교양',
+                movie_category: 'documentary',
                 movie_channel: 'sbs_dali',
                 movie_channel_id: 775460,
                 movie_date: {
@@ -1786,7 +1786,7 @@ export const Channel = {
                 movie_video:
                     'https://www.youtube.com/embed/42VIq8EW0wU?si=kRlQrubOZqxSEt5t&autoplay=1&mute=1',
                 movie_like_count: 6400,
-                movie_category: '시사교양',
+                movie_category: 'documentary',
                 movie_channel: 'sbs_dali',
                 movie_channel_id: 775460,
                 movie_date: {
@@ -1814,7 +1814,7 @@ export const Channel = {
                 movie_video:
                     'https://www.youtube.com/embed/GAqV_mkqJhU?si=Qt2iuH4iTnUd5m8r&autoplay=1&mute=1',
                 movie_like_count: 7200,
-                movie_category: '시사교양',
+                movie_category: 'documentary',
                 movie_channel: 'sbs_dali',
                 movie_channel_id: 775460,
                 movie_date: {
@@ -1842,7 +1842,7 @@ export const Channel = {
                 movie_video:
                     'https://www.youtube.com/embed/cS4M7OBprBc?si=LRN60vPzFQhAIsnE&autoplay=1&mute=1',
                 movie_like_count: 2700,
-                movie_category: '시사교양',
+                movie_category: 'documentary',
                 movie_channel: 'sbs_dali',
                 movie_channel_id: 775460,
                 movie_date: {
@@ -2039,7 +2039,7 @@ export const Channel = {
                 movie_video:
                     'https://www.youtube.com/embed/p3kJOuNnkJg?si=fF2ky_2of1fliP6G&autoplay=1&mute=1',
                 movie_like_count: 55000,
-                movie_category: '음악',
+                movie_category: 'music',
                 movie_channel: 'SBSKPOP',
                 movie_channel_id: 2250024,
                 movie_date: {
@@ -2066,7 +2066,7 @@ export const Channel = {
                 movie_video:
                     'https://www.youtube.com/embed/2WNIGv1r5d4?si=IU51kHkPu9mZle0s&autoplay=1&mute=1',
                 movie_like_count: 12000,
-                movie_category: '음악',
+                movie_category: 'music',
                 movie_channel: 'SBSKPOP',
                 movie_channel_id: 2250024,
                 movie_date: {
@@ -2094,7 +2094,7 @@ export const Channel = {
                 movie_video:
                     'https://www.youtube.com/embed/zyzRypp6dbQ?si=zu-9x2jdhW_w3NDP&autoplay=1&mute=1',
                 movie_like_count: 1200,
-                movie_category: '음악',
+                movie_category: 'music',
                 movie_channel: 'SBSKPOP',
                 movie_channel_id: 2250024,
                 movie_date: {
@@ -2123,7 +2123,7 @@ export const Channel = {
                 movie_video:
                     'https://www.youtube.com/embed/fdzojloPlFA?si=nQwDPXBvL1pmSExl&autoplay=1&mute=1',
                 movie_like_count: 210000,
-                movie_category: '음악',
+                movie_category: 'music',
                 movie_channel: 'SBSKPOP',
                 movie_channel_id: 2250024,
                 movie_date: {
@@ -2152,7 +2152,7 @@ export const Channel = {
                 movie_video:
                     'https://www.youtube.com/embed/jUNz-uTF--E?si=UDI5QuZOMAiPeC17&autoplay=1&mute=1',
                 movie_like_count: 210000,
-                movie_category: '음악',
+                movie_category: 'music',
                 movie_channel: 'SBSKPOP',
                 movie_channel_id: 2250024,
                 movie_date: {
@@ -2192,7 +2192,7 @@ export const Channel = {
                 movie_video:
                     'https://www.youtube.com/embed/HOGfNYten8c?si=k6-fUSnQNNAnXJ4v&autoplay=1&mute=1',
                 movie_like_count: 1500,
-                movie_category: '동물',
+                movie_category: 'animal',
                 movie_channel: 'SBSANIMAL',
                 movie_channel_id: 2215544,
                 movie_date: {
@@ -2220,7 +2220,7 @@ export const Channel = {
                 movie_video:
                     'https://www.youtube.com/embed/E8V02ArInjY?si=-gZ7rSEfkdHYv1lH&autoplay=1&mute=1',
                 movie_like_count: 12000,
-                movie_category: '동물',
+                movie_category: 'animal',
                 movie_channel: 'SBSANIMAL',
                 movie_channel_id: 2215544,
                 movie_date: {
@@ -2249,7 +2249,7 @@ export const Channel = {
                 movie_video:
                     'https://www.youtube.com/embed/d-PV-ScWtB8?si=fXQ_wjNh_U0VDBRm&autoplay=1&mute=1',
                 movie_like_count: 6800,
-                movie_category: '동물',
+                movie_category: 'animal',
                 movie_channel: 'SBSANIMAL',
                 movie_channel_id: 2215544,
                 movie_date: {
@@ -2277,7 +2277,7 @@ export const Channel = {
                 movie_video:
                     'https://www.youtube.com/embed/Tkw5NKyCpeU?si=uG5O3Z2WJPAqR9CJ&autoplay=1&mute=1',
                 movie_like_count: 500,
-                movie_category: '동물',
+                movie_category: 'animal',
                 movie_channel: 'SBSANIMAL',
                 movie_channel_id: 2215544,
                 movie_date: {
@@ -2306,7 +2306,7 @@ export const Channel = {
                 movie_video:
                     'https://www.youtube.com/embed/MlKFeqBIZJs?si=2twwrn3h4FCtmZRB&autoplay=1&mute=1',
                 movie_like_count: 2100,
-                movie_category: '동물',
+                movie_category: 'animal',
                 movie_channel: 'SBSANIMAL',
                 movie_channel_id: 2215544,
                 movie_date: {

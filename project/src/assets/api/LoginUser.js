@@ -114,4 +114,119 @@ export const LoginUser = [
         // 구독한 채널 아이디
         Subscription_Id: [],
     },
+    {
+        user_id: 56165156,
+        user_name: 'radiohead',
+        user_age: 20,
+        user_tel: '010-1234-1234',
+        user_email: 'radiohead@naver.com',
+        user_password: '1111',
+        user_search_list: [{ search_id: 1, search: 'music' }],
+        // 시청 기록
+        Viewing_Record: [
+            // 동영상 정보
+        ],
+        // 재생 목록
+        Playlist: [],
+        // 나중에 볼 동영상
+        Later_Watch: [],
+        // 좋아요 표시한 동영상
+        like_Movie_List: [],
+        // 오프라인 저장 동영상
+        Download_List: [],
+        // 구독한 채널 아이디
+        Subscription_Id: [],
+    },
+    {
+        user_id: 6546654,
+        user_name: 'ultraTasteDiary',
+        user_age: 30,
+        user_tel: '010-3481-1745',
+        user_email: 'ultraTasteDiary@naver.com',
+        user_password: '8761',
+        user_search_list: [{ search_id: 1, search: 'food' }],
+        // 시청 기록
+        Viewing_Record: [
+            // 동영상 정보
+        ],
+        // 재생 목록
+        Playlist: [],
+        // 나중에 볼 동영상
+        Later_Watch: [],
+        // 좋아요 표시한 동영상
+        like_Movie_List: [],
+        // 오프라인 저장 동영상
+        Download_List: [],
+        // 구독한 채널 아이디
+        Subscription_Id: [],
+    },
+    {
+        user_id: 96745102,
+        user_name: 'suede',
+        user_age: 27,
+        user_tel: '010-4912-9012',
+        user_email: 'suede@naver.com',
+        user_password: '1568',
+        user_search_list: [{ search_id: 1, search: 'live' }],
+        // 시청 기록
+        Viewing_Record: [
+            // 동영상 정보
+        ],
+        // 재생 목록
+        Playlist: [],
+        // 나중에 볼 동영상
+        Later_Watch: [],
+        // 좋아요 표시한 동영상
+        like_Movie_List: [],
+        // 오프라인 저장 동영상
+        Download_List: [],
+        // 구독한 채널 아이디
+        Subscription_Id: [],
+    },
+    {
+        user_id: 41846541,
+        user_name: 'woowakgood',
+        user_age: 35,
+        user_tel: '010-4975-6179',
+        user_email: 'woowakgood@naver.com',
+        user_password: '3715',
+        user_search_list: [{ search_id: 1, search: 'gaming' }],
+        // 시청 기록
+        Viewing_Record: [
+            // 동영상 정보
+        ],
+        // 재생 목록
+        Playlist: [],
+        // 나중에 볼 동영상
+        Later_Watch: [],
+        // 좋아요 표시한 동영상
+        like_Movie_List: [],
+        // 오프라인 저장 동영상
+        Download_List: [],
+        // 구독한 채널 아이디
+        Subscription_Id: [],
+    },
+    {
+        user_id: 81372931,
+        user_name: 'goodboykris',
+        user_age: 26,
+        user_tel: '010-1546-4891',
+        user_email: 'goodboykris@naver.com',
+        user_password: '8154',
+        user_search_list: [{ search_id: 1, search: 'education' }],
+        // 시청 기록
+        Viewing_Record: [
+            // 동영상 정보
+        ],
+        // 재생 목록
+        Playlist: [],
+        // 나중에 볼 동영상
+        Later_Watch: [],
+        // 좋아요 표시한 동영상
+        like_Movie_List: [],
+        // 오프라인 저장 동영상
+        Download_List: [],
+        // 구독한 채널 아이디
+        Subscription_Id: [],
+    },
 ];

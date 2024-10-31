@@ -1,19 +1,35 @@
 import { Link, useParams } from 'react-router-dom';
 import { ChannelWrap } from './styled';
 import { useSelector } from 'react-redux';
+import Channel_home from './Channel_home';
+import { useState } from 'react';
 
 const Channel = () => {
     const { Channel_name } = useParams();
     const { Channel } = useSelector((state) => state.channel);
+    const [isSubscribed, setIsSubscribed] = useState(false);
+
     console.log(Channel[Channel_name]);
+
+    //동영상 총 개수 
+    const videoCount = Channel[Channel_name].Movies.length; 
+    // 구독자수 n만명
+    const formatSubscribers = (count) => {
+        return count >= 10000 ? `${Math.floor(count / 10000)}만명` : `${count}명`;
+    };
+    //구독 토글
+    const handleSubscribe = () => {
+        setIsSubscribed(!isSubscribed);
+    };
+
     return (
         <ChannelWrap>
-            {/* 10-30 서희원님 작업 */}
+            {/* 10-31 서희원님 작업 */}
             <div className='header_banner'>
                 <div className='channel_banner'>
                     <img
-                        src='https://yt3.googleusercontent.com/YSzNgAfL46tAd9qCJDyBKxIXVzfJUzq4ic8dY9LbGCsnGEuZ3S6QZkcY6zPZG_GIuuNaa9f1=w1707-fcrop64=1,00005a57ffffa5a8-k-c0xffffffff-no-nd-rj'
-                        alt=''
+                        src={Channel[Channel_name].channel_banner}
+                        alt={Channel[Channel_name]}
                     />
                 </div>
             </div>
@@ -22,34 +38,39 @@ const Channel = () => {
                     <div className='header_left'>
                         <img
                             className='channel_img'
-                            src='https://yt3.googleusercontent.com/ihi8LdmSNfcp96-gaHBE1Av3-PLotF9rOhUxTy_pY-CeHYCAkDzE1ktxfe4gbhtYR0CIYjUPba0=s160-c-k-c0x00ffffff-no-rj'
-                            alt=''
+                            src={Channel[Channel_name].channel_image}
+                            alt={Channel[Channel_name]}
                         />
                     </div>
                     <div className='header_right'>
-                        <div className='channel_name'>채널명</div>
+                        <div className='channel_name'>{Channel[Channel_name].channel_name}</div>
                         <div className='channel_info'>
-                            {' '}
-                            @xxx아이디 • 구독자 xxx만명 • 동영상 xxx개
-                            <div className='channel_desc'> 채널소개 설명 ~~~</div>
-                            <button className='subscribe_btn'>구독</button>
+                            @{Channel_name} • 구독자 {formatSubscribers(Channel[Channel_name].channel_subscribers)} • 동영상 {videoCount}개
+                            <div className='channel_desc'> {Channel[Channel_name].channel_introduction}</div>
+                            <button className={isSubscribed ? 'subscribed_btn' : 'subscribe_btn'}
+                onClick={handleSubscribe}>{isSubscribed ? '구독중' : '구독'}</button>
                         </div>
                     </div>
                 </div>
             </div>
             <div className='channel_navbar'>
                 <ul className='inner'>
-                    <li>
+                    {/* <li key={index}
+                            className={activeChannelMenu === index ? 'nav_active' : ''}
+                            onClick={() => handleChannelMenu(index)}>
+                        <Link to={'/'}>홈</Link>
+                    </li> */}
+                    <li className='nav_active'>
                         <Link to={'/'}>홈</Link>
                     </li>
                     <li>
                         <Link to={'/'}>동영상</Link>
                     </li>
                 </ul>
-                {/* <div className="channel_search">
-                    검색
-                </div> */}
+                
             </div>
+            <Channel_home/>
+            
         </ChannelWrap>
     );
 };
