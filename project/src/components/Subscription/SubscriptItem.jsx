@@ -1,6 +1,8 @@
+import { useEffect, useState } from "react";
 import { Button } from "../../ui/Button";
+import Popup from "../../ui/popup/Popup";
 
-const SubscriptItem = ({ channel }) => {
+const SubscriptItem = ({ channel, handleChangeThisId, thisChannelID }) => {
   const {
     channel_id,
     channel_name,
@@ -9,6 +11,25 @@ const SubscriptItem = ({ channel }) => {
     channel_subscribers,
     Movies,
   } = channel;
+
+  useEffect(() => {
+    const modal = document.querySelector("#subscript-popup");
+    if (thisChannelID === channel_id) {
+      modal.showModal();
+    }
+  }, [thisChannelID, channel_id]);
+
+  const handleShowPopup = () => {
+    handleChangeThisId(channel_id);
+    const modal = document.querySelector("#subscript-popup");
+    modal.showModal();
+    setIsModalOpen(true);
+  };
+  const handleClosePopup = () => {
+    const modal = document.querySelector("#subscript-popup");
+    modal.close();
+  };
+
   return (
     <li className="subscript-li active">
       <img
@@ -28,8 +49,9 @@ const SubscriptItem = ({ channel }) => {
         </span>
         <p className="content-channel-introduction">{channel_introduction}</p>
       </div>
+
       <div className="subscript-icon">
-        <Button className="icon-notification">
+        <Button className="icon-notification" onClick={handleShowPopup}>
           <img
             className="button-icon-notification"
             src="https://raw.githubusercontent.com/React-Project-Team1/data-center/752a52cbfb5bf64b383b0941ba3834539b2988ac/Icon/Notification.svg"
@@ -38,6 +60,14 @@ const SubscriptItem = ({ channel }) => {
           구독중
         </Button>
       </div>
+      {thisChannelID === channel_id && (
+        <Popup
+          channel_name={channel_name}
+          handleClosePopup={handleClosePopup}
+          channel_id={channel_id}
+          thisChannelID={thisChannelID}
+        />
+      )}
     </li>
   );
 };

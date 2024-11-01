@@ -353,7 +353,7 @@ export const Channel = {
         ],
     },
     Highfiction: {
-        channel_id: '641322',
+        channel_id: 641322,
         channel_name: '하이픽션',
         channel_banner:
             'https://yt3.googleusercontent.com/w8XfHLFzmciL0QYoAEwv_CP5qvVRRN5wzIkLfAdgtMNuaNtMrJhkTLX0dC46f5gVHWFaoY4YMg=w1060-fcrop64=1,00005a57ffffa5a8-k-c0xffffffff-no-nd-rj',
@@ -860,7 +860,7 @@ export const Channel = {
             },
             {
                 movie_id: 556152,
-                movie_title: '이쯤에서 돌아보는 그들의 발자취56165156라디오헤드) 이야기',
+                movie_title: '이쯤에서 돌아보는 그들의 발자취 라디오헤드 이야기',
                 movie_body: `‘Lotus Flower’ is taken from ‘The King of Limbs’ out on XL Recordings Director of Photograph: Nick Wood`,
                 movie_image: 'https://i.ytimg.com/vi/f2fjTisiUDI/maxresdefault.jpg',
                 movie_video: 'https://www.youtube.com/embed/f2fjTisiUDI?autoplay=1&mute=1',
@@ -1302,7 +1302,7 @@ export const Channel = {
                 movie_title:
                     '폭력적인 중국인에게 대처하는 법 : 중국인에게 타이완 넘버원을 외쳐보았다',
                 movie_body: 'TAIWAN #1 (conan exiles)',
-                movie_image: 'https://i.ytimg.com/vi_webp/Hkg6Vu2Um5k/sddefault.webp',
+                movie_image: 'https://i1.ytimg.com/vi/Hkg6Vu2Um5k/sddefault.jpg',
                 movie_video: 'https://www.youtube.com/embed/Hkg6Vu2Um5k?autoplay=1&mute=1',
                 // 동영상 좋아요 수
                 movie_like_count: 40000,

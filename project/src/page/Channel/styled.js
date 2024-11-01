@@ -73,22 +73,23 @@ export const ChannelWrap = styled.div`
                     background: #000;
                     color: white;
                     font-size: 87.5%;
-                    line-height: 36px;
                     border-radius: 5rem;
                     border: none;
-                    padding: 0 1.6rem;
+                    padding: 1rem 1.6rem;
                     margin: 12px 0 8px 0;
                 }
 
                 .subscribed_btn {//구독중 버튼
+                    
                     background: #ededed;
                     color: black;
                     font-size: 87.5%;
-                    line-height: 36px;
                     border-radius: 5rem;
                     border: none;
-                    padding: 0 1.6rem;
+                    padding: 1rem 1.6rem;
                     margin: 12px 0 8px 0;
+                    align-items:center;
+                
 }
             }
         }
@@ -101,10 +102,13 @@ export const ChannelWrap = styled.div`
         .inner {
             display: flex;
             line-height: 4.8rem;
-
+            align-items: center;
             li {
                 padding: 0 2% 0 2%;
                 position: relative;
+                cursor: pointer;
+                display: flex;
+                justify-content: center;
             }
             li::after{
                 content:'';
@@ -119,16 +123,42 @@ export const ChannelWrap = styled.div`
                 transition : opacity 0.3s ease, transform 0.3s ease-in-out;
                 
             }
-            li.nav_active::after,
             li:hover::after {
+                opacity: 0.5;
+            }
+            li.nav_active::after{
                 opacity: 1;
                 transform:   scaleX(1);
             }
+            //검색버튼
+            .channel_search {
+                padding-left:1rem ;
+                padding-right: 0;
+            }
+            button {
+                width: 4rem;
+                height: 4rem;
+                border-radius: 50%;
+                border : none;
+                padding: none;
+                background-color: white;
+                img {
+                
+
+                }
+            }
+            .search_input {
+                outline: none;
+                margin-left: 0.5rem;
+                border-width: 0;
+                border-bottom : 0.1rem solid #000;
+            }
+            
         }
     }
 `;
 export const ChannelHomeWrap = styled.div`
-    border-bottom :1px solid #e4e4e4; 
+    border-bottom :0.1rem solid #e4e4e4; 
     padding-right: calc(50% - 64.2rem);
     padding-left: calc(50% - 64.2rem);
     
@@ -140,7 +170,7 @@ export const ChannelHomeWrap = styled.div`
         }
         .channel_mainvideo {
             width: 100%;
-            padding: 24px 0 ;
+            padding: 2.4rem 0 ;
             .video-loder{
                 display: flex;
             
@@ -149,15 +179,17 @@ export const ChannelHomeWrap = styled.div`
                     display: none;
                 }
                 .video-wrap {
-                    width:424px;
-                    height: 238px;
+                    width:42.4rem;
+                    height: 23.8rem;
                     padding-bottom: 0%;
-                    margin-right: 20px; 
+                    margin-right: 1%; 
                     img, iframe{
-                        width:424px;
-                        height: 238px;
+                        width:42.4rem;
+                        height: 23.8rem;
                     } }
-                .text-wrap { }
+                .text-wrap {
+                    padding-left: 1%;
+                 }
             }
             .movie_info {
                 
@@ -173,4 +205,85 @@ export const ChannelHomeWrap = styled.div`
     
        
        
-export const ChannelVideoWrap = styled.div``;
+export const ChannelVideoWrap = styled.div`
+     padding-right: calc(50% - 64.2rem);
+     padding-left: calc(50% - 64.2rem);
+    .channel_video_tab {
+        padding-top: 1%;
+        .sort_btn {
+            border-radius: 0.5rem;
+            background-color: #f2f2f2;
+            border:none;
+            padding: 0.5rem 1rem ;
+            margin-right:1rem;
+            font-size: 1.4rem;
+            line-height: 2rem;
+            font-weight: 500;
+        }
+        .sort_btn.active {
+            background-color: black;
+            color: white;
+        }
+        .channel_videolist {
+           
+        
+        }
+        
+        
+    }
+`;
+export const SearchMovieWrap = styled.div`
+    .search_results {
+        /* padding-right: calc(50% - 64.2rem); */
+        padding-left: calc(50% - 64.2rem);
+        padding-right  : 30%;
+        
+        flex-direction: column;
+        .test {
+            flex-direction:  column;
+            width: 100%;
+            padding-top: 1.5%;
+            margin-top:0;
+            .video-loder {
+                width: 100%;
+                display: flex;
+                flex-direction: row;
+                border-bottom : 0.1rem solid #e4e4e4;
+                margin : 0 1.5% 1.5% 0;
+                .video-wrap {
+                    width:24.6rem;
+                    height: 13.8rem;
+                    padding-bottom: 0%;
+                    margin-right: 1%; 
+                   margin-bottom : 1.5%;
+                    img, iframe{
+                        width:24.6rem;
+                        height: 13.8rem;
+                    } }
+                   
+                }
+                .text-wrap {
+                    width: 80%;
+                    display: flex;
+                    justify-content: space-between;
+                    .channel-logo {
+                    display: none;
+                    }
+                    .movie_info{
+                        .movie_title{}
+                        .channel_name{}
+                        .movie_like_count{
+                            .movie_date {}
+                        }
+                    }
+                   .pluse-menu {
+                    /* position: relative;
+                    left: 0; */
+                 
+
+            }
+                }
+            }
+        }
+    
+`;

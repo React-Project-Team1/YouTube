@@ -8,6 +8,7 @@ export const SubscriptionWrap = styled.div`
     .subscriptH2 {
       font-size: 3.6rem;
       font-weight: 600;
+      margin-bottom: 1rem;
     }
   }
 `;

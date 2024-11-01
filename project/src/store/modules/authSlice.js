@@ -6,13 +6,13 @@ const initialState = {
     LoginUser,
     // 현재 로그인 된 유저
     isLoginUser: {
-        user_id: 806540,
-        user_name: '아가리어터',
-        user_age: 27,
-        user_tel: '010-5305-9524',
-        user_email: 'Or7r2l@naver.com',
-        user_password: '1111',
-        user_search_list: [{ search_id: 1, search: 'vlog' }],
+        user_id: 41846541,
+        user_name: 'woowakgood',
+        user_age: 35,
+        user_tel: '010-4975-6179',
+        user_email: 'woowakgood@naver.com',
+        user_password: '3715',
+        user_search_list: [{ search_id: 1, search: 'gaming' }],
         // 시청 기록
         Viewing_Record: [
             // 동영상 정보
@@ -26,7 +26,7 @@ const initialState = {
         // 오프라인 저장 동영상
         Download_List: [],
         // 구독한 채널 아이디
-        Subscription_Id: [859641, 775460],
+        Subscription_Id: [984562],
     },
     isAuth: true,
 };
@@ -112,9 +112,11 @@ export const authSlice = createSlice({
         },
         DelSubscription(state, action) {
             // 구독 목록 삭제
-            const { user_id } = action.payload;
+            const { user_id, channel_id } = action.payload;
             const User = state.LoginUser.find((user) => user.user_id === user_id);
-            User.Subscription_Id.filter();
+            User.Subscription_Id = User.Subscription_Id.filter(
+                (Subscription) => Subscription !== channel_id
+            );
             state.isLoginUser = User;
         },
     },
