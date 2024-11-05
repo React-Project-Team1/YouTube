@@ -2,12 +2,12 @@ import styled from 'styled-components';
 
 export const SearchWrap = styled.div`
     min-height: 100vh;
-
     margin: 2% auto;
 `;
 
 export const SearchListWrap = styled.ul`
     width: 100%;
+    min-width: 100rem;
     .video-loder {
         display: flex;
         flex-direction: row;
