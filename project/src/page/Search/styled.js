@@ -1,15 +1,13 @@
 import styled from 'styled-components';
 
 export const SearchWrap = styled.div`
-    height: 100%;
-    margin: auto;
+    min-height: 100vh;
+
+    margin: 2% auto;
 `;
 
 export const SearchListWrap = styled.ul`
-    width: 100rem;
-    position: absolute;
-    left: 25%;
-    top: 10%;
+    width: 100%;
     .video-loder {
         display: flex;
         flex-direction: row;
@@ -28,6 +26,9 @@ export const SearchListWrap = styled.ul`
             width: 50%;
             margin-left: 2%;
             height: 100%;
+        }
+        .movie_body {
+            display: block;
         }
     }
 `;
