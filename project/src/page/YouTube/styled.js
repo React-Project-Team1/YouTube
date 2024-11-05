@@ -32,6 +32,16 @@ export const YouTubeWrap = styled.div`
             &:not(:nth-child(5n)) {
                 margin-right: 1%;
             }
+            &:nth-child(5n) {
+                .plus-menu {
+                    .save-list {
+                        position: absolute;
+                        top: 100%;
+                        right: 0;
+                        left: -20rem;
+                    }
+                }
+            }
             margin-bottom: 2.2%;
         }
     }

@@ -7,8 +7,7 @@ export const SearchWrap = styled.div`
 `;
 
 export const SearchListWrap = styled.ul`
-    width: 100%;
-    max-width: 100rem;
+    width: 100rem;
     .channel-item {
         display: flex;
         align-items: center;

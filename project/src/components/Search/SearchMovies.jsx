@@ -7,10 +7,12 @@ const SearchMovies = ({ Search, allMovies }) => {
     );
 
     return (
-        <li className="movie-item">
-            {filteredMovies.map((movie) => (
-                <Video key={movie.movie_id} movie={movie} />
-            ))}
+        <li className='movie-item'>
+            <ul>
+                {filteredMovies.map((movie) => (
+                    <Video key={movie.movie_id} movie={movie} />
+                ))}
+            </ul>
         </li>
     );
 };

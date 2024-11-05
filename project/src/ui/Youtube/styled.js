@@ -78,7 +78,7 @@ export const VideoWrap = styled.li`
         position: absolute;
         top: 0;
         right: 0;
-        z-index: 400;
+        z-index: 300;
         img {
             position: relative;
         }
