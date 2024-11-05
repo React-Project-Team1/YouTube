@@ -1,34 +1,78 @@
 import styled from 'styled-components';
 
 export const SearchWrap = styled.div`
-    min-height: 100vh;
+    height: 100%;
     margin: 2% auto;
+    /* position: relative; */
 `;
 
 export const SearchListWrap = styled.ul`
     width: 100%;
-    min-width: 100rem;
-    .video-loder {
+    max-width: 100rem;
+    .channel-item {
         display: flex;
-        flex-direction: row;
+        align-items: center;
         justify-content: space-between;
-        height: 30rem;
-        .video-wrap {
+        margin-bottom: 2%;
+        .channel-profile {
             width: 50%;
-            overflow: unset;
-            img,
-            iframe {
-                height: 50%;
-                border-radius: 1rem;
+            display: flex;
+            justify-content: center;
+            .channel-logo {
+                border-radius: 50%;
             }
         }
-        .text-wrap {
+        .channel-info {
             width: 50%;
-            margin-left: 2%;
-            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-left: 3%;
+            .into-text {
+                .name {
+                    font-size: 2rem;
+                }
+                .info {
+                    font-size: 1.4rem;
+                    color: #777;
+                }
+            }
+            .channel-btn {
+                background-color: #000;
+                color: #fff;
+                &:hover {
+                    background-color: #333;
+                }
+            }
         }
-        .movie_body {
-            display: block;
+    }
+    .movie-item {
+        .video-loder {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            height: 30rem;
+            .video-wrap {
+                width: 50%;
+                overflow: unset;
+                img,
+                iframe {
+                    height: 50%;
+                    border-radius: 1rem;
+                }
+            }
+            .text-wrap {
+                width: 50%;
+                margin-left: 2%;
+                height: 100%;
+                padding: 0.2rem 0;
+                .movie_info {
+                    .movie_title {
+                        font-size: 2rem;
+                        font-weight: 500;
+                    }
+                }
+            }
         }
     }
 `;
