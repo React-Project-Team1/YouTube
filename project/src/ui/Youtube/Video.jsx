@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { VideoWrap } from './styled';
@@ -42,6 +42,19 @@ const Video = ({ movie }) => {
         e.stopPropagation();
         setSaveShow(!saveShow);
     };
+    //외부 클릭 감지 핸들러
+    const wrapRef = useRef(null);
+    const outClick = (event) => {
+        if (wrapRef.current && !wrapRef.current.contains(event.target)) {
+            setSaveShow(false);
+        }
+    };
+    useEffect(() => {
+        document.addEventListener('mousedown', outClick);
+        return () => {
+            document.removeEventListener('mousedown', outClick);
+        };
+    }, []);
     return (
         <VideoWrap
             onClick={() => {
@@ -88,7 +101,7 @@ const Video = ({ movie }) => {
                         alt='close-menu'
                     />
                 </div>
-                <div className='plus-menu'>
+                <div className='plus-menu' ref={wrapRef}>
                     <img
                         src='https://raw.githubusercontent.com/React-Project-Team1/data-center/8771a05a9203fec750cd13cc666d881eddd08ad9/Icon/See_more.svg'
                         alt='pluse-menu'
