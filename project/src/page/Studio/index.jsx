@@ -30,17 +30,21 @@ const Studio = () => {
     if (thisChannel)
         return (
             <StudioWrap>
-                <h2 className='studio-title'>채널 대시보드</h2>
-                <div className='content-box'>
-                    <SubscribersList
-                        subscribers={thisChannel.channel_subscribers}
-                        channel={thisChannel.Movies[0].movie_channel}
-                    />
-                    <MovieList movies={thisChannel.Movies} />
-                    <CommentList
-                        comment={thisChannel.Movies.flatMap((comment) => comment.movie_comments)}
-                        thisChannel={thisChannel}
-                    />
+                <div className='inner'>
+                    <h2 className='studio-title'>채널 대시보드</h2>
+                    <div className='content-box'>
+                        <SubscribersList
+                            subscribers={thisChannel.channel_subscribers}
+                            channel={thisChannel.Movies[0].movie_channel}
+                        />
+                        <MovieList movies={thisChannel.Movies} />
+                        <CommentList
+                            comment={thisChannel.Movies.flatMap(
+                                (comment) => comment.movie_comments
+                            )}
+                            thisChannel={thisChannel}
+                        />
+                    </div>
                 </div>
             </StudioWrap>
         );

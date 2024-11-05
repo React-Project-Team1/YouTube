@@ -3,19 +3,41 @@ import { useDispatch, useSelector } from "react-redux";
 import { useState, useEffect } from "react";
 import { CommentWrap } from "./styled";
 import CommentList from "./CommentList";
-import { useNavigate } from "react-router-dom"; // useNavigate 추가
+import { useNavigate } from "react-router-dom";
+import { AddNewMoviesComment } from "../../store/modules/channelSlice";
 
-const Comment = ({ movieId }) => {
+const Comment = ({ moviesComment, movie_id }) => {
   const [showReport, setShowReport] = useState(false);
   const [showFooter, setShowFooter] = useState(false);
+
   const [commentInput, setCommentInput] = useState("");
-  const { isLoginUser } = useSelector((state) => state.auth);
-  const dispatch = useDispatch();
+  const { isLoginUser } = useSelector((state) => state.auth); //로그인정보
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+
   const [commentCount, setCommentCount] = useState(0); // 댓글 수 상태
+  const [sortedComments, setSortedComments] = useState(moviesComment);
+
+  useEffect(() => {
+    setCommentCount(moviesComment.length); // 댓글 수 업데이트
+    setSortedComments(moviesComment);
+  }, [moviesComment]);
 
   const handleReportClick = () => {
     setShowReport((prev) => !prev);
+  };
+
+  const handleSortComments = (sortType) => {
+    let sorted = [...moviesComment];
+    if (sortType === "popular") {
+      // 인기 댓글 순으로 정렬
+      sorted.sort((a, b) => b.likes - a.likes);
+    } else if (sortType === "newest") {
+      // 최신순으로 정렬
+      sorted.sort((a, b) => new Date(b.date) - new Date(a.date));
+    }
+    setSortedComments(sorted);
+    setShowReport(false); // 메뉴 숨기기
   };
 
   // 댓글 입력칸 클릭 시
@@ -38,6 +60,25 @@ const Comment = ({ movieId }) => {
     setCommentInput("");
   };
 
+  // 댓글 추가
+  const handleAddComment = () => {
+    if (!isLoginUser) {
+      navigate("/login"); // 로그인 되어 있지 않으면 로그인 페이지로 이동
+      return;
+    }
+
+    if (commentInput.trim()) {
+      dispatch(
+        AddNewMoviesComment({
+          movie_id,
+          comment_user_name: isLoginUser.user_name,
+          comment_body: commentInput.trim(),
+        })
+      );
+      setCommentInput(""); // 댓글 입력창 초기화
+    }
+  };
+
   return (
     <CommentWrap>
       <div className="section">
@@ -52,10 +93,16 @@ const Comment = ({ movieId }) => {
           </button>
           {showReport && (
             <div className="text">
-              <div className="label_comment">
+              <div
+                className="label_comment"
+                onClick={() => handleSortComments("popular")}
+              >
                 <p>인기 댓글순</p>
               </div>
-              <div className="label_comment">
+              <div
+                className="label_comment"
+                onClick={() => handleSortComments("newest")}
+              >
                 <p>최신순</p>
               </div>
             </div>
@@ -101,7 +148,8 @@ const Comment = ({ movieId }) => {
                     color: commentInput ? "#fff" : "",
                     cursor: commentInput ? "pointer" : "",
                   }}
-                  disabled={!commentInput}
+                  disabled={!commentInput.trim()}
+                  onClick={handleAddComment}
                 >
                   댓글
                 </button>
@@ -109,7 +157,7 @@ const Comment = ({ movieId }) => {
             </div>
           )}
         </div>
-        <CommentList />
+        <CommentList moviesComment={moviesComment} movie_id={movie_id} />
       </div>
     </CommentWrap>
   );

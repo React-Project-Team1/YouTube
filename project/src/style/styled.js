@@ -19,7 +19,8 @@ export const HeaderWrap = styled.header`
             align-items: center;
         }
         .logo-gif {
-            width: 30%;
+            max-width: 10rem;
+            width: 100%;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -77,7 +78,6 @@ export const HeaderWrap = styled.header`
             }
         }
         .search-history {
-            display: none;
             position: absolute;
             background: #fff;
             border-radius: 1rem;
@@ -90,11 +90,27 @@ export const HeaderWrap = styled.header`
                 display: flex;
                 align-items: center;
                 justify-content: space-between;
+                margin-bottom: 2%;
+                &:last-child {
+                    margin-bottom: 0%;
+                }
+                &:hover {
+                    background: #eee;
+                }
                 .search-keyword {
                     display: flex;
                     align-items: center;
+                    width: 90%;
                     img {
-                        margin-right: 10%;
+                        margin-right: 3%;
+                    }
+                }
+                .history-btn {
+                    border: none;
+                    background: none;
+                    display: flex;
+                    .close-btn {
+                        width: 70%;
                     }
                 }
             }
@@ -133,7 +149,34 @@ export const HeaderWrap = styled.header`
 `;
 
 export const SideMenuWrap = styled.div`
-    min-height: 100vh;
+    .channel {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        margin: 10% 0;
+        .channel-img-wrap {
+            border-radius: 50%;
+            overflow: hidden;
+            width: 12rem;
+            height: 12rem;
+            margin-bottom: 6%;
+            img {
+                height: 100%;
+            }
+        }
+        .channel-name {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            .my-channel-name {
+                font-size: 1.2rem;
+                color: #666;
+            }
+        }
+    }
     ul {
         border-bottom: 1px solid #dcdcdc;
         box-sizing: border-box;
@@ -163,6 +206,16 @@ export const SideMenuWrap = styled.div`
             }
             img {
                 margin-right: 2rem;
+            }
+        }
+    }
+    .studiomenu-list {
+        li {
+            min-height: 5rem;
+            color: #666;
+            img {
+                max-width: 2.6rem;
+                max-height: 2.6rem;
             }
         }
     }
@@ -200,5 +253,71 @@ export const StudioLayoutWrap = styled.div`
     }
     .content-wrap {
         display: flex;
+    }
+    .studio-title {
+        font-size: 2.6rem;
+        font-weight: 500;
+        margin-bottom: 3rem;
+    }
+    .inner {
+        padding: 2%;
+        box-sizing: border-box;
+        width: 100%;
+    }
+`;
+
+export const SpinnerWrap = styled.div`
+    .spinner {
+        position: absolute;
+        z-index: 10;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+    }
+    .spinner-circle {
+        width: 100%;
+        height: 100%;
+        background: inherit;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: inherit;
+        padding: 0.5rem 1rem;
+    }
+
+    .spinner-circle:before {
+        z-index: 5;
+        content: '';
+        position: absolute;
+        border-radius: 50%;
+        border: 3px dashed #333;
+        width: 50px;
+        height: 50px;
+        border-left: 3px solid transparent;
+        border-bottom: 3px solid transparent;
+        animation: loading 1s linear infinite;
+    }
+
+    .spinner-circle:after {
+        content: '';
+        position: absolute;
+        border-radius: 50%;
+        border: 3px dashed #333;
+        width: 50px;
+        height: 50px;
+        border-left: 3px solid transparent;
+        border-bottom: 3px solid transparent;
+        animation: loading 1s ease infinite;
+        z-index: 10;
+    }
+
+    @keyframes loading {
+        0% {
+            transform: rotate(0deg);
+        }
+        100% {
+            transform: rotate(360deg);
+        }
     }
 `;

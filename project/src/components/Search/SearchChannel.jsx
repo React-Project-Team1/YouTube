@@ -1,8 +1,10 @@
+import { useDispatch } from 'react-redux';
 import { Button } from '../../ui/Button';
+import { AddNewSubscription } from '../../store/modules/authSlice';
 
 const SearchChannel = ({ channel }) => {
-    const { channel_image, channel_name, channel_subscribers } = channel;
-    // const { movie_channel } = movie;
+    const dispatch = useDispatch();
+    const { channel_image, channel_name, channel_subscribers, Movies } = channel;
     const subscribers_conunt = (channel_subscribers) => {
         if (channel_subscribers >= 10000) {
             return Math.floor(channel_subscribers / 10000) + '만명';
@@ -16,16 +18,20 @@ const SearchChannel = ({ channel }) => {
     return (
         <li className="channel-item">
             <div className="channel-profile">
-                <img src={channel_image} alt="" className="channel-logo" />
+                <img src={channel_image} alt={channel_name} className="channel-logo" />
             </div>
             <div className="channel-info">
                 <div className="into-text">
                     <h3 className="name">{channel_name}</h3>
                     <p className="info">
-                        @movie_channel • 구독자 {subscribers_conunt(channel_subscribers)}
+                        @{Movies[0].movie_channel} • 구독자
+                        {subscribers_conunt(channel_subscribers)}
                     </p>
                 </div>
-                <Button className="channel-btn">구독</Button>
+                {/* 이거 해야 됨 */}
+                <Button className="channel-btn" onClick={() => dispatch(AddNewSubscription)}>
+                    구독
+                </Button>
             </div>
         </li>
     );

@@ -254,6 +254,9 @@ export const BelowDetailWrap = styled.div`
 `;
 
 export const CommentWrap = styled.div`
+  .section {
+    margin-bottom: 5rem;
+  }
   .comment_top {
     margin-top: 2rem;
     display: flex;
@@ -278,6 +281,7 @@ export const CommentWrap = styled.div`
     border-radius: 15px;
     padding-top: 1rem;
     padding-bottom: 1rem;
+    z-index: 1;
   }
   .user_profile {
     width: 4rem;
@@ -372,6 +376,26 @@ export const CommentWrap = styled.div`
     width: 4rem;
     height: 4rem;
   }
+  .comment_user {
+    margin-bottom: 5rem;
+  }
+  .Like {
+    display: block;
+    width: 10rem;
+    display: flex;
+    justify-content: space-between;
+    margin-left: -0.8rem;
+    margin-top: 0.5rem;
+  }
+  .BelowBtn {
+    border: none;
+    background: none;
+    margin-top: 0.5rem;
+  }
+  .BelowBtn_comment {
+    text-align: center;
+    vertical-align: 40%;
+  }
   .comment_userId {
     margin-left: 1.5rem;
     width: 100%;
@@ -380,12 +404,13 @@ export const CommentWrap = styled.div`
     line-height: 2rem;
     position: absolute;
     left: 4.2rem;
-    top: 0.8rem;
+    top: 0;
 
     .userId {
       font-size: 1.3rem;
-      font-weight: 500;
+      font-weight: 600;
       line-height: 1.8rem;
+      margin-bottom: 0.3rem;
     }
   }
 `;

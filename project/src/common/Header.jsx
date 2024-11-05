@@ -6,9 +6,12 @@ import UserMenu from '../components/Header/UserMenu';
 import { useSelector } from 'react-redux';
 import LoginButton from '../ui/Header/LoginButton';
 import SearchHistory from '../components/Header/SearchHistory';
+import { useParams } from 'react-router-dom';
 
 const Header = () => {
     const { isAuth } = useSelector((state) => state.auth);
+    const { Search } = useParams();
+
     return (
         <HeaderWrap id='header'>
             <div className='top'>
@@ -17,7 +20,7 @@ const Header = () => {
                     <Logo />
                 </div>
                 <SearchBox />
-                <SearchHistory />
+                {Search && <SearchHistory Search={Search} />}
                 {isAuth ? <UserMenu /> : <LoginButton />}
             </div>
         </HeaderWrap>

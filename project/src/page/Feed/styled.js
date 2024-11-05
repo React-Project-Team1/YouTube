@@ -2,13 +2,14 @@ import styled from 'styled-components';
 
 export const FeedWrap = styled.div`
 width: 100%;
+/* display: flex; */
 .inner {
     padding-top : 2.4rem;
     /* padding-right: calc(50% - 64.2rem); */
     padding-right: 35%;
     padding-left: calc(50% - 64.2rem);
     h2 {
-        font-size: 4rem;
+        font-size: 3.5rem;
         line-height: 5rem;
         font-weight: 700;
     }
@@ -46,6 +47,7 @@ width: 100%;
                         line-height: 2.6rem;
                         font-weight: 400;
                         word-break: break-all;
+                        padding:0;
                     }
                  
                     .channel-logo {
@@ -59,11 +61,11 @@ width: 100%;
                         }
                     }
                     .close-menu, 
-                    .pluse-menu{
+                    .plus-menu{
                         padding : 0 1rem;
                         img {
-                            width:3rem;
-                            height: 3rem;
+                            width: 2.4rem;
+                            height: 2.4rem;
                         }
                         position: relative;
                         text-align: center;
@@ -77,10 +79,11 @@ width: 100%;
             }
                 }
             }
-.viewing_record_menu {
+.page_menu {
     /* border:1px solid #000; */
-    z-index: 10;
+    /* z-index: 10; */
     position:fixed;
+    background-color:white;
     top: 20rem;
     right: 15%;
     .search_wrap {

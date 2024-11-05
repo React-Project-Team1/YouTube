@@ -31,7 +31,7 @@ export const VideoWrap = styled.li`
         display: flex;
     }
     .channel-logo {
-        width: 3.4rem;
+        width: 3rem;
         height: 3rem;
         border-radius: 50%;
         margin-right: 1rem;
@@ -78,7 +78,7 @@ export const VideoWrap = styled.li`
         position: absolute;
         top: 0;
         right: 0;
-        z-index: 300;
+
         img {
             position: relative;
         }

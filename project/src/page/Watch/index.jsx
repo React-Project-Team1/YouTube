@@ -7,10 +7,12 @@ import { getAllMovies } from '../../store/modules/channelSlice';
 import Below from '../../components/watch/Below';
 import WatchList from '../../components/watch/WatchList';
 import { Channel } from '../../assets/api/Channel';
+import { IsAddList } from '../../store/modules/authSlice';
 
 const Watch = () => {
     const { isSideMenu } = useSelector((state) => state.header);
     const { allMovies } = useSelector((state) => state.channel);
+    const { isLoginUser } = useSelector((state) => state.auth);
     const { Movie_ID } = useParams();
     const dispatch = useDispatch();
 
@@ -23,6 +25,14 @@ const Watch = () => {
         if (allMovies.length === 0) dispatch(getAllMovies());
         if (thisMovie) {
             document.title = thisMovie.movie_title;
+            //시청기록 데이터 추가
+            dispatch(
+                IsAddList({
+                    user_id: isLoginUser.user_id,
+                    type: 'Viewing_Record',
+                    movie: thisMovie,
+                })
+            );
         }
     }, [Movie_ID, allMovies, thisMovie]);
 
@@ -34,17 +44,15 @@ const Watch = () => {
         );
 
     // 구독자 수 및 좋아요 수 포맷팅
-    const formatSubscribers = (count) => {
-        return (count / 10000).toFixed(1) + '만명';
-    };
-
-    const formatLikes = (count) => {
-        if (count > 1000) {
-            return (count / 10000).toFixed(1) + '만';
-        } else if (count > 0) {
-            return count;
+    const formatNumber = (number) => {
+        if (number >= 10000) {
+            return Math.floor(number / 10000) + '만';
+        } else if (number >= 1000) {
+            return Math.floor(number / 1000) + '천';
+        } else if (number <= 1000) {
+            return number + '';
         }
-        return 0;
+        return number.toString();
     };
 
     return (
@@ -65,16 +73,19 @@ const Watch = () => {
                     movieBody={thisMovie.movie_body}
                     channelName={thisChannel ? thisChannel.channel_name : '알 수 없음'}
                     channelSubscribers={
-                        thisChannel
-                            ? formatSubscribers(thisChannel.channel_subscribers)
-                            : '알 수 없음'
+                        thisChannel ? formatNumber(thisChannel.channel_subscribers) : '알 수 없음'
                     }
-                    movieLikeCount={formatLikes(thisMovie.movie_like_count)}
+                    movieLikeCount={formatNumber(thisMovie.movie_like_count)}
                     channelImage={thisChannel ? thisChannel.channel_image : ''}
+                    moviesComment={thisMovie.movie_comments}
+                    movie_id={thisMovie.movie_id}
                 />
             </div>
             <WatchListWrap>
-                <WatchList currentVideoCategory={thisMovie.movie_category} />
+                <WatchList
+                    currentVideoCategory={thisMovie.movie_category}
+                    currentVideoId={thisMovie.movie_id}
+                />
             </WatchListWrap>
         </WatchWrap>
     );

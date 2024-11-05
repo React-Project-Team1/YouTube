@@ -3,7 +3,6 @@ import styled from 'styled-components';
 export const SearchWrap = styled.div`
     height: 100%;
     margin: 2% auto;
-    /* position: relative; */
 `;
 
 export const SearchListWrap = styled.ul`

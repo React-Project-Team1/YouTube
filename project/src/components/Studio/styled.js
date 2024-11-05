@@ -73,13 +73,23 @@ export const MovieListWrap = styled.ul`
             .channel-logo {
                 display: none;
             }
-            .pluse-menu {
+            .plus-menu {
                 display: none;
             }
             .movie_title {
                 padding-right: 0;
                 max-width: 30rem;
             }
+            .text-wrap {
+                max-width: 22rem;
+            }
         }
     }
+`;
+
+export const CommentPageWrap = styled.div`
+    width: 100%;
+`;
+export const ContentPageWrap = styled.div`
+    width: 100%;
 `;

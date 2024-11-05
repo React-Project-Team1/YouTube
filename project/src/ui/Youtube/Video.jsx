@@ -94,7 +94,7 @@ const Video = ({ movie }) => {
                         alt='pluse-menu'
                         onClick={handleShow}
                     />
-                    <SaveList saveShow={saveShow} />
+                    {saveShow && <SaveList />}
                 </div>
             </div>
         </VideoWrap>

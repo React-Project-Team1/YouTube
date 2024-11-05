@@ -1,5 +1,4 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { v4 as uuidv4 } from 'uuid';
 import { Channel } from '../../assets/api/Channel';
 
 const initialState = {
@@ -16,7 +15,7 @@ export const channelSlice = createSlice({
         ChangeChannelInfo(state, action) {},
         // 영상 추가
         AddNewMovies(state, action) {
-            const NewMove = { movie_id: uuidv4() };
+            const NewMove = { movie_id: Math.floor(Math.random() * 999999) };
         },
         // 영상 삭제
         DelMovies(state, action) {},
@@ -24,7 +23,21 @@ export const channelSlice = createSlice({
         ChangeMovies(state, action) {},
         // 댓글 추가
         AddNewMoviesComment(state, action) {
-            const NewComment = { comment_id: uuidv4() };
+            const { movie_id, comment_user_name, comment_body } = action.payload;
+            const newComment = {
+                comment_id: Math.floor(Math.random() * 999999),
+                comment_user_name,
+                comment_body,
+                date: new Date().toISOString(),
+            };
+
+            const movie = state.allMovies.find((movie) => movie.movie_id === movie_id);
+            if (movie) {
+                if (!movie.comments) {
+                    movie.comments = [];
+                }
+                movie.comments.push(newComment);
+            }
         },
         // 댓글 삭제
         DelMoviesComment(state, action) {},

@@ -1,8 +1,6 @@
 import styled from 'styled-components';
 
 export const StudioWrap = styled.div`
-    padding: 2%;
-    box-sizing: border-box;
     width: 100%;
     .content-box {
         display: flex;
@@ -20,11 +18,6 @@ export const StudioWrap = styled.div`
                 margin-top: 1.6rem;
             }
         }
-    }
-    .studio-title {
-        font-size: 2.6rem;
-        font-weight: 500;
-        margin-bottom: 3rem;
     }
     .title-h3 {
         font-size: 2rem;
