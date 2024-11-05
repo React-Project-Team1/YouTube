@@ -76,6 +76,29 @@ export const HeaderWrap = styled.header`
                 }
             }
         }
+        .search-history {
+            display: none;
+            position: absolute;
+            background: #fff;
+            border-radius: 1rem;
+            width: 50rem;
+            padding: 1.5rem;
+            box-shadow: #00000050 0px 1px 3px;
+            top: 100%;
+            left: 36%;
+            .search-item {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                .search-keyword {
+                    display: flex;
+                    align-items: center;
+                    img {
+                        margin-right: 10%;
+                    }
+                }
+            }
+        }
         .user-menu {
             display: flex;
             justify-content: center;

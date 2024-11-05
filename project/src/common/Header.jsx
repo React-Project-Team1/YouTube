@@ -5,6 +5,7 @@ import SearchBox from '../components/Header/SearchBox';
 import UserMenu from '../components/Header/UserMenu';
 import { useSelector } from 'react-redux';
 import LoginButton from '../ui/Header/LoginButton';
+import SearchHistory from '../components/Header/SearchHistory';
 
 const Header = () => {
     const { isAuth } = useSelector((state) => state.auth);
@@ -16,6 +17,7 @@ const Header = () => {
                     <Logo />
                 </div>
                 <SearchBox />
+                <SearchHistory />
                 {isAuth ? <UserMenu /> : <LoginButton />}
             </div>
         </HeaderWrap>
