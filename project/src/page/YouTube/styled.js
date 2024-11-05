@@ -57,4 +57,8 @@ export const YouTubeWrap = styled.div`
             width: 100%;
         }
     }
+    #scroll-anchor {
+        min-height: 10rem;
+        position: relative;
+    }
 `;
