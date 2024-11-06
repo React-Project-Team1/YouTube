@@ -1,21 +1,10 @@
-import { useSelector } from "react-redux";
-import CommentDetail from "./CommentDetail";
+import CommentItem from "./CommentItem";
 
-const CommentList = ({ moviesComment, movie_id }) => {
-  const { allMovies } = useSelector((state) => state.channel);
-
+const CommentList = ({ moviesComment }) => {
   return (
     <ul className="user_comment">
       {moviesComment.map((item) => (
-        <li key={item.movie_id}>
-          <div>
-            <span className="user-profile">
-              {item.comment_user_name.charAt(0)}
-            </span>
-          </div>
-
-          <CommentDetail item={item} />
-        </li>
+        <CommentItem key={item.comment_id} item={item} />
       ))}
     </ul>
   );

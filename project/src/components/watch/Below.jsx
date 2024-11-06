@@ -4,9 +4,9 @@ import BelowDetail from './BelowDetail';
 import { RiFlagLine } from 'react-icons/ri';
 import { useState } from 'react';
 import Comment from './Comment';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { AddNewSubscription, IsAddList } from '../../store/modules/authSlice';
+import { AddNewSubscription, DelSubscription, IsAddList } from '../../store/modules/authSlice';
 
 const Below = ({
     title,
@@ -25,19 +25,33 @@ const Below = ({
     const [isDisLiked, setIsDisLiked] = useState(false);
     const dispatch = useDispatch();
     const { isLoginUser } = useSelector((state) => state.auth); // 로그인된 사용자 정보 가져오기
+    const { Channel_name } = useParams();
+    const { channel } = useSelector((state) => state.channel);
 
-    console.log(movie_id);
+    // 현재 채널이 구독 중인지 확인
+    const isSubscribed = isLoginUser.Subscription_Id.includes(channelId);
+
+    // 선택한 채널 찾기
+    const thisChannel = channel;
+
     const handleReportClick = () => {
         setShowReport((prev) => !prev);
     };
 
     const handleSubscribeClick = () => {
-        dispatch(
-            AddNewSubscription({
-                user_id: isLoginUser.user_id,
-                channel_id: channelId,
-            })
-        );
+        // 구독 상태에 따라서 처리
+        if (isSubscribed) {
+            // 구독 중이면 구독 취소
+            dispatch(DelSubscription({ user_id: isLoginUser.user_id, channel_id: channelId }));
+        } else {
+            // 구독 안 되어 있으면 구독 추가
+            dispatch(
+                AddNewSubscription({
+                    user_id: isLoginUser.user_id,
+                    channel_id: channelId,
+                })
+            );
+        }
     };
 
     const handleLikeClick = () => {
@@ -46,6 +60,7 @@ const Below = ({
         } else {
             setIsLiked(true);
             setIsDisLiked(false);
+            dispatch(IsAddList({ type: 'like_Movie_List', movie_id }));
         }
     };
 
@@ -55,7 +70,6 @@ const Below = ({
         } else {
             setIsDisLiked(true);
             setIsLiked(false);
-            dispatch(IsAddList({ type: 'like_Movie_List', movie_id }));
         }
     };
 
@@ -66,7 +80,7 @@ const Below = ({
             <h2 className='title'>{title}</h2>
             <div className='top'>
                 <div className='channel'>
-                    <div onClick={() => navigate('/channel')}>
+                    <div onClick={() => navigate(`/channel/${Channel_name}`)}>
                         <img className='channelImg' src={channelImage} alt='' />
                     </div>
                     <div className='channel_detail' onClick={() => navigate('/channel')}>
@@ -75,12 +89,10 @@ const Below = ({
                     </div>
                     <div className='subscribers'>
                         <button
-                            className={`subscribers-btn ${
-                                isLoginUser.Subscription_Id.includes(channelId) ? 'on' : ''
-                            }`}
+                            className={`subscribers-btn ${isSubscribed ? 'on' : ''}`}
                             onClick={handleSubscribeClick}
                         >
-                            {isLoginUser.Subscription_Id.includes(channelId) ? (
+                            {isSubscribed ? (
                                 <>
                                     <img
                                         src='https://raw.githubusercontent.com/React-Project-Team1/data-center/752a52cbfb5bf64b383b0941ba3834539b2988ac/Icon/Notification.svg'

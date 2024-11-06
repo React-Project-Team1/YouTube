@@ -1,19 +1,10 @@
-import { useDispatch, useSelector } from "react-redux";
-
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import { CommentWrap } from "./styled";
+import CommentForm from "./CommentForm";
 import CommentList from "./CommentList";
-import { useNavigate } from "react-router-dom";
-import { AddNewMoviesComment } from "../../store/modules/channelSlice";
 
 const Comment = ({ moviesComment, movie_id }) => {
   const [showReport, setShowReport] = useState(false);
-  const [showFooter, setShowFooter] = useState(false);
-
-  const [commentInput, setCommentInput] = useState("");
-  const { isLoginUser } = useSelector((state) => state.auth); //로그인정보
-  const navigate = useNavigate();
-  const dispatch = useDispatch();
 
   const [commentCount, setCommentCount] = useState(0); // 댓글 수 상태
   const [sortedComments, setSortedComments] = useState(moviesComment);
@@ -23,62 +14,26 @@ const Comment = ({ moviesComment, movie_id }) => {
     setSortedComments(moviesComment);
   }, [moviesComment]);
 
-  const handleReportClick = () => {
-    setShowReport((prev) => !prev);
-  };
-
+  //댓글 정렬
   const handleSortComments = (sortType) => {
-    let sorted = [...moviesComment];
-    if (sortType === "popular") {
-      // 인기 댓글 순으로 정렬
-      sorted.sort((a, b) => b.likes - a.likes);
-    } else if (sortType === "newest") {
-      // 최신순으로 정렬
-      sorted.sort((a, b) => new Date(b.date) - new Date(a.date));
-    }
+    const sorted = [...moviesComment].sort((a, b) => {
+      if (sortType === "oldest") {
+        // 오래된 순으로 정렬 (오름차순)
+        return new Date(a.date) - new Date(b.date);
+      } else if (sortType === "newest") {
+        // 최신순으로 정렬 (내림차순)
+        return new Date(b.date) - new Date(a.date);
+      }
+      return 0;
+    });
+
     setSortedComments(sorted);
     setShowReport(false); // 메뉴 숨기기
   };
 
-  // 댓글 입력칸 클릭 시
-  const handleInputClick = () => {
-    if (!isLoginUser) {
-      navigate("/login"); // 로그인 화면으로 이동
-    } else {
-      setShowFooter(true); // 입력란 보이기
-    }
+  const handleReportClick = () => {
+    setShowReport((prev) => !prev);
   };
-
-  // 댓글 입력 변경
-  const handleInputChange = (e) => {
-    setCommentInput(e.target.value);
-  };
-
-  // 댓글 취소 클릭 시 입력란 초기화
-  const handleCancelClick = () => {
-    setShowFooter(false);
-    setCommentInput("");
-  };
-
-  // 댓글 추가
-  const handleAddComment = () => {
-    if (!isLoginUser) {
-      navigate("/login"); // 로그인 되어 있지 않으면 로그인 페이지로 이동
-      return;
-    }
-
-    if (commentInput.trim()) {
-      dispatch(
-        AddNewMoviesComment({
-          movie_id,
-          comment_user_name: isLoginUser.user_name,
-          comment_body: commentInput.trim(),
-        })
-      );
-      setCommentInput(""); // 댓글 입력창 초기화
-    }
-  };
-
   return (
     <CommentWrap>
       <div className="section">
@@ -108,56 +63,8 @@ const Comment = ({ moviesComment, movie_id }) => {
             </div>
           )}
         </div>
-        <div className="comment">
-          <div className="comment_inner">
-            <div>
-              <div>
-                <span className="user-profile">
-                  {isLoginUser.user_name.charAt(0)}
-                </span>
-              </div>
-            </div>
-            <div className="comment_edit">
-              <input
-                type="text"
-                className="comment_edit_input"
-                placeholder="댓글 추가..."
-                value={commentInput}
-                onChange={handleInputChange}
-                onFocus={handleInputClick}
-              />
-            </div>
-          </div>
-
-          {showFooter && (
-            <div className="comment_footer">
-              <div className="emoji">
-                <img
-                  src="https://raw.githubusercontent.com/React-Project-Team1/data-center/01142956452b8bed27fa95419332aca1f595ea45/Icon/emoji.svg.svg"
-                  alt=""
-                />
-              </div>
-              <div className="btns">
-                <button className="btn cancel" onClick={handleCancelClick}>
-                  취소
-                </button>
-                <button
-                  className="btn btn_comment"
-                  style={{
-                    backgroundColor: commentInput ? "#007BFF" : "",
-                    color: commentInput ? "#fff" : "",
-                    cursor: commentInput ? "pointer" : "",
-                  }}
-                  disabled={!commentInput.trim()}
-                  onClick={handleAddComment}
-                >
-                  댓글
-                </button>
-              </div>
-            </div>
-          )}
-        </div>
-        <CommentList moviesComment={moviesComment} movie_id={movie_id} />
+        <CommentForm />
+        <CommentList moviesComment={moviesComment} />
       </div>
     </CommentWrap>
   );
