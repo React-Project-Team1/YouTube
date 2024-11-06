@@ -79,9 +79,17 @@ const YouTube = () => {
                 ))}
             </ul>
             <ul className='main-video-wrap'>
-                {videoChunks[0]?.map((movie) => (
-                    <Video key={movie.movie_id} movie={movie} />
-                ))}
+                {allMovies
+                    // all이면 모든 영상을 ,아니면 active의 category의 영상 출력
+                    .filter((movie) =>
+                        thisMenu === 'all' ? movie : movie.movie_category.includes(thisMenu)
+                    )
+                    .slice()
+                    .sort(() => Math.random() - 0.5)
+                    .slice(0, 10)
+                    .map((movie) => (
+                        <Video key={movie.movie_id} movie={movie} />
+                    ))}
             </ul>
             <div className='main-banner'>
                 <img
