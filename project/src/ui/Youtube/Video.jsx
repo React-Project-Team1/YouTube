@@ -120,7 +120,7 @@ const Video = ({ movie }) => {
                         alt='pluse-menu'
                         onClick={handleShow}
                     />
-                    {saveShow && <SaveList />}
+                    {saveShow && <SaveList movie={movie} />}
                 </div>
             </div>
         </VideoWrap>

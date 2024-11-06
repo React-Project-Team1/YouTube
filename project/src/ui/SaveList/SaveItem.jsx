@@ -23,7 +23,7 @@ const SaveItem = ({ save, movie }) => {
     }, [handleSave]);
 
     // Download_List에서 현재 movie_id가 존재하는지 확인하여 조건 설정
-    /* const isDownloaded =
+    const isDownloaded =
         type === 'Download_List' &&
         isLoginUser.Download_List.filter((down) => down.movie_id === movie.movie_id).length > 0;
 
@@ -57,7 +57,7 @@ const SaveItem = ({ save, movie }) => {
             }
         }
         return null;
-    } */
+    }
 
     // 기본적으로 다른 타입의 항목은 모두 렌더링
     if (type !== 'Download_List')
