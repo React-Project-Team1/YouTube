@@ -8,18 +8,19 @@ const StudioSideMenu = () => {
     const thisChannel = Object.values(Channel).find(
         (channel) => channel.channel_id === Number(isLoginUser.user_id)
     );
-
     return (
         <SideMenuWrap>
-            <div className='channel'>
-                <div className='channel-img-wrap'>
-                    <img src={thisChannel.channel_image} alt={thisChannel.channel_name} />
+            {thisChannel && (
+                <div className='channel'>
+                    <div className='channel-img-wrap'>
+                        <img src={thisChannel.channel_image} alt={thisChannel.channel_name} />
+                    </div>
+                    <div className='channel-name'>
+                        <p className='my-channel'>내 채널</p>
+                        <p className='my-channel-name'>{thisChannel.channel_name}</p>
+                    </div>
                 </div>
-                <div className='channel-name'>
-                    <p className='my-channel'>내 채널</p>
-                    <p className='my-channel-name'>{thisChannel.channel_name}</p>
-                </div>
-            </div>
+            )}
             <StudioMenuList />
         </SideMenuWrap>
     );

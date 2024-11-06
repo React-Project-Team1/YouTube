@@ -13,6 +13,22 @@ export const channelSlice = createSlice({
         // 10-31 김신영 작업
         // 채널 정보 수정
         ChangeChannelInfo(state, action) {},
+        //
+        AddNewChannel(state, action) {
+            const { user_id, user_name, user_email } = action.payload;
+            const emailPrefix = user_email.split('@')[0];
+            const NewChannel = {
+                channel_id: user_id,
+                channel_name: user_name,
+                channel_banner: 'https://via.placeholder.com/1000x120',
+                channel_image: 'https://via.placeholder.com/80',
+                channel_introduction: `안녕하세요 ${user_name} 채널 입니다.`,
+                channel_subscribers: 0,
+                Movies: [],
+            };
+            state.Channel[emailPrefix] = NewChannel;
+            console.log(state.Channel[emailPrefix]);
+        },
         // 영상 추가
         AddNewMovies(state, action) {
             const NewMove = { movie_id: Math.floor(Math.random() * 999999) };
@@ -59,6 +75,7 @@ export const channelSlice = createSlice({
 
 export const {
     ChangeChannelInfo,
+    AddNewChannel,
     AddNewMovies,
     DelMovies,
     ChangeMovies,

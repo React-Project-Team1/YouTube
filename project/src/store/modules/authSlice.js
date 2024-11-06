@@ -5,11 +5,11 @@ const initialState = {
     LoginUser,
     // 현재 로그인 된 유저
     isLoginUser: {
-        user_id: 56165156,
-        user_name: 'radiohead',
+        user_id: 1249082141,
+        user_name: '테스트 유저',
         user_age: 20,
         user_tel: '010-1234-1234',
-        user_email: 'radiohead@naver.com',
+        user_email: 'testUser@naver.com',
         user_password: '1111',
         user_search_list: [{ search_id: 1, search: 'music' }],
         // 시청 기록
@@ -25,7 +25,7 @@ const initialState = {
         // 오프라인 저장 동영상
         Download_List: [],
         // 구독한 채널 아이디
-        Subscription_Id: [859641, 775460, 798311, 56165156, 6546654],
+        Subscription_Id: [],
     },
     isAuth: true,
 };
