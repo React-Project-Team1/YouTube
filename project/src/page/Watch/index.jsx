@@ -50,7 +50,7 @@ const Watch = () => {
         } else if (number >= 1000) {
             return Math.floor(number / 1000) + '천';
         } else if (number <= 1000) {
-            return number + '';
+            return number;
         }
         return number.toString();
     };

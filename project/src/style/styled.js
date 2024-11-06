@@ -81,7 +81,8 @@ export const HeaderWrap = styled.header`
             position: absolute;
             background: #fff;
             border-radius: 1rem;
-            width: 50rem;
+            min-width: 40rem;
+            max-width: 50rem;
             padding: 1.5rem;
             box-shadow: #00000050 0px 1px 3px;
             top: 100%;
@@ -95,7 +96,7 @@ export const HeaderWrap = styled.header`
                     margin-bottom: 0%;
                 }
                 &:hover {
-                    background: #eee;
+                    background: #fafafa;
                 }
                 .search-keyword {
                     display: flex;
