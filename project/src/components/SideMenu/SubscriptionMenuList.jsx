@@ -1,7 +1,14 @@
 import { useSelector } from 'react-redux';
 import LoginButton from '../../ui/Header/LoginButton';
+import { useNavigate } from 'react-router-dom';
 const SubscriptionMenuList = () => {
-    const { isAuth } = useSelector((state) => state.auth);
+    const { Channel } = useSelector((state) => state.channel);
+    const { isAuth, isLoginUser } = useSelector((state) => state.auth);
+    const navigate = useNavigate();
+
+    const thisChannel = Object.values(Channel).filter((channel) =>
+        isLoginUser.Subscription_Id.includes(channel.channel_id)
+    );
     return (
         <ul className='subscription-wrap'>
             <p className='menu-title'>구독</p>
@@ -12,7 +19,18 @@ const SubscriptionMenuList = () => {
                     </span>
                     <LoginButton />
                 </>
-            ) : null}
+            ) : (
+                thisChannel.map((channel) => (
+                    <li
+                        key={channel.channel_id}
+                        className='thisChannel-item'
+                        onClick={() => navigate(`/channel/${channel.Movies[0]?.movie_channel}`)}
+                    >
+                        <img src={channel.channel_image} alt={channel.channel_name} />
+                        <span className='name'>{channel.channel_name}</span>
+                    </li>
+                ))
+            )}
         </ul>
     );
 };

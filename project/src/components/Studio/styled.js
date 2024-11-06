@@ -89,6 +89,27 @@ export const MovieListWrap = styled.ul`
 
 export const CommentPageWrap = styled.div`
     width: 100%;
+    .comment-nav-bar {
+        width: 100%;
+        border-bottom: 1px solid #ddd;
+        box-sizing: border-box;
+        padding: 0 4rem;
+        .comment-tab {
+            padding: 1.4rem;
+            display: inline-block;
+            cursor: pointer;
+            position: relative;
+            &::after {
+                content: '';
+                width: 100%;
+                height: 0.2rem;
+                background-color: #000;
+                position: absolute;
+                left: 0;
+                bottom: 0;
+            }
+        }
+    }
 `;
 export const ContentPageWrap = styled.div`
     width: 100%;
@@ -175,6 +196,55 @@ export const ContentPageWrap = styled.div`
         }
         .text-wrap {
             display: none;
+        }
+    }
+`;
+
+export const VideoUploadPageWrap = styled.div`
+    width: 100%;
+    min-height: 100vh;
+    .upload-form {
+        max-width: 140rem;
+        box-sizing: border-box;
+        padding: 0 2%;
+        > p {
+            margin-bottom: 2%;
+        }
+        label {
+            display: block;
+            font-size: 1.4rem;
+            color: #999;
+        }
+        .movie_title,
+        .movie_body,
+        .movie_category {
+            width: 100%;
+            padding: 1rem;
+            box-sizing: border-box;
+            border-radius: 1rem;
+            border: 1px solid #333;
+            font-size: 1.6rem;
+            color: #666;
+        }
+        .movie_category {
+            max-width: 40rem;
+        }
+        .video-wrap,
+        .img-wrap {
+            margin: 1% 0;
+            img {
+                max-height: 40rem;
+            }
+            video {
+                max-height: 40rem;
+            }
+        }
+        button {
+            background-color: #000;
+            color: #fafafa;
+            &:hover {
+                background-color: #212121;
+            }
         }
     }
 `;

@@ -10,7 +10,8 @@ const MenuItem = ({ id, name, type, nav, icon }) => {
             type === 'MyVideo' ||
             type === 'Dashboard' ||
             type === 'Content' ||
-            type === 'Comment'
+            type === 'Comment' ||
+            type === 'VideoUpload'
         ) {
             navigate(`/studio/${isLoginUser.user_id}${nav}`);
         } else {

@@ -2,6 +2,7 @@ import Layout from './common/Layout';
 import StudioLayout from './common/StudioLayout';
 import CommentPage from './components/Studio/CommentPage';
 import ContentPage from './components/Studio/ContentPage';
+import VideoUploadPage from './components/Studio/VideoUploadPage';
 import { Channel, Feed, Join, Login, Search, Studio, Subscription, Watch, YouTube } from './page';
 import GlobalStyle from './style/GlobalStyle';
 import { BrowserRouter, Route, Routes, HashRouter } from 'react-router-dom';
@@ -39,6 +40,7 @@ const App = () => {
                         <Route index element={<Join />} />
                     </Route>
                     <Route path='/studio' element={<StudioLayout />}>
+                        <Route path=':User_ID/videoupload' element={<VideoUploadPage />} />
                         <Route path=':User_ID/dashboard' element={<Studio />} />
                         <Route path=':User_ID/content' element={<ContentPage />} />
                         <Route path=':User_ID/comment' element={<CommentPage />} />

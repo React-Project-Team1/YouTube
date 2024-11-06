@@ -1,6 +1,5 @@
 import { useSelector } from 'react-redux';
 import { SearchListWrap } from '../../page/Search/styled';
-import Popup from '../../ui/popup/Popup';
 import SearchChannel from './SearchChannel';
 import SearchMovies from './SearchMovies';
 
@@ -18,7 +17,6 @@ const SearchList = ({ Search, allMovies }) => {
                 <SearchChannel key={channel.channel_id} channel={channel} Movies={Movies} />
             ))}
             <SearchMovies Search={Search} allMovies={allMovies} />
-            {/* <Popup /> 해야 함 */}
         </SearchListWrap>
     );
 };

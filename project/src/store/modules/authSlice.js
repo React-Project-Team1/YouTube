@@ -122,8 +122,13 @@ export const authSlice = createSlice({
             // 구독 목록 추가
             const { user_id } = action.payload;
             const User = state.LoginUser.find((user) => user.user_id === user_id);
-            User.Subscription_Id.push();
-            state.isLoginUser = User;
+            if (User) {
+                // 중복 채널 추가 X
+                if (!User.Subscription_Id.includes(channel_id)) {
+                    User.Subscription_Id.push(channel_id);
+                }
+                state.isLoginUser = User;
+            } // 1106 김신영 수정
         },
         DelSubscription(state, action) {
             // 구독 목록 삭제

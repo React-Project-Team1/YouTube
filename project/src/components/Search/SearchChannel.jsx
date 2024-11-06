@@ -1,10 +1,13 @@
 import { useDispatch } from 'react-redux';
 import { Button } from '../../ui/Button';
 import { AddNewSubscription } from '../../store/modules/authSlice';
+import Popup from '../../ui/popup/Popup';
+import { useState } from 'react';
 
 const SearchChannel = ({ channel }) => {
     const dispatch = useDispatch();
-    const { channel_image, channel_name, channel_subscribers, Movies } = channel;
+    const { channel_image, channel_name, channel_subscribers, Movies, channel_id } = channel;
+    const [isSubscribed, setIsSubscribed] = useState(false);
     const subscribers_conunt = (channel_subscribers) => {
         if (channel_subscribers >= 10000) {
             return Math.floor(channel_subscribers / 10000) + '만명';
@@ -13,6 +16,20 @@ const SearchChannel = ({ channel }) => {
         } else if (channel_subscribers <= 1000) {
             return channel_subscribers + '명';
         }
+    };
+
+    const handelSubscription = () => {
+        dispatch(AddNewSubscription(channel_id));
+        setIsSubscribed(!isSubscribed);
+    };
+
+    const handleShowPopup = () => {
+        const modal = document.querySelector('#subscript-popup');
+        modal.showModal();
+    };
+    const handleClosePopup = () => {
+        const modal = document.querySelector('#subscript-popup');
+        modal.close();
     };
 
     return (
@@ -28,10 +45,20 @@ const SearchChannel = ({ channel }) => {
                         {subscribers_conunt(channel_subscribers)}
                     </p>
                 </div>
-                {/* 이거 해야 됨 */}
-                <Button className="channel-btn" onClick={() => dispatch(AddNewSubscription)}>
-                    구독
-                </Button>
+                {isSubscribed ? (
+                    <Button
+                        className="channel-unsub-btn"
+                        onClick={(handelSubscription, handleShowPopup)}
+                    >
+                        구독 중
+                    </Button>
+                ) : (
+                    <Button className="channel-btn" onClick={handelSubscription}>
+                        구독
+                    </Button>
+                )}
+                {/* 수정 필요 */}
+                <Popup handleClosePopup={handleClosePopup} />
             </div>
         </li>
     );

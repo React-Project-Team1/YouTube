@@ -31,7 +31,9 @@ export const channelSlice = createSlice({
         },
         // 영상 추가
         AddNewMovies(state, action) {
-            const NewMove = { movie_id: Math.floor(Math.random() * 999999) };
+            const NewMove = { movie_id: Math.floor(Math.random() * 999999), ...action.payload };
+            console.log(action.payload.movie_indexDB_id);
+            state.Channel[action.payload.movie_channel].Movies.push(NewMove);
         },
         // 영상 삭제
         DelMovies(state, action) {
@@ -43,21 +45,22 @@ export const channelSlice = createSlice({
         ChangeMovies(state, action) {},
         // 댓글 추가
         AddNewMoviesComment(state, action) {
-            const { movie_id, comment_user_name, comment_body } = action.payload;
+            const { movie_id, comment_body } = action.payload;
+
+            // 로그인된 사용자 정보 가져오기
+            const { isLoginUser } = state.auth;
+
             const newComment = {
-                comment_id: Math.floor(Math.random() * 999999),
-                comment_user_name,
+                comment_id: isLoginUser.user_id,
+                comment_user_name: isLoginUser.user_name,
                 comment_body,
                 date: new Date().toISOString(),
             };
 
+            // 해당 movie_id에 맞는 영화 찾기
             const movie = state.allMovies.find((movie) => movie.movie_id === movie_id);
-            if (movie) {
-                if (!movie.comments) {
-                    movie.comments = [];
-                }
-                movie.comments.push(newComment);
-            }
+
+            movie.comments.push(newComment); // 새 댓글 추가
         },
         // 댓글 삭제
         DelMoviesComment(state, action) {},

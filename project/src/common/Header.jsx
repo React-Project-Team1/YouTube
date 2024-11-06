@@ -11,19 +11,26 @@ import { useState } from 'react';
 
 const Header = () => {
     const { isAuth } = useSelector((state) => state.auth);
-    // 해더에 검색 기록 온오프 추가
-    const [isShown, setIsShown] = useState(false);
+    const [isShown, setIsShown] = useState(true); // 검색 기록 보이기
+    const [search, setSearch] = useState(''); // searchBox -> Header 이동
     const { Search } = useParams();
 
     return (
-        <HeaderWrap id='header'>
-            <div className='top'>
-                <div className='first-box'>
+        <HeaderWrap id="header">
+            <div className="top">
+                <div className="first-box">
                     <AllMenu />
                     <Logo />
                 </div>
-                <SearchBox isShown={isShown} setIsShown={setIsShown} />
-                {Search && <SearchHistory Search={Search} isShown={isShown} />}
+                <SearchBox
+                    isShown={isShown}
+                    setIsShown={setIsShown}
+                    search={search}
+                    setSearch={setSearch}
+                />
+                {Search && (
+                    <SearchHistory Search={Search} isShown={isShown} setSearch={setSearch} />
+                )}
                 {isAuth ? <UserMenu /> : <LoginButton />}
             </div>
         </HeaderWrap>

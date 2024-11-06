@@ -1,4 +1,4 @@
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { FeedWrap } from './styled';
 import { useSelector } from 'react-redux';
 import Video from '../../ui/Youtube/Video';
@@ -22,6 +22,7 @@ const Feed = () => {
                 return '피드';
         }
     };
+
     return (
         <FeedWrap>
             <div className='hearder'>
@@ -34,7 +35,7 @@ const Feed = () => {
                     {/* 시청한 동영상 출력 */}
                     <ul className='test'>
                         {isLoginUser[Category].map((movie) => (
-                            <Video key={movie.id} movie={movie} />
+                            <Video key={movie.movie_id} movie={movie} />
                         ))}
                     </ul>
                 </div>

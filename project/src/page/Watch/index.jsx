@@ -1,6 +1,6 @@
 import { useParams } from 'react-router-dom';
 import { WatchWrap, WatchListWrap } from './styled';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { SideMenuChange } from '../../store/modules/HeaderSlice';
 import { getAllMovies } from '../../store/modules/channelSlice';
@@ -21,8 +21,8 @@ const Watch = () => {
     const thisChannel = thisMovie ? Channel[thisMovie.movie_channel] : null;
 
     useEffect(() => {
+        if (!thisMovie) dispatch(getAllMovies());
         if (isSideMenu) dispatch(SideMenuChange());
-        if (allMovies.length === 0) dispatch(getAllMovies());
         if (thisMovie) {
             document.title = thisMovie.movie_title;
             //시청기록 데이터 추가
@@ -34,7 +34,7 @@ const Watch = () => {
                 })
             );
         }
-    }, [Movie_ID, allMovies, thisMovie]);
+    }, [Movie_ID, allMovies, thisMovie, dispatch]);
 
     if (!Movie_ID || !thisMovie)
         return (
@@ -55,40 +55,47 @@ const Watch = () => {
         return number.toString();
     };
 
-    return (
-        <WatchWrap>
-            <div className='video-wrap'>
-                <div className='videoInner'>
-                    <iframe
-                        src={thisMovie.movie_video}
+    if (allMovies)
+        return (
+            <WatchWrap>
+                <div className='video-wrap'>
+                    <div className='videoInner'>
+                        {thisMovie.movie_video_type !== 'video' ? (
+                            <iframe
+                                src={thisMovie.movie_video}
+                                title={thisMovie.movie_title}
+                                allowFullScreen
+                                allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
+                                autoPlay
+                            />
+                        ) : (
+                            <video controls autoPlay muted src={thisMovie.movie_video}></video>
+                        )}
+                    </div>
+                    <Below
                         title={thisMovie.movie_title}
-                        allowFullScreen
-                        allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
-                        autoPlay
+                        movie_date={thisMovie.movie_date}
+                        movieBody={thisMovie.movie_body}
+                        channelName={thisChannel ? thisChannel.channel_name : '알 수 없음'}
+                        channelSubscribers={
+                            thisChannel
+                                ? formatNumber(thisChannel.channel_subscribers)
+                                : '알 수 없음'
+                        }
+                        movieLikeCount={formatNumber(thisMovie.movie_like_count)}
+                        channelImage={thisChannel ? thisChannel.channel_image : ''}
+                        moviesComment={thisMovie.movie_comments}
+                        movie_id={thisMovie.movie_id}
                     />
                 </div>
-                <Below
-                    title={thisMovie.movie_title}
-                    movie_date={thisMovie.movie_date}
-                    movieBody={thisMovie.movie_body}
-                    channelName={thisChannel ? thisChannel.channel_name : '알 수 없음'}
-                    channelSubscribers={
-                        thisChannel ? formatNumber(thisChannel.channel_subscribers) : '알 수 없음'
-                    }
-                    movieLikeCount={formatNumber(thisMovie.movie_like_count)}
-                    channelImage={thisChannel ? thisChannel.channel_image : ''}
-                    moviesComment={thisMovie.movie_comments}
-                    movie_id={thisMovie.movie_id}
-                />
-            </div>
-            <WatchListWrap>
-                <WatchList
-                    currentVideoCategory={thisMovie.movie_category}
-                    currentVideoId={thisMovie.movie_id}
-                />
-            </WatchListWrap>
-        </WatchWrap>
-    );
+                <WatchListWrap>
+                    <WatchList
+                        currentVideoCategory={thisMovie.movie_category}
+                        currentVideoId={thisMovie.movie_id}
+                    />
+                </WatchListWrap>
+            </WatchWrap>
+        );
 };
 
 export default Watch;

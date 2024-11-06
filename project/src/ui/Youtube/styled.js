@@ -17,7 +17,8 @@ export const VideoWrap = styled.li`
             width: 100%;
             height: 100%;
         }
-        iframe {
+        iframe,
+        video {
             position: absolute;
             left: 0;
             top: 0;

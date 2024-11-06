@@ -81,12 +81,12 @@ export const HeaderWrap = styled.header`
             position: absolute;
             background: #fff;
             border-radius: 1rem;
-            min-width: 40rem;
-            max-width: 50rem;
+            min-width: 50rem;
+            max-width: 56rem;
             padding: 1.5rem;
             box-shadow: #00000050 0px 1px 3px;
             top: 100%;
-            left: 36%;
+            left: 35%;
             .search-item {
                 display: flex;
                 align-items: center;
@@ -235,6 +235,13 @@ export const SideMenuWrap = styled.div`
     }
     .login-menu {
         width: 10rem;
+    }
+    .thisChannel-item {
+        img {
+            width: 3rem;
+            height: 3rem;
+            border-radius: 50%;
+        }
     }
 `;
 
