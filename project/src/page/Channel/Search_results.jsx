@@ -18,7 +18,7 @@ const Search_results = ({ searchTerm }) => {
     return (
         <SearchMovieWrap>
             <div className='search_results'>
-                <ul className='test'>
+                <ul className='search_results-wrap'>
                     {filteredMovies.length > 0 ? (
                         filteredMovies.map((movie) => <Video key={movie.movie_id} movie={movie} />)
                     ) : (
