@@ -5,13 +5,13 @@ const initialState = {
     LoginUser,
     // 현재 로그인 된 유저
     isLoginUser: {
-        user_id: 1249082141,
-        user_name: '테스트 유저',
-        user_age: 20,
-        user_tel: '010-1234-1234',
-        user_email: 'testUser@naver.com',
+        user_id: 904206,
+        user_name: '무찌',
+        user_age: 35,
+        user_tel: '010-0654-7051',
+        user_email: 'moozzi@naver.com',
         user_password: '1111',
-        user_search_list: [{ search_id: 1, search: 'music' }],
+        user_search_list: [{ search_id: 1, search: 'song' }],
         // 시청 기록
         Viewing_Record: [
             // 동영상 정보
@@ -25,7 +25,7 @@ const initialState = {
         // 오프라인 저장 동영상
         Download_List: [],
         // 구독한 채널 아이디
-        Subscription_Id: [],
+        Subscription_Id: [806540, 798311],
     },
     isAuth: true,
 };
