@@ -18,7 +18,11 @@ export const channelSlice = createSlice({
             const NewMove = { movie_id: Math.floor(Math.random() * 999999) };
         },
         // 영상 삭제
-        DelMovies(state, action) {},
+        DelMovies(state, action) {
+            const { channel_name, movie_id } = action.payload;
+            const channel = state.Channel[channel_name];
+            channel.Movies = channel.Movies.filter((movie) => !movie_id.includes(movie.movie_id));
+        },
         // 영상 수정
         ChangeMovies(state, action) {},
         // 댓글 추가

@@ -92,4 +92,89 @@ export const CommentPageWrap = styled.div`
 `;
 export const ContentPageWrap = styled.div`
     width: 100%;
+    .del-menu {
+        background-color: #212121;
+        width: 100%;
+        height: 0;
+        display: flex;
+        align-items: center;
+        color: #fafafa;
+        box-sizing: border-box;
+        padding: 0 4rem;
+        p {
+            font-weight: 400;
+            font-size: 1.4rem;
+        }
+        .selectedMovies-length {
+            margin-right: 4rem;
+            position: relative;
+            &::after {
+                content: '';
+                position: absolute;
+                width: 0.1rem;
+                height: 100%;
+                right: -2rem;
+                top: 0;
+                background-color: #fafafa;
+                opacity: 0.2;
+            }
+        }
+        .del-btn {
+            cursor: pointer;
+            padding: 0 1rem;
+            text-align: center;
+            transition: all 0.2s;
+            &:hover {
+                background-color: #424242;
+            }
+        }
+        overflow: hidden;
+        transition: all 0.2s;
+        &.active {
+            height: 6rem;
+        }
+    }
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 1.2rem;
+    }
+    thead th {
+        color: #666;
+        font-weight: bold;
+        padding: 1.2rem;
+        border-top: 1px solid #ddd;
+        border-bottom: 1px solid #ddd;
+        text-align: left;
+    }
+    tbody td {
+        padding: 1rem;
+        border-bottom: 1px solid #ddd;
+        color: #555;
+        vertical-align: top;
+        &:first-child {
+            width: 3rem;
+        }
+        &.movie_video {
+            min-width: 8rem;
+        }
+        &.movie_info {
+            max-width: 24rem;
+        }
+        .movie_body {
+            max-width: 40rem;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            color: #999;
+        }
+    }
+    .video-loder {
+        .video-wrap {
+            margin: 0;
+        }
+        .text-wrap {
+            display: none;
+        }
+    }
 `;
