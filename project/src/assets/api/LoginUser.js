@@ -158,7 +158,7 @@ export const LoginUser = [
         // 오프라인 저장 동영상
         Download_List: [],
         // 구독한 채널 아이디
-        Subscription_Id: [],
+        Subscription_Id: [859641, 775460, 798311, 56165156, 6546654],
     },
     {
         user_id: 96745102,
