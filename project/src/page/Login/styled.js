@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const LoginWrap = styled.div`
-    background: #f5f5f5;
+    background: #e0e0e0;
     min-height: 100vh;
     display: flex;
     .login-container {
@@ -9,7 +9,7 @@ export const LoginWrap = styled.div`
         width: 60%;
         margin: auto;
         border-radius: 4rem;
-        background-color: #e0e0e0;
+        background-color: #fff;
         display: flex;
         overflow: hidden;
         min-height: 40rem;
@@ -19,9 +19,6 @@ export const LoginWrap = styled.div`
         box-sizing: border-box;
         width: 50%;
         padding: 8% 0;
-    }
-    .right-con-box {
-        background-color: #fff;
     }
     .left-con-box {
         padding: 4% 5rem;

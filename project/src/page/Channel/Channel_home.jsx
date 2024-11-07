@@ -1,4 +1,4 @@
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { ChannelHomeWrap } from './styled';
 import Video from '../../ui/Youtube/Video';
 import { useParams } from 'react-router-dom';

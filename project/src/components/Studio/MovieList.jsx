@@ -11,9 +11,13 @@ const MovieList = ({ movies }) => {
         <MovieListWrap>
             <h3 className='title-h3'>영상 콘텐츠</h3>
             <ul className='movie-list'>
-                {movies.map((movie) => (
-                    <Video key={movie.movie_id} movie={movie} />
-                ))}
+                {movies
+                    .slice()
+                    .sort(() => Math.random() - 0.5)
+                    .slice(0, 4)
+                    .map((movie) => (
+                        <Video key={movie.movie_id} movie={movie} />
+                    ))}
             </ul>
             <Button onClick={() => navigate(`/studio/${isLoginUser.user_id}/content`)}>
                 콘텐츠 더 보기
