@@ -7,7 +7,7 @@ const SubscriptionMenuList = () => {
     const navigate = useNavigate();
 
     const thisChannel = Object.values(Channel).filter((channel) =>
-        isLoginUser.Subscription_Id.includes(channel.channel_id)
+        isLoginUser?.Subscription_Id?.includes(channel.channel_id)
     );
     return (
         <ul className='subscription-wrap'>
