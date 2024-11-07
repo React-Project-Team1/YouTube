@@ -3,9 +3,11 @@ import { Button } from '../../ui/Button';
 import { LoginFormWrap } from './styled';
 import { useDispatch, useSelector } from 'react-redux';
 import { UserLogin } from '../../store/modules/authSlice';
+import { useState } from 'react';
 
-const LoginForm = ({ loginCheck, setUser, user, setLoginCheck }) => {
+const LoginForm = ({ loginCheck, setLoginCheck }) => {
     const { LoginUser } = useSelector((state) => state.auth);
+    const [user, setUser] = useState({ user_email: '', user_password: '' });
     const dispatch = useDispatch();
     const navigate = useNavigate();
     const changeInput = (e) => {

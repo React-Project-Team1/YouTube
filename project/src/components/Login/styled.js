@@ -49,4 +49,41 @@ export const LoginFormWrap = styled.form`
     }
 `;
 
-export const QuickLoginWrap = styled.ul``;
+export const QuickLoginWrap = styled.ul`
+    box-sizing: border-box;
+    padding: 0 2rem;
+    .login-item {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        border-bottom: 1px solid #dcdcdc;
+        padding: 1%;
+        box-sizing: border-box;
+        transition: all 0.3s;
+        cursor: pointer;
+        &:hover {
+            background-color: #eeeeee;
+        }
+    }
+    .profile-wrap {
+        background-color: var(--youtube-red);
+        border-radius: 50%;
+        width: 3rem;
+        height: 3rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #fafafa;
+        font-size: 1.2rem;
+        margin-right: 1.2rem;
+    }
+    .account-wrap {
+        width: 3rem;
+        height: 3rem;
+        margin-right: 1.2rem;
+        padding: 1.4% 1%;
+        img {
+            width: 100%;
+        }
+    }
+`;

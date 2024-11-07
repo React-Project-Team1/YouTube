@@ -1,17 +1,15 @@
-import { useNavigate } from 'react-router-dom';
 import { LoginWrap } from './styled';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { useEffect, useState } from 'react';
 import LoginForm from '../../components/Login/LoginForm';
 import QuickLogin from '../../components/Login/QuickLogin';
+import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
     const { isAuth } = useSelector((state) => state.auth);
-    const dispatch = useDispatch();
-    const navigate = useNavigate();
-    const [quickLogin, setQuickLogin] = useState(false);
-    const [user, setUser] = useState({ user_email: '', user_password: '' });
+    const [quickLogin, setQuickLogin] = useState(true);
     const [loginCheck, setLoginCheck] = useState(false);
+    const navigate = useNavigate();
 
     useEffect(() => {
         if (isAuth) {
@@ -30,14 +28,9 @@ const Login = () => {
                 </div>
                 <div className='right-con-box'>
                     {quickLogin ? (
-                        <QuickLogin />
+                        <QuickLogin setQuickLogin={setQuickLogin} />
                     ) : (
-                        <LoginForm
-                            loginCheck={loginCheck}
-                            user={user}
-                            setUser={setUser}
-                            setLoginCheck={setLoginCheck}
-                        />
+                        <LoginForm loginCheck={loginCheck} setLoginCheck={setLoginCheck} />
                     )}
                 </div>
             </div>

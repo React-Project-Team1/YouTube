@@ -4,30 +4,8 @@ import { LoginUser } from '../../assets/api/LoginUser';
 const initialState = {
     LoginUser,
     // 현재 로그인 된 유저
-    isLoginUser: {
-        user_id: 6546654,
-        user_name: 'ultraTasteDiary',
-        user_age: 30,
-        user_tel: '010-3481-1745',
-        user_email: 'ultraTasteDiary@naver.com',
-        user_password: '8761',
-        user_search_list: [{ search_id: 1, search: 'food' }],
-        // 시청 기록
-        Viewing_Record: [
-            // 동영상 정보
-        ],
-        // 재생 목록
-        Playlist: [],
-        // 나중에 볼 동영상
-        Later_Watch: [],
-        // 좋아요 표시한 동영상
-        like_Movie_List: [],
-        // 오프라인 저장 동영상
-        Download_List: [],
-        // 구독한 채널 아이디
-        Subscription_Id: [859641, 775460, 798311, 56165156, 6546654],
-    },
-    isAuth: true,
+    isLoginUser: {},
+    isAuth: false,
 };
 
 export const authSlice = createSlice({
