@@ -5,7 +5,6 @@ export const WatchWrap = styled.div`
     box-sizing: border-box;
     padding: 2% 3.5%;
     display: flex;
-
     .video-wrap {
         position: relative;
         width: 70%;

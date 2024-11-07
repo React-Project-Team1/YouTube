@@ -86,6 +86,7 @@ const Watch = () => {
                         channelImage={thisChannel ? thisChannel.channel_image : ''}
                         moviesComment={thisMovie.movie_comments}
                         movie_id={thisMovie.movie_id}
+                        channel_name={thisChannel.Movies[0].movie_channel}
                     />
                 </div>
                 <WatchListWrap>

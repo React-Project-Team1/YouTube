@@ -19,6 +19,7 @@ const Below = ({
     channelId,
     moviesComment,
     movie_id,
+    channel_name,
 }) => {
     const [showReport, setShowReport] = useState(false);
     const [isLiked, setIsLiked] = useState(false);
@@ -26,13 +27,9 @@ const Below = ({
     const dispatch = useDispatch();
     const { isLoginUser } = useSelector((state) => state.auth); // 로그인된 사용자 정보 가져오기
     const { Channel_name } = useParams();
-    const { channel } = useSelector((state) => state.channel);
 
     // 현재 채널이 구독 중인지 확인
     const isSubscribed = isLoginUser.Subscription_Id.includes(channelId);
-
-    // 선택한 채널 찾기
-    const thisChannel = channel;
 
     const handleReportClick = () => {
         setShowReport((prev) => !prev);
@@ -80,10 +77,13 @@ const Below = ({
             <h2 className='title'>{title}</h2>
             <div className='top'>
                 <div className='channel'>
-                    <div onClick={() => navigate(`/channel/${Channel_name}`)}>
+                    <div onClick={() => navigate(`/channel/${channel_name}`)}>
                         <img className='channelImg' src={channelImage} alt='' />
                     </div>
-                    <div className='channel_detail' onClick={() => navigate('/channel')}>
+                    <div
+                        className='channel_detail'
+                        onClick={() => navigate(`/channel/${channel_name}`)}
+                    >
                         <h2 className='channel_name'>{channelName}</h2>
                         <p className='channel_subscribers'>{channelSubscribers}명</p>
                     </div>
@@ -169,6 +169,7 @@ const Below = ({
                 movieLikeCount={movieLikeCount}
                 channelSubscribers={channelSubscribers}
                 channelImage={channelImage}
+                channel_name={channel_name}
             />
             <Comment moviesComment={moviesComment} movie_id={movie_id} />
         </BelowWrap>
