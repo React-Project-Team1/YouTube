@@ -25,6 +25,9 @@ const Login = () => {
                         <img src='https://upload.wikimedia.org/wikipedia/commons/archive/c/c1/20170301123009%21Google_%22G%22_logo.svg' />
                     </div>
                     <h2 className='title'>{quickLogin ? '계정 선택' : '로그인'}</h2>
+                    <p className='nav-youtube' onClick={() => navigate('/')}>
+                        YouTube로 이동
+                    </p>
                 </div>
                 <div className='right-con-box'>
                     {quickLogin ? (

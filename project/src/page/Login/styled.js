@@ -36,4 +36,11 @@ export const LoginWrap = styled.div`
             font-weight: 500;
         }
     }
+    .nav-youtube {
+        display: inline-block;
+        border-bottom: 1px solid #000;
+        user-select: none;
+        cursor: pointer;
+        font-size: 1.4rem;
+    }
 `;

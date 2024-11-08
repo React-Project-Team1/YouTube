@@ -150,6 +150,7 @@ export const HeaderWrap = styled.header`
 `;
 
 export const SideMenuWrap = styled.div`
+    max-width: 26rem;
     .channel {
         display: flex;
         flex-direction: column;

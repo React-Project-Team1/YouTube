@@ -8,11 +8,7 @@ export const LoginFormWrap = styled.form`
         flex-direction: column;
         align-items: center;
         justify-content: space-between;
-        img {
-            width: 40%;
-            /* width: 30rem; */
-            margin: 5%;
-        }
+        position: relative;
         .login-input,
         .failed-input {
             display: flex;
@@ -22,11 +18,10 @@ export const LoginFormWrap = styled.form`
             margin-top: 5%;
             input {
                 border: 1px solid #dcdcdc;
-                border-radius: 2rem;
                 outline: invert;
                 text-indent: 2rem;
                 font-size: 1.6rem;
-                height: 4rem;
+                height: 5rem;
                 margin-bottom: 5%;
                 width: 40rem;
             }
@@ -42,9 +37,32 @@ export const LoginFormWrap = styled.form`
                 border: 1px solid #ed1d24;
             }
         }
-        button {
-            min-width: 14rem;
-            font-size: 1.6rem;
+        .btn-wrap {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            right: 4rem;
+            bottom: 0rem;
+            .join-btn {
+                margin-left: 1rem;
+                background-color: #212121;
+                color: #fff;
+                &:hover {
+                    background-color: #424242;
+                }
+            }
+        }
+        input {
+            &.password {
+                transition: all 0.5s;
+                height: 0;
+                opacity: 0;
+            }
+            &.active {
+                height: 5rem;
+                opacity: 1;
+            }
         }
     }
 `;

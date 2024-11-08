@@ -8,8 +8,10 @@ import { useState } from 'react';
 const LoginForm = ({ loginCheck, setLoginCheck }) => {
     const { LoginUser } = useSelector((state) => state.auth);
     const [user, setUser] = useState({ user_email: '', user_password: '' });
+    const [idChk, setIdChk] = useState(false);
     const dispatch = useDispatch();
     const navigate = useNavigate();
+
     const changeInput = (e) => {
         const { name, value } = e.target;
         setUser({
@@ -17,6 +19,7 @@ const LoginForm = ({ loginCheck, setLoginCheck }) => {
             [name]: value,
         });
     };
+
     const onSubmit = (e) => {
         e.preventDefault();
         if (
@@ -27,19 +30,24 @@ const LoginForm = ({ loginCheck, setLoginCheck }) => {
             )
         ) {
             dispatch(UserLogin(user));
+            navigate(-1);
         } else {
             setLoginCheck(true);
             return;
         }
     };
+
+    const handleIdChk = (e) => {
+        e.preventDefault();
+        if (!user.user_email) {
+            alert('아이디를 입력해 주세요');
+        } else {
+            setIdChk(!idChk);
+        }
+    };
+
     return (
         <LoginFormWrap className='login-box' onSubmit={onSubmit}>
-            <img
-                className='logo'
-                onClick={() => navigate('/')}
-                src='https://raw.githubusercontent.com/React-Project-Team1/data-center/50bcadb338add2ff5dcb6ac28c339d051e58635b/Icon/YouTube_logo.svg'
-                alt='Youtube'
-            />
             {!loginCheck ? (
                 <p className='login-input'>
                     <input
@@ -53,6 +61,7 @@ const LoginForm = ({ loginCheck, setLoginCheck }) => {
                         name='user_password'
                         placeholder='비밀번호'
                         onChange={changeInput}
+                        className={idChk ? 'password active' : 'password'}
                     />
                 </p>
             ) : (
@@ -69,12 +78,30 @@ const LoginForm = ({ loginCheck, setLoginCheck }) => {
                         name='user_password'
                         placeholder='비밀번호'
                         onChange={changeInput}
+                        className={idChk ? 'password active' : 'password'}
                     />
                 </p>
             )}
-            <Button className='login-btn' type='submit'>
-                로그인
-            </Button>
+            <div className='btn-wrap'>
+                {idChk ? (
+                    <Button className='login-btn' type='submit'>
+                        로그인
+                    </Button>
+                ) : (
+                    <Button className='login-btn' onClick={handleIdChk}>
+                        다음
+                    </Button>
+                )}
+                <Button
+                    className='join-btn'
+                    onClick={(e) => {
+                        e.preventDefault();
+                        alert('회원가입 만들기');
+                    }}
+                >
+                    계정 만들기
+                </Button>
+            </div>
         </LoginFormWrap>
     );
 };
