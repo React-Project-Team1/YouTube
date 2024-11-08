@@ -3,16 +3,10 @@ import { CommentWrap } from './styled';
 import CommentForm from './CommentForm';
 import CommentList from './CommentList';
 
-const Comment = ({ moviesComment, movie_id }) => {
+const Comment = ({ moviesComment, movie_id, movie_channel }) => {
     const [showReport, setShowReport] = useState(false);
 
-    const [commentCount, setCommentCount] = useState(0); // 댓글 수 상태
     const [sortedComments, setSortedComments] = useState(moviesComment);
-
-    useEffect(() => {
-        setCommentCount(moviesComment.length); // 댓글 수 업데이트
-        setSortedComments(moviesComment);
-    }, [moviesComment]);
 
     //댓글 정렬
     const handleSortComments = (sortType) => {
@@ -38,7 +32,7 @@ const Comment = ({ moviesComment, movie_id }) => {
         <CommentWrap>
             <div className='section'>
                 <div className='comment_top'>
-                    <h2 className='total_comment'>댓글 {commentCount} 개</h2>
+                    <h2 className='total_comment'>댓글 {moviesComment.length} 개</h2>
                     <button className='label' onClick={handleReportClick}>
                         <img
                             src='https://raw.githubusercontent.com/React-Project-Team1/data-center/752a52cbfb5bf64b383b0941ba3834539b2988ac/Icon/menu.svg.svg'
@@ -63,7 +57,7 @@ const Comment = ({ moviesComment, movie_id }) => {
                         </div>
                     )}
                 </div>
-                <CommentForm movie_id={movie_id} />
+                <CommentForm movie_id={movie_id} movie_channel={movie_channel} />
                 <CommentList moviesComment={moviesComment} />
             </div>
         </CommentWrap>

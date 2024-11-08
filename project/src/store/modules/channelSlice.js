@@ -45,15 +45,20 @@ export const channelSlice = createSlice({
         ChangeMovies(state, action) {},
         // 댓글 추가
         AddNewMoviesComment(state, action) {
-            const { movie_id } = action.payload;
+            const { movie_id, movie_channel, comment_body, comment_user_id, comment_user_name } =
+                action.payload;
 
             const newComment = {
                 comment_id: Math.floor(Math.random() * 99999),
-                ...action.payload,
+                comment_body,
+                comment_user_id,
+                comment_user_name,
             };
-            console.log(newComment);
 
-            // movie.comments.push(newComment); // 새 댓글 추가
+            const thisMovie = state.Channel[movie_channel].Movies.find(
+                (movie) => movie.movie_id === movie_id
+            );
+            thisMovie.movie_comments.push(newComment);
         },
         // 댓글 삭제
         DelMoviesComment(state, action) {},

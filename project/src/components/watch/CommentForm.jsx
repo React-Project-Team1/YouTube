@@ -1,9 +1,9 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { AddNewMoviesComment } from '../../store/modules/channelSlice';
+import { AddNewMoviesComment, getAllMovies } from '../../store/modules/channelSlice';
 
-const CommentForm = ({ movie_id }) => {
+const CommentForm = ({ movie_id, movie_channel }) => {
     const { isLoginUser } = useSelector((state) => state.auth); // 로그인 정보
     const [showFooter, setShowFooter] = useState(false);
     const [commentInput, setCommentInput] = useState('');
@@ -37,6 +37,7 @@ const CommentForm = ({ movie_id }) => {
         dispatch(
             AddNewMoviesComment({
                 movie_id,
+                movie_channel,
                 comment_body: commentInput,
                 comment_user_id: isLoginUser.user_id,
                 comment_user_name: isLoginUser.user_name,
@@ -45,6 +46,7 @@ const CommentForm = ({ movie_id }) => {
         // 댓글 입력란 초기화
         setCommentInput('');
         setShowFooter(false);
+        dispatch(getAllMovies());
     };
 
     return (

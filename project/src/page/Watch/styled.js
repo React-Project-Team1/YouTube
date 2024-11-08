@@ -30,13 +30,11 @@ export const WatchWrap = styled.div`
 `;
 
 export const WatchListWrap = styled.div`
-    width: 25%;
     display: flex;
     flex-direction: column;
     .sub_video_wrap {
         width: 100%;
     }
-
     .video-loder {
         display: flex;
         margin-bottom: 1.6rem;
@@ -48,7 +46,6 @@ export const WatchListWrap = styled.div`
         .text-wrap {
             width: 100%;
             max-width: 25rem;
-
             .channel-logo {
                 display: none;
             }

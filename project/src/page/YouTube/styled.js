@@ -48,6 +48,11 @@ export const YouTubeWrap = styled.div`
                     max-width: 26rem;
                 }
             }
+            .plus-menu {
+                .save-list {
+                    right: -750%;
+                }
+            }
         }
     }
     .main-banner {

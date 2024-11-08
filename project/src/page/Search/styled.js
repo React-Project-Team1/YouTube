@@ -54,7 +54,8 @@ export const SearchListWrap = styled.ul`
                 width: 50%;
                 overflow: unset;
                 img,
-                iframe {
+                iframe,
+                video {
                     height: 50%;
                     border-radius: 1rem;
                 }

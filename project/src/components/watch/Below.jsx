@@ -20,6 +20,7 @@ const Below = ({
     moviesComment,
     movie_id,
     channel_name,
+    movie_channel,
 }) => {
     const [showReport, setShowReport] = useState(false);
     const [isLiked, setIsLiked] = useState(false);
@@ -170,7 +171,11 @@ const Below = ({
                 channelImage={channelImage}
                 channel_name={channel_name}
             />
-            <Comment moviesComment={moviesComment} movie_id={movie_id} />
+            <Comment
+                moviesComment={moviesComment}
+                movie_id={movie_id}
+                movie_channel={movie_channel}
+            />
         </BelowWrap>
     );
 };
