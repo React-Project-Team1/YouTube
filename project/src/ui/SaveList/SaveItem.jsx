@@ -29,7 +29,7 @@ const SaveItem = ({ save, movie }) => {
 
     if (type !== 'Download_List') {
         return (
-            <li className='save-item'>
+            <li className='save-item' onClick={handleChangeSave}>
                 <img src={img} alt={name} />
                 {name}
             </li>
