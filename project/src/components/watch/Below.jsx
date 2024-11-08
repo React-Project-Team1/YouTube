@@ -96,7 +96,7 @@ const Below = ({
                                     alt='구독 중'
                                     className='img'
                                 />
-                                <span className='BelowBtn_comment comment'>구독중</span>
+                                구독중
                             </Button>
                         ) : (
                             <Button className='not-subscribers-btn' onClick={handleSubscribeClick}>

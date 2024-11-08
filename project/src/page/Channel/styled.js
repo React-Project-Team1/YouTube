@@ -70,29 +70,6 @@ export const ChannelWrap = styled.div`
                     margin-bottom: 1.2rem;
                     font-size: 1.4rem;
                 }
-                .subscribe_btn {
-                    //구독버튼
-                    background: #000;
-                    color: white;
-                    font-size: 87.5%;
-                    border-radius: 5rem;
-                    border: none;
-                    padding: 1rem 1.6rem;
-                    margin: 12px 0 8px 0;
-                }
-
-                .subscribed_btn {
-                    //구독중 버튼
-
-                    background: #ededed;
-                    color: black;
-                    font-size: 87.5%;
-                    border-radius: 5rem;
-                    border: none;
-                    padding: 1rem 1.6rem;
-                    margin: 12px 0 8px 0;
-                    align-items: center;
-                }
             }
         }
     }
@@ -152,6 +129,24 @@ export const ChannelWrap = styled.div`
                 border-width: 0;
                 border-bottom: 0.1rem solid #000;
             }
+        }
+    }
+    button {
+        max-height: 3.6rem;
+    }
+    .subscribers-btn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        img {
+            height: 1000%;
+        }
+    }
+    .not-subscribers-btn {
+        color: #fff;
+        background-color: #212121;
+        &:hover {
+            background-color: #424242;
         }
     }
 `;

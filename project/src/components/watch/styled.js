@@ -57,10 +57,16 @@ export const BelowWrap = styled.div`
 
         .subscribers {
             margin-left: 1.5rem;
+            button {
+                max-height: 3.6rem;
+            }
             .subscribers-btn {
                 display: flex;
                 justify-content: center;
                 align-items: center;
+                img {
+                    height: 1000%;
+                }
             }
             .not-subscribers-btn {
                 color: #fff;
