@@ -337,9 +337,7 @@ export const CommentWrap = styled.div`
     .comment_footer {
         display: flex;
         justify-content: space-between;
-    }
-    .emoji {
-        margin-left: 6rem;
+        margin-top: 1rem;
     }
     .btn {
         border-radius: 5rem;
