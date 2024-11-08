@@ -21,12 +21,14 @@ const SubscriptItem = ({ channel, handleChangeThisId, thisChannelID }) => {
         }
     }, [thisChannelID, channel_id]);
 
-    const handleShowPopup = () => {
+    const handleShowPopup = (e) => {
+        e.stopPropagation();
         handleChangeThisId(channel_id);
         const modal = document.querySelector('#subscript-popup');
         modal.showModal();
     };
-    const handleClosePopup = () => {
+    const handleClosePopup = (e) => {
+        e.stopPropagation();
         const modal = document.querySelector('#subscript-popup');
         modal.close();
     };

@@ -103,3 +103,24 @@ export const SubscriptListWrap = styled.ul`
         }
     }
 `;
+
+export const NotSubscriptionWrap = styled.div`
+    width: 100%;
+    margin: 10rem 0;
+    text-align: center;
+    .Not_login_subscription_img {
+        width: 18%;
+    }
+    .Not_login_subscription_title {
+        display: block;
+        font-size: 2.8rem;
+        margin-bottom: 1.6rem;
+    }
+    .Not_login_subscription_desc {
+        margin-bottom: 3rem;
+    }
+    .login_button {
+        width: 8%;
+        margin: auto;
+    }
+`;

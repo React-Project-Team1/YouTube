@@ -13,16 +13,13 @@ export default [
     },
     {
         id: 86651890151,
-        name: '오프라인 저장',
+        falseName: '오프라인 저장',
+        trueName: '오프라인 동영상 삭제',
         type: 'Download_List',
-        saveType: true,
-        img: 'https://raw.githubusercontent.com/React-Project-Team1/data-center/a95871720c235be8180dd58ccc5bf67fbb92d7a4/Icon/Download.svg',
-    },
-    {
-        id: 651651085111,
-        name: '오프라인 동영상 삭제',
-        type: 'Download_List',
-        saveType: false,
-        img: 'https://raw.githubusercontent.com/React-Project-Team1/data-center/01142956452b8bed27fa95419332aca1f595ea45/Icon/trash.svg',
+        SaveType: false,
+        falseImg:
+            'https://raw.githubusercontent.com/React-Project-Team1/data-center/a95871720c235be8180dd58ccc5bf67fbb92d7a4/Icon/Download.svg',
+        trueImg:
+            'https://raw.githubusercontent.com/React-Project-Team1/data-center/01142956452b8bed27fa95419332aca1f595ea45/Icon/trash.svg',
     },
 ];
