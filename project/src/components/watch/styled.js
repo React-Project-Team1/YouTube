@@ -86,11 +86,9 @@ export const BelowWrap = styled.div`
                     position: relative;
                     margin-left: 0;
                     border-radius: 3rem 0 0 3rem;
-
                     &:last-child {
                         border-radius: 0 3rem 3rem 0;
                         padding-left: 15px;
-
                         &::after {
                             content: '';
                             height: 1.7rem;

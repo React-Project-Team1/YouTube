@@ -6,7 +6,7 @@ import { useState } from 'react';
 import Comment from './Comment';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { AddNewSubscription, IsAddList } from '../../store/modules/authSlice';
+import { AddNewSubscription, IsAddList, IsDelList } from '../../store/modules/authSlice';
 import { Button } from '../../ui/Button';
 import Popup from '../../ui/popup/Popup';
 
@@ -26,23 +26,19 @@ const Below = ({
     movie_channel,
 }) => {
     const [showReport, setShowReport] = useState(false);
-    const [isLiked, setIsLiked] = useState(false);
-    const [isDisLiked, setIsDisLiked] = useState(false);
     const dispatch = useDispatch();
-    const { isLoginUser } = useSelector((state) => state.auth); // 로그인된 사용자 정보 가져오기
+    const { isLoginUser, isAuth } = useSelector((state) => state.auth); // 로그인된 사용자 정보 가져오기
     const navigate = useNavigate();
 
     //오프라인/재생목록 저장
-    const handleSave = (e, saveType) => {
+    const handleClickType = (e, saveType) => {
         e.preventDefault();
-        if (isLoginUser?.user_id) {
-            dispatch(
-                IsAddList({
-                    user_id: isLoginUser.user_id,
-                    type: saveType,
-                    movie: movie,
-                })
-            );
+        if (isLoginUser || isAuth) {
+            if (isLoginUser[saveType].find((user) => user.movie_id === movie_id)) {
+                dispatch(IsDelList({ user_id: isLoginUser.user_id, type: saveType, movie: movie }));
+            } else {
+                dispatch(IsAddList({ user_id: isLoginUser.user_id, type: saveType, movie: movie }));
+            }
         } else {
             alert('로그인이 필요합니다.');
             navigate('/login');
@@ -74,32 +70,6 @@ const Below = ({
     const handleClosePopup = () => {
         const modal = document.querySelector('#subscript-popup');
         modal.close();
-    };
-
-    //좋아요버튼
-    const handleLikeClick = () => {
-        if (isLiked) {
-            setIsLiked(false);
-        } else {
-            setIsLiked(true);
-            setIsDisLiked(false);
-            dispatch(
-                IsAddList({
-                    user_id: isLoginUser.user_id,
-                    type: 'like_Movie_List',
-                    movie: movie,
-                })
-            );
-        }
-    };
-
-    const handleDisLikeClick = () => {
-        if (isDisLiked) {
-            setIsDisLiked(false);
-        } else {
-            setIsDisLiked(true);
-            setIsLiked(false);
-        }
     };
 
     return (
@@ -143,51 +113,78 @@ const Below = ({
 
                 <div className='action'>
                     <span className='Like'>
-                        <button className='BelowBtn like' onClick={handleLikeClick}>
+                        <Button
+                            className='BelowBtn like'
+                            onClick={(e) => handleClickType(e, 'like_Movie_List')}
+                        >
                             <img
                                 className='img'
                                 src={
-                                    isLiked
+                                    isLoginUser['like_Movie_List'].find(
+                                        (user) => user.movie_id === movie_id
+                                    )
                                         ? 'https://raw.githubusercontent.com/React-Project-Team1/data-center/23eefc8c9a7f5aebbc05941d76cabae0ea0fca14/Icon/disLike_black.svg'
                                         : 'https://raw.githubusercontent.com/React-Project-Team1/data-center/ee727f8dfb7bcd0c51e97b02fc6c584acdb7cd2f/Icon/like.svg.svg'
                                 }
                                 alt=''
                             />
                             <span className='BelowBtn_comment'>{movieLikeCount}</span>
-                        </button>
-                        <button className='BelowBtn' onClick={handleDisLikeClick}>
+                        </Button>
+                        <Button
+                            className='BelowBtn'
+                            onClick={(e) => handleClickType(e, 'like_Movie_List')}
+                        >
                             <img
                                 className='img'
                                 src={
-                                    isDisLiked
+                                    isLoginUser['like_Movie_List'].find(
+                                        (user) => user.movie_id === movie_id
+                                    )
                                         ? 'https://raw.githubusercontent.com/React-Project-Team1/data-center/a95871720c235be8180dd58ccc5bf67fbb92d7a4/Icon/DisLike_black.svg'
                                         : 'https://raw.githubusercontent.com/React-Project-Team1/data-center/cfcea0ca72ded7c526b3eff908c10fbe750b2924/Icon/dislike.svg.svg'
                                 }
                                 alt=''
                             />
-                        </button>
+                        </Button>
                     </span>
 
-                    <button className='BelowBtn' onClick={(e) => handleSave(e, 'Download_List')}>
+                    <Button
+                        className='BelowBtn'
+                        onClick={(e) => handleClickType(e, 'Download_List')}
+                    >
                         <img
                             className='img'
-                            src='https://raw.githubusercontent.com/React-Project-Team1/data-center/752a52cbfb5bf64b383b0941ba3834539b2988ac/Icon/save2.svg.svg'
+                            src={
+                                isLoginUser['Download_List'].find(
+                                    (user) => user.movie_id === movie_id
+                                )
+                                    ? 'https://raw.githubusercontent.com/React-Project-Team1/data-center/01142956452b8bed27fa95419332aca1f595ea45/Icon/trash.svg'
+                                    : 'https://raw.githubusercontent.com/React-Project-Team1/data-center/752a52cbfb5bf64b383b0941ba3834539b2988ac/Icon/save2.svg.svg'
+                            }
                             alt=''
                         />
-                        <span className='BelowBtn_comment'>오프라인 저장</span>
-                    </button>
+                        <span className='BelowBtn_comment'>
+                            {isLoginUser['Download_List'].find((user) => user.movie_id === movie_id)
+                                ? '오프라인 저장 삭제'
+                                : '오프라인 저장'}
+                        </span>
+                    </Button>
 
-                    <button className='BelowBtn' onClick={(e) => handleSave(e, 'Playlist')}>
+                    <Button className={'BelowBtn'} onClick={(e) => handleClickType(e, 'Playlist')}>
                         <img
                             className='img'
                             src='https://raw.githubusercontent.com/React-Project-Team1/data-center/cfcea0ca72ded7c526b3eff908c10fbe750b2924/Icon/save.svg.svg'
                             alt=''
                         />
-                        <span className='BelowBtn_comment'>저장</span>
-                    </button>
-                    <button className='BelowBtn' onClick={handleReportClick}>
+                        <span className='BelowBtn_comment'>
+                            {isLoginUser['Playlist'].find((user) => user.movie_id === movie_id)
+                                ? '재생목록 삭제'
+                                : '재생목록 저장'}
+                        </span>
+                    </Button>
+                    <Button className='BelowBtn' onClick={handleReportClick}>
                         <LuMoreHorizontal className='icons' />
-                    </button>
+                    </Button>
                     {showReport && (
                         <div className='report-text'>
                             <RiFlagLine /> 신고

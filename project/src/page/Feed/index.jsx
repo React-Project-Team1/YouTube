@@ -16,8 +16,8 @@ const Feed = () => {
                 return '나중에 볼 동영상';
             case 'like_Movie_List':
                 return '좋아요 표시한 동영상';
-            // case 'Download_List':
-            //     return '오프라인 저장 동영상';
+            case 'Download_List':
+                return '오프라인 저장 동영상';
             default:
                 return '피드';
         }
