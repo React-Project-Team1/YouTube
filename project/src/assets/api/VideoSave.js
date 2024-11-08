@@ -1,13 +1,15 @@
 export default [
     {
         id: 76165159843,
-        name: ' 나중에 볼 동영상에 저장',
+        falseName: '나중에 볼 동영상 저장',
+        trueName: '나중에 볼 동영상 삭제',
         type: 'Later_Watch',
         img: 'https://raw.githubusercontent.com/React-Project-Team1/data-center/a95871720c235be8180dd58ccc5bf67fbb92d7a4/Icon/later_on.svg',
     },
     {
         id: 23165165165,
-        name: ' 재생목록에 저장',
+        falseName: '재생목록 저장',
+        trueName: '재생목록 삭제',
         type: 'Playlist',
         img: 'https://raw.githubusercontent.com/React-Project-Team1/data-center/a95871720c235be8180dd58ccc5bf67fbb92d7a4/Icon/save.svg.svg',
     },

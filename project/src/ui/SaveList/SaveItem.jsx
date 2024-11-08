@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { IsAddList, IsDelList } from '../../store/modules/authSlice';
 const SaveItem = ({ save, movie }) => {
-    const { type, img, name, falseName, trueName, falseImg, trueImg } = save;
+    const { type, img, falseName, trueName, falseImg, trueImg } = save;
     const { isLoginUser } = useSelector((state) => state.auth);
     const dispatch = useDispatch();
     const [ofType, setOfType] = useState(false);
@@ -30,8 +30,8 @@ const SaveItem = ({ save, movie }) => {
     if (type !== 'Download_List') {
         return (
             <li className='save-item' onClick={handleChangeSave}>
-                <img src={img} alt={name} />
-                {name}
+                <img src={img} alt={ofType ? trueName : falseName} />
+                {ofType ? trueName : falseName}
             </li>
         );
     }
