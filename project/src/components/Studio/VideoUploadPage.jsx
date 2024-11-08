@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { VideoUploadPageWrap } from './styled';
 import { Button } from '../../ui/Button';
 import { useDispatch, useSelector } from 'react-redux';
-import { AddNewMovies } from '../../store/modules/channelSlice';
+import { AddNewMovies, getAllMovies } from '../../store/modules/channelSlice';
 import { useNavigate } from 'react-router-dom';
 
 const VideoUploadPage = () => {
@@ -87,6 +87,7 @@ const VideoUploadPage = () => {
                 })
             );
             navigate(`/studio/${isLoginUser.user_id}/content`);
+            dispatch(getAllMovies());
         }
     };
     return (

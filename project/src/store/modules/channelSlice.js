@@ -27,12 +27,10 @@ export const channelSlice = createSlice({
                 Movies: [],
             };
             state.Channel[emailPrefix] = NewChannel;
-            console.log(state.Channel[emailPrefix]);
         },
         // 영상 추가
         AddNewMovies(state, action) {
             const NewMove = { movie_id: Math.floor(Math.random() * 999999), ...action.payload };
-            console.log(action.payload.movie_indexDB_id);
             state.Channel[action.payload.movie_channel].Movies.push(NewMove);
         },
         // 영상 삭제

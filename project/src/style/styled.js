@@ -330,3 +330,14 @@ export const SpinnerWrap = styled.div`
         }
     }
 `;
+
+export const WrongapproachWrap = styled.div`
+    width: 100%;
+    min-height: 100vh;
+    box-sizing: border-box;
+    padding: 10%;
+    .not {
+        text-align: center;
+        font-size: 2rem;
+    }
+`;

@@ -45,7 +45,6 @@ const CommentForm = ({ movie_id, movie_channel }) => {
         );
         // 댓글 입력란 초기화
         setCommentInput('');
-        setShowFooter(false);
         dispatch(getAllMovies());
     };
 

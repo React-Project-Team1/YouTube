@@ -3,7 +3,7 @@ import { QuickLoginWrap } from './styled';
 import { useDispatch, useSelector } from 'react-redux';
 import { UserLogin } from '../../store/modules/authSlice';
 
-const QuickLogin = ({ setQuickLogin }) => {
+const QuickLogin = ({ setPageType }) => {
     const { LoginUser } = useSelector((state) => state.auth);
     const randomLoginUser = LoginUser.slice()
         .sort(() => Math.random() - 0.5)
@@ -37,7 +37,7 @@ const QuickLogin = ({ setQuickLogin }) => {
                     </div>
                 </li>
             ))}
-            <li className='login-item' onClick={() => setQuickLogin(false)}>
+            <li className='login-item' onClick={() => setPageType('login')}>
                 <div className='account-wrap'>
                     <img
                         src='https://raw.githubusercontent.com/React-Project-Team1/data-center/23eefc8c9a7f5aebbc05941d76cabae0ea0fca14/Icon/Account.svg'

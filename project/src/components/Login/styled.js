@@ -38,12 +38,11 @@ export const LoginFormWrap = styled.form`
             }
         }
         .btn-wrap {
+            margin-top: 2rem;
+            width: 40rem;
             display: flex;
-            justify-content: center;
+            justify-content: end;
             align-items: center;
-            position: absolute;
-            right: 4rem;
-            bottom: 0rem;
             .join-btn {
                 margin-left: 1rem;
                 background-color: #212121;
@@ -102,6 +101,51 @@ export const QuickLoginWrap = styled.ul`
         padding: 1.4% 1%;
         img {
             width: 100%;
+        }
+    }
+`;
+
+export const JoinFormWrap = styled.form`
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    .join-wrap {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    input {
+        border: 1px solid #dcdcdc;
+        outline: invert;
+        text-indent: 2rem;
+        font-size: 1.6rem;
+        height: 0;
+        opacity: 0;
+        margin-bottom: 2%;
+        width: 40rem;
+        transition: all 0.5s;
+        &.active {
+            height: 5rem;
+            opacity: 1;
+        }
+    }
+    .btn-wrap {
+        margin-top: 2rem;
+        width: 40rem;
+        display: flex;
+        justify-content: end;
+        align-items: center;
+        .cancle-btn {
+            margin-left: 1rem;
+            background-color: #212121;
+            color: #fff;
+            &:hover {
+                background-color: #424242;
+            }
         }
     }
 `;

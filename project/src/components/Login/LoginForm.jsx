@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { UserLogin } from '../../store/modules/authSlice';
 import { useState } from 'react';
 
-const LoginForm = ({ loginCheck, setLoginCheck }) => {
+const LoginForm = ({ loginCheck, setLoginCheck, setPageType }) => {
     const { LoginUser } = useSelector((state) => state.auth);
     const [user, setUser] = useState({ user_email: '', user_password: '' });
     const [idChk, setIdChk] = useState(false);
@@ -96,7 +96,7 @@ const LoginForm = ({ loginCheck, setLoginCheck }) => {
                     className='join-btn'
                     onClick={(e) => {
                         e.preventDefault();
-                        alert('회원가입 만들기');
+                        setPageType('join');
                     }}
                 >
                     계정 만들기

@@ -1,5 +1,6 @@
 import Layout from './common/Layout';
 import StudioLayout from './common/StudioLayout';
+import Wrongapproach from './common/Wrongapproach';
 import CommentPage from './components/Studio/CommentPage';
 import ContentPage from './components/Studio/ContentPage';
 import VideoUploadPage from './components/Studio/VideoUploadPage';
@@ -28,10 +29,10 @@ const App = () => {
                         <Route path='/feed'>
                             <Route path=':Category' element={<Feed />} />
                         </Route>
-
                         <Route path='/subscription'>
                             <Route index element={<Subscription />} />
                         </Route>
+                        <Route path='*' element={<Wrongapproach />} />
                     </Route>
                     <Route path='/login'>
                         <Route index element={<Login />} />
