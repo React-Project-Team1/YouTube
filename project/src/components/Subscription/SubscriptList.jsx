@@ -16,7 +16,7 @@ const SubscriptList = () => {
     const { isLoginUser } = useSelector((state) => state.auth);
 
     const thisSubscriptChannel = allChannel.filter((channel) =>
-        isLoginUser.Subscription_Id.includes(channel.channel_id)
+        isLoginUser?.Subscription_Id?.includes(channel.channel_id)
     );
 
     return (

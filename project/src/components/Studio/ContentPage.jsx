@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { ContentPageWrap } from './styled';
 import Video from '../../ui/Youtube/Video';
-import { DelMovies } from '../../store/modules/channelSlice';
+import { DelMovies, getAllMovies } from '../../store/modules/channelSlice';
 
 const ContentPage = () => {
     const { Channel } = useSelector((state) => state.channel);
@@ -34,6 +34,7 @@ const ContentPage = () => {
             })
         );
         setSelectedMovies([]);
+        dispatch(getAllMovies());
     };
 
     return (
