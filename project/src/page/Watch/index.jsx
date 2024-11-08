@@ -13,6 +13,7 @@ const Watch = () => {
     const { isSideMenu } = useSelector((state) => state.header);
     const { allMovies } = useSelector((state) => state.channel);
     const { isLoginUser } = useSelector((state) => state.auth);
+    const { Channel } = useSelector((state) => state.channel);
     const { Movie_ID } = useParams();
     const dispatch = useDispatch();
 
