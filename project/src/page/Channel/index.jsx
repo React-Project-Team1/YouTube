@@ -19,7 +19,7 @@ const Channel = () => {
     const dispatch = useDispatch();
 
     const thisChannel = Channel[Channel_name];
-    const isSubscribed = isLoginUser?.Subscription_Id?.includes(thisChannel.channel_id);
+    const isSubscribed = isLoginUser?.Subscription_Id?.includes(thisChannel?.channel_id);
     //동영상 총 개수
     const videoCount = thisChannel?.Movies.length;
     // 구독자수 n만명

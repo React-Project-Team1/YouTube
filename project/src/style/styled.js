@@ -150,7 +150,12 @@ export const HeaderWrap = styled.header`
 `;
 
 export const SideMenuWrap = styled.div`
-    max-width: 26rem;
+    min-width: 25rem;
+    z-index: 10;
+    height: 100vh;
+    overflow: scroll;
+    position: sticky;
+    top: 5.6rem;
     .channel {
         display: flex;
         flex-direction: column;
@@ -196,7 +201,7 @@ export const SideMenuWrap = styled.div`
         }
         li {
             display: flex;
-            min-width: 22rem;
+            width: 22rem;
             box-sizing: border-box;
             align-items: center;
             cursor: pointer;
@@ -242,6 +247,11 @@ export const SideMenuWrap = styled.div`
             width: 3rem;
             height: 3rem;
             border-radius: 50%;
+        }
+        .name {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
     }
 `;

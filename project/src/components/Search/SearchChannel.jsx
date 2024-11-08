@@ -8,7 +8,8 @@ const SearchChannel = ({ channel }) => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
     const { isLoginUser } = useSelector((state) => state.auth);
-    const { channel_image, channel_name, channel_subscribers, Movies, channel_id } = channel;
+    const { channel_image, channel_name, channel_subscribers, Movies, channel_id, channel_nav } =
+        channel;
     const isSubscribed = isLoginUser?.Subscription_Id?.includes(channel_id);
 
     const subscribers_conunt = (channel_subscribers) => {
@@ -44,7 +45,7 @@ const SearchChannel = ({ channel }) => {
     return (
         <li
             className='channel-item'
-            onClick={() => navigate(`/channel/${Movies[0].movie_channel}`)}
+            onClick={() => navigate(`/channel/${Movies[0]?.movie_channel || channel_nav}`)}
         >
             <div className='channel-profile'>
                 <img src={channel_image} alt={channel_name} className='channel-logo' />
@@ -53,7 +54,7 @@ const SearchChannel = ({ channel }) => {
                 <div className='into-text'>
                     <h3 className='name'>{channel_name}</h3>
                     <p className='info'>
-                        @{Movies[0].movie_channel} • 구독자
+                        @{Movies[0]?.movie_channel || channel_nav} • 구독자
                         {subscribers_conunt(channel_subscribers)}
                     </p>
                 </div>

@@ -35,7 +35,7 @@ const Feed = () => {
                     {/* 시청한 동영상 출력 */}
                     <ul className='test'>
                         {isLoginUser[Category]?.map((movie) => (
-                            <Video key={movie.movie_id} movie={movie} />
+                            <Video key={movie.movie_id} movie={movie} type={Category} />
                         ))}
                     </ul>
                 </div>

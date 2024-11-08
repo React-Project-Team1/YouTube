@@ -24,7 +24,13 @@ const SubscriptionMenuList = () => {
                     <li
                         key={channel.channel_id}
                         className='thisChannel-item'
-                        onClick={() => navigate(`/channel/${channel.Movies[0]?.movie_channel}`)}
+                        onClick={() =>
+                            navigate(
+                                `/channel/${
+                                    channel.Movies[0]?.movie_channel || channel.channel_nav
+                                }`
+                            )
+                        }
                     >
                         <img src={channel.channel_image} alt={channel.channel_name} />
                         <span className='name'>{channel.channel_name}</span>

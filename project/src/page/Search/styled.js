@@ -53,13 +53,6 @@ export const SearchListWrap = styled.ul`
                     color: #777;
                 }
             }
-            .channel-btn {
-                background-color: #000;
-                color: #fff;
-                &:hover {
-                    background-color: #333;
-                }
-            }
         }
     }
     .movie-item {

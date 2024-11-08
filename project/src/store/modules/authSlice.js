@@ -92,28 +92,42 @@ export const authSlice = createSlice({
         IsDelList(state, action) {
             // 시청기록 , 재생목록, 나중에 볼 동영상, 좋아요 표시한 동영상, 오프라인 저장 동영상 을 삭제하는 동작
             // action.payload.type 으로 Viewing_Record,Playlist... 등을 받아와서 처리
-            const { user_id, type } = action.payload;
+            const { user_id, type, movie } = action.payload;
             const User = state.LoginUser.find((user) => user.user_id === user_id);
-            User[type].filter();
+            if (User) {
+                User[type] = User[type].filter((user) => user.movie_id !== movie.movie_id);
+            }
             state.isLoginUser = User;
         },
         AddNewSearchList(state, action) {
-            // 새로운 검색어 추가
-            const { user_id } = action.payload;
+            // 검색어 기록 추가 11-08 김신영 수정
+            const { user_id, search } = action.payload;
             const User = state.LoginUser.find((user) => user.user_id === user_id);
 
-            // 아래 객체에 코드 작성
-            const NewSearch = { search_id: Math.floor(Math.random() * 1000000) };
+            if (User) {
+                // 중복 검색어 방지
+                const isDuplicate = User.user_search_list.some((item) => item.search === search);
 
-            User.user_search_list.push(NewSearch);
-            state.isLoginUser = User;
+                if (!isDuplicate) {
+                    const NewSearch = {
+                        search_id: Math.floor(Math.random() * 1000000),
+                        search,
+                    };
+                    User.user_search_list.unshift(NewSearch); // 최신 검색 순
+                    state.isLoginUser = User; // 업데이트된 유저 정보 반영
+                }
+            }
         },
         DelSearchList(state, action) {
-            // 최근 검색어 삭제
-            const { user_id } = action.payload;
-            const User = state.LoginUser.find((user) => user.user_id === user_id);
-            User.user_search_list.filter();
-            state.isLoginUser = User;
+            // 검색 기록 삭제 11-08 김신영 수정 끝
+            const { user_id, search } = action.payload;
+            const User = state.LoginUser.find((user) => user.user_id === user_id); // 로그인 정보
+            if (User) {
+                User.user_search_list = User.user_search_list.filter(
+                    (item) => item.search !== search
+                );
+                state.isLoginUser = User;
+            }
         },
         AddNewSubscription(state, action) {
             // 구독 목록 추가

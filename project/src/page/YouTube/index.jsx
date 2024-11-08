@@ -7,10 +7,10 @@ import TopMenu from '../../components/main/TopMenu';
 import menuData from '../../assets/api/TopMenu';
 import Spinner from '../../components/Spinner';
 import NoSearchItem from '../../components/Search/NoSearchItem';
-
 const YouTube = () => {
     const { allMovies } = useSelector((state) => state.channel);
     const { isAuth } = useSelector((state) => state.auth);
+    const { isSideMenu } = useSelector((state) => state.header);
     const [randomMenu] = useState(
         menuData
             .filter((menu) => menu.category !== 'all')
@@ -19,37 +19,36 @@ const YouTube = () => {
     );
     const [thisMenu, setThisMenu] = useState('all');
     const dispatch = useDispatch();
-    const [videoCount, setVideoCount] = useState(10);
+    const [videoCount, setVideoCount] = useState(8);
 
     useEffect(() => {
         if (allMovies.length === 0) {
             dispatch(getAllMovies());
         }
         document.title = 'YouTube';
-        if (videoCount >= 110) setVideoCount(110);
+        if (videoCount >= allMovies.length) setVideoCount(110);
     }, [dispatch, allMovies.length, videoCount]);
 
     // 무한 스크롤 상태
     const observerRef = useRef();
     const targetRef = useRef();
-
     // 초기 랜덤 정렬된 비디오 청크 상태
     const [videoChunks, setVideoChunks] = useState([]);
-
     // allMovies가 변경될 때 한 번만 실행하여 랜덤 섞기 후 청크로 분할
     useEffect(() => {
-        if (allMovies.length > 0 && videoChunks.length === 0) {
-            const shuffledMovies = allMovies.slice().sort(() => Math.random() - 0.5); // 전체 비디오 랜덤 섞기
+        if (allMovies.length > 0) {
+            const shuffledMovies = allMovies.slice().sort(() => Math.random() - 0.5);
             const chunks = [];
-            for (let i = 0; i < shuffledMovies.length; i += 10) {
-                chunks.push(shuffledMovies.slice(i, i + 10));
+            for (let i = 0; i < shuffledMovies.length; i += isSideMenu ? 8 : 10) {
+                chunks.push(shuffledMovies.slice(i, i + (isSideMenu ? 8 : 10)));
             }
             setVideoChunks(chunks);
+            setVideoCount(isSideMenu ? 8 : 10);
         }
-    }, [allMovies]);
+    }, [allMovies, isSideMenu]);
 
     const loadMoreVideos = () => {
-        setVideoCount((prevCount) => prevCount + 10);
+        setVideoCount((prevCount) => prevCount + (isSideMenu ? 8 : 10));
     };
 
     useEffect(() => {
@@ -64,7 +63,6 @@ const YouTube = () => {
             },
             { threshold: 1 }
         );
-
         // 요소가 존재할 때 observe 호출
         if (targetRef.current) {
             observerRef.current.observe(targetRef.current);
@@ -77,9 +75,14 @@ const YouTube = () => {
         };
     }, []);
 
+    useEffect(() => {
+        setVideoCount(isSideMenu ? 8 : 10);
+    }, [isSideMenu]);
+
+    if (!allMovies) return <Spinner />;
     if (allMovies)
         return (
-            <YouTubeWrap>
+            <YouTubeWrap width={isSideMenu ? '24.25%' : '19.2%'} not={isSideMenu ? 4 : 5}>
                 {isAuth ? (
                     <>
                         <ul className='top-category'>
@@ -102,14 +105,16 @@ const YouTube = () => {
                                 ))}
                         </ul>
                         <ul className='main-video-wrap'>
-                            {videoChunks.length > 0 &&
+                            {thisMenu === 'all' &&
+                                videoChunks.length > 0 &&
                                 videoChunks[0]
-                                    .filter((movie) =>
-                                        thisMenu === 'all'
-                                            ? movie
-                                            : movie.movie_category.includes(thisMenu)
-                                    )
-                                    .slice(0, 10)
+                                    .slice(0, isSideMenu ? 8 : 10)
+                                    .map((movie) => <Video key={movie.movie_id} movie={movie} />)}
+                            {thisMenu !== 'all' &&
+                                allMovies
+                                    .filter((movie) => movie.movie_category.includes(thisMenu))
+                                    .sort(() => Math.random() - 0.5)
+                                    .slice(0, isSideMenu ? 8 : 10)
                                     .map((movie) => <Video key={movie.movie_id} movie={movie} />)}
                         </ul>
                         <div className='main-banner'>
@@ -119,16 +124,16 @@ const YouTube = () => {
                                 alt='Main Banner'
                             />
                         </div>
-
                         {videoChunks &&
-                            videoChunks.slice(1, Math.ceil(videoCount / 10)).map((chunk, index) => (
-                                <ul key={`video-chunk-${index}`} className='main-video-wrap'>
-                                    {chunk.map((movie) => (
-                                        <Video key={movie.movie_id} movie={movie} />
-                                    ))}
-                                </ul>
-                            ))}
-
+                            videoChunks
+                                .slice(1, Math.ceil(videoCount / (isSideMenu ? 8 : 10)))
+                                .map((chunk, index) => (
+                                    <ul key={`video-chunk-${index}`} className='main-video-wrap'>
+                                        {chunk.map((movie) => (
+                                            <Video key={movie.movie_id} movie={movie} />
+                                        ))}
+                                    </ul>
+                                ))}
                         <div id='scroll-anchor' ref={targetRef}>
                             {videoCount !== allMovies?.length + 10 ? <Spinner /> : null}
                         </div>

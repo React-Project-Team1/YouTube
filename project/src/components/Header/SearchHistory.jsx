@@ -1,18 +1,20 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
+import { AddNewSearchList, DelSearchList } from '../../store/modules/authSlice';
 
 const SearchHistory = ({ Search, isShown, setSearch }) => {
     const navigate = useNavigate();
-    const [isSearched, setIsSearched] = useState([]); // 검색한 단어
+    const dispatch = useDispatch();
+    const user = useSelector((state) => state.auth.isLoginUser);
+    const searchHistory = user.user_search_list || []; // 검색어 목록
+
     useEffect(() => {
         if (Search) {
-            setIsSearched((listedSearch) => {
-                // 중복 검색어 추가 X
-                if (listedSearch.includes(Search)) return listedSearch;
-                return [Search, ...listedSearch];
-            });
+            // 검색어 추가
+            dispatch(AddNewSearchList({ user_id: user.user_id, search: Search }));
         }
-    }, [Search]);
+    }, [Search, dispatch, user.user_id]);
 
     // 최근 기록 재검색
     const searchKeyword = (keyword) => {
@@ -21,34 +23,38 @@ const SearchHistory = ({ Search, isShown, setSearch }) => {
     };
 
     // 검색 기록 삭제
-    const DeleteKeyword = (keyword) => {
-        setIsSearched((listedSearch) => listedSearch.filter((item) => item !== keyword));
+    const deleteKeyword = (keyword) => {
+        dispatch(DelSearchList({ user_id: user.user_id, search: keyword }));
     };
 
     return (
-        isSearched.length > 0 && // 검색어 모두 삭제 시 창 출력 X
+        searchHistory.length > 0 && // 검색어 모두 삭제 시 창 출력 X
         !isShown && ( // 검색창 클릭 시 출력
-            <ul className="search-history">
-                {isSearched.map((keyword, index) => (
-                    <li key={index} className="search-item" onClick={() => searchKeyword(keyword)}>
-                        <p className="search-keyword">
+            <ul className='search-history'>
+                {searchHistory.map((item) => (
+                    <li
+                        key={item.search_id}
+                        className='search-item'
+                        onClick={() => searchKeyword(item.search)}
+                    >
+                        <p className='search-keyword'>
                             <img
-                                src="https://raw.githubusercontent.com/React-Project-Team1/data-center/50bcadb338add2ff5dcb6ac28c339d051e58635b/Icon/Search.svg"
-                                alt="search"
+                                src='https://raw.githubusercontent.com/React-Project-Team1/data-center/50bcadb338add2ff5dcb6ac28c339d051e58635b/Icon/Search.svg'
+                                alt='search'
                             />
-                            {keyword}
+                            {item.search}
                         </p>
                         <button
-                            className="history-btn"
+                            className='history-btn'
                             onClick={(e) => {
                                 e.stopPropagation();
-                                DeleteKeyword(keyword, e); // 기록 삭제
+                                deleteKeyword(item.search); // 기록 삭제
                             }}
                         >
                             <img
-                                src="https://raw.githubusercontent.com/React-Project-Team1/data-center/23eefc8c9a7f5aebbc05941d76cabae0ea0fca14/Icon/Close_Btn.svg"
-                                alt="close-btn"
-                                className="close-btn"
+                                src='https://raw.githubusercontent.com/React-Project-Team1/data-center/23eefc8c9a7f5aebbc05941d76cabae0ea0fca14/Icon/Close_Btn.svg'
+                                alt='close-btn'
+                                className='close-btn'
                             />
                         </button>
                     </li>

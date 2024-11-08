@@ -5,10 +5,10 @@ export const WatchWrap = styled.div`
     box-sizing: border-box;
     padding: 2% 3.5%;
     display: flex;
-    .video-wrap {
+    > .video-wrap {
         position: relative;
         width: 70%;
-        margin: 0 0 0 2rem;
+        margin: 0 2rem 0 0;
         .videoInner {
             width: 100%;
             height: 0;
@@ -37,7 +37,6 @@ export const WatchListWrap = styled.div`
     }
     .video-loder {
         display: flex;
-        margin-bottom: 1.6rem;
         .video-wrap {
             width: 18rem;
             overflow: hidden;

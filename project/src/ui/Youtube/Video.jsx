@@ -5,8 +5,7 @@ import { VideoWrap } from './styled';
 import { SideMenuChange } from '../../store/modules/headerSlice';
 import SaveList from '../SaveList/SaveList';
 import { IsDelList } from '../../store/modules/authSlice';
-
-const Video = ({ movie }) => {
+const Video = ({ movie, type }) => {
     const {
         movie_id,
         movie_title,
@@ -17,7 +16,6 @@ const Video = ({ movie }) => {
         movie_channel,
         movie_video_type,
     } = movie;
-    const { type } = useParams(); // useParams로 type을 받아옴
     const { Channel } = useSelector((state) => state.channel);
     const { isSideMenu } = useSelector((state) => state.header);
     const { isLoginUser } = useSelector((state) => state.auth); // 로그인한 유저 정보
@@ -39,13 +37,12 @@ const Video = ({ movie }) => {
         dispatch(
             IsDelList({
                 user_id: isLoginUser.user_id,
-                type: type, // 카테고리 (Viewing_Record, Playlist 등)
-                movie_id: movie_id,
+                type, // 카테고리 (Viewing_Record, Playlist 등)
+                movie,
             })
         );
     };
     const navigate = useNavigate();
-
     const [saveShow, setSaveShow] = useState(false);
     const handleShow = (e) => {
         e.stopPropagation();
@@ -126,5 +123,4 @@ const Video = ({ movie }) => {
         </VideoWrap>
     );
 };
-
 export default Video;

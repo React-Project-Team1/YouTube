@@ -2,6 +2,7 @@
     채널명: {
         channel_id: '채널 주인의 user_id',
         channel_name: '채널명/한글',
+        channel_nav:'',
         channel_banner: '배너 이미지 주소',
         channel_image: '채널 프로필 사진',
         channel_introduction: '채널 소개글',
@@ -42,6 +43,7 @@ export const Channel = {
     KBS_Joy: {
         channel_id: 741852,
         channel_name: 'KBS Joy',
+        channel_nav: 'KBS_Joy',
         channel_banner:
             'https://yt3.googleusercontent.com/mB8n4aqavnr5nGV5P7UH67hZd2qRYTJ5sCnXVqNIxFMX8NNQ26iyoztz-zfpUj7Nx6Vtp7_WEg=w1707-fcrop64=1,00005a57ffffa5a8-k-c0xffffffff-no-nd-rj',
         channel_image:
@@ -199,6 +201,7 @@ export const Channel = {
     LIJULIKE: {
         channel_id: 458963,
         channel_name: '리쥬라이크',
+        channel_nav: 'LIJULIKE',
         channel_banner:
             'https://yt3.googleusercontent.com/LPYJH3KwfkCifSwsUuVaVFuKi1Uz09HpDLOi11ddXHlVOBh3XwlYSZfJ7UHjiudY3YAWseAU0q4=w1060-fcrop64=1,00005a57ffffa5a8-k-c0xffffffff-no-nd-rj',
         channel_image:
@@ -355,6 +358,7 @@ export const Channel = {
     Highfiction: {
         channel_id: 641322,
         channel_name: '하이픽션',
+        channel_nav: 'Highfiction',
         channel_banner:
             'https://yt3.googleusercontent.com/w8XfHLFzmciL0QYoAEwv_CP5qvVRRN5wzIkLfAdgtMNuaNtMrJhkTLX0dC46f5gVHWFaoY4YMg=w1060-fcrop64=1,00005a57ffffa5a8-k-c0xffffffff-no-nd-rj',
         channel_image:
@@ -507,6 +511,7 @@ export const Channel = {
     Beginagain: {
         channel_id: 984562,
         channel_name: '@begin_again',
+        channel_nav: 'Beginagain',
         channel_banner:
             'https://yt3.googleusercontent.com/SgYk8-S4UrUAxgTx4Y0wB64PNsENZK0raxLYEiN800OiRSwh6eMozF0Z9YZoday7cZpII8SV=w1060-fcrop64=1,00005a57ffffa5a8-k-c0xffffffff-no-nd-rj',
         channel_image:
@@ -663,6 +668,7 @@ export const Channel = {
     G_Movie: {
         channel_id: 859641,
         channel_name: '@지무비',
+        channel_nav: 'G_Movie',
         channel_banner:
             'https://yt3.googleusercontent.com/YZSsAoZix0DCd0figFc81fktZHrOmvpWg0Se4bspLVD4BLbZH1hsBaPmoG3hlGqlRUxgDovyqg=w1060-fcrop64=1,00005a57ffffa5a8-k-c0xffffffff-no-nd-rj',
         channel_image:
@@ -823,6 +829,7 @@ export const Channel = {
     radiohead: {
         channel_id: 56165156,
         channel_name: '라디오헤드',
+        channel_nav: 'radiohead',
         channel_banner:
             'https://yt3.googleusercontent.com/7YJU_BnlYUPHGI1abV2FfjhgizivH6UZpPaMjAdjKWbuy_o_nspoIOhoa82lDA_c38Jfubve=w1060-fcrop64=1,00005a57ffffa5a8-k-c0xffffffff-no-nd-rj',
         channel_image:
@@ -968,6 +975,7 @@ export const Channel = {
     ultraTasteDiary: {
         channel_id: 6546654,
         channel_name: '최강록 Ultra Taste Diary',
+        channel_nav: 'ultraTasteDiary',
         channel_banner:
             'https://yt3.googleusercontent.com/nVk2CWFo_sMLATnX4kvDakcFI7vuAsBKGBEh-V9MzclW1j8HfYKIz-Xowx_UuOdM2bZn2DJ7aw=w1060-fcrop64=1,00005a57ffffa5a8-k-c0xffffffff-no-nd-rj',
         channel_image:
@@ -1113,6 +1121,7 @@ export const Channel = {
     suede: {
         channel_id: 96745102,
         channel_name: '스웨이드',
+        channel_nav: 'suede',
         channel_banner: '배너 이미지 주소',
         channel_image:
             'https://yt3.googleusercontent.com/UX1nAVaOk_ARxZXQu5uknwTP2JJ3C54dcSWKNjTwoB4Ft8B2v1v4nIVeJCuYWHAYDFd6AxtVjw=s160-c-k-c0x00ffffff-no-rj',
@@ -1259,6 +1268,7 @@ export const Channel = {
     woowakgood: {
         channel_id: 41846541,
         channel_name: '우왁굳',
+        channel_nav: 'woowakgood',
         channel_banner:
             'https://yt3.googleusercontent.com/eYI-CDr4AXjjnzZv8ERzW-P2u1AQPNNCNDRLxBw1mlIwEjA-BIKUHpdd6dFDD7pjGF7urPZTrA=w1060-fcrop64=1,00005a57ffffa5a8-k-c0xffffffff-no-nd-rj',
         channel_image:
@@ -1407,6 +1417,7 @@ export const Channel = {
     goodboykris: {
         channel_id: 81372931,
         channel_name: '소련 여자',
+        channel_nav: 'goodboykris',
         channel_banner:
             'https://yt3.googleusercontent.com/FB29DrRZRBPzHTH5kb8yEanNdWrQaF76lnobBdlqUTNC-1mkg-btjUeJn6KNq6l0OIS0JB6fAw=w1060-fcrop64=1,00005a57ffffa5a8-k-c0xffffffff-no-nd-rj',
         channel_image:
@@ -1553,6 +1564,7 @@ export const Channel = {
     workman: {
         channel_id: 452454,
         channel_name: '워크맨-Workman',
+        channel_nav: 'workman',
         channel_banner:
             'https://yt3.googleusercontent.com/YSzNgAfL46tAd9qCJDyBKxIXVzfJUzq4ic8dY9LbGCsnGEuZ3S6QZkcY6zPZG_GIuuNaa9f1=w1707-fcrop64=1,00005a57ffffa5a8-k-c0xffffffff-no-nd-rj',
         channel_image:
@@ -1711,6 +1723,7 @@ export const Channel = {
     sbs_dali: {
         channel_id: 775460,
         channel_name: '달리 [SBS DALI] - SBS 공식 교양 채널',
+        channel_nav: 'sbs_dali',
         channel_banner:
             'https://yt3.googleusercontent.com/sMSp7eIV0sktjQTpjflRyf3q4zDAC1A8UJhz_c9oSdWJGMdg88k6TlxOCS63GyK4WpToo7oX=w1060-fcrop64=1,00005a57ffffa5a8-k-c0xffffffff-no-nd-rj',
         channel_image:
@@ -1865,6 +1878,7 @@ export const Channel = {
     ootbstudio: {
         channel_id: 125424,
         channel_name: 'ootb STUDIO',
+        channel_nav: 'ootbstudio',
         channel_banner:
             'https://yt3.googleusercontent.com/7K01zQCZpweun9YtKU0wNM9rBotE8TSUE1r3WLMX98AhZ9YeCBApWyHvQbr75uytLWsCrY-uPQ=w1060-fcrop64=1,00005a57ffffa5a8-k-c0xffffffff-no-nd-rj',
         channel_image:
@@ -2021,6 +2035,7 @@ export const Channel = {
     SBSKPOP: {
         channel_id: 2250024,
         channel_name: 'SBSKPOP X INKIGAYO',
+        channel_nav: 'SBSKPOP',
         channel_banner:
             'https://yt3.googleusercontent.com/oOQHsiZrRMv3jYKY4M7kJsqcBjlXfwf1Wq1X96qsUuYWxY5TdFiNHUewkl8XWmVDvL9uMucUoOc=w1060-fcrop64=1,00005a57ffffa5a8-k-c0xffffffff-no-nd-rj',
         channel_image:
@@ -2174,6 +2189,7 @@ export const Channel = {
     SBSANIMAL: {
         channel_id: 2215544,
         channel_name: 'SBS TV동물농장x애니멀봐 공식 유튜브 채널입니다!',
+        channel_nav: 'SBSANIMAL',
         channel_banner:
             'https://yt3.googleusercontent.com/jJb9nRaO1XSX7cCyUCWlddsO4VEMAfmKkpUfCKsWSco9VOi0QdUvFeTjUSpt669Xs85CIWp9lw=w1060-fcrop64=1,00005a57ffffa5a8-k-c0xffffffff-no-nd-rj',
         channel_image:
@@ -2329,6 +2345,7 @@ export const Channel = {
     jindoEre: {
         channel_id: 798311,
         channel_name: '진돗개 이레',
+        channel_nav: 'jindoEre',
         channel_banner:
             'https://yt3.googleusercontent.com/byG9tgzrpnpoM2Zu20_WMqX4QjqYX-bxbhPCoJZhFYkPqOtqW1IJPD0FwtoAQMl3dVwlw7ULlg=w1060-fcrop64=1,00005a57ffffa5a8-k-c0xffffffff-no-nd-rj',
         channel_image:
@@ -2479,6 +2496,7 @@ export const Channel = {
     shoppingMom: {
         channel_id: 660495,
         channel_name: '쇼핑맘',
+        channel_nav: 'shoppingMom',
         channel_banner:
             'https://yt3.googleusercontent.com/DTgCPAH4K8MxbMYGrLtQVum6D_1Ys3iU868mDeH_CalsqdGKL9Ou99teL7z7V8g1Y8p3-mAfZL8=w1060-fcrop64=1,00005a57ffffa5a8-k-c0xffffffff-no-nd-rj',
         channel_image:
@@ -2636,6 +2654,7 @@ export const Channel = {
     mamu_vlog: {
         channel_id: 201864,
         channel_name: 'mamu마므',
+        channel_nav: 'mamu_vlog',
         channel_banner:
             'https://yt3.googleusercontent.com/lArY9lbEFU12URnCHfvsQ8d1KaktdkJ5AbCSL0FnyRWws8GMkTBIFlWRzzQAGpyZxXFDpV9Iew=w1060-fcrop64=1,00005a57ffffa5a8-k-c0xffffffff-no-nd-rj',
         channel_image:
@@ -2790,6 +2809,7 @@ export const Channel = {
     moozzi: {
         channel_id: 904206,
         channel_name: '무찌',
+        channel_nav: 'moozzi',
         channel_banner:
             'https://yt3.googleusercontent.com/_c2vXh4oFCHaqxOTehNhs-WLCTuzATSHTJ5fiQDz4E4tbBFsXwliKoXo00K_Xmyt_YmpZZCPYQ=w1060-fcrop64=1,00005a57ffffa5a8-k-c0xffffffff-no-nd-rj',
         channel_image:
@@ -2943,6 +2963,7 @@ export const Channel = {
     Or7r2l: {
         channel_id: 806540,
         channel_name: '아가리어터',
+        channel_nav: 'Or7r2l',
         channel_banner:
             'https://yt3.googleusercontent.com/LlkjnLTQEfDyOSWelXnV_4XJb-EethG3Dfc92JvZJnLlnaHufmM6QVx_y9GLyf9Qc3As9QlpngA=w1060-fcrop64=1,00005a57ffffa5a8-k-c0xffffffff-no-nd-rj',
         channel_image:

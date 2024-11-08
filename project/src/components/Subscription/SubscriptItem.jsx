@@ -10,6 +10,7 @@ const SubscriptItem = ({ channel, handleChangeThisId, thisChannelID }) => {
         channel_image,
         channel_introduction,
         channel_subscribers,
+        channel_nav,
         Movies,
     } = channel;
 
@@ -36,12 +37,14 @@ const SubscriptItem = ({ channel, handleChangeThisId, thisChannelID }) => {
     return (
         <li
             className='subscript-li'
-            onClick={() => navigate(`/channel/${channel.Movies[0].movie_channel}`)}
+            onClick={() => navigate(`/channel/${channel.Movies[0]?.movie_channel || channel_nav}`)}
         >
             <img className='subscript-li-img' src={channel_image} alt={channel_name} />
             <div className='subscript-channel-content'>
                 <strong className='content-channel-name'>{channel_name}</strong>
-                <span className='content-channel-engName'>@{Movies[0].movie_channel}</span>
+                <span className='content-channel-engName'>
+                    @{Movies[0]?.movie_channel || channel_nav}
+                </span>
                 <span className='content-channel-subscribers'>
                     구독자 {channel_subscribers.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')}명
                 </span>

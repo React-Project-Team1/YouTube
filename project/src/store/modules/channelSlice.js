@@ -20,10 +20,11 @@ export const channelSlice = createSlice({
             const NewChannel = {
                 channel_id: user_id,
                 channel_name: user_name,
-                channel_banner: 'https://via.placeholder.com/1000x120',
-                channel_image: 'https://via.placeholder.com/80',
+                channel_banner: 'https://via.placeholder.com/1280x200',
+                channel_image: 'https://via.placeholder.com/160x160',
                 channel_introduction: `안녕하세요 ${user_name} 채널 입니다.`,
                 channel_subscribers: 0,
+                channel_nav: emailPrefix,
                 Movies: [],
             };
             state.Channel[emailPrefix] = NewChannel;

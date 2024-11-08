@@ -143,6 +143,20 @@ export const BelowWrap = styled.div`
         border-radius: 15px;
         z-index: 1;
     }
+    .CommentList {
+        position: relative;
+    }
+    .Comment_report {
+        width: auto;
+        position: absolute;
+        right: -5rem;
+        top: 3.5rem;
+        background: #fff;
+        padding: 1%;
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        border-radius: 15px;
+        z-index: 1;
+    }
 `;
 
 export const BelowDetailWrap = styled.div`
@@ -382,6 +396,13 @@ export const CommentWrap = styled.div`
         color: #fff;
         width: 4rem;
         height: 4rem;
+    }
+    .CommentBtn {
+        height: 8rem;
+        font-size: 2rem;
+    }
+    .CommentDel {
+        width: 5rem;
     }
     .comment_user {
         margin-bottom: 5rem;
