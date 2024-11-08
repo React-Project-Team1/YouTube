@@ -36,6 +36,7 @@ export const authSlice = createSlice({
             // localStorage 처리...
         },
         // 10-31 김신영님 작업끝
+        // 11-08 고건영 작업
         AddNewUser(state, action) {
             // 새로운 유저 회원가입 조건문 처리 해야함
             // 로그인, 로그아웃 등 기능은 별도로 구현 해야함
@@ -116,10 +117,9 @@ export const authSlice = createSlice({
         },
         AddNewSubscription(state, action) {
             // 구독 목록 추가
-            const { user_id } = action.payload;
+            const { user_id, channel_id } = action.payload;
             const User = state.LoginUser.find((user) => user.user_id === user_id);
             if (User) {
-                // 중복 채널 추가 X
                 if (!User.Subscription_Id.includes(channel_id)) {
                     User.Subscription_Id.push(channel_id);
                 }

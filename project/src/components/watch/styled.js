@@ -57,19 +57,17 @@ export const BelowWrap = styled.div`
 
         .subscribers {
             margin-left: 1.5rem;
-
             .subscribers-btn {
-                color: #fff;
-                background: #0f0f0f;
-                padding: 0 1.56rem;
-                height: 3.8rem;
-                font-size: 1.4rem;
-                border-radius: 3rem;
-                border: none;
+                display: flex;
+                justify-content: center;
+                align-items: center;
             }
-            .on {
-                color: #0f0f0f;
-                background: rgba(0, 0, 0, 0.05);
+            .not-subscribers-btn {
+                color: #fff;
+                background-color: #212121;
+                &:hover {
+                    background-color: #424242;
+                }
             }
         }
 

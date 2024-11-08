@@ -42,6 +42,7 @@ export const channelSlice = createSlice({
         // 영상 수정
         ChangeMovies(state, action) {},
         // 댓글 추가
+        // 11-08 고건영 작업
         AddNewMoviesComment(state, action) {
             const { movie_id, movie_channel, comment_body, comment_user_id, comment_user_name } =
                 action.payload;

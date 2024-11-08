@@ -7,6 +7,7 @@ import Comment from './Comment';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { AddNewSubscription, DelSubscription, IsAddList } from '../../store/modules/authSlice';
+import { Button } from '../../ui/Button';
 
 const Below = ({
     title,
@@ -88,23 +89,20 @@ const Below = ({
                         <p className='channel_subscribers'>{channelSubscribers}명</p>
                     </div>
                     <div className='subscribers'>
-                        <button
-                            className={`subscribers-btn ${isSubscribed ? 'on' : ''}`}
-                            onClick={handleSubscribeClick}
-                        >
-                            {isSubscribed ? (
-                                <>
-                                    <img
-                                        src='https://raw.githubusercontent.com/React-Project-Team1/data-center/752a52cbfb5bf64b383b0941ba3834539b2988ac/Icon/Notification.svg'
-                                        alt='구독 중'
-                                        className='img'
-                                    />
-                                    <span className='BelowBtn_comment comment'>구독중</span>
-                                </>
-                            ) : (
-                                '구독'
-                            )}
-                        </button>
+                        {isSubscribed ? (
+                            <Button className='subscribers-btn' onClick={handleSubscribeClick}>
+                                <img
+                                    src='https://raw.githubusercontent.com/React-Project-Team1/data-center/752a52cbfb5bf64b383b0941ba3834539b2988ac/Icon/Notification.svg'
+                                    alt='구독 중'
+                                    className='img'
+                                />
+                                <span className='BelowBtn_comment comment'>구독중</span>
+                            </Button>
+                        ) : (
+                            <Button className='not-subscribers-btn' onClick={handleSubscribeClick}>
+                                구독
+                            </Button>
+                        )}
                     </div>
                 </div>
 
