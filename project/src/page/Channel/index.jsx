@@ -101,7 +101,7 @@ const Channel = () => {
                                 <Popup
                                     handleClosePopup={handleClosePopup}
                                     channel_name={thisChannel.channel_name}
-                                    thisChannelID={thisChannel.Movies[0].movie_channel}
+                                    thisChannelID={thisChannel.channel_id}
                                 />
                             </div>
                         </div>
