@@ -8,6 +8,7 @@ import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { AddNewSubscription, DelSubscription, IsAddList } from '../../store/modules/authSlice';
 import { Button } from '../../ui/Button';
+import Popup from '../../ui/popup/Popup';
 
 const Below = ({
     title,
@@ -37,19 +38,23 @@ const Below = ({
     };
 
     const handleSubscribeClick = () => {
-        // 구독 상태에 따라서 처리
-        if (isSubscribed) {
-            // 구독 중이면 구독 취소
-            dispatch(DelSubscription({ user_id: isLoginUser.user_id, channel_id: channelId }));
-        } else {
-            // 구독 안 되어 있으면 구독 추가
-            dispatch(
-                AddNewSubscription({
-                    user_id: isLoginUser.user_id,
-                    channel_id: channelId,
-                })
-            );
-        }
+        // 구독 안 되어 있으면 구독 추가
+        dispatch(
+            AddNewSubscription({
+                user_id: isLoginUser.user_id,
+                channel_id: channelId,
+            })
+        );
+    };
+
+    const handleShowPopup = (e) => {
+        e.stopPropagation();
+        const modal = document.querySelector('#subscript-popup');
+        modal.showModal();
+    };
+    const handleClosePopup = () => {
+        const modal = document.querySelector('#subscript-popup');
+        modal.close();
     };
 
     const handleLikeClick = () => {
@@ -90,7 +95,7 @@ const Below = ({
                     </div>
                     <div className='subscribers'>
                         {isSubscribed ? (
-                            <Button className='subscribers-btn' onClick={handleSubscribeClick}>
+                            <Button className='subscribers-btn' onClick={handleShowPopup}>
                                 <img
                                     src='https://raw.githubusercontent.com/React-Project-Team1/data-center/752a52cbfb5bf64b383b0941ba3834539b2988ac/Icon/Notification.svg'
                                     alt='구독 중'
@@ -103,6 +108,12 @@ const Below = ({
                                 구독
                             </Button>
                         )}
+
+                        <Popup
+                            handleClosePopup={handleClosePopup}
+                            channel_name={channel_name}
+                            thisChannelID={channelId}
+                        />
                     </div>
                 </div>
 

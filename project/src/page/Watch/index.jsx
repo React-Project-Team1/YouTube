@@ -6,7 +6,6 @@ import { SideMenuChange } from '../../store/modules/HeaderSlice';
 import { getAllMovies } from '../../store/modules/channelSlice';
 import Below from '../../components/watch/Below';
 import WatchList from '../../components/watch/WatchList';
-import { Channel } from '../../assets/api/Channel';
 import { IsAddList } from '../../store/modules/authSlice';
 
 const Watch = () => {

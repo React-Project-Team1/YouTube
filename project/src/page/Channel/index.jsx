@@ -7,6 +7,7 @@ import { useState } from 'react';
 import Search_results from './Search_results';
 import { Button } from '../../ui/Button';
 import { AddNewSubscription, DelSubscription } from '../../store/modules/authSlice';
+import Popup from '../../ui/popup/Popup';
 // import { Button } from '../../ui/Button';
 
 const Channel = () => {
@@ -26,25 +27,24 @@ const Channel = () => {
         return count >= 10000 ? `${Math.floor(count / 10000)}만명` : `${count}명`;
     };
 
-    const handleSubscribeClick = () => {
-        // 구독 상태에 따라서 처리
-        if (isSubscribed) {
-            // 구독 중이면 구독 취소
-            dispatch(
-                DelSubscription({
-                    user_id: isLoginUser.user_id,
-                    channel_id: thisChannel.channel_id,
-                })
-            );
-        } else {
-            // 구독 안 되어 있으면 구독 추가
-            dispatch(
-                AddNewSubscription({
-                    user_id: isLoginUser.user_id,
-                    channel_id: thisChannel.channel_id,
-                })
-            );
-        }
+    const handleSubscribeClick = (e) => {
+        e.stopPropagation();
+        // 구독 안 되어 있으면 구독 추가
+        dispatch(
+            AddNewSubscription({
+                user_id: isLoginUser.user_id,
+                channel_id: thisChannel.channel_id,
+            })
+        );
+    };
+    const handleShowPopup = (e) => {
+        e.stopPropagation();
+        const modal = document.querySelector('#subscript-popup');
+        modal.showModal();
+    };
+    const handleClosePopup = () => {
+        const modal = document.querySelector('#subscript-popup');
+        modal.close();
     };
 
     if (!thisChannel)
@@ -82,10 +82,7 @@ const Channel = () => {
                                     {thisChannel.channel_introduction}
                                 </div>
                                 {isSubscribed ? (
-                                    <Button
-                                        className='subscribers-btn'
-                                        onClick={handleSubscribeClick}
-                                    >
+                                    <Button className='subscribers-btn' onClick={handleShowPopup}>
                                         <img
                                             src='https://raw.githubusercontent.com/React-Project-Team1/data-center/752a52cbfb5bf64b383b0941ba3834539b2988ac/Icon/Notification.svg'
                                             alt='구독 중'
@@ -101,6 +98,11 @@ const Channel = () => {
                                         구독
                                     </Button>
                                 )}
+                                <Popup
+                                    handleClosePopup={handleClosePopup}
+                                    channel_name={thisChannel.channel_name}
+                                    thisChannelID={thisChannel.Movies[0].movie_channel}
+                                />
                             </div>
                         </div>
                     </div>
