@@ -33,7 +33,6 @@ export const authSlice = createSlice({
         UserLogout(state) {
             state.isAuth = false;
             state.isLoginUser = null;
-            // localStorage 처리...
         },
         // 10-31 김신영님 작업끝
         // 11-08 고건영 작업
@@ -103,7 +102,6 @@ export const authSlice = createSlice({
             // 검색어 기록 추가 11-08 김신영 수정
             const { user_id, search } = action.payload;
             const User = state.LoginUser.find((user) => user.user_id === user_id);
-
             if (User) {
                 // 중복 검색어 방지
                 const isDuplicate = User.user_search_list.some((item) => item.search === search);

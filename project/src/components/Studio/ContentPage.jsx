@@ -1,13 +1,15 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { ContentPageWrap } from './styled';
 import Video from '../../ui/Youtube/Video';
 import { DelMovies, getAllMovies } from '../../store/modules/channelSlice';
+import { useNavigate } from 'react-router-dom';
 
 const ContentPage = () => {
     const { Channel } = useSelector((state) => state.channel);
-    const { isLoginUser } = useSelector((state) => state.auth);
+    const { isLoginUser, isAuth } = useSelector((state) => state.auth);
     const dispatch = useDispatch();
+    const navigate = useNavigate();
     const thisChannel = Object.values(Channel).find(
         (channel) => channel.channel_id === Number(isLoginUser.user_id)
     );
@@ -36,6 +38,10 @@ const ContentPage = () => {
         setSelectedMovies([]);
         dispatch(getAllMovies());
     };
+
+    useEffect(() => {
+        if (!isAuth) navigate(`/`);
+    }, [isAuth]);
 
     return (
         <ContentPageWrap>

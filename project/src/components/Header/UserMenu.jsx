@@ -1,7 +1,10 @@
+import { useState } from 'react';
 import { useSelector } from 'react-redux';
+import UserMenuList from '../../ui/Header/UserMenuList';
 
 const UserMenu = () => {
     const { isLoginUser } = useSelector((state) => state.auth);
+    const [menu, setMenu] = useState(false);
     return (
         <div className='user-menu'>
             <a href='#'>
@@ -16,8 +19,11 @@ const UserMenu = () => {
                     alt='Notification'
                 />
             </a>
-            <a href='#'>
-                <span className='user-profile'>{isLoginUser.user_name.charAt(0)}</span>
+            <a href='#' onClick={() => setMenu(!menu)}>
+                <span className='user-profile'>
+                    {isLoginUser.user_name.charAt(0)}
+                    {menu && <UserMenuList />}
+                </span>
             </a>
         </div>
     );

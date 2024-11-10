@@ -7,13 +7,13 @@ const SearchHistory = ({ Search, isShown, setSearch }) => {
     const navigate = useNavigate();
     const dispatch = useDispatch();
     const user = useSelector((state) => state.auth.isLoginUser);
-    const searchHistory = user.user_search_list || []; // 검색어 목록
+    const searchHistory = user?.user_search_list || []; // 검색어 목록
 
     useEffect(() => {
         if (Search) {
             dispatch(AddNewSearchList({ user_id: user.user_id, search: Search }));
         }
-    }, [Search, dispatch, user.user_id]);
+    }, [Search, dispatch, user?.user_id]);
 
     // 최근 기록 재검색
     const searchKeyword = (keyword) => {

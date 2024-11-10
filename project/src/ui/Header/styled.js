@@ -26,3 +26,31 @@ export const LoginButtonWrap = styled.div`
         font-size: 1.4rem;
     }
 `;
+
+export const UserMenuWrap = styled.ul`
+    position: absolute;
+    left: -18rem;
+    top: 4rem;
+    padding: 1rem 0;
+    z-index: 999;
+    background-color: #fff;
+    border-radius: 0.5rem;
+    box-shadow: 0 0.4rem 0.8rem rgba(0, 0, 0, 0.1); /* 그림자 추가 */
+    width: 100%;
+    min-width: 22rem;
+    overflow: hidden;
+    li {
+        display: flex;
+        align-items: center;
+        padding: 0.6rem 1.6rem;
+        cursor: pointer;
+        font-size: 1.4rem;
+        color: #333;
+        &:hover {
+            background-color: #f0f0f0;
+        }
+        img {
+            margin-right: 0.8rem;
+        }
+    }
+`;

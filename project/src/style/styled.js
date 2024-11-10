@@ -144,6 +144,7 @@ export const HeaderWrap = styled.header`
                     color: #fff;
                     width: 3rem;
                     height: 3rem;
+                    position: relative;
                 }
             }
         }
