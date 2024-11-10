@@ -1,11 +1,13 @@
-import { Link, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { FeedWrap } from './styled';
 import { useSelector } from 'react-redux';
 import Video from '../../ui/Youtube/Video';
+import { useState } from 'react';
 
 const Feed = () => {
     const { Category } = useParams();
     const { isLoginUser } = useSelector((state) => state.auth);
+    const [search, setSearch] = useState('');
     const getCategory = () => {
         switch (Category) {
             case 'Viewing_Record':
@@ -33,8 +35,12 @@ const Feed = () => {
             <div className='viewing_content'>
                 <div className='inner'>
                     {/* 시청한 동영상 출력 */}
-                    <ul className='test'>
-                        {isLoginUser[Category]?.map((movie) => (
+                    <ul className='video-list'>
+                        {isLoginUser[Category]?.filter(
+                            (video) =>
+                                video.movie_title.toLowerCase().includes(search?.toLowerCase()) ||
+                                video.movie_category.toLowerCase().includes(search.toLowerCase())
+                        ).map((movie) => (
                             <Video key={movie.movie_id} movie={movie} type={Category} />
                         ))}
                     </ul>
@@ -45,18 +51,19 @@ const Feed = () => {
                     <div className='search'>
                         <img
                             src='https://raw.githubusercontent.com/React-Project-Team1/data-center/a95871720c235be8180dd58ccc5bf67fbb92d7a4/Icon/Search.svg'
-                            alt='시청기록검색'
+                            alt={`${getCategory()} 검색`}
                         />
-                        <input type='text' placeholder='시청 기록 검색' />
+                        <input
+                            type='text'
+                            value={search}
+                            onChange={(e) => setSearch(e.target.value)}
+                            placeholder={`${getCategory()} 검색`}
+                        />
                     </div>
 
                     <div className='content'>
                         <img src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAKRJREFUSEvtlUEKgCAQRV93CYK6TsdpGXSZrlPQaYpAXVjDt8xd7mR03v8z6FQUXlXh/ChAD4xAYwjZgAGYLaEKsACtcLkC3VvA7i5aQlRclkglUPELwF/I7X1wHFsvDvDKpfXIonn+dfO+BsQK1T7wUx2ohNkl+gGXd/W0JH8P5NeUXSJFeAxIGTQx9HbwWC/5HJUTUCvpLm6OTjUyE/Pbx4oDDlBhOBmYaWrOAAAAAElFTkSuQmCC' />
-                        <p>시청 기록 지우기 </p>
-                    </div>
-                    <div className='content'>
-                        <img src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAhZJREFUSEu11UnojlEUx/HPXzJEip0hlAVFSLFSrGRIQoYFSkkSsZAFMoSVpEwlC0KJhWSMspBhJ1Mkc7JVpAwR7qn71vN/vHO97+p5nvfc+z33nN/53S4d/nV1eH+NAL2xEDMxASPxF+/xCNdxAb9qJVoPMAtH86b1Dvoaa3CrWlAtwM6U6Y684APO4Soe528TMReLMSx/24T9ZUg1QGXzr1iGy7ks1RLsgUU4gb7YgIPFwDIgsrqE7ynjyWnxsyZFMAX3EMBpuFtZVwT0x0sMxnKcaXLzSthGHMCL1PjxlcYXAWtxJNX1OcbVKUstbq+srkhwPi5GYBFwDaGcdRlU3CikWYwvv1di92ILjmN1GfAx/TEUo/C2lGazgKm4g4epl5PKgG9ZCaGGH20CBuETPmNgGRCyjEYPQDy3U6JY+yWvj+duPYjuj84KeNomIMryIAtlbBlwNklsKTZjX5uAbdid+ng69XFFGRDaP4VXGIM/Lc5BzzQ/bzAcS3C+DIjmRpkiYGUyuZMtAtZnm4hhjUH7WQbE+wzcaMMqwlbuZ6uYnqXabXCKyW7FnqyGMLsrdU4S3hPliMHqlyQapzhcjK9l19uTwnblwHfZrmPSnyAsIaxkXnbSIdlWwkkPlZOpd+HMScZ3LE93vXbEhbMKt6sFNboy+6SsF2B2btyInG2oJfR+M5va71oZNAK0KKT/wzsO+Afx62wZ7JyvrQAAAABJRU5ErkJggg==' />
-                        <p>시청 기록 일시중지</p>
+                        <p>{getCategory()} 지우기 </p>
                     </div>
                 </div>
             </div>

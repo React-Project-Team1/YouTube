@@ -47,6 +47,7 @@ export const CommentItemWrap = styled.li`
         white-space: nowrap;
         overflow: hidden;
         font-size: 1.4rem;
+        max-width: 80rem;
     }
     .user {
         display: flex;
@@ -54,6 +55,18 @@ export const CommentItemWrap = styled.li`
         margin-bottom: 1%;
         color: #666;
         font-size: 1.2rem;
+    }
+    .comment_title-wrap {
+        display: none;
+        font-size: 1.2rem;
+        width: 20rem;
+        margin-left: 2rem;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        line-height: 1.6rem; /* 한 줄의 높이 설정 */
+        max-height: 3.2rem; /* 두 줄의 높이에 맞추어 설정 */
     }
 `;
 
@@ -107,6 +120,28 @@ export const CommentPageWrap = styled.div`
                 position: absolute;
                 left: 0;
                 bottom: 0;
+            }
+        }
+    }
+    .comment-list {
+        width: 100%;
+        .comment-item {
+            max-width: 100%;
+            border-bottom: 1px solid #ddd;
+            margin-bottom: 0;
+            box-sizing: border-box;
+            padding: 1%;
+            .user-profile {
+                margin-right: 1rem;
+            }
+            .comment-img-wrap {
+                max-width: 16rem;
+                img {
+                    height: 100%;
+                }
+            }
+            .comment_title-wrap {
+                display: -webkit-box;
             }
         }
     }

@@ -53,6 +53,11 @@ export const VideoWrap = styled.li`
         box-sizing: border-box;
         padding-right: 2.5rem;
     }
+    .movie_body {
+        display: none;
+        font-size: 1.2rem;
+        color: #999;
+    }
     .movie_like_count,
     .channel_name {
         font-size: 1.4rem;

@@ -1,4 +1,4 @@
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { Button } from '../../ui/Button';
 import { LoginFormWrap } from './styled';
 import { useDispatch, useSelector } from 'react-redux';
@@ -11,6 +11,7 @@ const LoginForm = ({ loginCheck, setLoginCheck, setPageType }) => {
     const [idChk, setIdChk] = useState(false);
     const dispatch = useDispatch();
     const navigate = useNavigate();
+    const location = useLocation();
 
     const changeInput = (e) => {
         const { name, value } = e.target;
@@ -30,7 +31,15 @@ const LoginForm = ({ loginCheck, setLoginCheck, setPageType }) => {
             )
         ) {
             dispatch(UserLogin(user));
-            navigate(-1);
+            if (
+                location.pathname.startsWith('/studio') ||
+                location.pathname.startsWith('/login') ||
+                location.pathname.startsWith('/join')
+            ) {
+                navigate(`/`);
+            } else {
+                navigate(-1);
+            }
         } else {
             setLoginCheck(true);
             return;

@@ -2,10 +2,10 @@ import styled from 'styled-components';
 
 export const FeedWrap = styled.div`
     width: 100%;
+    min-height: 100vh;
     /* display: flex; */
     .inner {
         padding-top: 2.4rem;
-        /* padding-right: calc(50% - 64.2rem); */
         padding-right: 35%;
         padding-left: calc(50% - 64.2rem);
         h2 {
@@ -13,8 +13,7 @@ export const FeedWrap = styled.div`
             line-height: 5rem;
             font-weight: 700;
         }
-
-        .test {
+        .video-list {
             display: flex;
             flex-direction: column;
             width: 100%;
@@ -51,7 +50,6 @@ export const FeedWrap = styled.div`
                     word-break: break-all;
                     padding: 0;
                 }
-
                 .channel-logo {
                     display: none;
                 }
@@ -64,6 +62,14 @@ export const FeedWrap = styled.div`
                         .movie_date {
                             display: none;
                         }
+                    }
+                    .movie_body {
+                        display: block;
+                        margin-top: 0.4rem;
+                        max-width: 50rem;
+                        white-space: nowrap;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
                     }
                 }
                 .close-menu,
@@ -83,8 +89,6 @@ export const FeedWrap = styled.div`
         }
     }
     .page_menu {
-        /* border:1px solid #000; */
-        /* z-index: 10; */
         position: fixed;
         background-color: white;
         top: 20rem;
@@ -92,6 +96,7 @@ export const FeedWrap = styled.div`
         .search_wrap {
             display: flex; /* Flex 컨테이너로 설정 */
             flex-direction: column;
+            min-width: 22rem;
             .search {
                 display: flex;
                 margin-bottom: 1rem;
@@ -101,24 +106,25 @@ export const FeedWrap = styled.div`
                     height: 3rem;
                     padding: 1rem;
                     border-radius: 50%;
-                    /* background-color:#efefef; */
                 }
                 input {
                     border: none;
                     outline: none;
                 }
             }
-
             .content {
+                width: 100%;
                 margin: 1rem 0;
-                padding: 0.8rem;
+                padding: 1rem;
                 border-radius: 5rem;
+                box-sizing: border-box;
                 display: flex;
+                align-items: center;
+                cursor: pointer;
+                font-size: 1.4rem;
                 img {
                     display: flex;
                     margin-right: 3%;
-                }
-                p {
                 }
             }
             .content:hover {

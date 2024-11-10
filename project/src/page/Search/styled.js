@@ -67,6 +67,10 @@ export const SearchListWrap = styled.ul`
                         font-size: 2rem;
                         font-weight: 500;
                     }
+                    .movie_body {
+                        display: block;
+                        margin-top: 1rem;
+                    }
                 }
             }
         }

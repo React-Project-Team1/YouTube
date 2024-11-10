@@ -18,13 +18,14 @@ const CommentItem = ({ comment, thisChannel }) => {
             <div className='comment-text-wrap'>
                 <div className='user'>
                     <span className='user-profile'>{comment.comment_user_name.charAt(0)}</span>
-                    <span className='comment_user_name'>{comment.comment_user_name}</span>
+                    <span className='comment_user_name'>@{comment.comment_user_name}</span>
                 </div>
                 <p className='comment_body'>{comment.comment_body}</p>
             </div>
             <div className='comment-img-wrap'>
                 <img src={thisMovie.movie_image} alt='Movie-image' />
             </div>
+            <div className='comment_title-wrap'>{thisMovie.movie_title}</div>
         </CommentItemWrap>
     );
 };

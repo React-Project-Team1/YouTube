@@ -28,6 +28,10 @@ const GlobalStyle = createGlobalStyle`
   input{
     box-sizing: border-box;
   }
+  p,
+  span{
+    user-select: none;
+  }
 `;
 
 export default GlobalStyle;

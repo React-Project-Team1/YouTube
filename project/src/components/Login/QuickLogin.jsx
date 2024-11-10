@@ -1,4 +1,4 @@
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { QuickLoginWrap } from './styled';
 import { useDispatch, useSelector } from 'react-redux';
 import { UserLogin } from '../../store/modules/authSlice';
@@ -11,23 +11,31 @@ const QuickLogin = ({ setPageType }) => {
 
     const dispatch = useDispatch();
     const navigate = useNavigate();
+    const location = useLocation();
+
+    const handleLogin = (user) => {
+        alert(`${user.user_name} 로그인`);
+        dispatch(
+            UserLogin({
+                user_email: user.user_email,
+                user_password: user.user_password,
+            })
+        );
+        if (
+            location.pathname.startsWith('/studio') ||
+            location.pathname.startsWith('/login') ||
+            location.pathname.startsWith('/join')
+        ) {
+            navigate(`/`);
+        } else {
+            navigate(-1);
+        }
+    };
+
     return (
         <QuickLoginWrap>
             {randomLoginUser.map((user) => (
-                <li
-                    key={user.user_id}
-                    className='login-item'
-                    onClick={() => {
-                        alert(`${user.user_name} 로그인`);
-                        dispatch(
-                            UserLogin({
-                                user_email: user.user_email,
-                                user_password: user.user_password,
-                            })
-                        );
-                        navigate(-1);
-                    }}
-                >
+                <li key={user.user_id} className='login-item' onClick={() => handleLogin(user)}>
                     <div className='profile-wrap'>
                         <span className='user-profile'>{user.user_name.charAt(0)}</span>
                     </div>
