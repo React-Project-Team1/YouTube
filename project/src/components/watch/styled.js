@@ -21,13 +21,11 @@ export const BelowWrap = styled.div`
             align-items: center;
             flex-wrap: nowrap;
             overflow: hidden;
-
             .channelImg {
                 width: 4rem;
                 margin-top: 0.5rem;
                 border-radius: 2.5rem;
             }
-
             .channel_detail {
                 margin-left: 1.2rem;
                 margin-right: 2.4rem;
@@ -36,7 +34,8 @@ export const BelowWrap = styled.div`
                 flex-direction: column;
                 justify-content: center;
                 white-space: nowrap;
-
+                user-select: none;
+                cursor: pointer;
                 .channel_name {
                     font-size: 1.7rem;
                     font-weight: 600;
