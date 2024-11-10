@@ -32,11 +32,13 @@ export const WatchWrap = styled.div`
 export const WatchListWrap = styled.div`
     display: flex;
     flex-direction: column;
+    width: 30%;
     .sub_video_wrap {
         width: 100%;
     }
     .video-loder {
         display: flex;
+        width: 100%;
         .video-wrap {
             width: 18rem;
             overflow: hidden;

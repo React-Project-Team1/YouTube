@@ -1,50 +1,24 @@
-import { Link, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { ChannelWrap } from './styled';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import Channel_home from './Channel_home';
 import Channel_video from './Channel_video';
 import { useState } from 'react';
 import Search_results from './Search_results';
-import { Button } from '../../ui/Button';
-import { AddNewSubscription, DelSubscription } from '../../store/modules/authSlice';
-import Popup from '../../ui/popup/Popup';
-// import { Button } from '../../ui/Button';
+import SubscribersBtn from '../../ui/Subscribers/SubscribersBtn';
 
 const Channel = () => {
     const { Channel_name } = useParams();
     const { Channel } = useSelector((state) => state.channel);
-    const { isLoginUser } = useSelector((state) => state.auth);
     const [activeTab, setActiveTab] = useState('home'); // 현재 활성화된 탭 상태
     const [searchTerm, setSearchTerm] = useState('');
-    const dispatch = useDispatch();
 
     const thisChannel = Channel[Channel_name];
-    const isSubscribed = isLoginUser?.Subscription_Id?.includes(thisChannel?.channel_id);
     //동영상 총 개수
     const videoCount = thisChannel?.Movies.length;
     // 구독자수 n만명
     const formatSubscribers = (count) => {
         return count >= 10000 ? `${Math.floor(count / 10000)}만명` : `${count}명`;
-    };
-
-    const handleSubscribeClick = (e) => {
-        e.stopPropagation();
-        // 구독 안 되어 있으면 구독 추가
-        dispatch(
-            AddNewSubscription({
-                user_id: isLoginUser.user_id,
-                channel_id: thisChannel.channel_id,
-            })
-        );
-    };
-    const handleShowPopup = (e) => {
-        e.stopPropagation();
-        const modal = document.querySelector('#subscript-popup');
-        modal.showModal();
-    };
-    const handleClosePopup = () => {
-        const modal = document.querySelector('#subscript-popup');
-        modal.close();
     };
 
     if (!thisChannel)
@@ -81,27 +55,9 @@ const Channel = () => {
                                     {' '}
                                     {thisChannel.channel_introduction}
                                 </div>
-                                {isSubscribed ? (
-                                    <Button className='subscribers-btn' onClick={handleShowPopup}>
-                                        <img
-                                            src='https://raw.githubusercontent.com/React-Project-Team1/data-center/752a52cbfb5bf64b383b0941ba3834539b2988ac/Icon/Notification.svg'
-                                            alt='구독 중'
-                                            className='img'
-                                        />
-                                        구독중
-                                    </Button>
-                                ) : (
-                                    <Button
-                                        className='not-subscribers-btn'
-                                        onClick={handleSubscribeClick}
-                                    >
-                                        구독
-                                    </Button>
-                                )}
-                                <Popup
-                                    handleClosePopup={handleClosePopup}
+                                <SubscribersBtn
+                                    channel_id={thisChannel.channel_id}
                                     channel_name={thisChannel.channel_name}
-                                    thisChannelID={thisChannel.channel_id}
                                 />
                             </div>
                         </div>

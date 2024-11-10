@@ -6,9 +6,10 @@ import { useState } from 'react';
 import Comment from './Comment';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { AddNewSubscription, IsAddList, IsDelList } from '../../store/modules/authSlice';
+import { IsAddList, IsDelList } from '../../store/modules/authSlice';
 import { Button } from '../../ui/Button';
-import Popup from '../../ui/popup/Popup';
+
+import SubscribersBtn from '../../ui/Subscribers/SubscribersBtn';
 
 const Below = ({
     movie,
@@ -45,31 +46,8 @@ const Below = ({
         }
     };
 
-    // 현재 채널이 구독 중인지 확인
-    const isSubscribed = isLoginUser?.Subscription_Id?.includes(channelId);
-
     const handleReportClick = () => {
         setShowReport((prev) => !prev);
-    };
-
-    const handleSubscribeClick = () => {
-        // 구독 안 되어 있으면 구독 추가
-        dispatch(
-            AddNewSubscription({
-                user_id: isLoginUser.user_id,
-                channel_id: channelId,
-            })
-        );
-    };
-
-    const handleShowPopup = (e) => {
-        e.stopPropagation();
-        const modal = document.querySelector('#subscript-popup');
-        modal.showModal();
-    };
-    const handleClosePopup = () => {
-        const modal = document.querySelector('#subscript-popup');
-        modal.close();
     };
 
     return (
@@ -88,26 +66,7 @@ const Below = ({
                         <p className='channel_subscribers'>{channelSubscribers}명</p>
                     </div>
                     <div className='subscribers'>
-                        {isSubscribed ? (
-                            <Button className='subscribers-btn' onClick={handleShowPopup}>
-                                <img
-                                    src='https://raw.githubusercontent.com/React-Project-Team1/data-center/752a52cbfb5bf64b383b0941ba3834539b2988ac/Icon/Notification.svg'
-                                    alt='구독 중'
-                                    className='img'
-                                />
-                                구독중
-                            </Button>
-                        ) : (
-                            <Button className='not-subscribers-btn' onClick={handleSubscribeClick}>
-                                구독
-                            </Button>
-                        )}
-
-                        <Popup
-                            handleClosePopup={handleClosePopup}
-                            channel_name={channel_name}
-                            thisChannelID={channelId}
-                        />
+                        <SubscribersBtn channel_id={channelId} channel_name={channel_name} />
                     </div>
                 </div>
 
@@ -120,7 +79,7 @@ const Below = ({
                             <img
                                 className='img'
                                 src={
-                                    isLoginUser['like_Movie_List'].find(
+                                    isLoginUser['like_Movie_List']?.find(
                                         (user) => user.movie_id === movie_id
                                     )
                                         ? 'https://raw.githubusercontent.com/React-Project-Team1/data-center/23eefc8c9a7f5aebbc05941d76cabae0ea0fca14/Icon/disLike_black.svg'
@@ -137,7 +96,7 @@ const Below = ({
                             <img
                                 className='img'
                                 src={
-                                    isLoginUser['like_Movie_List'].find(
+                                    isLoginUser['like_Movie_List']?.find(
                                         (user) => user.movie_id === movie_id
                                     )
                                         ? 'https://raw.githubusercontent.com/React-Project-Team1/data-center/a95871720c235be8180dd58ccc5bf67fbb92d7a4/Icon/DisLike_black.svg'
@@ -155,7 +114,7 @@ const Below = ({
                         <img
                             className='img'
                             src={
-                                isLoginUser['Download_List'].find(
+                                isLoginUser['Download_List']?.find(
                                     (user) => user.movie_id === movie_id
                                 )
                                     ? 'https://raw.githubusercontent.com/React-Project-Team1/data-center/01142956452b8bed27fa95419332aca1f595ea45/Icon/trash.svg'
@@ -164,7 +123,9 @@ const Below = ({
                             alt=''
                         />
                         <span className='BelowBtn_comment'>
-                            {isLoginUser['Download_List'].find((user) => user.movie_id === movie_id)
+                            {isLoginUser['Download_List']?.find(
+                                (user) => user.movie_id === movie_id
+                            )
                                 ? '오프라인 저장 삭제'
                                 : '오프라인 저장'}
                         </span>
@@ -177,7 +138,7 @@ const Below = ({
                             alt=''
                         />
                         <span className='BelowBtn_comment'>
-                            {isLoginUser['Playlist'].find((user) => user.movie_id === movie_id)
+                            {isLoginUser['Playlist']?.find((user) => user.movie_id === movie_id)
                                 ? '재생목록 삭제'
                                 : '재생목록 저장'}
                         </span>
