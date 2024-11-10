@@ -24,7 +24,7 @@ const Channel = () => {
     if (!thisChannel)
         return (
             <ChannelWrap>
-                <p>찾으시는 페이지가 없습니다.</p>
+                <p>"{Channel_name}" 찾으시는 채널이 없습니다.</p>
             </ChannelWrap>
         );
     if (thisChannel)

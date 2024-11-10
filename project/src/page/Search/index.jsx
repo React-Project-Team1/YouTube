@@ -10,9 +10,11 @@ const Search = () => {
     const { Search } = useParams();
     const { allMovies } = useSelector((state) => state.channel);
     const dispatch = useDispatch();
+
     useEffect(() => {
         dispatch(getAllMovies());
     }, []);
+
     return (
         <SearchWrap>
             {!Search ? <NoSearchItem /> : <SearchList Search={Search} allMovies={allMovies} />}

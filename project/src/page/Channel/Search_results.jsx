@@ -1,4 +1,3 @@
-import React from 'react';
 import { useSelector } from 'react-redux';
 import Video from '../../ui/Youtube/Video';
 import { SearchMovieWrap } from './styled';

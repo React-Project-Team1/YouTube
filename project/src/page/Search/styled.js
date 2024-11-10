@@ -3,33 +3,19 @@ import styled from 'styled-components';
 export const SearchWrap = styled.div`
     height: 100%;
     margin: 2% auto;
+    min-height: 100vh;
 `;
 
 export const SearchListWrap = styled.ul`
     width: 100rem;
+    min-height: 100vh;
+    .not-search {
+    }
     .channel-item {
         display: flex;
         align-items: center;
         justify-content: space-between;
         margin-bottom: 2%;
-        button {
-            max-height: 3.6rem;
-        }
-        .subscribers-btn {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            img {
-                height: 1000%;
-            }
-        }
-        .not-subscribers-btn {
-            color: #fff;
-            background-color: #212121;
-            &:hover {
-                background-color: #424242;
-            }
-        }
         .channel-profile {
             width: 50%;
             display: flex;

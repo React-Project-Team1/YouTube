@@ -25,7 +25,7 @@ const QuickLogin = ({ setPageType }) => {
                                 user_password: user.user_password,
                             })
                         );
-                        navigate('/');
+                        navigate(-1);
                     }}
                 >
                     <div className='profile-wrap'>

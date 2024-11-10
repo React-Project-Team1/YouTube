@@ -11,7 +11,6 @@ const SearchHistory = ({ Search, isShown, setSearch }) => {
 
     useEffect(() => {
         if (Search) {
-            // 검색어 추가
             dispatch(AddNewSearchList({ user_id: user.user_id, search: Search }));
         }
     }, [Search, dispatch, user.user_id]);
@@ -19,7 +18,7 @@ const SearchHistory = ({ Search, isShown, setSearch }) => {
     // 최근 기록 재검색
     const searchKeyword = (keyword) => {
         setSearch(keyword);
-        // navigate(`/movies/${keyword}`); // 질문 1
+        navigate(`/movies/${keyword}`); // 질문 1
     };
 
     // 검색 기록 삭제

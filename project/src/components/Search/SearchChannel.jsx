@@ -3,7 +3,6 @@ import SubscribersBtn from '../../ui/Subscribers/SubscribersBtn';
 
 const SearchChannel = ({ channel }) => {
     const navigate = useNavigate();
-
     const { channel_image, channel_name, channel_subscribers, Movies, channel_id, channel_nav } =
         channel;
 

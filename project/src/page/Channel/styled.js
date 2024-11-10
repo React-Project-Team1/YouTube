@@ -4,6 +4,8 @@ export const ChannelWrap = styled.div`
     /* background-color: black; */
     overflow: hidden;
     width: 100%;
+    min-height: 100vh;
+    padding: 2%;
     .channel_home {
         padding-right: calc(50% - 64.2rem);
         padding-left: calc(50% - 64.2rem);
@@ -48,6 +50,7 @@ export const ChannelWrap = styled.div`
         padding-top: 1.6rem;
         padding-right: calc(50% - 64.2rem);
         padding-left: calc(50% - 64.2rem);
+        margin-bottom: 1rem;
         /* border: 1px solid #000; */
         .page_header_profile {
             display: flex;
@@ -67,8 +70,10 @@ export const ChannelWrap = styled.div`
                     color: #555;
                 }
                 .channel_desc {
+                    max-width: 80rem;
                     margin-bottom: 1.2rem;
                     font-size: 1.4rem;
+                    word-break: keep-all;
                 }
             }
         }
@@ -134,27 +139,11 @@ export const ChannelWrap = styled.div`
     button {
         max-height: 3.6rem;
     }
-    .subscribers-btn {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        img {
-            height: 1000%;
-        }
-    }
-    .not-subscribers-btn {
-        color: #fff;
-        background-color: #212121;
-        &:hover {
-            background-color: #424242;
-        }
-    }
 `;
 export const ChannelHomeWrap = styled.div`
     border-bottom: 0.1rem solid #e4e4e4;
     padding-right: calc(50% - 64.2rem);
     padding-left: calc(50% - 64.2rem);
-
     /* overflow: hidden; */
     .channel_home_inner {
         display: flex;

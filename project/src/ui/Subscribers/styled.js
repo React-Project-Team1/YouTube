@@ -19,4 +19,7 @@ export const SubscribersBtnWrap = styled.div`
             background-color: #424242;
         }
     }
+    .channel-btn {
+        margin-right: 1rem;
+    }
 `;

@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { Button } from '../../ui/Button';
 import { useNavigate } from 'react-router-dom';
 import Popup from '../../ui/popup/Popup';
+import { useSelector } from 'react-redux';
 
 const SubscriptItem = ({ channel, handleChangeThisId, thisChannelID }) => {
     const {
@@ -13,7 +14,6 @@ const SubscriptItem = ({ channel, handleChangeThisId, thisChannelID }) => {
         channel_nav,
         Movies,
     } = channel;
-
     const navigate = useNavigate();
     useEffect(() => {
         const modal = document.querySelector('#subscript-popup');

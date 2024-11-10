@@ -87,6 +87,7 @@ export const HeaderWrap = styled.header`
             box-shadow: #00000050 0px 1px 3px;
             top: 100%;
             left: 35%;
+            z-index: 999;
             .search-item {
                 display: flex;
                 align-items: center;

@@ -16,9 +16,9 @@ const Header = () => {
     const { Search } = useParams();
 
     return (
-        <HeaderWrap id="header">
-            <div className="top">
-                <div className="first-box">
+        <HeaderWrap id='header'>
+            <div className='top'>
+                <div className='first-box'>
                     <AllMenu />
                     <Logo />
                 </div>
@@ -28,9 +28,7 @@ const Header = () => {
                     search={search}
                     setSearch={setSearch}
                 />
-                {Search && (
-                    <SearchHistory Search={Search} isShown={isShown} setSearch={setSearch} />
-                )}
+                <SearchHistory Search={Search} isShown={isShown} setSearch={setSearch} />
                 {isAuth ? <UserMenu /> : <LoginButton />}
             </div>
         </HeaderWrap>
