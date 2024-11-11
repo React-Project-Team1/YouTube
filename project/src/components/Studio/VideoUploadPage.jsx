@@ -32,6 +32,7 @@ const VideoUploadPage = () => {
         if (file) {
             setMovie((movie) => ({ ...movie, movie_image: file }));
             setMovieImage(URL.createObjectURL(file));
+            imageSaveToIndexedDB(file);
         }
     };
 
@@ -62,6 +63,24 @@ const VideoUploadPage = () => {
             console.error('IndexedDB 에러:', e);
         };
     };
+    const imageSaveToIndexedDB = (file) => {
+        const request = indexedDB.open('imageDB', 1);
+        request.onupgradeneeded = (e) => {
+            const db = e.target.result;
+            if (!db.objectStoreNames.contains('images')) {
+                db.createObjectStore('images', { keyPath: 'id', autoIncrement: true });
+            }
+        };
+        request.onsuccess = (e) => {
+            const db = e.target.result;
+            const transaction = db.transaction('images', 'readwrite');
+            const store = transaction.objectStore('images');
+            store.add({ image: file });
+        };
+        request.onerror = (e) => {
+            console.error('IndexedDB 에러:', e);
+        };
+    };
     const onSubmit = (e) => {
         e.preventDefault();
         if (!movie.movie_title || !movie.movie_body || !movie.movie_image || !movie.movie_video) {
@@ -72,8 +91,8 @@ const VideoUploadPage = () => {
                     movie_title: movie.movie_title,
                     movie_body: movie.movie_body,
                     movie_category: movie.movie_category,
-                    movie_image: URL.createObjectURL(movie.movie_image),
-                    movie_video: URL.createObjectURL(movie.movie_video),
+                    movie_image: movieImage,
+                    movie_video: movieVideo,
                     movie_like_count: 0,
                     movie_channel: isLoginUser.user_email.split('@')[0],
                     movie_channel_id: isLoginUser.user_id,

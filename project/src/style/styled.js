@@ -183,6 +183,7 @@ export const SideMenuWrap = styled.div`
             .my-channel-name {
                 font-size: 1.2rem;
                 color: #666;
+                max-width: 16rem;
             }
         }
     }
