@@ -18,6 +18,7 @@ const MenuItem = ({ id, name, type, nav, icon }) => {
             navigate(nav);
         }
     };
+
     return (
         <li onClick={handleClickNav}>
             <img src={icon} alt={type} />

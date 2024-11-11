@@ -150,8 +150,6 @@ const YouTube = () => {
         }
     }, [userActivities]);
 
-    console.log(videoChunks);
-
     if (!allMovies) return <Spinner />;
     if (allMovies)
         return (

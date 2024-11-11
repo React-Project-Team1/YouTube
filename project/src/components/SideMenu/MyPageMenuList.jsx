@@ -1,6 +1,8 @@
+import { useSelector } from 'react-redux';
 import { SideMenuAPI } from '../../assets/api/SideMenu';
 import MenuItem from './MenuItem';
 const MyPageMenuList = () => {
+    const { isAuth } = useSelector((state) => state.auth);
     return (
         <ul>
             <p className='menu-title'>
@@ -10,9 +12,15 @@ const MyPageMenuList = () => {
                     alt='right'
                 />
             </p>
-            {SideMenuAPI.MyPage.map((mypage) => (
-                <MenuItem key={mypage.id} {...mypage} />
-            ))}
+            {isAuth
+                ? SideMenuAPI.MyPage.map((mypage) => <MenuItem key={mypage.id} {...mypage} />)
+                : SideMenuAPI.MyPage.filter(
+                      (page) =>
+                          page.type !== 'Download_List' &&
+                          page.type !== 'like_Movie_List' &&
+                          page.type !== 'Playlist' &&
+                          page.type !== 'Later_Watch'
+                  ).map((mypage) => <MenuItem key={mypage.id} {...mypage} />)}
         </ul>
     );
 };
