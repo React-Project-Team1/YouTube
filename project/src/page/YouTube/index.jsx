@@ -45,7 +45,7 @@ const YouTube = () => {
             dispatch(getAllMovies());
         }
         document.title = 'YouTube';
-        if (videoCount >= allMovies.length) setVideoCount(110);
+        if (videoCount >= allMovies.length) setVideoCount(allMovies.length + 10);
     }, [dispatch, allMovies.length, videoCount]);
 
     useEffect(() => {
@@ -149,6 +149,8 @@ const YouTube = () => {
             setMainVideo(shuffledMovies);
         }
     }, [userActivities]);
+
+    console.log(videoChunks);
 
     if (!allMovies) return <Spinner />;
     if (allMovies)
