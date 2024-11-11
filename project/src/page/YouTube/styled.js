@@ -29,7 +29,7 @@ export const YouTubeWrap = styled.div`
         flex-wrap: wrap;
         .video-loder {
             width: ${(props) => props.width};
-            &:not(:nth-child(${(props) => props.not}n)) {
+            &:not(:nth-child(${(props) => props.$not}n)) {
                 margin-right: 1%;
             }
             &:nth-child(5n) {
@@ -63,7 +63,7 @@ export const YouTubeWrap = styled.div`
         }
     }
     #scroll-anchor {
-        min-height: 10rem;
+        min-height: 1rem;
         position: relative;
     }
 `;

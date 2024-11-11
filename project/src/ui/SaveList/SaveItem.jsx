@@ -1,15 +1,18 @@
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { IsAddList, IsDelList } from '../../store/modules/authSlice';
+import { useNavigate } from 'react-router-dom';
 const SaveItem = ({ save, movie }) => {
     const { type, img, falseName, trueName, falseImg, trueImg } = save;
-    const { isLoginUser } = useSelector((state) => state.auth);
+    const { isLoginUser, isAuth } = useSelector((state) => state.auth);
     const dispatch = useDispatch();
+    const navigate = useNavigate();
     const [ofType, setOfType] = useState(false);
 
     const handleChangeSave = (e) => {
         e.stopPropagation();
         e.preventDefault();
+        if (!isAuth) navigate('/login');
         if (ofType) {
             // 삭제
             dispatch(IsDelList({ user_id: isLoginUser.user_id, type, movie }));
@@ -20,7 +23,7 @@ const SaveItem = ({ save, movie }) => {
     };
 
     useEffect(() => {
-        if (isLoginUser[type].find((user) => user.movie_id === movie.movie_id)) {
+        if (isLoginUser[type]?.find((user) => user.movie_id === movie.movie_id)) {
             setOfType(true);
         } else {
             setOfType(false);
