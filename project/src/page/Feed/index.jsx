@@ -1,13 +1,15 @@
 import { useParams } from 'react-router-dom';
 import { FeedWrap } from './styled';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import Video from '../../ui/Youtube/Video';
 import { useState } from 'react';
+import { AllDelList } from '../../store/modules/authSlice';
 
 const Feed = () => {
     const { Category } = useParams();
     const { isLoginUser } = useSelector((state) => state.auth);
     const [search, setSearch] = useState('');
+    const dispatch = useDispatch();
     const getCategory = () => {
         switch (Category) {
             case 'Viewing_Record':
@@ -61,7 +63,12 @@ const Feed = () => {
                         />
                     </div>
 
-                    <div className='content'>
+                    <div
+                        className='content'
+                        onClick={() =>
+                            dispatch(AllDelList({ user_id: isLoginUser.user_id, type: Category }))
+                        }
+                    >
                         <img src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAKRJREFUSEvtlUEKgCAQRV93CYK6TsdpGXSZrlPQaYpAXVjDt8xd7mR03v8z6FQUXlXh/ChAD4xAYwjZgAGYLaEKsACtcLkC3VvA7i5aQlRclkglUPELwF/I7X1wHFsvDvDKpfXIonn+dfO+BsQK1T7wUx2ohNkl+gGXd/W0JH8P5NeUXSJFeAxIGTQx9HbwWC/5HJUTUCvpLm6OTjUyE/Pbx4oDDlBhOBmYaWrOAAAAAElFTkSuQmCC' />
                         <p>{getCategory()} 지우기 </p>
                     </div>

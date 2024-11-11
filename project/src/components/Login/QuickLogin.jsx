@@ -5,7 +5,8 @@ import { UserLogin } from '../../store/modules/authSlice';
 
 const QuickLogin = ({ setPageType }) => {
     const { LoginUser } = useSelector((state) => state.auth);
-    const randomLoginUser = LoginUser.slice()
+    const randomLoginUser = LoginUser.filter((user) => typeof user.user_id === 'number')
+        .slice()
         .sort(() => Math.random() - 0.5)
         .slice(0, 3);
 

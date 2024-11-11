@@ -7,7 +7,7 @@ import { useSelector } from 'react-redux';
 import LoginButton from '../ui/Header/LoginButton';
 import SearchHistory from '../components/Header/SearchHistory';
 import { useParams } from 'react-router-dom';
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 const Header = () => {
     const { isAuth } = useSelector((state) => state.auth);
@@ -15,8 +15,21 @@ const Header = () => {
     const [search, setSearch] = useState(''); // searchBox -> Header 이동
     const { Search } = useParams();
 
+    const wrapRef = useRef(null);
+    const outClick = (event) => {
+        if (wrapRef.current && !wrapRef.current.contains(event.target)) {
+            setIsShown(true);
+        }
+    };
+    useEffect(() => {
+        document.addEventListener('mousedown', outClick);
+        return () => {
+            document.removeEventListener('mousedown', outClick);
+        };
+    }, []);
+
     return (
-        <HeaderWrap id='header'>
+        <HeaderWrap id='header' ref={wrapRef}>
             <div className='top'>
                 <div className='first-box'>
                     <AllMenu />
@@ -28,7 +41,12 @@ const Header = () => {
                     search={search}
                     setSearch={setSearch}
                 />
-                <SearchHistory Search={Search} isShown={isShown} setSearch={setSearch} />
+                <SearchHistory
+                    Search={Search}
+                    isShown={isShown}
+                    setSearch={setSearch}
+                    setIsShown={setIsShown}
+                />
                 {isAuth ? <UserMenu /> : <LoginButton />}
             </div>
         </HeaderWrap>

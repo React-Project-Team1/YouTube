@@ -1,10 +1,22 @@
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useSelector } from 'react-redux';
 import UserMenuList from '../../ui/Header/UserMenuList';
 
 const UserMenu = () => {
     const { isLoginUser } = useSelector((state) => state.auth);
     const [menu, setMenu] = useState(false);
+    const wrapRef = useRef(null);
+    const outClick = (event) => {
+        if (wrapRef.current && !wrapRef.current.contains(event.target)) {
+            setMenu(false);
+        }
+    };
+    useEffect(() => {
+        document.addEventListener('mousedown', outClick);
+        return () => {
+            document.removeEventListener('mousedown', outClick);
+        };
+    }, []);
     return (
         <div className='user-menu'>
             <a href='#'>
@@ -19,9 +31,9 @@ const UserMenu = () => {
                     alt='Notification'
                 />
             </a>
-            <a href='#' onClick={() => setMenu(!menu)}>
+            <a href='#' onClick={() => setMenu(!menu)} ref={wrapRef}>
                 <span className='user-profile'>
-                    {isLoginUser.user_name.charAt(0)}
+                    {isLoginUser?.user_name?.charAt(0)}
                     {menu && <UserMenuList />}
                 </span>
             </a>
