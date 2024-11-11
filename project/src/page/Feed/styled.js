@@ -96,7 +96,7 @@ export const FeedWrap = styled.div`
         .search_wrap {
             display: flex; /* Flex 컨테이너로 설정 */
             flex-direction: column;
-            min-width: 22rem;
+            min-width: 23.5rem;
             .search {
                 display: flex;
                 margin-bottom: 1rem;

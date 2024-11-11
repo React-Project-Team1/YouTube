@@ -1,9 +1,17 @@
 import { useNavigate } from 'react-router-dom';
+import { AddNewSearchList } from '../../store/modules/authSlice';
+import { useDispatch, useSelector } from 'react-redux';
 
 const SearchBox = ({ setIsShown, isShown, search, setSearch }) => {
     const navigate = useNavigate();
+    const dispatch = useDispatch();
+    const user = useSelector((state) => state.auth.isLoginUser);
+
     const onSubmit = (e) => {
         e.preventDefault();
+        if (search) {
+            dispatch(AddNewSearchList({ user_id: user.user_id, search }));
+        } // 검색어 저장
         navigate(`/movies/${search}`);
         setSearch('');
     };

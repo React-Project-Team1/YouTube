@@ -1,19 +1,12 @@
-import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { AddNewSearchList, DelSearchList } from '../../store/modules/authSlice';
+import { DelSearchList } from '../../store/modules/authSlice';
 
-const SearchHistory = ({ Search, isShown, setSearch, setIsShown }) => {
+const SearchHistory = ({ isShown, setSearch, setIsShown }) => {
     const navigate = useNavigate();
     const dispatch = useDispatch();
     const user = useSelector((state) => state.auth.isLoginUser);
     const searchHistory = user?.user_search_list || []; // 검색어 목록
-
-    useEffect(() => {
-        if (Search) {
-            dispatch(AddNewSearchList({ user_id: user.user_id, search: Search }));
-        }
-    }, [Search, dispatch, user?.user_id]);
 
     // 최근 기록 재검색
     const searchKeyword = (keyword) => {
