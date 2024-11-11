@@ -102,8 +102,13 @@ const YouTube = () => {
 
     useEffect(() => {
         if (!isLoginUser) return;
-        const movieCategory = isLoginUser?.Viewing_Record?.map((record) => record.movie_category);
-        const searchList = isLoginUser?.user_search_list?.map((item) => item.search);
+
+        const movieCategory = Array.from(
+            new Set(isLoginUser?.Viewing_Record?.map((record) => record.movie_category))
+        );
+        const searchList = Array.from(
+            new Set(isLoginUser?.user_search_list?.map((item) => item.search))
+        );
 
         setUserActivities({
             ...userActivities,
