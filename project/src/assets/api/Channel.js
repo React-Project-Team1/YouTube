@@ -688,7 +688,7 @@ export const Channel = {
                 movie_video:
                     'https://www.youtube.com/embed/2EahotHTVpc?si=fng9erydx2hVg_bq&autoplay=1&mute=1',
                 // 동영상 좋아요 수
-                movie_like_count: '', //좋아요 수 비공개
+                movie_like_count: 270000, //좋아요 수 비공개
                 movie_category: 'movie_review',
                 movie_channel: 'G_Movie',
                 movie_channel_id: 859641,

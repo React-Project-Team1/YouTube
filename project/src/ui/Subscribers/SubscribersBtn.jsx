@@ -4,6 +4,7 @@ import Popup from '../popup/Popup';
 import { AddNewSubscription } from '../../store/modules/authSlice';
 import { useNavigate } from 'react-router-dom';
 import { SubscribersBtnWrap } from './styled';
+import { IsMovieChangeSubscriber } from '../../store/modules/channelSlice';
 
 const SubscribersBtn = ({ channel_id, channel_name }) => {
     const { isLoginUser, isAuth } = useSelector((state) => state.auth);
@@ -24,6 +25,7 @@ const SubscribersBtn = ({ channel_id, channel_name }) => {
                     channel_id,
                 })
             );
+            dispatch(IsMovieChangeSubscriber({ channel_name, type: 'plus' }));
         } else {
             alert('error');
         }

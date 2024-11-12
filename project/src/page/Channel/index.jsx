@@ -57,7 +57,7 @@ const Channel = () => {
                                 </div>
                                 <SubscribersBtn
                                     channel_id={thisChannel.channel_id}
-                                    channel_name={thisChannel.channel_name}
+                                    channel_name={thisChannel.channel_nav}
                                 />
                             </div>
                         </div>

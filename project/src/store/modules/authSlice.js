@@ -149,7 +149,7 @@ export const authSlice = createSlice({
             const { user_id, channel_id } = action.payload;
             const User = state.LoginUser.find((user) => user.user_id === user_id);
             if (User) {
-                if (!User.Subscription_Id.includes(channel_id)) {
+                if (!User.Subscription_Id?.includes(channel_id)) {
                     User.Subscription_Id.push(channel_id);
                 }
                 state.isLoginUser = User;

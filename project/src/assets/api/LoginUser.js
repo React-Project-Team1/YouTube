@@ -17,6 +17,7 @@ export const LoginUser = [
         Later_Watch: [],
         // 좋아요 표시한 동영상
         like_Movie_List: [],
+        dislike_Movie_List: [],
         // 오프라인 저장 동영상
         Download_List: [],
         // 구독한 채널 아이디
@@ -40,6 +41,7 @@ export const LoginUser = [
         Later_Watch: [],
         // 좋아요 표시한 동영상
         like_Movie_List: [],
+        dislike_Movie_List: [],
         // 오프라인 저장 동영상
         Download_List: [],
         // 구독한 채널 아이디
@@ -63,6 +65,7 @@ export const LoginUser = [
         Later_Watch: [],
         // 좋아요 표시한 동영상
         like_Movie_List: [],
+        dislike_Movie_List: [],
         // 오프라인 저장 동영상
         Download_List: [],
         // 구독한 채널 아이디
@@ -86,6 +89,7 @@ export const LoginUser = [
         Later_Watch: [],
         // 좋아요 표시한 동영상
         like_Movie_List: [],
+        dislike_Movie_List: [],
         // 오프라인 저장 동영상
         Download_List: [],
         // 구독한 채널 아이디
@@ -109,6 +113,7 @@ export const LoginUser = [
         Later_Watch: [],
         // 좋아요 표시한 동영상
         like_Movie_List: [],
+        dislike_Movie_List: [],
         // 오프라인 저장 동영상
         Download_List: [],
         // 구독한 채널 아이디
@@ -132,6 +137,7 @@ export const LoginUser = [
         Later_Watch: [],
         // 좋아요 표시한 동영상
         like_Movie_List: [],
+        dislike_Movie_List: [],
         // 오프라인 저장 동영상
         Download_List: [],
         // 구독한 채널 아이디
@@ -155,6 +161,7 @@ export const LoginUser = [
         Later_Watch: [],
         // 좋아요 표시한 동영상
         like_Movie_List: [],
+        dislike_Movie_List: [],
         // 오프라인 저장 동영상
         Download_List: [],
         // 구독한 채널 아이디
@@ -178,6 +185,7 @@ export const LoginUser = [
         Later_Watch: [],
         // 좋아요 표시한 동영상
         like_Movie_List: [],
+        dislike_Movie_List: [],
         // 오프라인 저장 동영상
         Download_List: [],
         // 구독한 채널 아이디
@@ -201,6 +209,7 @@ export const LoginUser = [
         Later_Watch: [],
         // 좋아요 표시한 동영상
         like_Movie_List: [],
+        dislike_Movie_List: [],
         // 오프라인 저장 동영상
         Download_List: [],
         // 구독한 채널 아이디
@@ -224,6 +233,7 @@ export const LoginUser = [
         Later_Watch: [],
         // 좋아요 표시한 동영상
         like_Movie_List: [],
+        dislike_Movie_List: [],
         // 오프라인 저장 동영상
         Download_List: [],
         // 구독한 채널 아이디
@@ -247,6 +257,7 @@ export const LoginUser = [
         Later_Watch: [],
         // 좋아요 표시한 동영상
         like_Movie_List: [],
+        dislike_Movie_List: [],
         // 오프라인 저장 동영상
         Download_List: [],
         // 구독한 채널 아이디
@@ -270,6 +281,7 @@ export const LoginUser = [
         Later_Watch: [],
         // 좋아요 표시한 동영상
         like_Movie_List: [],
+        dislike_Movie_List: [],
         // 오프라인 저장 동영상
         Download_List: [],
         // 구독한 채널 아이디
@@ -293,6 +305,7 @@ export const LoginUser = [
         Later_Watch: [],
         // 좋아요 표시한 동영상
         like_Movie_List: [],
+        dislike_Movie_List: [],
         // 오프라인 저장 동영상
         Download_List: [],
         // 구독한 채널 아이디
@@ -316,6 +329,7 @@ export const LoginUser = [
         Later_Watch: [],
         // 좋아요 표시한 동영상
         like_Movie_List: [],
+        dislike_Movie_List: [],
         // 오프라인 저장 동영상
         Download_List: [],
         // 구독한 채널 아이디
@@ -339,6 +353,7 @@ export const LoginUser = [
         Later_Watch: [],
         // 좋아요 표시한 동영상
         like_Movie_List: [],
+        dislike_Movie_List: [],
         // 오프라인 저장 동영상
         Download_List: [],
         // 구독한 채널 아이디
@@ -362,6 +377,7 @@ export const LoginUser = [
         Later_Watch: [],
         // 좋아요 표시한 동영상
         like_Movie_List: [],
+        dislike_Movie_List: [],
         // 오프라인 저장 동영상
         Download_List: [],
         // 구독한 채널 아이디
@@ -385,6 +401,7 @@ export const LoginUser = [
         Later_Watch: [],
         // 좋아요 표시한 동영상
         like_Movie_List: [],
+        dislike_Movie_List: [],
         // 오프라인 저장 동영상
         Download_List: [],
         // 구독한 채널 아이디
@@ -408,6 +425,7 @@ export const LoginUser = [
         Later_Watch: [],
         // 좋아요 표시한 동영상
         like_Movie_List: [],
+        dislike_Movie_List: [],
         // 오프라인 저장 동영상
         Download_List: [],
         // 구독한 채널 아이디
@@ -431,6 +449,7 @@ export const LoginUser = [
         Later_Watch: [],
         // 좋아요 표시한 동영상
         like_Movie_List: [],
+        dislike_Movie_List: [],
         // 오프라인 저장 동영상
         Download_List: [],
         // 구독한 채널 아이디
@@ -454,6 +473,7 @@ export const LoginUser = [
         Later_Watch: [],
         // 좋아요 표시한 동영상
         like_Movie_List: [],
+        dislike_Movie_List: [],
         // 오프라인 저장 동영상
         Download_List: [],
         // 구독한 채널 아이디

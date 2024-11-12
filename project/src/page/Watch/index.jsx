@@ -87,7 +87,9 @@ const Watch = () => {
                         moviesComment={thisMovie.movie_comments}
                         movie_id={thisMovie.movie_id}
                         movie_channel={thisMovie.movie_channel}
-                        channel_name={thisChannel?.Movies[0]?.movie_channel}
+                        channel_name={
+                            thisChannel?.Movies[0]?.movie_channel || thisChannel_channel_nav
+                        }
                         channelId={thisChannel.channel_id}
                         movie={thisMovie}
                     />

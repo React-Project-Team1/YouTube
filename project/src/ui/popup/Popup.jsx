@@ -1,6 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { PopupWrap } from './styled';
 import { DelSubscription } from '../../store/modules/authSlice';
+import { IsMovieChangeSubscriber } from '../../store/modules/channelSlice';
 
 const Popup = ({ handleClosePopup, channel_name, thisChannelID }) => {
     const dispatch = useDispatch();
@@ -22,6 +23,7 @@ const Popup = ({ handleClosePopup, channel_name, thisChannelID }) => {
                                 channel_id: thisChannelID,
                             })
                         );
+                        dispatch(IsMovieChangeSubscriber({ channel_name, type: 'minus' }));
                         handleClosePopup();
                     }}
                 >

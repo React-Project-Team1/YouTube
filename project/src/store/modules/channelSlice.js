@@ -84,9 +84,29 @@ export const channelSlice = createSlice({
 
         IsMovieChangeLike(state, action) {
             // 좋아요 수 변경 로직
+            const { channel_name, type, movie_id } = action.payload;
+            const thisChannel = state.Channel[channel_name];
+            const thisMovie = thisChannel.Movies.find((movie) => movie.movie_id === movie_id);
+            if (type === 'plus') {
+                thisMovie.movie_like_count += 1;
+            } else {
+                thisMovie.movie_like_count -= 1;
+            }
+
             localStorage.setItem('YoutubeChannel', JSON.stringify(state.Channel));
         },
+        IsMovieChangeSubscriber(state, action) {
+            // 구독자 변경 로직
+            const { channel_name, type } = action.payload;
+            const thisChannel = state.Channel[channel_name];
+            if (type === 'plus') {
+                thisChannel.channel_subscribers += 1;
+            } else {
+                thisChannel.channel_subscribers -= 1;
+            }
 
+            localStorage.setItem('YoutubeChannel', JSON.stringify(state.Channel));
+        },
         getAllMovies(state, action) {
             state.allMovies = [];
             Object.keys(state.Channel).forEach((channel) => {
@@ -107,5 +127,6 @@ export const {
     DelMoviesComment,
     IsMovieChangeLike,
     getAllMovies,
+    IsMovieChangeSubscriber,
 } = channelSlice.actions;
 export default channelSlice.reducer;
