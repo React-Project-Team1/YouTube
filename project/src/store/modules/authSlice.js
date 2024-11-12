@@ -59,6 +59,7 @@ export const authSlice = createSlice({
                     Playlist: [],
                     Later_Watch: [],
                     like_Movie_List: [],
+                    dislike_Movie_List: [],
                     Download_List: [],
                     Subscription_Id: [],
                 };

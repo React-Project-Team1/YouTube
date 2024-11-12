@@ -50,7 +50,6 @@ export const channelSlice = createSlice({
             // 영상 수정 로직
             localStorage.setItem('YoutubeChannel', JSON.stringify(state.Channel));
         },
-
         AddNewMoviesComment(state, action) {
             const { movie_id, movie_channel, comment_body, comment_user_id, comment_user_name } =
                 action.payload;
@@ -107,7 +106,7 @@ export const channelSlice = createSlice({
 
             localStorage.setItem('YoutubeChannel', JSON.stringify(state.Channel));
         },
-        getAllMovies(state, action) {
+        getAllMovies(state) {
             state.allMovies = [];
             Object.keys(state.Channel).forEach((channel) => {
                 state.allMovies.push(...state.Channel[channel].Movies);

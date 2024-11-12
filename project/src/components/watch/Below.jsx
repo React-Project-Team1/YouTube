@@ -9,7 +9,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { IsAddList, IsDelList } from '../../store/modules/authSlice';
 import { Button } from '../../ui/Button';
 import SubscribersBtn from '../../ui/Subscribers/SubscribersBtn';
-import { IsMovieChangeLike } from '../../store/modules/channelSlice';
+import { getAllMovies, IsMovieChangeLike } from '../../store/modules/channelSlice';
 
 const Below = ({
     movie,
@@ -45,6 +45,7 @@ const Below = ({
                 );
                 if (saveType === 'like_Movie_List') {
                     dispatch(IsMovieChangeLike({ channel_name, movie_id, type: 'minus' }));
+                    dispatch(getAllMovies());
                 }
             } else {
                 dispatch(
@@ -56,6 +57,7 @@ const Below = ({
                 );
                 if (saveType === 'like_Movie_List') {
                     dispatch(IsMovieChangeLike({ channel_name, movie_id, type: 'plus' }));
+                    dispatch(getAllMovies());
                 }
             }
         } else {
