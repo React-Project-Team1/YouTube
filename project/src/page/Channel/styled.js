@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { media } from '../../style/media';
 
 export const ChannelWrap = styled.div`
     /* background-color: black; */
@@ -139,6 +140,29 @@ export const ChannelWrap = styled.div`
     button {
         max-height: 3.6rem;
     }
+    @media ${media.mobile} {
+        .page_header {
+            .page_header_profile {
+                display: flex;
+                justify-content: flex-start;
+                .header_left {
+                    margin-right: 16px;
+                    .channel_img {
+                        width: 55%;
+                    }
+                }
+                .header-right {
+                    .channel_name {
+                        font-size: 26px;
+                    }
+                    .channel_info {
+                        .channel_desc {
+                        }
+                    }
+                }
+            }
+        }
+    }
 `;
 export const ChannelHomeWrap = styled.div`
     border-bottom: 0.1rem solid #e4e4e4;
@@ -204,6 +228,22 @@ export const ChannelVideoWrap = styled.div`
         .channel_videolist {
         }
     }
+    @media ${media.mobile} {
+        .channel_videolist {
+            .search_results-wrap {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                .video-loder {
+                    width: 100%;
+                    .video-wrap {
+                    }
+                    .text-wrap {
+                    }
+                }
+            }
+        }
+    }
 `;
 export const SearchMovieWrap = styled.div`
     .search_results {
@@ -251,10 +291,6 @@ export const SearchMovieWrap = styled.div`
                         .movie_date {
                         }
                     }
-                }
-                .pluse-menu {
-                    /* position: relative;
-                    left: 0; */
                 }
             }
         }
