@@ -6,7 +6,7 @@ import { SideMenuWrap } from '../style/styled';
 
 const SideMenu = () => {
     return (
-        <SideMenuWrap>
+        <SideMenuWrap className='pc'>
             <HomeMenuList />
             <MyPageMenuList />
             <SubscriptionMenuList />

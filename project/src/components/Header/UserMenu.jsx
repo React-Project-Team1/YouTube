@@ -18,7 +18,7 @@ const UserMenu = () => {
         };
     }, []);
     return (
-        <div className='user-menu'>
+        <div className='user-menu pc'>
             <a href='#'>
                 <img
                     src='https://raw.githubusercontent.com/React-Project-Team1/data-center/50bcadb338add2ff5dcb6ac28c339d051e58635b/Icon/Making_video.svg'
