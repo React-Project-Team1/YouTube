@@ -125,7 +125,7 @@ export const BelowWrap = styled.div`
     .CommentList {
         position: relative;
     }
-    .Comment_report {
+    .Comment_items {
         width: auto;
         position: absolute;
         right: -5rem;
@@ -135,6 +135,10 @@ export const BelowWrap = styled.div`
         box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
         border-radius: 15px;
         z-index: 1;
+        .Comment_item {
+            vertical-align: top;
+            margin-left: 0.3rem;
+        }
     }
 `;
 

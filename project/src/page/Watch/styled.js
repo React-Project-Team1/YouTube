@@ -40,7 +40,7 @@ export const WatchListWrap = styled.div`
         display: flex;
         width: 100%;
         .video-wrap {
-            width: 18rem;
+            max-width: 22rem;
             overflow: hidden;
             padding-bottom: 24%;
         }

@@ -70,7 +70,15 @@ export const channelSlice = createSlice({
         },
 
         DelMoviesComment(state, action) {
-            // 댓글 삭제 로직
+            const { movie_id, movie_channel, comment_id } = action.payload;
+            const channel = state.Channel[movie_channel]; // 채널 정보 찾기
+            const movie = channel.Movies.find((movie) => movie.movie_id === movie_id);
+
+            if (movie) {
+                movie.movie_comments = movie.movie_comments.filter(
+                    (comment) => comment.comment_id !== comment_id
+                );
+            }
             localStorage.setItem('YoutubeChannel', JSON.stringify(state.Channel));
         },
 
