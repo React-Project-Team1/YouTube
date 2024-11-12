@@ -196,6 +196,9 @@ export const HeaderWrap = styled.header`
                     }
                 }
             }
+            .user-menu {
+                display: none;
+            }
         }
     }
 `;
