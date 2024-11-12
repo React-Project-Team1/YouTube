@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { media } from '../../style/media';
 
 export const YouTubeWrap = styled.div`
     width: 100%;
@@ -65,5 +66,39 @@ export const YouTubeWrap = styled.div`
     #scroll-anchor {
         min-height: 1rem;
         position: relative;
+    }
+    @media ${media.mobile} {
+        .top-category {
+            .top-menu-li {
+                .top-menu-button {
+                    font-size: 1.4rem;
+                    padding: 0.8rem 1rem;
+                }
+            }
+        }
+
+        .main-video-wrap {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            .video-loder {
+                width: 100%;
+                margin-right: 0;
+                .plus-menu {
+                    .save-list {
+                        position: absolute;
+                        top: 100%;
+                        right: 0;
+                        left: -20rem;
+                    }
+                }
+                margin-bottom: 4%;
+                .text-wrap {
+                    .movie_info {
+                        max-width: 50rem;
+                    }
+                }
+            }
+        }
     }
 `;
