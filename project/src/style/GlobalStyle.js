@@ -1,6 +1,7 @@
 import { createGlobalStyle } from 'styled-components';
 
 import reset from 'styled-reset';
+import { media } from './media';
 
 const GlobalStyle = createGlobalStyle`
   ${reset}
@@ -31,6 +32,30 @@ const GlobalStyle = createGlobalStyle`
   p,
   span{
     user-select: none;
+  }
+  .pc{
+    display: block;
+  }
+  .mobile{
+    display: none;
+  }
+
+  @media ${media.tablet} {
+    html{
+      font-size: 8px;
+    }
+    
+  }
+  @media ${media.mobile} {
+    html{
+      font-size: 6px;
+    }
+    .pc{
+      display: none;
+    }
+    .mobile{
+      display: block;
+    }
   }
 `;
 
