@@ -1,10 +1,12 @@
 import styled from 'styled-components';
+import { media } from '../../style/media';
 
 export const WatchWrap = styled.div`
     width: 100%;
     box-sizing: border-box;
     padding: 2% 3.5%;
     display: flex;
+
     > .video-wrap {
         position: relative;
         width: 70%;
@@ -27,18 +29,26 @@ export const WatchWrap = styled.div`
             border: none;
         }
     }
+    @media ${media.tablet} {
+        display: block;
+        .video-wrap {
+            width: 100%;
+        }
+    }
 `;
 
 export const WatchListWrap = styled.div`
     display: flex;
     flex-direction: column;
     width: 30%;
+
     .sub_video_wrap {
         width: 100%;
     }
     .video-loder {
         display: flex;
         width: 100%;
+
         .video-wrap {
             max-width: 22rem;
             overflow: hidden;
@@ -46,7 +56,7 @@ export const WatchListWrap = styled.div`
         }
         .text-wrap {
             width: 100%;
-            max-width: 25rem;
+            /* max-width: 25rem; */
             .channel-logo {
                 display: none;
             }
@@ -65,6 +75,40 @@ export const WatchListWrap = styled.div`
 
         .save-list {
             right: -5rem;
+        }
+    }
+    @media ${media.mobile} {
+        display: block;
+        width: 70%;
+        .movie_title {
+            display: block;
+        }
+        .video-loder {
+            .video-wrap {
+                max-width: 30rem;
+                .movie_title {
+                }
+            }
+        }
+        .text-wrap {
+        }
+        .save-list {
+        }
+    }
+    @media ${media.tablet} {
+        display: block;
+        width: 100%;
+        .movie_title {
+            display: block;
+        }
+        .video-loder {
+            .video-wrap {
+                max-width: 40rem;
+                .movie_title {
+                }
+            }
+        }
+        .text-wrap {
         }
     }
 `;
