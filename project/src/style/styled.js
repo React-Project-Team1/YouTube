@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { media } from './media';
 
 export const HeaderWrap = styled.header`
     box-sizing: border-box;
@@ -77,6 +78,7 @@ export const HeaderWrap = styled.header`
                 }
             }
         }
+
         .search-history {
             position: absolute;
             background: #fff;
@@ -145,6 +147,53 @@ export const HeaderWrap = styled.header`
                     width: 3rem;
                     height: 3rem;
                     position: relative;
+                }
+            }
+        }
+    }
+    @media ${media.mobile} {
+        .top {
+            min-height: 8rem;
+            .search-box {
+                width: 40rem;
+                border: none;
+                &:hover {
+                    border: 1px solid #dcdcdc;
+                    input {
+                        transform: scaleX(1);
+                    }
+                    .search-btn {
+                        width: 10%;
+                        height: 4rem;
+                        border: none;
+                        border-left: 1px solid #dcdcdc;
+                        cursor: pointer;
+                        background-color: #efefef;
+                        transition: all 0.3s;
+                        &:hover {
+                            background-color: #dddd;
+                        }
+                        img {
+                            width: 2.6rem;
+                        }
+                    }
+                }
+                input {
+                    transition: all 0.3s;
+                    transform: scaleX(0);
+                    transform-origin: right;
+                }
+                .search-btn {
+                    background-color: #fff;
+                    border: none;
+                    position: relative;
+                    img {
+                        position: absolute;
+                        left: 50%;
+                        top: 50%;
+                        transform: translate(-50%, -50%);
+                        width: 3rem;
+                    }
                 }
             }
         }

@@ -78,18 +78,16 @@ export const SearchListWrap = styled.ul`
 `;
 
 export const NoSearchWrap = styled.div`
-    width: 50rem;
-    height: 13rem;
-    border-radius: 1rem;
-    padding: 1rem;
-    text-align: center;
-    box-shadow: #00000024 2px 4px 20px;
+    width: 100%;
     display: flex;
-    position: absolute;
-    top: 10%;
-    left: 35%;
     .no-search {
         margin: auto;
+        box-shadow: #00000024 0.2rem 0.4rem 2rem;
+        width: 50rem;
+        border-radius: 1rem;
+        padding: 2rem;
+        box-sizing: border-box;
+        text-align: center;
         .no-search-title {
             font-size: 2.5rem;
             font-weight: 700;

@@ -44,7 +44,6 @@ const GlobalStyle = createGlobalStyle`
     html{
       font-size: 8px;
     }
-    
   }
   @media ${media.mobile} {
     html{

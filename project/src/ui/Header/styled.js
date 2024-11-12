@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { media } from '../../style/media';
 
 export const LoginButtonWrap = styled.div`
     display: flex;
@@ -24,6 +25,9 @@ export const LoginButtonWrap = styled.div`
     }
     .login-btn {
         font-size: 1.4rem;
+    }
+    @media ${media.mobile} {
+        display: none;
     }
 `;
 

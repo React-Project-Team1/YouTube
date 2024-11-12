@@ -11,9 +11,9 @@ const SearchBox = ({ setIsShown, isShown, search, setSearch }) => {
         e.preventDefault();
         if (search) {
             dispatch(AddNewSearchList({ user_id: user.user_id, search }));
+            navigate(`/movies/${search}`);
+            setSearch('');
         } // 검색어 저장
-        navigate(`/movies/${search}`);
-        setSearch('');
     };
     return (
         <form onSubmit={onSubmit} className='search-box' onClick={() => setIsShown(!isShown)}>
