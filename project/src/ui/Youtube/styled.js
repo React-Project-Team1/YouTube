@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { media } from '../../style/media';
 
 export const VideoWrap = styled.li`
     cursor: pointer;
@@ -87,6 +88,83 @@ export const VideoWrap = styled.li`
 
         img {
             position: relative;
+        }
+    }
+    .mobile_movie_like_count,
+    .mobile_movie_date,
+    .mobile_channel_name {
+        display: none;
+    }
+    @media ${media.mobile} {
+        .video-wrap {
+            border-radius: 0;
+        }
+        .text-wrap {
+            padding: 0 1.6rem;
+            .channel-logo {
+                margin-top: 0.6rem;
+                width: 4rem;
+                height: 4rem;
+                margin-right: 2rem;
+            }
+            .movie_info {
+                .movie_title {
+                    display: inline-block;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                    margin-bottom: -1rem;
+                    font-size: 2rem;
+                }
+                .mobile {
+                    width: 100%;
+                    display: flex;
+                    color: #666;
+                    .mobile_movie_like_count {
+                        display: block;
+                        margin-right: 1rem;
+                        position: relative;
+                        .mobile_movie_date {
+                            display: inline-block;
+                            margin-left: 1rem;
+                            position: relative;
+                            &::after {
+                                content: '';
+                                display: block;
+                                position: absolute;
+                                left: -0.6rem;
+                                top: 50%;
+                                transform: translateY(-50%);
+                                width: 0.2rem;
+                                height: 0.2rem;
+                                border-radius: 50%;
+                                background: #666;
+                            }
+                        }
+                    }
+                    .mobile_channel_name {
+                        display: block;
+                        margin-right: 1rem;
+                        position: relative;
+                        &::after {
+                            content: '';
+                            display: block;
+                            position: absolute;
+                            right: -0.5rem;
+                            top: 50%;
+                            transform: translateY(-50%);
+                            width: 0.2rem;
+                            height: 0.2rem;
+                            border-radius: 50%;
+                            background: #666;
+                        }
+                    }
+                }
+                .channel_name,
+                .movie_like_count {
+                    display: none;
+                }
+            }
         }
     }
 `;

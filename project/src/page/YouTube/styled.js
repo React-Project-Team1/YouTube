@@ -7,9 +7,13 @@ export const YouTubeWrap = styled.div`
     padding: 2%;
     .top-category {
         display: flex;
+        flex-direction: row; /* 가로 정렬 */
+        flex-wrap: nowrap; /* 줄 바꿈 방지 */
+        overflow-x: auto; /* 가로 스크롤 활성화 */
+        white-space: nowrap; /* 항목들이 한 줄로 나오게 설정 */
         margin-bottom: 2.6rem;
         .top-menu-li {
-            margin-right: 1rem;
+            margin-right: 1.6rem;
             &.active {
                 .top-menu-button {
                     background-color: #000;
@@ -17,10 +21,10 @@ export const YouTubeWrap = styled.div`
                 }
             }
             .top-menu-button {
+                padding: 0.8rem 1.6rem;
                 border-radius: 1rem;
                 overflow: hidden;
-                font-weight: 600;
-                padding: 0.8rem 1.6rem;
+                white-space: nowrap; /* 버튼 텍스트가 줄 바꿈 되지 않도록 설정 */
             }
         }
     }
@@ -46,7 +50,7 @@ export const YouTubeWrap = styled.div`
             margin-bottom: 2.2%;
             .text-wrap {
                 .movie_info {
-                    max-width: 26rem;
+                    max-width: 28rem;
                 }
             }
             .plus-menu {
@@ -66,13 +70,21 @@ export const YouTubeWrap = styled.div`
     #scroll-anchor {
         min-height: 1rem;
         position: relative;
+        width: 100%;
     }
     @media ${media.mobile} {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 0;
+        width: 100%;
         .top-category {
+            padding: 0 1rem;
+            overflow: hidden;
             .top-menu-li {
-                .top-menu-button {
-                    font-size: 1.4rem;
-                    padding: 0.8rem 1rem;
+                button {
+                    display: inline-block;
+                    width: fit-content;
+                    padding: 0.5rem 1rem;
                 }
             }
         }
