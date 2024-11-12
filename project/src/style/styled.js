@@ -166,6 +166,9 @@ export const HeaderWrap = styled.header`
     @media ${media.mobile} {
         .top {
             min-height: 8rem;
+            .user-menu {
+                display: none;
+            }
             .search-box {
                 width: 40rem;
                 border: none;
