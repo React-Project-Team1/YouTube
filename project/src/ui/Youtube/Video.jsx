@@ -20,7 +20,6 @@ const Video = ({ movie, type }) => {
     const { Channel } = useSelector((state) => state.channel);
     const { isSideMenu } = useSelector((state) => state.header);
     const { isLoginUser } = useSelector((state) => state.auth); // 로그인한 유저 정보
-
     // 마우스 올렸을때 영상 재생 컨트롤
     const [play, setPlay] = useState(false);
     const dispatch = useDispatch();
@@ -33,7 +32,6 @@ const Video = ({ movie, type }) => {
             return movie_like_count + '회';
         }
     };
-
     // 시청기록삭제
     const handleDelete = (e) => {
         e.stopPropagation();
@@ -51,7 +49,6 @@ const Video = ({ movie, type }) => {
         e.stopPropagation();
         setSaveShow(!saveShow);
     };
-
     //외부 클릭 감지 핸들러
     const wrapRef = useRef(null);
     const outClick = (event) => {
@@ -65,7 +62,6 @@ const Video = ({ movie, type }) => {
             document.removeEventListener('mousedown', outClick);
         };
     }, []);
-
     return (
         <VideoWrap
             onClick={() => {
@@ -102,6 +98,15 @@ const Video = ({ movie, type }) => {
                 <div className='movie_info'>
                     <p className='movie_title'>{movie_title}</p>
                     <p className='channel_name'>{Channel[movie_channel].channel_name}</p>
+                    <div className='mobile'>
+                        <p className='mobile_channel_name'>{Channel[movie_channel].channel_name}</p>
+                        <p className='mobile_movie_like_count'>
+                            조회수 {movie_view_conunt(movie_like_count)}
+                            <span className='mobile_movie_date'>
+                                {movie_date.year}.{movie_date.month}.{movie_date.day}
+                            </span>
+                        </p>
+                    </div>
                     <p className='movie_like_count'>
                         조회수 {movie_view_conunt(movie_like_count)}
                         <span className='movie_date'>
