@@ -32,7 +32,7 @@ const SearchChannel = ({ channel }) => {
                         {subscribers_conunt(channel_subscribers)}
                     </p>
                 </div>
-                <SubscribersBtn channel_id={channel_id} channel_name={channel_name} />
+                <SubscribersBtn channel_id={channel_id} channel_name={channel_nav} />
             </div>
         </li>
     );

@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { media } from '../../style/media';
 
 export const BelowWrap = styled.div`
     height: 4rem;
@@ -61,7 +62,7 @@ export const BelowWrap = styled.div`
         .action {
             display: flex;
             flex-wrap: nowrap;
-            gap: 1rem; /* 버튼 간격 */
+            gap: 1rem;
             .Like {
                 .BelowBtn {
                     position: relative;
@@ -140,6 +141,19 @@ export const BelowWrap = styled.div`
             margin-left: 0.3rem;
         }
     }
+    @media ${media.tablet} {
+        height: auto;
+        .BelowBtn_comment {
+            font-size: 1.4rem;
+            margin: 0;
+        }
+        .subscribers-btn {
+            font-size: 1.4rem;
+        }
+        .not-subscribers-btn {
+            font-size: 1.4rem;
+        }
+    }
 `;
 
 export const BelowDetailWrap = styled.div`
@@ -148,7 +162,6 @@ export const BelowDetailWrap = styled.div`
     border-radius: 2rem;
     padding: 1%;
     font-size: 1.5rem;
-
     .info {
         .desc {
             margin-left: 1rem;

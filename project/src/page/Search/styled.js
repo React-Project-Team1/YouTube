@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { media } from '../../style/media';
 
 export const SearchWrap = styled.div`
     height: 100%;
@@ -30,7 +31,8 @@ export const SearchListWrap = styled.ul`
             align-items: center;
             justify-content: space-between;
             margin-left: 3%;
-            .into-text {
+            .info-text {
+                width: 75%;
                 .name {
                     font-size: 2rem;
                 }
@@ -71,6 +73,37 @@ export const SearchListWrap = styled.ul`
                         display: block;
                         margin-top: 1rem;
                     }
+                }
+            }
+        }
+    }
+    @media ${media.mobile} {
+        width: 95vw;
+        .channel-item {
+            height: 11vh;
+            .channel-profile {
+                .channel-logo {
+                    width: 50%;
+                }
+            }
+            .channel-info {
+                margin-right: 2%;
+                width: 46%;
+                .info-text {
+                    width: 50vw;
+                    .name {
+                        letter-spacing: -0.19rem;
+                    }
+                }
+                .channel-btn {
+                    margin-left: -10%;
+                }
+            }
+        }
+        .movie-item {
+            .video-loder {
+                height: 13vh;
+                .text-wrap {
                 }
             }
         }

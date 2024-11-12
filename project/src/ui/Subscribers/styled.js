@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { media } from '../../style/media';
 export const SubscribersBtnWrap = styled.div`
     button {
         max-height: 3.6rem;
@@ -21,5 +22,13 @@ export const SubscribersBtnWrap = styled.div`
     }
     .channel-btn {
         margin-right: 1rem;
+    }
+    @media ${media.mobile} {
+        .subscribers-btn {
+            width: 14vw;
+            .img {
+                width: 35%;
+            }
+        }
     }
 `;

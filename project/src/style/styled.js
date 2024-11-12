@@ -118,6 +118,18 @@ export const HeaderWrap = styled.header`
                     }
                 }
             }
+            @media ${media.mobile} {
+                left: 17%;
+                min-width: 45vw;
+                max-width: 51vw;
+                img {
+                    width: 8%;
+                }
+                .history-btn {
+                    width: 14%;
+                    margin-right: -5%;
+                }
+            }
         }
         .user-menu {
             display: flex;
@@ -195,9 +207,6 @@ export const HeaderWrap = styled.header`
                         width: 3rem;
                     }
                 }
-            }
-            .user-menu {
-                display: none;
             }
         }
     }
