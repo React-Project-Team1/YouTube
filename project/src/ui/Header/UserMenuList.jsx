@@ -2,6 +2,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { UserMenuWrap } from './styled';
 import { useNavigate } from 'react-router-dom';
 import { UserLogout } from '../../store/modules/authSlice';
+import { isSavePopTrue } from '../../store/modules/savePopupSlice';
 
 const UserMenuList = () => {
     const { isAuth, isLoginUser } = useSelector((state) => state.auth);
@@ -12,6 +13,7 @@ const UserMenuList = () => {
         if (name === 'logout') {
             dispatch(UserLogout());
             navigate(`/`);
+            dispatch(isSavePopTrue(`${isLoginUser.user_name}님 로그아웃`));
         } else if (name === 'studio') {
             navigate(`/studio/${isLoginUser.user_id}/dashboard`);
         } else {

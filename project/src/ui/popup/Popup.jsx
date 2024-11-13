@@ -4,6 +4,7 @@ import { DelSubscription } from '../../store/modules/authSlice';
 import { IsMovieChangeSubscriber } from '../../store/modules/channelSlice';
 import { isSubscribersFalse } from '../../store/modules/subscribersSlice';
 import { useMouseOutside } from '../../hook/useMouseOutside';
+import { isSavePopTrue } from '../../store/modules/savePopupSlice';
 
 const Popup = () => {
     const dispatch = useDispatch();
@@ -24,6 +25,7 @@ const Popup = () => {
                         onClick={(e) => {
                             e.stopPropagation();
                             dispatch(isSubscribersFalse());
+                            dispatch(isSavePopTrue(`${thisChannel.channel_name} 채널 구독 취소`));
                             dispatch(
                                 DelSubscription({
                                     user_id: isLoginUser.user_id,

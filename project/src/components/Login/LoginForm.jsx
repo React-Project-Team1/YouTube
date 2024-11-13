@@ -4,6 +4,7 @@ import { LoginFormWrap } from './styled';
 import { useDispatch, useSelector } from 'react-redux';
 import { UserLogin } from '../../store/modules/authSlice';
 import { useState } from 'react';
+import { isSavePopTrue } from '../../store/modules/savePopupSlice';
 
 const LoginForm = ({ loginCheck, setLoginCheck, setPageType }) => {
     const { LoginUser } = useSelector((state) => state.auth);
@@ -31,6 +32,7 @@ const LoginForm = ({ loginCheck, setLoginCheck, setPageType }) => {
             )
         ) {
             dispatch(UserLogin(user));
+            dispatch(isSavePopTrue(`${user.user_email}님 로그인`));
             if (
                 location.pathname.startsWith('/studio') ||
                 location.pathname.startsWith('/login') ||

@@ -2,6 +2,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import { QuickLoginWrap } from './styled';
 import { useDispatch, useSelector } from 'react-redux';
 import { UserLogin } from '../../store/modules/authSlice';
+import { isSavePopTrue } from '../../store/modules/savePopupSlice';
 
 const QuickLogin = ({ setPageType }) => {
     const { LoginUser } = useSelector((state) => state.auth);
@@ -9,19 +10,18 @@ const QuickLogin = ({ setPageType }) => {
         .slice()
         .sort(() => Math.random() - 0.5)
         .slice(0, 3);
-
     const dispatch = useDispatch();
     const navigate = useNavigate();
     const location = useLocation();
-
     const handleLogin = (user) => {
-        alert(`${user.user_name} 로그인`);
+        alert(`${user.user_name}님 로그인`);
         dispatch(
             UserLogin({
                 user_email: user.user_email,
                 user_password: user.user_password,
             })
         );
+        dispatch(isSavePopTrue(`${user.user_name} 로그인`));
         if (
             location.pathname.startsWith('/studio') ||
             location.pathname.startsWith('/login') ||

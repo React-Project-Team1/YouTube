@@ -11,6 +11,7 @@ import { Button } from '../../ui/Button';
 import SubscribersBtn from '../../ui/Subscribers/SubscribersBtn';
 import { getAllMovies, IsMovieChangeLike } from '../../store/modules/channelSlice';
 import { useMouseOutside } from '../../hook/useMouseOutside';
+import { isSavePopTrue } from '../../store/modules/savePopupSlice';
 
 const Below = ({
     movie,
@@ -35,7 +36,7 @@ const Below = ({
     const wrapRef = useMouseOutside(() => setShowReport(false));
 
     // 오프라인/재생목록 저장
-    const handleClickType = (e, saveType) => {
+    const handleClickType = (e, saveType, Msg) => {
         e.preventDefault();
         if (isLoginUser && isAuth) {
             if (isLoginUser[saveType].find((user) => user.movie_id === movie_id)) {
@@ -46,6 +47,7 @@ const Below = ({
                         movie: movie,
                     })
                 );
+                dispatch(isSavePopTrue(Msg));
                 if (saveType === 'like_Movie_List') {
                     dispatch(IsMovieChangeLike({ channel_name, movie_id, type: 'minus' }));
                     dispatch(getAllMovies());
@@ -58,6 +60,7 @@ const Below = ({
                         movie: movie,
                     })
                 );
+                dispatch(isSavePopTrue(Msg));
                 if (saveType === 'like_Movie_List') {
                     dispatch(IsMovieChangeLike({ channel_name, movie_id, type: 'plus' }));
                     dispatch(getAllMovies());
@@ -101,7 +104,17 @@ const Below = ({
                     <span className='Like'>
                         <button
                             className='BelowBtn like'
-                            onClick={(e) => handleClickType(e, 'like_Movie_List')}
+                            onClick={(e) =>
+                                handleClickType(
+                                    e,
+                                    'like_Movie_List',
+                                    isLoginUser['like_Movie_List']?.find(
+                                        (user) => user.movie_id === movie_id
+                                    )
+                                        ? '좋아요 목록에 삭제'
+                                        : '좋아요 목록에 추가'
+                                )
+                            }
                         >
                             <img
                                 className='img'
@@ -118,7 +131,17 @@ const Below = ({
                         </button>
                         <button
                             className='BelowBtn'
-                            onClick={(e) => handleClickType(e, 'dislike_Movie_List')}
+                            onClick={(e) =>
+                                handleClickType(
+                                    e,
+                                    'dislike_Movie_List',
+                                    isLoginUser['dislike_Movie_List']?.find(
+                                        (user) => user.movie_id === movie_id
+                                    )
+                                        ? '싫어요 취소'
+                                        : '싫어요'
+                                )
+                            }
                         >
                             <img
                                 className='img'
@@ -136,7 +159,17 @@ const Below = ({
 
                     <Button
                         className='BelowBtn'
-                        onClick={(e) => handleClickType(e, 'Download_List')}
+                        onClick={(e) =>
+                            handleClickType(
+                                e,
+                                'Download_List',
+                                isLoginUser['Download_List']?.find(
+                                    (user) => user.movie_id === movie_id
+                                )
+                                    ? '오프라인 저장 삭제'
+                                    : '오프라인 저장'
+                            )
+                        }
                     >
                         <img
                             className='img'
@@ -158,7 +191,18 @@ const Below = ({
                         </span>
                     </Button>
 
-                    <Button className={'BelowBtn'} onClick={(e) => handleClickType(e, 'Playlist')}>
+                    <Button
+                        className={'BelowBtn'}
+                        onClick={(e) =>
+                            handleClickType(
+                                e,
+                                'Playlist',
+                                isLoginUser['Playlist']?.find((user) => user.movie_id === movie_id)
+                                    ? '재생목록 삭제'
+                                    : '재생목록 저장'
+                            )
+                        }
+                    >
                         <img
                             className='img'
                             src='https://raw.githubusercontent.com/React-Project-Team1/data-center/cfcea0ca72ded7c526b3eff908c10fbe750b2924/Icon/save.svg.svg'

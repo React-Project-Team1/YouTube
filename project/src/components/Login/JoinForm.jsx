@@ -3,6 +3,7 @@ import { JoinFormWrap } from './styled';
 import { Button } from '../../ui/Button';
 import { useDispatch, useSelector } from 'react-redux';
 import { AddNewUser } from '../../store/modules/authSlice';
+import { isSavePopTrue } from '../../store/modules/savePopupSlice';
 
 const JoinForm = ({ setPageType }) => {
     const [user, setUser] = useState({
@@ -34,6 +35,7 @@ const JoinForm = ({ setPageType }) => {
             alert('중복되는 아이디가 있습니다.');
         } else {
             dispatch(AddNewUser(user));
+            dispatch(isSavePopTrue(`${user.user_name}님 회원가입`));
         }
     };
     return (

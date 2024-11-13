@@ -6,6 +6,7 @@ import { useNavigate } from 'react-router-dom';
 import { SubscribersBtnWrap } from './styled';
 import { IsMovieChangeSubscriber } from '../../store/modules/channelSlice';
 import { isSubscribersTrue } from '../../store/modules/subscribersSlice';
+import { isSavePopTrue } from '../../store/modules/savePopupSlice';
 
 const SubscribersBtn = ({ channel_id, channel_name, thisChannel }) => {
     const { isLoginUser, isAuth } = useSelector((state) => state.auth);
@@ -26,6 +27,7 @@ const SubscribersBtn = ({ channel_id, channel_name, thisChannel }) => {
                 })
             );
             dispatch(IsMovieChangeSubscriber({ channel_name, type: 'plus' }));
+            dispatch(isSavePopTrue(`${thisChannel.channel_name} 채널 구독`));
         } else {
             alert('error');
         }
