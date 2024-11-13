@@ -7,3 +7,4 @@ export { default as Join } from './Join';
 export { default as Feed } from './Feed';
 export { default as Channel } from './Channel';
 export { default as Subscription } from './Subscription';
+export { default as MyPage } from './MyPage';

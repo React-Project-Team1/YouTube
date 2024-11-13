@@ -418,3 +418,25 @@ export const WrongapproachWrap = styled.div`
         font-size: 2rem;
     }
 `;
+
+export const MobileFooterWrap = styled.div`
+    width: 100%;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    background-color: #fff;
+    .menu-list {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-sizing: border-box;
+        padding: 2%;
+    }
+    .btn-item {
+        width: 25%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+`;
