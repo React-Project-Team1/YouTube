@@ -2,19 +2,13 @@ import { Outlet, useLocation } from 'react-router-dom';
 import Header from './Header';
 import SideMenu from './SideMenu';
 import { LayoutWrap } from '../style/styled';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { useEffect } from 'react';
-import Popup from '../ui/popup/Popup';
-import SavePopup from '../ui/SaveList/SavePopup';
-import { isSavePopFalse } from '../store/modules/savePopupSlice';
+import PopWrap from './PopWrap';
 
 const Layout = () => {
     const { isSideMenu } = useSelector((state) => state.header);
     const { pathname } = useLocation();
-    const { isSubscribers } = useSelector((state) => state.subscribers);
-    const { isSavePop } = useSelector((state) => state.savepop);
-    const dispatch = useDispatch();
-
     useEffect(() => {
         window.scrollTo({
             top: 0,
@@ -23,21 +17,6 @@ const Layout = () => {
         });
     }, [pathname]);
 
-    useEffect(() => {
-        if (isSubscribers) {
-            const modal = document.querySelector('#subscript-popup');
-            modal.showModal();
-        }
-    }, [isSubscribers]);
-
-    useEffect(() => {
-        const timer = setTimeout(() => {
-            dispatch(isSavePopFalse());
-        }, 1000);
-        if (isSavePop) timer;
-        return () => clearInterval(timer);
-    }, [isSavePop]);
-
     return (
         <LayoutWrap>
             <Header />
@@ -45,8 +24,7 @@ const Layout = () => {
                 {isSideMenu && <SideMenu />}
                 <Outlet />
             </div>
-            <Popup />
-            {isSavePop && <SavePopup left={isSideMenu ? '28rem' : '4rem'} />}
+            <PopWrap />
         </LayoutWrap>
     );
 };
