@@ -56,6 +56,7 @@ const Channel = () => {
                                     {thisChannel.channel_introduction}
                                 </div>
                                 <SubscribersBtn
+                                    thisChannel={thisChannel}
                                     channel_id={thisChannel.channel_id}
                                     channel_name={thisChannel.channel_nav}
                                 />

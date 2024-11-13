@@ -4,10 +4,12 @@ import SideMenu from './SideMenu';
 import { LayoutWrap } from '../style/styled';
 import { useSelector } from 'react-redux';
 import { useEffect } from 'react';
+import Popup from '../ui/popup/Popup';
 
 const Layout = () => {
     const { isSideMenu } = useSelector((state) => state.header);
     const { pathname } = useLocation();
+    const { isSubscribers } = useSelector((state) => state.subscribers);
 
     useEffect(() => {
         window.scrollTo({
@@ -17,6 +19,13 @@ const Layout = () => {
         });
     }, [pathname]);
 
+    useEffect(() => {
+        if (isSubscribers) {
+            const modal = document.querySelector('#subscript-popup');
+            modal.showModal();
+        }
+    }, [isSubscribers]);
+
     return (
         <LayoutWrap>
             <Header />
@@ -24,6 +33,7 @@ const Layout = () => {
                 {isSideMenu && <SideMenu />}
                 <Outlet />
             </div>
+            <Popup />
         </LayoutWrap>
     );
 };

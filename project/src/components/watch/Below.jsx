@@ -10,6 +10,7 @@ import { IsAddList, IsDelList } from '../../store/modules/authSlice';
 import { Button } from '../../ui/Button';
 import SubscribersBtn from '../../ui/Subscribers/SubscribersBtn';
 import { getAllMovies, IsMovieChangeLike } from '../../store/modules/channelSlice';
+import { useMouseOutside } from '../../hook/useMouseOutside';
 
 const Below = ({
     movie,
@@ -30,6 +31,7 @@ const Below = ({
     const dispatch = useDispatch();
     const { isLoginUser, isAuth } = useSelector((state) => state.auth); // 로그인된 사용자 정보 가져오기
     const navigate = useNavigate();
+    const wrapRef = useMouseOutside(() => setShowReport(false));
 
     // 오프라인/재생목록 저장
     const handleClickType = (e, saveType) => {
@@ -167,7 +169,7 @@ const Below = ({
                         <LuMoreHorizontal className='icons' />
                     </Button>
                     {showReport && (
-                        <div className='report-text'>
+                        <div className='report-text' ref={wrapRef}>
                             <RiFlagLine /> 신고
                         </div>
                     )}

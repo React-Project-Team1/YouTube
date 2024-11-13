@@ -8,13 +8,8 @@ import sortData from '../../assets/api/SortSubscript';
 const SubscriptList = () => {
     const { Channel } = useSelector((state) => state.channel);
     const allChannel = Object.keys(Channel).map((key) => Channel[key]);
-    const [thisChannelID, setThisChannelID] = useState(null);
     const [thisSortType, setThisSortType] = useState(sortData[0]);
-    const handleChangeThisId = (id) => {
-        setThisChannelID(id);
-    };
     const { isLoginUser } = useSelector((state) => state.auth);
-
     const thisSubscriptChannel = allChannel.filter((channel) =>
         isLoginUser?.Subscription_Id?.includes(channel.channel_id)
     );
@@ -39,12 +34,7 @@ const SubscriptList = () => {
                     }
                 })
                 .map((channel) => (
-                    <SubscriptItem
-                        key={channel.channel_id}
-                        channel={channel}
-                        thisChannelID={thisChannelID}
-                        handleChangeThisId={handleChangeThisId}
-                    />
+                    <SubscriptItem key={channel.channel_id} channel={channel} />
                 ))}
         </SubscriptListWrap>
     );

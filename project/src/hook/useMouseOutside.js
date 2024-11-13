@@ -4,7 +4,7 @@ export const useMouseOutside = (setMenu) => {
     const wrapRef = useRef(null);
     const outClick = (event) => {
         if (wrapRef.current && !wrapRef.current.contains(event.target)) {
-            setMenu(false);
+            setMenu();
         }
     };
     useEffect(() => {

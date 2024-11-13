@@ -3,8 +3,9 @@ import { Button } from '../../ui/Button';
 import { useNavigate } from 'react-router-dom';
 import Popup from '../../ui/popup/Popup';
 import { useSelector } from 'react-redux';
+import SubscribersBtn from '../../ui/Subscribers/SubscribersBtn';
 
-const SubscriptItem = ({ channel, handleChangeThisId, thisChannelID }) => {
+const SubscriptItem = ({ channel }) => {
     const {
         channel_id,
         channel_name,
@@ -15,24 +16,6 @@ const SubscriptItem = ({ channel, handleChangeThisId, thisChannelID }) => {
         Movies,
     } = channel;
     const navigate = useNavigate();
-    useEffect(() => {
-        const modal = document.querySelector('#subscript-popup');
-        if (thisChannelID === channel_id) {
-            modal.showModal();
-        }
-    }, [thisChannelID, channel_id]);
-
-    const handleShowPopup = (e) => {
-        e.stopPropagation();
-        handleChangeThisId(channel_id);
-        const modal = document.querySelector('#subscript-popup');
-        modal.showModal();
-    };
-    const handleClosePopup = (e) => {
-        e.stopPropagation();
-        const modal = document.querySelector('#subscript-popup');
-        modal.close();
-    };
 
     return (
         <li
@@ -52,23 +35,12 @@ const SubscriptItem = ({ channel, handleChangeThisId, thisChannelID }) => {
             </div>
 
             <div className='subscript-icon'>
-                <Button className='icon-notification' onClick={handleShowPopup}>
-                    <img
-                        className='button-icon-notification'
-                        src='https://raw.githubusercontent.com/React-Project-Team1/data-center/752a52cbfb5bf64b383b0941ba3834539b2988ac/Icon/Notification.svg'
-                        alt='notificaion'
-                    />
-                    구독중
-                </Button>
-            </div>
-            {thisChannelID === channel_id && (
-                <Popup
-                    channel_name={channel_name}
-                    handleClosePopup={handleClosePopup}
+                <SubscribersBtn
                     channel_id={channel_id}
-                    thisChannelID={thisChannelID}
+                    channel_name={channel_name}
+                    thisChannel={channel}
                 />
-            )}
+            </div>
         </li>
     );
 };

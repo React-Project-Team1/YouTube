@@ -13,7 +13,7 @@ export const YouTubeWrap = styled.div`
         white-space: nowrap; /* 항목들이 한 줄로 나오게 설정 */
         margin-bottom: 2.6rem;
         .top-menu-li {
-            margin-right: 1.6rem;
+            margin-right: 1rem;
             &.active {
                 .top-menu-button {
                     background-color: #000;
