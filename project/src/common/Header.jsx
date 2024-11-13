@@ -8,25 +8,14 @@ import LoginButton from '../ui/Header/LoginButton';
 import SearchHistory from '../components/Header/SearchHistory';
 import { useParams } from 'react-router-dom';
 import { useEffect, useRef, useState } from 'react';
+import { useMouseOutside } from '../hook/useMouseOutside';
 
 const Header = () => {
     const { isAuth } = useSelector((state) => state.auth);
     const [isShown, setIsShown] = useState(true); // 검색 기록 보이기
     const [search, setSearch] = useState(''); // searchBox -> Header 이동
     const { Search } = useParams();
-
-    const wrapRef = useRef(null);
-    const outClick = (event) => {
-        if (wrapRef.current && !wrapRef.current.contains(event.target)) {
-            setIsShown(true);
-        }
-    };
-    useEffect(() => {
-        document.addEventListener('mousedown', outClick);
-        return () => {
-            document.removeEventListener('mousedown', outClick);
-        };
-    }, []);
+    const wrapRef = useMouseOutside(() => setIsShown(true));
 
     return (
         <HeaderWrap id='header' ref={wrapRef}>

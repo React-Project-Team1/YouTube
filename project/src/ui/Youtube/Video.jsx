@@ -1,10 +1,11 @@
-import { useEffect, useRef, useState } from 'react';
+import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { VideoWrap } from './styled';
 import { SideMenuChange } from '../../store/modules/headerSlice';
 import SaveList from '../SaveList/SaveList';
 import { IsDelList } from '../../store/modules/authSlice';
+import { useMouseOutside } from '../../hook/useMouseOutside';
 const Video = ({ movie, type }) => {
     const {
         movie_id,
@@ -50,18 +51,7 @@ const Video = ({ movie, type }) => {
         setSaveShow(!saveShow);
     };
     //외부 클릭 감지 핸들러
-    const wrapRef = useRef(null);
-    const outClick = (event) => {
-        if (wrapRef.current && !wrapRef.current.contains(event.target)) {
-            setSaveShow(false);
-        }
-    };
-    useEffect(() => {
-        document.addEventListener('mousedown', outClick);
-        return () => {
-            document.removeEventListener('mousedown', outClick);
-        };
-    }, []);
+    const wrapRef = useMouseOutside(() => setSaveShow(false));
     return (
         <VideoWrap
             onClick={() => {
