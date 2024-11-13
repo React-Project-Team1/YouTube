@@ -7,12 +7,12 @@ import { isSavePopTrue } from '../../store/modules/savePopupSlice';
 const SaveItem = ({ save, movie }) => {
     const { type, img, falseName, trueName, falseImg, trueImg } = save;
     const { isLoginUser, isAuth } = useSelector((state) => state.auth);
+    const { isSavePop } = useSelector((state) => state.savepop);
     const dispatch = useDispatch();
     const navigate = useNavigate();
     const [ofType, setOfType] = useState(false);
 
     const handleChangeSave = (e) => {
-        e.stopPropagation();
         e.preventDefault();
         if (!isAuth) navigate('/login');
         if (ofType) {
@@ -37,7 +37,13 @@ const SaveItem = ({ save, movie }) => {
 
     if (type !== 'Download_List') {
         return (
-            <li className='save-item' onClick={handleChangeSave} style={{}}>
+            <li
+                className='save-item'
+                onClick={handleChangeSave}
+                style={{
+                    pointerEvents: isSavePop && 'none',
+                }}
+            >
                 <img src={img} alt={ofType ? trueName : falseName} />
                 {ofType ? trueName : falseName}
             </li>
@@ -45,7 +51,13 @@ const SaveItem = ({ save, movie }) => {
     }
 
     return (
-        <li className='save-item' onClick={handleChangeSave}>
+        <li
+            className='save-item'
+            onClick={handleChangeSave}
+            style={{
+                pointerEvents: isSavePop && 'none',
+            }}
+        >
             <img src={ofType ? trueImg : falseImg} alt={ofType ? trueName : falseName} />
             {ofType ? trueName : falseName}
         </li>

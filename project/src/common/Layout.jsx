@@ -33,7 +33,7 @@ const Layout = () => {
     useEffect(() => {
         const timer = setTimeout(() => {
             dispatch(isSavePopFalse());
-        }, 2000);
+        }, 1000);
         if (isSavePop) timer;
         return () => clearInterval(timer);
     }, [isSavePop]);
