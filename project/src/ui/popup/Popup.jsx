@@ -3,17 +3,19 @@ import { PopupWrap } from './styled';
 import { DelSubscription } from '../../store/modules/authSlice';
 import { IsMovieChangeSubscriber } from '../../store/modules/channelSlice';
 import { isSubscribersFalse } from '../../store/modules/subscribersSlice';
+import { useMouseOutside } from '../../hook/useMouseOutside';
 
 const Popup = () => {
     const dispatch = useDispatch();
     const { isLoginUser } = useSelector((state) => state.auth);
     const { thisChannel } = useSelector((state) => state.subscribers);
+    const wrapRef = useMouseOutside(() => dispatch(isSubscribersFalse()));
 
     if (thisChannel)
         return (
             <PopupWrap id='subscript-popup' className='popup-box'>
                 <p className='popup-title'>{thisChannel?.channel_name} 구독을 취소하시겠습니까?</p>
-                <div className='popup-btns'>
+                <div className='popup-btns' ref={wrapRef}>
                     <button className='popup-close' onClick={() => dispatch(isSubscribersFalse())}>
                         취소
                     </button>
@@ -30,7 +32,7 @@ const Popup = () => {
                             );
                             dispatch(
                                 IsMovieChangeSubscriber({
-                                    channel_name: thisChannel?.channel_name,
+                                    channel_name: thisChannel?.channel_nav,
                                     type: 'minus',
                                 })
                             );

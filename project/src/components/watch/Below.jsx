@@ -26,6 +26,7 @@ const Below = ({
     movie_id,
     channel_name,
     movie_channel,
+    thisChannel,
 }) => {
     const [showReport, setShowReport] = useState(false);
     const dispatch = useDispatch();
@@ -88,7 +89,11 @@ const Below = ({
                         <p className='channel_subscribers'>{channelSubscribers}명</p>
                     </div>
                     <div className='subscribers'>
-                        <SubscribersBtn channel_id={channelId} channel_name={channel_name} />
+                        <SubscribersBtn
+                            channel_id={channelId}
+                            channel_name={channel_name}
+                            thisChannel={thisChannel}
+                        />
                     </div>
                 </div>
 
