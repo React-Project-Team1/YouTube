@@ -4,6 +4,7 @@ import Header from './Header';
 import { useSelector } from 'react-redux';
 import StudioSideMenu from './StudioSideMenu';
 import { useEffect } from 'react';
+import PopWrap from './PopWrap';
 
 const StudioLayout = () => {
     const { isSideMenu } = useSelector((state) => state.header);
@@ -20,6 +21,7 @@ const StudioLayout = () => {
                     {isSideMenu && <StudioSideMenu />}
                     <Outlet />
                 </div>
+                <PopWrap />
             </StudioLayoutWrap>
         );
 };

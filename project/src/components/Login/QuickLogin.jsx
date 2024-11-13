@@ -21,7 +21,7 @@ const QuickLogin = ({ setPageType }) => {
                 user_password: user.user_password,
             })
         );
-        dispatch(isSavePopTrue(`${user.user_name} 로그인`));
+        dispatch(isSavePopTrue(`${user.user_name}님 로그인`));
         if (
             location.pathname.startsWith('/studio') ||
             location.pathname.startsWith('/login') ||

@@ -4,6 +4,7 @@ import { Button } from '../../ui/Button';
 import { useDispatch, useSelector } from 'react-redux';
 import { AddNewMovies, getAllMovies } from '../../store/modules/channelSlice';
 import { useNavigate } from 'react-router-dom';
+import { isSavePopTrue } from '../../store/modules/savePopupSlice';
 
 const VideoUploadPage = () => {
     const { isLoginUser } = useSelector((state) => state.auth);
@@ -86,6 +87,7 @@ const VideoUploadPage = () => {
         if (!movie.movie_title || !movie.movie_body || !movie.movie_image || !movie.movie_video) {
             alert('누락된 정보가 있습니다.');
         } else {
+            dispatch(isSavePopTrue(`${movie.movie_title} 추가`));
             dispatch(
                 AddNewMovies({
                     movie_title: movie.movie_title,

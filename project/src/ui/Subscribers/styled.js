@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { media } from '../../style/media';
 export const SubscribersBtnWrap = styled.div`
+    display: flex;
     button {
         max-height: 3.6rem;
     }

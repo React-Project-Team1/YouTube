@@ -16,7 +16,6 @@ export const BelowWrap = styled.div`
         display: flex;
         align-items: center;
         justify-content: space-between;
-
         .channel {
             display: flex;
             align-items: center;

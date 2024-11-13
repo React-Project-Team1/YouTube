@@ -37,7 +37,7 @@ export const YouTubeWrap = styled.div`
             &:not(:nth-child(${(props) => props.$not}n)) {
                 margin-right: 1%;
             }
-            &:nth-child(5n) {
+            &:nth-child(${(props) => props.$not}n) {
                 .plus-menu {
                     .save-list {
                         position: absolute;

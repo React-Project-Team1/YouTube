@@ -4,6 +4,7 @@ import { ContentPageWrap } from './styled';
 import Video from '../../ui/Youtube/Video';
 import { DelMovies, getAllMovies } from '../../store/modules/channelSlice';
 import { useNavigate } from 'react-router-dom';
+import { isSavePopTrue } from '../../store/modules/savePopupSlice';
 
 const ContentPage = () => {
     const { Channel } = useSelector((state) => state.channel);
@@ -37,6 +38,7 @@ const ContentPage = () => {
         );
         setSelectedMovies([]);
         dispatch(getAllMovies());
+        dispatch(isSavePopTrue(`${selectedMovies.length}개의 영상 삭제`));
     };
 
     useEffect(() => {
