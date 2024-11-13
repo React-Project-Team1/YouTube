@@ -330,6 +330,23 @@ export const LayoutWrap = styled.div`
     .content-wrap {
         display: flex;
         width: 100%;
+        position: relative;
+        .scroll_up {
+            position: fixed;
+            bottom: 10rem;
+            right: 3rem;
+            .scroll_up_btn {
+                width: 8rem;
+                height: 8rem;
+                border-radius: 50%;
+                background-repeat: no-repeat;
+                background-position: 50% 50%;
+                background-image: url('https://github.com/React-Project-Team1/data-center/blob/main/Icon/up.jpg?raw=true');
+                background-size: cover;
+                cursor: pointer;
+                border: none;
+            }
+        }
     }
     @media ${media.mobile} {
         margin-bottom: 9rem;

@@ -34,6 +34,7 @@ export const ChannelWrap = styled.div`
         padding-right: calc(50% - 64.2rem);
         padding-left: calc(50% - 64.2rem);
         height: 21.2109rem;
+        /* height: 21.21%; */
         /* background-color: #dddddd; */
         .channel_banner {
             height: 100%;
@@ -140,15 +141,31 @@ export const ChannelWrap = styled.div`
     button {
         max-height: 3.6rem;
     }
+   
     @media ${media.mobile} {
+        .header_banner {
+            /* height: 13%; */
+            /* height: 100px; */
+            height: 15rem;
+            .channel_banner {
+               width: 100%;
+               height: 100%;
+               overflow: hidden;
+                img { 
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover; 
+                }
+            }
+        }
         .page_header {
             .page_header_profile {
-                display: flex;
-                justify-content: flex-start;
                 .header_left {
+                    display: flex;
+                    align-items:center;
                     margin-right: 16px;
                     .channel_img {
-                        width: 55%;
+                         width: 12.5rem;
                     }
                 }
                 .header-right {
@@ -159,6 +176,28 @@ export const ChannelWrap = styled.div`
                         .channel_desc {
                         }
                     }
+                }
+            }
+        }
+        .channel_navbar {
+            .inner {
+                li {line-height: 6rem;}
+                .channel_search {
+                    button{
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        padding : 0;
+                        img {
+                            width: 3rem;
+
+                        }
+                    }
+                    .search_input {
+                        width: 100px;
+                    }
+                    .search_input::placeholder {
+                        font-size: 70%;
                 }
             }
         }
@@ -204,6 +243,31 @@ export const ChannelHomeWrap = styled.div`
             display: none;
         }
     }
+    @media ${media.mobile} {
+        .channel_mainvideo {
+            .video-loder {
+                display: flex;
+                flex-direction: column;
+                width: 60rem;
+
+                .video-wrap {
+                    width: 100%;
+                    height: 33rem;
+                    img,
+                    iframe {
+                        width: 100%;
+                        height: 100%;
+                        border-radius: 1rem;
+                    }
+                }
+                .text-wrap {
+                    .channel-logo {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
 `;
 
 export const ChannelVideoWrap = styled.div`
@@ -229,6 +293,10 @@ export const ChannelVideoWrap = styled.div`
         }
     }
     @media ${media.mobile} {
+        .channel_video_tab {
+            padding: 0;
+            margin: 1.5rem 0;
+        }
         .channel_videolist {
             .search_results-wrap {
                 width: 100%;
@@ -236,15 +304,74 @@ export const ChannelVideoWrap = styled.div`
                 flex-direction: column;
                 .video-loder {
                     width: 100%;
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: center;
                     .video-wrap {
+                        width: 45%;
+                        height: 15rem;
+                        padding-bottom: 0%;
+                        img {
+                            width: 100%;
+                            height: 100%;
+                            border-radius: 1rem;
+                        }
                     }
                     .text-wrap {
+                        width: 55%;
+                        padding: 0;
+                        margin-left: 1.5rem;
+                        .channel-logo {
+                            display: none;
+                        }
                     }
                 }
             }
         }
     }
 `;
+export const ChannelHomeListWrap = styled.div`
+@media ${media.mobile} {
+    h2 {
+        font-size:150%;
+        font-weight:700;
+    }
+        .search_results-wrap {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            .video-loder {
+                width: 100%;
+                display: flex;
+                flex-direction: row; 
+justify-content: space-between;
+
+                .video-wrap {
+                    width: 45%;
+                    height: 15rem;
+                    padding-bottom : 0%;
+                    img {
+                        width:100%;
+                        height: 100%;
+                        border-radius: 1rem;
+                    }
+                }
+                .text-wrap {
+                    width: 55%;
+                    padding:0;
+                    margin-left: 1.5rem;
+                    .channel-logo {
+                        display: none;
+                    }
+                    
+                }
+            }
+        }
+    }
+    
+}
+`;
+
 export const SearchMovieWrap = styled.div`
     .search_results {
         /* padding-right: calc(50% - 64.2rem); */

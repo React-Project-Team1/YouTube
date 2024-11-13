@@ -9,11 +9,12 @@ export const Button = styled.button`
     cursor: pointer;
     display: flex;
     align-items: center;
+    justify-content: center;
     &:hover {
         background-color: #e0e0e0;
     }
     @media ${media.mobile} {
-        width: 10vw;
-        font-size: 70%;
+        /* width: 100%; */
+        font-size: 100%;
     }
 `;

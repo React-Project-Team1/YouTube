@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { media } from '../../style/media';
 
 export const LoginFormWrap = styled.form`
     &.login-box {
@@ -9,6 +10,7 @@ export const LoginFormWrap = styled.form`
         align-items: center;
         justify-content: space-between;
         position: relative;
+
         .login-input,
         .failed-input {
             display: flex;
@@ -17,7 +19,8 @@ export const LoginFormWrap = styled.form`
             align-items: center;
             margin-top: 5%;
             input {
-                border: 1px solid #dcdcdc;
+                border: 1px solid #777;
+                border-radius: 0.9rem;
                 outline: invert;
                 text-indent: 2rem;
                 font-size: 1.6rem;
@@ -29,7 +32,6 @@ export const LoginFormWrap = styled.form`
         .failed-input {
             label {
                 font-size: 1.4rem;
-                text-align: left;
                 margin-bottom: 1rem;
                 color: #ed1d24;
             }
@@ -61,6 +63,36 @@ export const LoginFormWrap = styled.form`
             &.active {
                 height: 5rem;
                 opacity: 1;
+            }
+        }
+    }
+    @media ${media.mobile} {
+        &.login-box {
+            display: flex;
+            align-items: end;
+            .login-input,
+            .failed-input {
+                width: 100%;
+                margin: 0;
+                align-items: start;
+                input {
+                    width: 100%;
+                    height: 10rem;
+                    font-size: 150%;
+                    margin-bottom: 3%;
+                }
+                label {
+                    font-size: 100%;
+                }
+            }
+            .btn-wrap {
+                width: 50%;
+                button {
+                    display: flex;
+                    justify-content: center;
+                    width: 100%;
+                    font-size: 100%;
+                }
             }
         }
     }
@@ -103,6 +135,29 @@ export const QuickLoginWrap = styled.ul`
             width: 100%;
         }
     }
+    @media ${media.mobile} {
+        padding: 0;
+        .login-item {
+            padding: 8% 0;
+            height: 6vh;
+            .profile-wrap {
+                width: 5rem;
+                height: 5rem;
+                font-size: 140%;
+            }
+            .text-wrap {
+                font-size: 150%;
+                margin-left: 5px;
+                .user-email {
+                    font-size: 80%;
+                }
+            }
+            .account-wrap {
+                width: 4rem;
+                height: 4rem;
+            }
+        }
+    }
 `;
 
 export const JoinFormWrap = styled.form`
@@ -120,6 +175,7 @@ export const JoinFormWrap = styled.form`
     }
     input {
         border: 1px solid #dcdcdc;
+        border-radius: 0.9rem;
         outline: invert;
         text-indent: 2rem;
         font-size: 1.6rem;
@@ -139,12 +195,35 @@ export const JoinFormWrap = styled.form`
         display: flex;
         justify-content: end;
         align-items: center;
-        .cancle-btn {
+        .cancel-btn {
             margin-left: 1rem;
             background-color: #212121;
             color: #fff;
             &:hover {
                 background-color: #424242;
+            }
+        }
+    }
+    @media ${media.mobile} {
+        display: flex;
+        align-items: end;
+        .join-wrap {
+            width: 100%;
+            input {
+                width: 100%;
+                height: 10rem;
+                font-size: 150%;
+                margin-bottom: 3%;
+            }
+        }
+        .btn-wrap {
+            width: 45%;
+            button {
+                width: 100%;
+                font-size: 100%;
+            }
+            .join-btn {
+                width: 45%;
             }
         }
     }

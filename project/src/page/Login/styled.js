@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { media } from '../../style/media';
 
 export const LoginWrap = styled.div`
     background: #e0e0e0;
@@ -42,5 +43,27 @@ export const LoginWrap = styled.div`
         user-select: none;
         cursor: pointer;
         font-size: 1.4rem;
+    }
+    @media ${media.mobile} {
+        background: #fff;
+        .left-con-box,
+        .right-con-box {
+            width: 100%;
+        }
+        .login-container {
+            flex-direction: column;
+            padding: 5.5%;
+            width: 100%;
+            .left-con-box {
+                padding: 0;
+                .title {
+                    font-size: 4.5rem;
+                }
+                .nav-youtube {
+                    font-size: 160%;
+                    margin: 1% 0;
+                }
+            }
+        }
     }
 `;

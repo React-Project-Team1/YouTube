@@ -16,7 +16,7 @@ export const SearchListWrap = styled.ul`
         display: flex;
         align-items: center;
         justify-content: space-between;
-        margin-bottom: 2%;
+        margin-bottom: 5%;
         .channel-profile {
             width: 50%;
             display: flex;
@@ -39,11 +39,28 @@ export const SearchListWrap = styled.ul`
                 .info {
                     font-size: 1.4rem;
                     color: #777;
+                    .username {
+                        margin-right: 1.4rem;
+                    }
+                    .sub-count {
+                        position: relative;
+                        &::before {
+                            content: '';
+                            width: 0.4rem;
+                            height: 0.4rem;
+                            background: #777;
+                            border-radius: 50%;
+                            position: absolute;
+                            top: 50%;
+                            left: -12%;
+                        }
+                    }
                 }
             }
         }
     }
     .movie-item {
+        margin-top: 2.5%;
         .video-loder {
             display: flex;
             flex-direction: row;
@@ -78,32 +95,83 @@ export const SearchListWrap = styled.ul`
         }
     }
     @media ${media.mobile} {
-        width: 95vw;
+        width: 100vw;
+        margin-bottom: 2%;
+        overflow: hidden;
         .channel-item {
-            height: 11vh;
+            display: flex;
+            align-items: center;
+            padding: 5% 0;
+            border-bottom: 1px solid #eee;
+            margin-bottom: 0;
+            &:last-child {
+            }
             .channel-profile {
                 .channel-logo {
-                    width: 50%;
+                    width: 40%;
                 }
             }
             .channel-info {
-                margin-right: 2%;
-                width: 46%;
-                .info-text {
-                    width: 50vw;
-                    .name {
-                        letter-spacing: -0.19rem;
+                display: flex;
+                flex-direction: column;
+                align-items: start;
+                width: 60%;
+                .info {
+                    color: #777;
+                    display: flex;
+                    flex-direction: column;
+                    .sub-count {
+                        &::before {
+                            display: none;
+                        }
                     }
-                }
-                .channel-btn {
-                    margin-left: -10%;
                 }
             }
         }
         .movie-item {
-            .video-loder {
-                height: 13vh;
-                .text-wrap {
+            .search-video-wrap {
+                .video-loder {
+                    height: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    margin-bottom: 7%;
+                    .video-wrap {
+                        width: 100%;
+                        iframe,
+                        img {
+                            height: 100%;
+                            border-radius: 0%;
+                        }
+                    }
+                    .text-wrap {
+                        width: 100%;
+                        display: flex;
+                        .channel-logo {
+                            display: flex;
+                            width: 10%;
+                            height: auto;
+                            img {
+                                width: 100%;
+                                height: 100%;
+                            }
+                        }
+                        .movie_info {
+                            width: 80%;
+                            position: absolute;
+                            left: 13%;
+                            top: 20%;
+                            .movie_title {
+                                -webkit-line-clamp: 2;
+                            }
+                            .movie_body {
+                                display: none;
+                            }
+                        }
+                        .plus-menu {
+                            top: 25%;
+                            right: 5%;
+                        }
+                    }
                 }
             }
         }
@@ -113,6 +181,9 @@ export const SearchListWrap = styled.ul`
 export const NoSearchWrap = styled.div`
     width: 100%;
     display: flex;
+    @media ${media.mobile} {
+        margin-top: 50%;
+    }
     .no-search {
         margin: auto;
         box-shadow: #00000024 0.2rem 0.4rem 2rem;

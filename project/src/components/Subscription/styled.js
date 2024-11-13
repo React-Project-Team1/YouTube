@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { media } from '../../style/media';
 
 export const SubscriptSortWrap = styled.div`
     width: 100%;
@@ -37,6 +38,14 @@ export const SubscriptSortWrap = styled.div`
             &:hover {
                 background: #ececec;
             }
+        }
+    }
+    /* 11/13 오후 김혜림 전체 추가 */
+    @media ${media.mobile} {
+        .subscript-select {
+            width: 13rem;
+            padding: 1rem;
+            font-size: 2rem;
         }
     }
 `;
@@ -98,6 +107,40 @@ export const SubscriptListWrap = styled.ul`
                 .button-icon-notification {
                     margin-right: 0.6rem;
                     width: 2.6rem;
+                }
+            }
+        }
+    }
+    /* 11/13 오후 김혜림 추가 */
+    @media ${media.mobile} {
+        .subscript-li {
+            .subscript-li-img {
+                width: 8rem;
+                height: 8rem;
+                margin-right: 1.6rem;
+            }
+            .subscript-channel-content {
+                width: 63%;
+                .content-channel-name {
+                    margin-bottom: 0;
+                }
+                .content-channel-engName,
+                .content-channel-subscribers,
+                .content-channel-introduction {
+                    font-size: 1.6rem;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                    word-break: keep-all;
+                }
+            }
+            .subscript-icon {
+                .subscribers-btn {
+                    width: 100%;
+                    font-size: 1.6rem;
+                    .img {
+                        width: 30%;
+                    }
                 }
             }
         }

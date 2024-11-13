@@ -3,7 +3,6 @@ import { JoinFormWrap } from './styled';
 import { Button } from '../../ui/Button';
 import { useDispatch, useSelector } from 'react-redux';
 import { AddNewUser } from '../../store/modules/authSlice';
-import { isSavePopTrue } from '../../store/modules/savePopupSlice';
 
 const JoinForm = ({ setPageType }) => {
     const [user, setUser] = useState({
@@ -35,59 +34,60 @@ const JoinForm = ({ setPageType }) => {
             alert('중복되는 아이디가 있습니다.');
         } else {
             dispatch(AddNewUser(user));
-            dispatch(isSavePopTrue(`${user.user_name}님 회원가입`));
         }
     };
     return (
         <JoinFormWrap onSubmit={onSubmit}>
-            <p className='join-wrap'>
+            <p className="join-wrap">
                 <input
-                    type='email'
-                    name='user_email'
-                    id='user_email'
-                    placeholder='이메일'
+                    type="text"
+                    name="user_name"
+                    id="user_name"
+                    placeholder="이름"
+                    className="active"
+                    onChange={handleChangeInput}
+                />
+                <input
+                    type="age"
+                    name="user_age"
+                    id="user_age"
+                    placeholder="나이"
+                    className="active"
+                    onChange={handleChangeInput}
+                />
+                <input
+                    type="tel"
+                    name="user_tel"
+                    id="user_tel"
+                    placeholder="전화번호"
+                    className="active"
+                    onChange={handleChangeInput}
+                />
+                <input
+                    type="email"
+                    name="user_email"
+                    id="user_email"
+                    placeholder="이메일"
                     className={nextForm && 'active'}
                     onChange={handleChangeInput}
                 />
                 <input
-                    type='password'
-                    name='user_password'
-                    id='user_password'
-                    placeholder='비밀번호'
+                    type="password"
+                    name="user_password"
+                    id="user_password"
+                    placeholder="비밀번호"
                     className={nextForm && 'active'}
-                    onChange={handleChangeInput}
-                />
-                <input
-                    type='text'
-                    name='user_name'
-                    id='user_name'
-                    placeholder='이름'
-                    className='active'
-                    onChange={handleChangeInput}
-                />
-                <input
-                    type='age'
-                    name='user_age'
-                    id='user_age'
-                    placeholder='나이'
-                    className='active'
-                    onChange={handleChangeInput}
-                />
-                <input
-                    type='tel'
-                    name='user_tel'
-                    id='user_tel'
-                    placeholder='전화번호'
-                    className='active'
                     onChange={handleChangeInput}
                 />
             </p>
-            <div className='btn-wrap'>
+            <div className="btn-wrap">
                 {nextForm ? (
-                    <Button type='submit'>회원가입</Button>
+                    <Button type="submit" className="join-btn">
+                        회원가입
+                    </Button>
                 ) : (
                     <>
-                        <Button onClick={handleUserChk} className='next-btn'>
+                        <Button onClick={handleUserChk} className="next-btn">
                             다음
                         </Button>
                         <Button
@@ -95,7 +95,7 @@ const JoinForm = ({ setPageType }) => {
                                 e.preventDefault();
                                 setPageType('login');
                             }}
-                            className='cancle-btn'
+                            className="cancel-btn"
                         >
                             취소
                         </Button>

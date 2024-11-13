@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { media } from '../../style/media';
 
 export const FeedWrap = styled.div`
     width: 100%;
@@ -131,6 +132,64 @@ export const FeedWrap = styled.div`
                 background-color: #e5e5e5;
             }
         }
+    }
+    @media ${media.mobile} {
+        .hearder {
+            .inner {
+                padding: 2%;
+            }
+        }
+        .viewing_content {
+            .inner {
+                padding: 2%;
+                .video-list {
+                    width: 100%;
+                    overflow: hidden;
+                    .video-loder {
+                        width: 100%;
+                        .video-wrap {
+                            width: 30%;
+                            img {
+                                width: 100%;
+                                height: 100%;
+                                border-radius: 1rem;
+                            }
+                        }
+                        .text-wrap {
+                            /* width: 60%; */
+                            width: 220px;
+                            padding-left: 0;
+                            .channel-logo {
+                            }
+                            .movie_info {
+                                .movie_title {
+                                    padding-right: 10%;
+                                    word-break: keep-all;
+                                }
+                                .channel_name {
+                                }
+                                .movie_body {
+                                    padding-right: 10%;
+                                    word-break: keep-all;
+                                }
+                            }
+                        }
+                        .close-menu {
+                            /* position: absolute;
+                        right:0; */
+                            display: none;
+                        }
+                        .plus-menu {
+                            position: absolute;
+                            right: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .page_menu {
+        display: none;
     }
 `;
 export const ViewingRecordWrap = styled.div``;

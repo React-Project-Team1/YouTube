@@ -6,6 +6,7 @@ import { useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import PopWrap from './PopWrap';
 import MobileFooter from './MobileFooter';
+import ScrollTo from './ScrollTo';
 
 const Layout = () => {
     const { isSideMenu } = useSelector((state) => state.header);
@@ -24,6 +25,8 @@ const Layout = () => {
             <div className='content-wrap'>
                 {isSideMenu && <SideMenu />}
                 <Outlet />
+                {/* 11/13 오후 김혜림 추가 */}
+                <ScrollTo />
             </div>
             <PopWrap />
             <MobileFooter />

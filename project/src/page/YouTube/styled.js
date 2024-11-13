@@ -78,17 +78,16 @@ export const YouTubeWrap = styled.div`
         padding: 0;
         width: 100%;
         .top-category {
-            /* 11/12 김혜림 수정 */
             overflow-x: scroll;
             white-space: nowrap;
             padding: 1rem;
             .top-menu-li {
                 button {
-                    /* 11/12 김혜림 수정 */
                     display: inline-block;
                     width: fit-content;
                     padding: 0.6rem 1rem;
-                    font-size: 1.8rem;
+                    /* 11/13 오후 김헤림 부분 수정 */
+                    font-size: 2.4rem;
                 }
             }
         }

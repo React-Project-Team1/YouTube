@@ -3,12 +3,16 @@ import { media } from '../../style/media';
 export const SubscribersBtnWrap = styled.div`
     display: flex;
     button {
-        max-height: 3.6rem;
+        /* 11/13 오후 김혜림 부분 수정  */
+        max-height: 4rem;
     }
     .subscribers-btn {
         display: flex;
         justify-content: center;
         align-items: center;
+        /* 11/13 오후 김혜림 부분 추가 */
+        white-space: nowrap;
+
         img {
             width: 2.4rem;
             margin-right: 0.4rem;
@@ -24,9 +28,9 @@ export const SubscribersBtnWrap = styled.div`
     .channel-btn {
         margin-right: 1rem;
     }
+    /* 11/13 오후 김혜림 부분 추가 */
     @media ${media.mobile} {
         .subscribers-btn {
-            width: 14vw;
             .img {
                 width: 35%;
             }

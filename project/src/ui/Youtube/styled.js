@@ -115,12 +115,16 @@ export const VideoWrap = styled.li`
                     text-overflow: ellipsis;
                     white-space: nowrap;
                     margin-bottom: -1rem;
-                    font-size: 2rem;
+                    /* 11/13 오후 김혜림 부분 수정 */
+                    font-size: 2.6rem;
                 }
                 .mobile {
                     width: 100%;
                     display: flex;
                     color: #666;
+                    /* 11/13 오후 김혜림 부분 수정 */
+                    font-size: 2rem;
+
                     .mobile_movie_like_count {
                         display: block;
                         margin-right: 1rem;
@@ -144,7 +148,6 @@ export const VideoWrap = styled.li`
                         }
                     }
                     .mobile_channel_name {
-                        /* 11/12 김혜림 전체 수정 */
                         max-width: 28rem;
                         text-overflow: ellipsis;
                         word-break: keep-all;
@@ -158,10 +161,7 @@ export const VideoWrap = styled.li`
                             content: '';
                             display: block;
                             position: absolute;
-
-                            /* 김혜림 부분 수정 */
                             right: 0rem;
-
                             top: 50%;
                             transform: translateY(-50%);
                             width: 0.2rem;
@@ -176,7 +176,6 @@ export const VideoWrap = styled.li`
                     display: none;
                 }
             }
-            /*11/12 김혜림 추가 */
             .plus-menu {
                 right: 1rem;
             }
