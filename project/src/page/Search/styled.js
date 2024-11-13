@@ -44,10 +44,6 @@ export const SearchListWrap = styled.ul`
         }
     }
 
-    .video-loder {
-        margin-bottom: 1rem;
-    }
-
     @media ${media.mobile} {
         width: 95vw;
         .channel-item {
