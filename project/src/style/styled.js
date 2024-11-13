@@ -369,7 +369,9 @@ export const SpinnerWrap = styled.div`
         align-items: center;
         justify-content: center;
         border-radius: inherit;
-        padding: 0.5rem 1rem;
+
+        /* 11/12 김혜림 삭제 */
+        /* padding: 0.5rem 1rem; */
     }
 
     .spinner-circle:before {
