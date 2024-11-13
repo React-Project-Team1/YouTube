@@ -31,14 +31,10 @@ export const VideoWrap = styled.li`
     .text-wrap {
         position: relative;
         display: flex;
-        /* 11/12 김혜림 부분 수정 */
-        width: 100%;
     }
     .channel-logo {
-        /* 11/12 김혜림 부분 수정 */
         min-width: 2.6rem;
         height: 2.6rem;
-
         border-radius: 50%;
         margin-right: 1rem;
         overflow: hidden;
@@ -49,8 +45,7 @@ export const VideoWrap = styled.li`
     }
     .movie_title {
         /* 11/12 김혜림 부분 수정 */
-        width: 98%;
-
+        width: 100%;
         overflow: hidden;
         text-overflow: ellipsis;
         word-break: keep-all;

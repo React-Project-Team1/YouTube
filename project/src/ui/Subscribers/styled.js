@@ -10,7 +10,7 @@ export const SubscribersBtnWrap = styled.div`
         justify-content: center;
         align-items: center;
         img {
-            height: 1000%;
+            width: 2.4rem;
             margin-right: 0.4rem;
         }
     }

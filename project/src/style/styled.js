@@ -166,6 +166,7 @@ export const HeaderWrap = styled.header`
     }
     @media ${media.mobile} {
         box-shadow: #00000050 0px 1px 3px;
+        margin-bottom: 1rem;
         .top {
             min-height: 8rem;
             .user-menu {
@@ -329,6 +330,9 @@ export const LayoutWrap = styled.div`
     .content-wrap {
         display: flex;
         width: 100%;
+    }
+    @media ${media.mobile} {
+        margin-bottom: 9rem;
     }
 `;
 
