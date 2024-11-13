@@ -7,6 +7,7 @@ export const HeaderWrap = styled.header`
     top: 0;
     background-color: #fff;
     z-index: 999;
+    width: 100%;
     div {
         box-sizing: border-box;
     }
@@ -164,6 +165,7 @@ export const HeaderWrap = styled.header`
         }
     }
     @media ${media.mobile} {
+        box-shadow: #00000050 0px 1px 3px;
         .top {
             min-height: 8rem;
             .user-menu {
@@ -369,9 +371,6 @@ export const SpinnerWrap = styled.div`
         align-items: center;
         justify-content: center;
         border-radius: inherit;
-
-        /* 11/12 김혜림 삭제 */
-        /* padding: 0.5rem 1rem; */
     }
 
     .spinner-circle:before {

@@ -210,7 +210,7 @@ const YouTube = () => {
                                       </ul>
                                   ))}
                         <div id='scroll-anchor' ref={targetRef}>
-                            {videoCount !== allMovies?.length + 10 ? <Spinner /> : null}
+                            {videoCount !== allMovies?.length + 10 && <Spinner />}
                         </div>
                     </>
                 ) : (

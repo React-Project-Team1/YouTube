@@ -55,6 +55,10 @@ const GlobalStyle = createGlobalStyle`
     .mobile{
       display: block;
     }
+    p,div,form,ul,li,span,input,button{
+      box-sizing: border-box;
+    }
+    
   }
 `;
 
