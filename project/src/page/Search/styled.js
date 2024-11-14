@@ -128,50 +128,47 @@ export const SearchListWrap = styled.ul`
                 }
             }
         }
-        .movie-item {
-            .search-video-wrap {
-                .video-loder {
+
+        .video-loder {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 7%;
+            .video-wrap {
+                width: 100%;
+                iframe,
+                img {
                     height: 100%;
+                    border-radius: 0%;
+                }
+            }
+            .text-wrap {
+                width: 100%;
+                display: flex;
+                .channel-logo {
                     display: flex;
-                    flex-direction: column;
-                    margin-bottom: 7%;
-                    .video-wrap {
+                    width: 10%;
+                    height: auto;
+                    img {
                         width: 100%;
-                        iframe,
-                        img {
-                            height: 100%;
-                            border-radius: 0%;
-                        }
+                        height: 100%;
                     }
-                    .text-wrap {
-                        width: 100%;
-                        display: flex;
-                        .channel-logo {
-                            display: flex;
-                            width: 10%;
-                            height: auto;
-                            img {
-                                width: 100%;
-                                height: 100%;
-                            }
-                        }
-                        .movie_info {
-                            width: 80%;
-                            position: absolute;
-                            left: 13%;
-                            top: 20%;
-                            .movie_title {
-                                -webkit-line-clamp: 2;
-                            }
-                            .movie_body {
-                                display: none;
-                            }
-                        }
-                        .plus-menu {
-                            top: 25%;
-                            right: 5%;
-                        }
+                }
+                .movie_info {
+                    width: 80%;
+                    position: absolute;
+                    left: 13%;
+                    top: 20%;
+                    .movie_title {
+                        -webkit-line-clamp: 2;
                     }
+                    .movie_body {
+                        display: none;
+                    }
+                }
+                .plus-menu {
+                    top: 25%;
+                    right: 5%;
                 }
             }
         }
