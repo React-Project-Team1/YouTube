@@ -26,62 +26,73 @@ const Feed = ({ category }) => {
                 return '피드';
         }
     };
-
-    return (
-        <FeedWrap className='feed-wrap'>
-            <div className='hearder'>
+    if (isLoginUser[Category || category]?.length === 0)
+        return (
+            <FeedWrap className='feed-wrap'>
                 <div className='inner'>
-                    <h2>{getCategory()}</h2>
+                    <p className='not-list'>{getCategory()}이 없습니다.</p>
                 </div>
-            </div>
-            <div className='viewing_content'>
-                <div className='inner'>
-                    {/* 시청한 동영상 출력 */}
-                    <ul className='video-list'>
-                        {isLoginUser[Category || category]
-                            ?.filter(
-                                (video) =>
-                                    video.movie_title
-                                        .toLowerCase()
-                                        .includes(search?.toLowerCase()) ||
-                                    video.movie_category
-                                        .toLowerCase()
-                                        .includes(search.toLowerCase())
-                            )
-                            .map((movie) => (
-                                <Video key={movie.movie_id} movie={movie} type={Category} />
-                            ))}
-                    </ul>
-                </div>
-            </div>
-            <div className='page_menu'>
-                <div className='search_wrap'>
-                    <div className='search'>
-                        <img
-                            src='https://raw.githubusercontent.com/React-Project-Team1/data-center/a95871720c235be8180dd58ccc5bf67fbb92d7a4/Icon/Search.svg'
-                            alt={`${getCategory()} 검색`}
-                        />
-                        <input
-                            type='text'
-                            value={search}
-                            onChange={(e) => setSearch(e.target.value)}
-                            placeholder={`${getCategory()} 검색`}
-                        />
-                    </div>
+            </FeedWrap>
+        );
 
-                    <div
-                        className='content'
-                        onClick={() =>
-                            dispatch(AllDelList({ user_id: isLoginUser.user_id, type: Category }))
-                        }
-                    >
-                        <img src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAKRJREFUSEvtlUEKgCAQRV93CYK6TsdpGXSZrlPQaYpAXVjDt8xd7mR03v8z6FQUXlXh/ChAD4xAYwjZgAGYLaEKsACtcLkC3VvA7i5aQlRclkglUPELwF/I7X1wHFsvDvDKpfXIonn+dfO+BsQK1T7wUx2ohNkl+gGXd/W0JH8P5NeUXSJFeAxIGTQx9HbwWC/5HJUTUCvpLm6OTjUyE/Pbx4oDDlBhOBmYaWrOAAAAAElFTkSuQmCC' />
-                        <p>{getCategory()} 지우기 </p>
+    if (isLoginUser[Category || category]?.length > 0)
+        return (
+            <FeedWrap className='feed-wrap'>
+                <div className='hearder'>
+                    <div className='inner'>
+                        <h2>{getCategory()}</h2>
                     </div>
                 </div>
-            </div>
-        </FeedWrap>
-    );
+                <div className='viewing_content'>
+                    <div className='inner'>
+                        {/* 시청한 동영상 출력 */}
+                        <ul className='video-list'>
+                            {isLoginUser[Category || category]
+                                ?.filter(
+                                    (video) =>
+                                        video.movie_title
+                                            .toLowerCase()
+                                            .includes(search?.toLowerCase()) ||
+                                        video.movie_category
+                                            .toLowerCase()
+                                            .includes(search.toLowerCase())
+                                )
+                                .map((movie) => (
+                                    <Video key={movie.movie_id} movie={movie} type={Category} />
+                                ))}
+                        </ul>
+                    </div>
+                </div>
+                <div className='page_menu'>
+                    <div className='search_wrap'>
+                        <div className='search'>
+                            <img
+                                src='https://raw.githubusercontent.com/React-Project-Team1/data-center/a95871720c235be8180dd58ccc5bf67fbb92d7a4/Icon/Search.svg'
+                                alt={`${getCategory()} 검색`}
+                            />
+                            <input
+                                type='text'
+                                value={search}
+                                onChange={(e) => setSearch(e.target.value)}
+                                placeholder={`${getCategory()} 검색`}
+                            />
+                        </div>
+
+                        <div
+                            className='content'
+                            onClick={() =>
+                                dispatch(
+                                    AllDelList({ user_id: isLoginUser.user_id, type: Category })
+                                )
+                            }
+                        >
+                            <img src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAKRJREFUSEvtlUEKgCAQRV93CYK6TsdpGXSZrlPQaYpAXVjDt8xd7mR03v8z6FQUXlXh/ChAD4xAYwjZgAGYLaEKsACtcLkC3VvA7i5aQlRclkglUPELwF/I7X1wHFsvDvDKpfXIonn+dfO+BsQK1T7wUx2ohNkl+gGXd/W0JH8P5NeUXSJFeAxIGTQx9HbwWC/5HJUTUCvpLm6OTjUyE/Pbx4oDDlBhOBmYaWrOAAAAAElFTkSuQmCC' />
+                            <p>{getCategory()} 지우기 </p>
+                        </div>
+                    </div>
+                </div>
+            </FeedWrap>
+        );
 };
 
 export default Feed;
