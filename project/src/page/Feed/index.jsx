@@ -5,13 +5,13 @@ import Video from '../../ui/Youtube/Video';
 import { useState } from 'react';
 import { AllDelList } from '../../store/modules/authSlice';
 
-const Feed = () => {
+const Feed = ({ category }) => {
     const { Category } = useParams();
     const { isLoginUser } = useSelector((state) => state.auth);
     const [search, setSearch] = useState('');
     const dispatch = useDispatch();
     const getCategory = () => {
-        switch (Category) {
+        switch (Category || category) {
             case 'Viewing_Record':
                 return '시청 기록';
             case 'Playlist':
@@ -28,7 +28,7 @@ const Feed = () => {
     };
 
     return (
-        <FeedWrap>
+        <FeedWrap className='feed-wrap'>
             <div className='hearder'>
                 <div className='inner'>
                     <h2>{getCategory()}</h2>
@@ -38,13 +38,19 @@ const Feed = () => {
                 <div className='inner'>
                     {/* 시청한 동영상 출력 */}
                     <ul className='video-list'>
-                        {isLoginUser[Category]?.filter(
-                            (video) =>
-                                video.movie_title.toLowerCase().includes(search?.toLowerCase()) ||
-                                video.movie_category.toLowerCase().includes(search.toLowerCase())
-                        ).map((movie) => (
-                            <Video key={movie.movie_id} movie={movie} type={Category} />
-                        ))}
+                        {isLoginUser[Category || category]
+                            ?.filter(
+                                (video) =>
+                                    video.movie_title
+                                        .toLowerCase()
+                                        .includes(search?.toLowerCase()) ||
+                                    video.movie_category
+                                        .toLowerCase()
+                                        .includes(search.toLowerCase())
+                            )
+                            .map((movie) => (
+                                <Video key={movie.movie_id} movie={movie} type={Category} />
+                            ))}
                     </ul>
                 </div>
             </div>

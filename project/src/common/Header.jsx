@@ -7,7 +7,7 @@ import { useSelector } from 'react-redux';
 import LoginButton from '../ui/Header/LoginButton';
 import SearchHistory from '../components/Header/SearchHistory';
 import { useParams } from 'react-router-dom';
-import { useEffect, useRef, useState } from 'react';
+import { useState } from 'react';
 import { useMouseOutside } from '../hook/useMouseOutside';
 
 const Header = () => {

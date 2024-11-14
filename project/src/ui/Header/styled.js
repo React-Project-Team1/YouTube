@@ -27,7 +27,7 @@ export const LoginButtonWrap = styled.div`
         font-size: 1.4rem;
     }
     @media ${media.mobile} {
-        display: none;
+        min-width: 10rem;
     }
 `;
 

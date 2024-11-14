@@ -167,6 +167,9 @@ export const HeaderWrap = styled.header`
     @media ${media.mobile} {
         box-shadow: #00000050 0px 1px 3px;
         margin-bottom: 1rem;
+        .login-menu {
+            display: none;
+        }
         .top {
             min-height: 8rem;
             .user-menu {
