@@ -254,6 +254,8 @@ export const ChannelHomeWrap = styled.div`
                 .video-wrap {
                     width: 45%;
                     padding-bottom: 28%;
+                    border-radius: 1rem;
+                    overflow: hidden;
                 }
                 .text-wrap {
                     width: 55%;
@@ -352,6 +354,7 @@ export const ChannelVideoWrap = styled.div`
                         width: 45%;
                         height: 15rem;
                         padding-bottom: 0%;
+
                         img {
                             width: 100%;
                             height: 100%;
