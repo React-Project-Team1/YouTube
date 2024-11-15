@@ -22,16 +22,16 @@ const Channel_home = () => {
                         </div>
                     </div>
                 </div>
-            </ChannelHomeWrap>
 
-            <div className='channel_home'>
-                <h2>추천</h2>
-                <ul className='search_results-wrap'>
-                    {Channel[Channel_name].Movies.map((movie) => (
-                        <Video key={movie.movie_id} movie={movie} />
-                    ))}
-                </ul>
-            </div>
+                <div className='channel_home'>
+                    <h2>추천</h2>
+                    <ul className='search_results-wrap'>
+                        {Channel[Channel_name].Movies.map((movie) => (
+                            <Video key={movie.movie_id} movie={movie} />
+                        ))}
+                    </ul>
+                </div>
+            </ChannelHomeWrap>
         </>
     );
 };
