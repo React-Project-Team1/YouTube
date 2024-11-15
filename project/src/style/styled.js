@@ -241,10 +241,36 @@ export const SideMenuWrap = styled.div`
             width: 12rem;
             height: 12rem;
             margin-bottom: 6%;
+            cursor: pointer;
+            transition: all 0.3s;
+            position: relative;
             img {
                 height: 100%;
+                transition: all 0.3s;
+            }
+            .edit-img {
+                opacity: 0;
+                transition: all 0.3s;
+                z-index: 99;
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+                img {
+                    width: 4rem;
+                }
+            }
+            &:hover {
+                background-color: #fff;
+                .edit-img {
+                    opacity: 1;
+                }
+                > img {
+                    opacity: 0.4;
+                }
             }
         }
+
         .channel-name {
             display: flex;
             flex-direction: column;

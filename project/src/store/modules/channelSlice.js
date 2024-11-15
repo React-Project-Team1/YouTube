@@ -45,11 +45,6 @@ export const channelSlice = createSlice({
             channel.Movies = channel.Movies.filter((movie) => !movie_id.includes(movie.movie_id));
             localStorage.setItem('YoutubeChannel', JSON.stringify(state.Channel));
         },
-
-        ChangeMovies(state, action) {
-            // 영상 수정 로직
-            localStorage.setItem('YoutubeChannel', JSON.stringify(state.Channel));
-        },
         AddNewMoviesComment(state, action) {
             const { movie_id, movie_channel, comment_body, comment_user_id, comment_user_name } =
                 action.payload;
@@ -121,7 +116,6 @@ export const {
     AddNewChannel,
     AddNewMovies,
     DelMovies,
-    ChangeMovies,
     AddNewMoviesComment,
     DelMoviesComment,
     IsMovieChangeLike,

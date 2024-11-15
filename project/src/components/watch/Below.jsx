@@ -30,6 +30,7 @@ const Below = ({
     thisChannel,
 }) => {
     const [showReport, setShowReport] = useState(false);
+    const [showReport2, setShowReport2] = useState(false);
     const dispatch = useDispatch();
     const { isLoginUser, isAuth } = useSelector((state) => state.auth); // 로그인된 사용자 정보 가져오기
     const navigate = useNavigate();
@@ -99,6 +100,9 @@ const Below = ({
 
     const handleReportClick = () => {
         setShowReport((prev) => !prev);
+    };
+    const handleReportClick2 = () => {
+        setShowReport2((prev) => !prev);
     };
 
     return (
@@ -183,7 +187,7 @@ const Below = ({
                     </span>
 
                     <Button
-                        className='BelowBtn'
+                        className='BelowBtn pc'
                         onClick={(e) =>
                             handleClickType(
                                 e,
@@ -215,9 +219,8 @@ const Below = ({
                                 : '오프라인 저장'}
                         </span>
                     </Button>
-
                     <Button
-                        className={'BelowBtn'}
+                        className={'BelowBtn pc'}
                         onClick={(e) =>
                             handleClickType(
                                 e,
@@ -239,12 +242,89 @@ const Below = ({
                                 : '재생목록 저장'}
                         </span>
                     </Button>
-                    <Button className='BelowBtn' onClick={handleReportClick}>
+                    <Button className='BelowBtn pc' onClick={handleReportClick}>
                         <LuMoreHorizontal className='icons' />
                     </Button>
                     {showReport && (
                         <div className='report-text' ref={wrapRef}>
                             <RiFlagLine /> 신고
+                        </div>
+                    )}
+                    {/* 모바일 */}
+                    <Button className='BelowBtn more2' onClick={handleReportClick2} ref={wrapRef}>
+                        <LuMoreHorizontal className='icons' />
+                    </Button>
+                    {showReport2 && (
+                        <div className='report-text'>
+                            <Button className='mobile_save'>
+                                <img
+                                    className='img'
+                                    src='https://raw.githubusercontent.com/React-Project-Team1/data-center/09bd61b24941543866f471ccbd590a39c6d36f03/Icon/complaint.svg
+               '
+                                    alt=''
+                                />
+                                <span className='BelowBtn_comment'>신고</span>
+                            </Button>
+                            <Button
+                                className='mobile_save'
+                                onClick={(e) =>
+                                    handleClickType(
+                                        e,
+                                        'Download_List',
+                                        isLoginUser['Download_List']?.find(
+                                            (user) => user.movie_id === movie_id
+                                        )
+                                            ? '오프라인 저장 삭제'
+                                            : '오프라인 저장'
+                                    )
+                                }
+                            >
+                                <img
+                                    className='img'
+                                    src={
+                                        isLoginUser['Download_List']?.find(
+                                            (user) => user.movie_id === movie_id
+                                        )
+                                            ? 'https://raw.githubusercontent.com/React-Project-Team1/data-center/01142956452b8bed27fa95419332aca1f595ea45/Icon/trash.svg'
+                                            : 'https://raw.githubusercontent.com/React-Project-Team1/data-center/752a52cbfb5bf64b383b0941ba3834539b2988ac/Icon/save2.svg.svg'
+                                    }
+                                    alt=''
+                                />
+                                <span className='BelowBtn_comment'>
+                                    {isLoginUser['Download_List']?.find(
+                                        (user) => user.movie_id === movie_id
+                                    )
+                                        ? '오프라인 저장 삭제'
+                                        : '오프라인 저장'}
+                                </span>
+                            </Button>
+                            <Button
+                                className='mobile_save'
+                                onClick={(e) =>
+                                    handleClickType(
+                                        e,
+                                        'Playlist',
+                                        isLoginUser['Playlist']?.find(
+                                            (user) => user.movie_id === movie_id
+                                        )
+                                            ? '재생목록 삭제'
+                                            : '재생목록 저장'
+                                    )
+                                }
+                            >
+                                <img
+                                    className='img'
+                                    src='https://raw.githubusercontent.com/React-Project-Team1/data-center/cfcea0ca72ded7c526b3eff908c10fbe750b2924/Icon/save.svg.svg'
+                                    alt=''
+                                />
+                                <span className='BelowBtn_comment'>
+                                    {isLoginUser['Playlist']?.find(
+                                        (user) => user.movie_id === movie_id
+                                    )
+                                        ? '재생목록 삭제'
+                                        : '재생목록 저장'}
+                                </span>
+                            </Button>
                         </div>
                     )}
                 </div>

@@ -6,7 +6,6 @@ export const WatchWrap = styled.div`
     box-sizing: border-box;
     padding: 2% 3.5%;
     display: flex;
-
     > .video-wrap {
         position: relative;
         width: 70%;
@@ -29,10 +28,14 @@ export const WatchWrap = styled.div`
             border: none;
         }
     }
-    @media ${media.tablet} {
+    @media ${media.mobile} {
         display: block;
+        padding: 0;
         .video-wrap {
             width: 100%;
+            .videoInner {
+                border-radius: 0;
+            }
         }
     }
 `;
@@ -41,7 +44,6 @@ export const WatchListWrap = styled.div`
     display: flex;
     flex-direction: column;
     width: 30%;
-
     .sub_video_wrap {
         width: 100%;
     }
@@ -56,7 +58,7 @@ export const WatchListWrap = styled.div`
         }
         .text-wrap {
             width: 100%;
-            /* max-width: 25rem; */
+
             .channel-logo {
                 display: none;
             }
@@ -66,49 +68,55 @@ export const WatchListWrap = styled.div`
                     font-size: 1.4rem;
                     word-break: break-all;
                 }
+                .mobile {
+                    display: block;
+                }
                 .channel_name,
                 .movie_like_count {
                     font-size: 1.2rem;
                 }
             }
         }
-
-        .save-list {
-            right: -5rem;
-        }
     }
     @media ${media.mobile} {
         display: block;
-        width: 70%;
+        width: 100%;
+
         .movie_title {
             display: block;
         }
         .video-loder {
             .video-wrap {
-                max-width: 30rem;
                 .movie_title {
+                    padding-right: 5rem;
                 }
             }
         }
         .text-wrap {
+            max-width: 30rem;
         }
         .save-list {
+            right: -100%;
         }
     }
     @media ${media.tablet} {
         display: block;
         width: 100%;
+
         .movie_title {
             display: block;
         }
         .video-loder {
             .video-wrap {
-                max-width: 40rem;
+                border-radius: 2rem;
                 .movie_title {
                 }
             }
         }
         .text-wrap {
+        }
+        .save-list {
+            right: -100%;
         }
     }
 `;

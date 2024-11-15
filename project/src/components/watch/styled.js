@@ -10,12 +10,12 @@ export const BelowWrap = styled.div`
         font-weight: 700;
         line-height: 2.8rem;
     }
-
     .top {
         padding: 1% 0;
         display: flex;
         align-items: center;
         justify-content: space-between;
+
         .channel {
             display: flex;
             align-items: center;
@@ -67,6 +67,7 @@ export const BelowWrap = styled.div`
                     position: relative;
                     margin-left: 0;
                     border-radius: 3rem 0 0 3rem;
+
                     &:last-child {
                         border-radius: 0 3rem 3rem 0;
                         padding-left: 15px;
@@ -87,17 +88,26 @@ export const BelowWrap = styled.div`
             }
 
             .BelowBtn {
+                flex-basis: auto;
                 height: 3.8rem;
                 font-size: 1.4rem;
                 background: rgba(0, 0, 0, 0.05);
                 border: none;
                 border-radius: 3rem;
                 padding: 0.8rem 1.2rem;
+
                 &:hover {
                     background: rgba(0, 0, 0, 0.1);
                 }
             }
         }
+    }
+    .more1 {
+        display: block;
+    }
+
+    .more2 {
+        display: none;
     }
 
     .BelowBtn_comment {
@@ -112,7 +122,6 @@ export const BelowWrap = styled.div`
     }
 
     .report-text {
-        width: auto;
         position: absolute;
         right: -4rem;
         top: 10rem;
@@ -140,17 +149,40 @@ export const BelowWrap = styled.div`
             margin-left: 0.3rem;
         }
     }
+
     @media ${media.tablet} {
         height: auto;
-        .BelowBtn_comment {
-            font-size: 1.4rem;
-            margin: 0;
+        .report-text {
+            right: -2rem;
         }
-        .subscribers-btn {
-            font-size: 1.4rem;
+    }
+    @media ${media.mobile} {
+        .Comment_items {
+            right: -2rem;
         }
-        .not-subscribers-btn {
-            font-size: 1.4rem;
+        .Comment_img {
+            width: 30%;
+        }
+        .report-text {
+            right: 0;
+        }
+        .more1 {
+            display: none;
+        }
+        .more2 {
+            display: block;
+        }
+        .save {
+            display: none;
+        }
+        .mobile_save {
+            width: auto;
+            background: transparent;
+        }
+        @media ${media.mobile} {
+            .subscribers-btn {
+                width: 17vw;
+            }
         }
     }
 `;
@@ -415,6 +447,7 @@ export const CommentWrap = styled.div`
         background: none;
         margin-top: 0.5rem;
     }
+
     .BelowBtn_comment {
         text-align: center;
         vertical-align: 40%;

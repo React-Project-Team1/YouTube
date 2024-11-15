@@ -283,3 +283,41 @@ export const VideoUploadPageWrap = styled.div`
         }
     }
 `;
+
+export const EditChannelInfoWrap = styled.div`
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .inner {
+        border-radius: 2rem;
+        width: 70%;
+        min-height: 50rem;
+        background-color: #fff;
+        input {
+            display: block;
+            margin-bottom: 1rem;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        input[type='text'] {
+            height: 4rem;
+            padding: 1rem;
+        }
+        .btn-wrap {
+            display: flex;
+            button {
+                &:nth-child(1) {
+                    margin-right: 1rem;
+                }
+            }
+        }
+    }
+`;

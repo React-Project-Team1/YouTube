@@ -5,7 +5,7 @@ export const Button = styled.button`
     background-color: #eeeeee;
     border-radius: 2rem;
     border: none;
-    padding: 1.5rem 2rem;
+    padding: 1.2rem 2rem;
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -15,6 +15,7 @@ export const Button = styled.button`
     }
     @media ${media.mobile} {
         /* width: 100%; */
+        padding: 1.5rem 2rem;
         font-size: 100%;
     }
 `;
