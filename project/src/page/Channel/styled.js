@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import { media } from '../../style/media';
 
 export const ChannelWrap = styled.div`
+    /* background-color: black; */
     overflow: hidden;
     width: 100%;
     min-height: 100vh;
@@ -238,11 +239,6 @@ export const ChannelHomeWrap = styled.div`
             }
         }
         .movie_info {
-            .mobile {
-                .mobile_channel_name {
-                    display: none;
-                }
-            }
         }
         .channel_name,
         .pluse-menu {
@@ -267,6 +263,19 @@ export const ChannelHomeWrap = styled.div`
                     }
                     .movie_info {
                         width: 100%;
+                        .movie_title {
+                            display: -webkit-box;
+                            -webkit-box-orient: vertical;
+                            -webkit-line-clamp: 3;
+                            overflow: hidden;
+                            white-space: wrap;
+                            text-overflow: ellipsis;
+                            font-size: 2rem;
+                            line-height: 2.5rem;
+                            margin-bottom: 1%;
+                            word-break: break-all;
+                            padding-right: 4rem;
+                        }
                         .mobile {
                             .mobile_channel_name {
                                 display: none;
@@ -356,10 +365,28 @@ export const ChannelVideoWrap = styled.div`
                         .channel-logo {
                             display: none;
                         }
-                        .mobile {
+                        .movie_info {
+                            display: inline-block;
+                            width: 100%;
+                            .movie_title {
+                                display: -webkit-box;
+                                -webkit-box-orient: vertical;
+                                -webkit-line-clamp: 3; /* 원하는 줄 수 설정 */
+                                overflow: hidden;
+                                white-space: wrap;
+                                text-overflow: ellipsis;
+                                font-size: 2rem;
+                                line-height: 2.5rem;
+                                margin-bottom: 1%;
+                                word-break: break-all; /* 글자 단위로 줄바꿈 */
+                                padding-right: 4rem;
+                            }
                             .mobile_channel_name {
                                 display: none;
                             }
+                        }
+                        .plus-menu {
+                            right: 0;
                         }
                     }
                 }
@@ -368,6 +395,8 @@ export const ChannelVideoWrap = styled.div`
     }
 `;
 export const ChannelHomeListWrap = styled.div`
+    /* padding-right: calc(50% - 64.2rem);
+    padding-left: calc(50% - 64.2rem); */
     @media ${media.mobile} {
         h2 {
             font-size: 150%;
@@ -382,7 +411,6 @@ export const ChannelHomeListWrap = styled.div`
                 display: flex;
                 flex-direction: row;
                 justify-content: space-between;
-
                 .video-wrap {
                     width: 45%;
                     height: 15rem;
@@ -399,6 +427,36 @@ export const ChannelHomeListWrap = styled.div`
                     margin-left: 1.5rem;
                     .channel-logo {
                         display: none;
+                    }
+                    .movie_info {
+                        display: inline-block;
+                        width: 100%;
+                        .mobile {
+                            display: flex;
+                            flex-direction: column;
+                            .mobile_channel_name {
+                                line-height: 2.2rem;
+                            }
+                            .mobile_movie_like_count {
+                            }
+                        }
+
+                        .movie_title {
+                            display: -webkit-box;
+                            -webkit-box-orient: vertical;
+                            -webkit-line-clamp: 3;
+                            overflow: hidden;
+                            white-space: wrap;
+                            text-overflow: ellipsis;
+                            font-size: 2rem;
+                            line-height: 2.5rem;
+                            margin-bottom: 1%;
+                            word-break: break-all;
+                            padding-right: 4rem;
+                        }
+                    }
+                    .plus-menu {
+                        right: 0;
                     }
                 }
             }
@@ -451,6 +509,62 @@ export const SearchMovieWrap = styled.div`
                     .movie_like_count {
                         .movie_date {
                         }
+                    }
+                }
+            }
+        }
+    }
+    @media ${media.mobile} {
+        margin-top: 10px;
+        .search_results {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            padding: 0%;
+            .video-loder {
+                width: 100%;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                .video-wrap {
+                    width: 45%;
+                    height: 15rem;
+                    padding-bottom: 0%;
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        border-radius: 1rem;
+                    }
+                }
+                .text-wrap {
+                    width: 55%;
+                    padding: 0;
+                    margin-left: 1.5rem;
+                    .channel-logo {
+                        display: none;
+                    }
+                    .movie_info {
+                        display: inline-block;
+                        width: 100%;
+                        .movie_title {
+                            display: -webkit-box;
+                            -webkit-box-orient: vertical;
+                            -webkit-line-clamp: 3;
+                            overflow: hidden;
+                            white-space: wrap;
+                            text-overflow: ellipsis;
+                            font-size: 2rem;
+                            line-height: 2.5rem;
+                            margin-bottom: 1%;
+                            word-break: break-all;
+                            padding-right: 4rem;
+                        }
+                        .mobile_channel_name {
+                            display: none;
+                        }
+                    }
+                    .plus-menu {
+                        right: 0;
                     }
                 }
             }
