@@ -31,6 +31,7 @@ export const WatchWrap = styled.div`
     @media ${media.mobile} {
         display: block;
         padding: 0;
+        margin-top: -0.9rem;
         .video-wrap {
             width: 100%;
             .videoInner {
