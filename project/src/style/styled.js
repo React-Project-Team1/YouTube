@@ -336,7 +336,7 @@ export const LayoutWrap = styled.div`
         position: relative;
         .scroll_up {
             position: fixed;
-            bottom: 1rem;
+            bottom: 3rem;
             right: 3rem;
             .scroll_up_btn {
                 width: 5rem;
@@ -345,11 +345,23 @@ export const LayoutWrap = styled.div`
                 cursor: pointer;
                 border: none;
                 background-color: rgba(0, 0, 0, 0);
+                img {
+                    width: 100%;
+                }
             }
         }
     }
     @media ${media.mobile} {
         margin-bottom: 9rem;
+        .content-wrap {
+            .scroll_up {
+                right: 5rem;
+                bottom: 10rem;
+                .scroll_up_btn {
+                    width: 7rem;
+                }
+            }
+        }
     }
 `;
 
