@@ -238,6 +238,11 @@ export const ChannelHomeWrap = styled.div`
             }
         }
         .movie_info {
+            .mobile {
+                .mobile_channel_name {
+                    display: none;
+                }
+            }
         }
         .channel_name,
         .pluse-menu {
@@ -262,6 +267,11 @@ export const ChannelHomeWrap = styled.div`
                     }
                     .movie_info {
                         width: 100%;
+                        .mobile {
+                            .mobile_channel_name {
+                                display: none;
+                            }
+                        }
                     }
                 }
             }
@@ -345,6 +355,11 @@ export const ChannelVideoWrap = styled.div`
                         margin-left: 1.5rem;
                         .channel-logo {
                             display: none;
+                        }
+                        .mobile {
+                            .mobile_channel_name {
+                                display: none;
+                            }
                         }
                     }
                 }
