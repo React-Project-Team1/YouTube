@@ -303,6 +303,7 @@ export const SideMenuWrap = styled.div`
         width: 18rem;
         word-break: keep-all;
         font-size: 1rem;
+        margin-bottom: 20rem;
     }
     .not-login-span {
         display: block;
