@@ -19,7 +19,7 @@ export const LoginFormWrap = styled.form`
             align-items: center;
             margin-top: 5%;
             input {
-                border: 1px solid #777;
+                border: 1px solid #ddd;
                 border-radius: 0.9rem;
                 outline: invert;
                 text-indent: 2rem;

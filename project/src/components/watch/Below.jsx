@@ -86,6 +86,7 @@ const Below = ({
                                 movie: movie,
                             })
                         );
+                        dispatch(IsMovieChangeLike({ channel_name, movie_id, type: 'minus' }));
                         dispatch(getAllMovies());
                     }
                 }
