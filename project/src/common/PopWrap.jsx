@@ -21,7 +21,7 @@ const PopWrap = () => {
             dispatch(isSavePopFalse());
         }, 1000);
         if (isSavePop) timer;
-        return () => clearInterval(timer);
+        return () => clearTimeout(timer);
     }, [isSavePop]);
     return (
         <>

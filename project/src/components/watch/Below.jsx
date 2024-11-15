@@ -62,8 +62,32 @@ const Below = ({
                 );
                 dispatch(isSavePopTrue(Msg));
                 if (saveType === 'like_Movie_List') {
+                    if (
+                        isLoginUser['dislike_Movie_List'].find((user) => user.movie_id === movie_id)
+                    ) {
+                        dispatch(
+                            IsDelList({
+                                user_id: isLoginUser.user_id,
+                                type: 'dislike_Movie_List',
+                                movie: movie,
+                            })
+                        );
+                        dispatch(getAllMovies());
+                    }
                     dispatch(IsMovieChangeLike({ channel_name, movie_id, type: 'plus' }));
                     dispatch(getAllMovies());
+                }
+                if (saveType === 'dislike_Movie_List') {
+                    if (isLoginUser['like_Movie_List'].find((user) => user.movie_id === movie_id)) {
+                        dispatch(
+                            IsDelList({
+                                user_id: isLoginUser.user_id,
+                                type: 'like_Movie_List',
+                                movie: movie,
+                            })
+                        );
+                        dispatch(getAllMovies());
+                    }
                 }
             }
         } else {
