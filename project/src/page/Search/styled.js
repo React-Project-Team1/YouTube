@@ -17,12 +17,17 @@ export const SearchListWrap = styled.ul`
         align-items: center;
         justify-content: space-between;
         margin-bottom: 5%;
+        cursor: pointer;
         .channel-profile {
             width: 50%;
             display: flex;
             justify-content: center;
             .channel-logo {
                 border-radius: 50%;
+                width: 100%;
+
+                max-width: 16rem;
+                max-height: 16rem;
             }
         }
         .channel-info {
@@ -110,6 +115,8 @@ export const SearchListWrap = styled.ul`
             .channel-profile {
                 .channel-logo {
                     width: 40%;
+                    min-width: 11rem;
+                    height: 11rem;
                 }
             }
             .channel-info {

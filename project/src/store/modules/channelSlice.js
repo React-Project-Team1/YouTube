@@ -11,7 +11,11 @@ export const channelSlice = createSlice({
     initialState,
     reducers: {
         ChangeChannelInfo(state, action) {
-            // 채널 정보 수정 로직
+            const { channel_nav, channel } = action.payload;
+            const thisChannel = state.Channel[channel_nav];
+            if (thisChannel) {
+                Object.assign(thisChannel, channel);
+            }
             // 수정 후 로컬스토리지 업데이트
             localStorage.setItem('YoutubeChannel', JSON.stringify(state.Channel));
         },

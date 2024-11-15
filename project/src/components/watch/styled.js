@@ -23,6 +23,7 @@ export const BelowWrap = styled.div`
             overflow: hidden;
             .channelImg {
                 width: 4rem;
+                height: 4rem;
                 margin-top: 0.5rem;
                 border-radius: 2.5rem;
             }
@@ -245,6 +246,7 @@ export const BelowDetailWrap = styled.div`
 
         .channelImg {
             width: 4rem;
+            height: 4rem;
             margin-top: 0.5rem;
             border-radius: 2.5rem;
         }

@@ -3,12 +3,12 @@ import { EditChannelInfoWrap } from './styled';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useState } from 'react';
 import { Button } from '../../ui/Button';
+import { ChangeChannelInfo } from '../../store/modules/channelSlice';
+import { isSavePopTrue } from '../../store/modules/savePopupSlice';
 
 const EditChannelInfo = ({ setEdit }) => {
     const { User_ID } = useParams();
     const { Channel } = useSelector((state) => state.channel);
-    const { isAuth, isLoginUser } = useSelector((state) => state.auth);
-    const navigate = useNavigate();
     const dispatch = useDispatch();
     const thisChannel = Object.values(Channel).find(
         (channel) => channel.channel_id === Number(User_ID)
@@ -28,9 +28,25 @@ const EditChannelInfo = ({ setEdit }) => {
         });
     };
 
+    const handleImageChange = (e) => {
+        const file = e.target.files[0];
+        if (file) {
+            setChannel((channel) => ({ ...channel, [e.target.name]: URL.createObjectURL(file) }));
+        }
+    };
+
     const onSubmit = (e) => {
         e.preventDefault();
+        dispatch(
+            ChangeChannelInfo({
+                channel_nav: thisChannel.channel_nav,
+                channel,
+            })
+        );
+        setEdit(false);
+        dispatch(isSavePopTrue('채널정보가 변경'));
     };
+
     if (thisChannel)
         return (
             <EditChannelInfoWrap>
@@ -56,12 +72,30 @@ const EditChannelInfo = ({ setEdit }) => {
                         />
                     </p>
                     <p>
-                        <input type='file' name='channel_banner' id='channel_banner' />
-                        <img src={channel.channel_banner} alt='channel_banner' />
+                        <input
+                            type='file'
+                            name='channel_banner'
+                            id='channel_banner'
+                            onChange={handleImageChange}
+                        />
+                        <img
+                            className='banner-img'
+                            src={channel.channel_banner}
+                            alt='channel_banner'
+                        />
                     </p>
                     <p>
-                        <input type='file' name='channel_image' id='channel_image' />
-                        <img src={channel.channel_image} alt='channel_image' />
+                        <input
+                            type='file'
+                            name='channel_image'
+                            id='channel_image'
+                            onChange={handleImageChange}
+                        />
+                        <img
+                            className='channel_img'
+                            src={channel.channel_image}
+                            alt='channel_image'
+                        />
                     </p>
                     <p className='btn-wrap'>
                         <Button type='submit'>업로드</Button>

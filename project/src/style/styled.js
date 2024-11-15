@@ -245,6 +245,7 @@ export const SideMenuWrap = styled.div`
             transition: all 0.3s;
             position: relative;
             img {
+                width: 100%;
                 height: 100%;
                 transition: all 0.3s;
             }

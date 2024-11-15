@@ -38,6 +38,8 @@ export const ChannelWrap = styled.div`
         /* background-color: #dddddd; */
         .channel_banner {
             height: 100%;
+            max-height: 30rem;
+            overflow: hidden;
             img {
                 display: inline-block;
                 object-fit: cover;
@@ -61,6 +63,8 @@ export const ChannelWrap = styled.div`
                 margin-right: 16px;
                 .channel_img {
                     border-radius: 50%;
+                    width: 16rem;
+                    height: 16rem;
                 }
             }
             .header_right {
