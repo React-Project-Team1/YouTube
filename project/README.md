@@ -1,8 +1,20 @@
-# React + Vite
+# Youtube
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+-   메인페이지
+-   // 이미지 넣고 이미지 설명
+-   소스코드 간단한 리뷰
+-   -   무한 로딩 기능 첨부 (useEffect 사용)
+-   ```javascript
+    useEffect(() => {
+        -setMovies(movies);
+    }, []);
+    ```
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+-   스튜디오
+-   채널
+-   피드
+-   로그인 | 회원가입
+-   마이 페이지
+-   검색
+-   구독
+-   동영상재생
