@@ -355,7 +355,6 @@ export const LayoutWrap = styled.div`
         margin-bottom: 9rem;
         .content-wrap {
             .scroll_up {
-                right: 5rem;
                 bottom: 10rem;
                 .scroll_up_btn {
                     width: 7rem;

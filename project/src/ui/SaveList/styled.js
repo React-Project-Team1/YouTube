@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import { media } from '../../style/media';
-
 export const SaveListWrap = styled.ul`
     padding: 1rem 0;
     position: absolute;
@@ -37,7 +36,6 @@ export const SaveListWrap = styled.ul`
         }
     }
 `;
-
 export const SavePopupWrap = styled.div`
     border: 1px solid #000;
     position: fixed;
@@ -47,4 +45,9 @@ export const SavePopupWrap = styled.div`
     border-radius: 1rem;
     background: #000;
     color: #fff;
+    /* 11/15 김혜림 추가 */
+    @media ${media.mobile} {
+        left: 1rem;
+        bottom: 10rem;
+    }
 `;
