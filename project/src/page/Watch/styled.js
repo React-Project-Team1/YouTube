@@ -51,7 +51,6 @@ export const WatchListWrap = styled.div`
     .video-loder {
         display: flex;
         width: 100%;
-
         .video-wrap {
             max-width: 22rem;
             overflow: hidden;
@@ -59,7 +58,6 @@ export const WatchListWrap = styled.div`
         }
         .text-wrap {
             width: 100%;
-
             .channel-logo {
                 display: none;
             }
@@ -82,28 +80,33 @@ export const WatchListWrap = styled.div`
     @media ${media.mobile} {
         display: block;
         width: 100%;
-
-        .movie_title {
-            display: block;
-        }
-        .video-loder {
-            .video-wrap {
-                .movie_title {
-                    padding-right: 5rem;
+        .sub_video_wrap {
+            .video-loder {
+                display: flex;
+                width: 100%;
+                flex-direction: column;
+                margin-bottom: 2rem;
+                .video-wrap {
+                    border-radius: 0;
+                    max-width: 100%;
+                    padding-bottom: 55%;
+                }
+                .text-wrap {
+                    .movie_info {
+                        .movie_title {
+                            font-size: 2.4rem;
+                        }
+                        .mobile {
+                            display: flex;
+                        }
+                    }
                 }
             }
-        }
-        .text-wrap {
-            max-width: 30rem;
-        }
-        .save-list {
-            right: -100%;
         }
     }
     @media ${media.tablet} {
         display: block;
         width: 100%;
-
         .movie_title {
             display: block;
         }

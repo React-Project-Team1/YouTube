@@ -157,6 +157,11 @@ export const BelowWrap = styled.div`
         }
     }
     @media ${media.mobile} {
+        padding: 1rem;
+        box-sizing: border-box;
+        .channel_detail {
+            max-width: 20rem;
+        }
         .Comment_items {
             right: -2rem;
         }
@@ -463,6 +468,12 @@ export const CommentWrap = styled.div`
             font-weight: 600;
             line-height: 1.8rem;
             margin-bottom: 0.3rem;
+        }
+    }
+    @media ${media.mobile} {
+        .section {
+            min-height: 0;
+            margin-bottom: 0;
         }
     }
 `;
