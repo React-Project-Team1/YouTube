@@ -31,6 +31,10 @@ export const SearchListWrap = styled.ul`
             align-items: center;
             justify-content: space-between;
             margin-left: 3%;
+            button {
+                width: 6vw;
+                letter-spacing: -0.15rem;
+            }
             .info-text {
                 width: 75%;
                 .name {
@@ -59,37 +63,34 @@ export const SearchListWrap = styled.ul`
             }
         }
     }
-    .movie-item {
-        margin-top: 2.5%;
-        .video-loder {
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-            height: 30rem;
-            .video-wrap {
-                width: 50%;
-                overflow: unset;
-                img,
-                iframe,
-                video {
-                    height: 50%;
-                    border-radius: 1rem;
-                }
+    .video-loder {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        height: 30rem;
+        .video-wrap {
+            width: 50%;
+            overflow: unset;
+            img,
+            iframe,
+            video {
+                height: 50%;
+                border-radius: 1rem;
             }
-            .text-wrap {
-                width: 50%;
-                margin-left: 2%;
-                height: 100%;
-                padding: 0.2rem 0;
-                .movie_info {
-                    .movie_title {
-                        font-size: 2rem;
-                        font-weight: 500;
-                    }
-                    .movie_body {
-                        display: block;
-                        margin-top: 1rem;
-                    }
+        }
+        .text-wrap {
+            width: 50%;
+            margin-left: 2%;
+            height: 100%;
+            padding: 0.2rem 0;
+            .movie_info {
+                .movie_title {
+                    font-size: 2rem;
+                    font-weight: 500;
+                }
+                .movie_body {
+                    display: block;
+                    margin-top: 1rem;
                 }
             }
         }
@@ -126,9 +127,13 @@ export const SearchListWrap = styled.ul`
                         }
                     }
                 }
+                button {
+                    width: 20vw;
+                    font-size: 90%;
+                    margin-top: 5%;
+                }
             }
         }
-
         .video-loder {
             height: 100%;
             display: flex;
