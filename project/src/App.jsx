@@ -4,18 +4,7 @@ import Wrongapproach from './common/Wrongapproach';
 import CommentPage from './components/Studio/CommentPage';
 import ContentPage from './components/Studio/ContentPage';
 import VideoUploadPage from './components/Studio/VideoUploadPage';
-import {
-    Channel,
-    Feed,
-    Join,
-    Login,
-    MyPage,
-    Search,
-    Studio,
-    Subscription,
-    Watch,
-    YouTube,
-} from './page';
+import { Channel, Feed, Login, MyPage, Search, Studio, Subscription, Watch, YouTube } from './page';
 import GlobalStyle from './style/GlobalStyle';
 import { BrowserRouter, Route, Routes, HashRouter } from 'react-router-dom';
 
@@ -50,9 +39,6 @@ const App = () => {
                     </Route>
                     <Route path='/login'>
                         <Route index element={<Login />} />
-                    </Route>
-                    <Route path='/join'>
-                        <Route index element={<Join />} />
                     </Route>
                     <Route path='/studio' element={<StudioLayout />}>
                         <Route path=':User_ID/videoupload' element={<VideoUploadPage />} />

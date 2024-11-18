@@ -2,7 +2,7 @@ import { useParams } from 'react-router-dom';
 import { FeedWrap } from './styled';
 import { useDispatch, useSelector } from 'react-redux';
 import Video from '../../ui/Youtube/Video';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { AllDelList } from '../../store/modules/authSlice';
 
 const Feed = ({ category }) => {
@@ -26,6 +26,10 @@ const Feed = ({ category }) => {
                 return '피드';
         }
     };
+
+    useEffect(() => {
+        document.title = `${getCategory()} | YouTube`;
+    }, [Category]);
     if (isLoginUser[Category || category]?.length === 0)
         return (
             <FeedWrap className='feed-wrap'>

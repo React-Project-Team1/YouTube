@@ -16,6 +16,7 @@ const Login = () => {
         if (isAuth) {
             navigate('/');
         }
+        document.title = '로그인 | YouTube';
     }, [isAuth]);
 
     if (!isAuth)

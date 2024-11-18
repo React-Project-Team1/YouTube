@@ -187,9 +187,9 @@ export const FeedWrap = styled.div`
                 }
             }
         }
-    }
-    .page_menu {
-        display: none;
+        .page_menu {
+            display: none;
+        }
     }
 `;
 export const ViewingRecordWrap = styled.div``;

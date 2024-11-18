@@ -3,7 +3,7 @@ import { ChannelWrap } from './styled';
 import { useSelector } from 'react-redux';
 import Channel_home from './Channel_home';
 import Channel_video from './Channel_video';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Search_results from './Search_results';
 import SubscribersBtn from '../../ui/Subscribers/SubscribersBtn';
 
@@ -20,6 +20,10 @@ const Channel = () => {
     const formatSubscribers = (count) => {
         return count >= 10000 ? `${Math.floor(count / 10000)}만명` : `${count}명`;
     };
+
+    useEffect(() => {
+        document.title = `${thisChannel.channel_name} | YouTube`;
+    }, []);
 
     if (!thisChannel)
         return (

@@ -22,6 +22,7 @@ const Studio = () => {
     useEffect(() => {
         if (!isAuth) navigate('/login');
         if (!thisChannel) dispatch(AddNewChannel(isLoginUser));
+        document.title = `${thisChannel.channel_name} | Studio`;
     }, [isAuth, thisChannel, User_ID, Channel]);
 
     if (!thisChannel)

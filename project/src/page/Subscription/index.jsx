@@ -3,9 +3,14 @@ import SubscriptList from '../../components/Subscription/SubscriptList';
 
 import { SubscriptionWrap } from './styled';
 import NotSubscription from '../../components/Subscription/NotSubscription';
+import { useEffect } from 'react';
 
 const Subscription = () => {
     const { isAuth } = useSelector((state) => state.auth);
+
+    useEffect(() => {
+        document.title = '모든 구독 채널 | YouTube';
+    }, []);
 
     return (
         <SubscriptionWrap>

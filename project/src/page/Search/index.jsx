@@ -15,6 +15,9 @@ const Search = () => {
         dispatch(getAllMovies());
     }, []);
 
+    useEffect(() => {
+        document.title = `${Search} | YouTube`;
+    }, [Search]);
     return (
         <SearchWrap>
             {!Search ? <NoSearchItem /> : <SearchList Search={Search} allMovies={allMovies} />}

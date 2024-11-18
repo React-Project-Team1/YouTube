@@ -10,6 +10,7 @@ const MyPage = () => {
     const navigate = useNavigate();
     useEffect(() => {
         if (!isAuth) navigate('/login');
+        document.title = '마이 페이지 | YouTube';
     }, [isAuth]);
 
     if (isAuth)
