@@ -39,62 +39,52 @@ const Below = ({
     // 오프라인/재생목록 저장
     const handleClickType = (e, saveType, Msg) => {
         e.preventDefault();
-        if (isLoginUser && isAuth) {
-            if (isLoginUser[saveType].find((user) => user.movie_id === movie_id)) {
-                dispatch(
-                    IsDelList({
-                        user_id: isLoginUser.user_id,
-                        type: saveType,
-                        movie: movie,
-                    })
-                );
-                dispatch(isSavePopTrue(Msg));
-                if (saveType === 'like_Movie_List') {
-                    dispatch(IsMovieChangeLike({ channel_name, movie_id, type: 'minus' }));
-                    dispatch(getAllMovies());
-                }
-            } else {
-                dispatch(
-                    IsAddList({
-                        user_id: isLoginUser.user_id,
-                        type: saveType,
-                        movie: movie,
-                    })
-                );
-                dispatch(isSavePopTrue(Msg));
-                if (saveType === 'like_Movie_List') {
-                    if (
-                        isLoginUser['dislike_Movie_List'].find((user) => user.movie_id === movie_id)
-                    ) {
-                        dispatch(
-                            IsDelList({
-                                user_id: isLoginUser.user_id,
-                                type: 'dislike_Movie_List',
-                                movie: movie,
-                            })
-                        );
-                        dispatch(getAllMovies());
-                    }
-                    dispatch(IsMovieChangeLike({ channel_name, movie_id, type: 'plus' }));
-                    dispatch(getAllMovies());
-                }
-                if (saveType === 'dislike_Movie_List') {
-                    if (isLoginUser['like_Movie_List'].find((user) => user.movie_id === movie_id)) {
-                        dispatch(
-                            IsDelList({
-                                user_id: isLoginUser.user_id,
-                                type: 'like_Movie_List',
-                                movie: movie,
-                            })
-                        );
-                        dispatch(IsMovieChangeLike({ channel_name, movie_id, type: 'minus' }));
-                        dispatch(getAllMovies());
-                    }
-                }
-            }
-        } else {
+
+        if (!isLoginUser || !isAuth) {
             alert('로그인이 필요합니다.');
             navigate('/login');
+            return;
+        }
+
+        const isMovieInList = (type) =>
+            isLoginUser[type].some((user) => user.movie_id === movie_id);
+
+        const removeMovieFromList = (type) => {
+            dispatch(IsDelList({ user_id: isLoginUser.user_id, type, movie }));
+        };
+
+        const addMovieToList = () => {
+            dispatch(IsAddList({ user_id: isLoginUser.user_id, type: saveType, movie }));
+            dispatch(isSavePopTrue(Msg));
+        };
+
+        const updateMovieLikeStatus = (operation) => {
+            dispatch(IsMovieChangeLike({ channel_name, movie_id, type: operation }));
+        };
+
+        if (isMovieInList(saveType)) {
+            // 이미 리스트에 있는 경우 삭제
+            removeMovieFromList(saveType);
+            dispatch(isSavePopTrue(Msg));
+            if (saveType === 'like_Movie_List') {
+                updateMovieLikeStatus('minus');
+                dispatch(getAllMovies());
+            }
+        } else {
+            addMovieToList();
+            if (saveType === 'like_Movie_List') {
+                if (isMovieInList('dislike_Movie_List')) {
+                    removeMovieFromList('dislike_Movie_List');
+                }
+                updateMovieLikeStatus('plus');
+                dispatch(getAllMovies());
+            } else if (saveType === 'dislike_Movie_List') {
+                if (isMovieInList('like_Movie_List')) {
+                    removeMovieFromList('like_Movie_List');
+                    updateMovieLikeStatus('minus');
+                    dispatch(getAllMovies());
+                }
+            }
         }
     };
 
