@@ -12,7 +12,6 @@ export const SubscribersBtnWrap = styled.div`
         align-items: center;
         /* 11/13 오후 김혜림 부분 추가 */
         white-space: nowrap;
-
         img {
             width: 2.4rem;
             margin-right: 0.4rem;
@@ -25,6 +24,12 @@ export const SubscribersBtnWrap = styled.div`
             background-color: #424242;
         }
     }
+    /* 11-18 김신영 추가 */
+    .channel-btn,
+    .video-btn {
+        width: 6.1vw;
+        letter-spacing: -0.1rem;
+    }
     .channel-btn {
         margin-right: 1rem;
     }
@@ -34,6 +39,12 @@ export const SubscribersBtnWrap = styled.div`
             .img {
                 width: 35%;
             }
+        }
+        /* 11-18 김신영 추가 */
+        .channel-btn,
+        .video-btn {
+            width: 20vw;
+            font-size: 90%;
         }
     }
 `;

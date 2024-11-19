@@ -35,11 +35,7 @@ export const SearchListWrap = styled.ul`
             display: flex;
             align-items: center;
             justify-content: space-between;
-            margin-left: 3%;
-            button {
-                width: 6vw;
-                letter-spacing: -0.15rem;
-            }
+            margin-left: 2%;
             .info-text {
                 width: 75%;
                 .name {
@@ -104,6 +100,9 @@ export const SearchListWrap = styled.ul`
         width: 100vw;
         margin-bottom: 2%;
         overflow: hidden;
+        button {
+            margin-top: 1vh;
+        }
         .channel-item {
             display: flex;
             align-items: center;
@@ -133,11 +132,6 @@ export const SearchListWrap = styled.ul`
                             display: none;
                         }
                     }
-                }
-                button {
-                    width: 20vw;
-                    font-size: 90%;
-                    margin-top: 5%;
                 }
             }
         }

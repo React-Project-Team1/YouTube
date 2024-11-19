@@ -89,7 +89,7 @@ export const HeaderWrap = styled.header`
             padding: 1.5rem;
             box-shadow: #00000050 0px 1px 3px;
             top: 100%;
-            left: 35%;
+            left: 36.3%;
             z-index: 999;
             .search-item {
                 display: flex;
@@ -120,9 +120,9 @@ export const HeaderWrap = styled.header`
                 }
             }
             @media ${media.mobile} {
-                left: 17%;
-                min-width: 45vw;
-                max-width: 51vw;
+                left: 33.5%;
+                min-width: 56vw;
+                max-width: 62vw;
                 img {
                     width: 8%;
                 }
