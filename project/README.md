@@ -341,6 +341,11 @@ useEffect(() => {
 
 ![studio](https://github.com/user-attachments/assets/8a5d10e2-f446-466d-a802-f01ef89eed16)
 
+1. **기능**
+    - 현재 구독자수, 영상, 댓글 수 표기
+    - 영상 업로드 및 삭제 관리
+    - 채널 배너 및 프로필 이미지 변경
+
 ## 채널
 
 <p align ="center">
@@ -589,8 +594,6 @@ const [pageType, setPageType] = useState('quickLogin'); // 페이지 세분화
            if (user.user_name && user.user_age && user.user_tel) setNextForm(true);
        };
     ```
-
-## 마이 페이지
 
 ## 검색
 
